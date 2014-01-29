@@ -1,0 +1,25 @@
+{
+  "name": "ariel17.com.ar",
+  "version": "0.0.1",
+  "homepage": "http://ariel17.com.ar/",
+  "authors": [
+    "Ariel Gerardo Ríos <ariel.gerardo.rios@gmail.com>"
+  ],
+  "description": "My own web site :)",
+  "keywords": [
+    "development",
+    "python",
+    "java"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}
