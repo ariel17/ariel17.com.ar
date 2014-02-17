@@ -1,2 +1,5 @@
 *.sw[po]
 bower_components
+
+# Compiled and objectfiles
+*.py[co]
