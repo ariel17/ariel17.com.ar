@@ -1,5 +1,7 @@
-*.sw[po]
-bower_components
+# Git ignore rules for current project
 
 # Compiled and objectfiles
 *.py[co]
+
+# SQLite database files
+*.db
