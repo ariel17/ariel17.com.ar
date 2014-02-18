@@ -83,22 +83,22 @@ TRANSLATIONS_PATTERN = "{path}_{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),        
-        ('http://getnikola.com', 'About me', 'icon-user'),
-        ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/getnikola', 'My Github', 'icon-github'),
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('http://getnikola.com', 'About me'),
+        ('https://twitter.com/getnikola', 'My Twitter'),
+        ('https://github.com/getnikola', 'My Github'),
     ),
     "es": (
-        ('/index.html', 'Inicio', 'icon-home'),
-        ('/archive.html', 'Archivos', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),        
-        ('http://getnikola.com', 'Acerca de mí', 'icon-user'),
-        ('https://twitter.com/getnikola', 'Mi Twitter', 'icon-twitter'),
-        ('https://github.com/getnikola', 'Mi Github', 'icon-github'),
+        ('/index.html', 'Inicio'),
+        ('/archive.html', 'Archivos'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('http://getnikola.com', 'Acerca de mí'),
+        ('https://twitter.com/getnikola', 'Mi Twitter'),
+        ('https://github.com/getnikola', 'Mi Github'),
     ),
 }
 
