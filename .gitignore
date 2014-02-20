@@ -9,3 +9,6 @@
 # Build artifacts
 cache
 output
+
+# Editor meta
+.*.sw[op]
