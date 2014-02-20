@@ -1,0 +1,4 @@
+# Local requirements
+-r base.txt
+requests==2.2.1
+webassets==0.9
