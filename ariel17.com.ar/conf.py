@@ -14,7 +14,7 @@ SITE_URL = "http://www.ariel17.com.ar/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
-BLOG_EMAIL = "ariel@ariel17.com.ar"
+BLOG_EMAIL = "ariel.gerardo.rios@gmail.com"
 BLOG_DESCRIPTION = "Yet another number in the list."
 
 # Nikola is multilingual!
@@ -53,14 +53,14 @@ BLOG_DESCRIPTION = "Yet another number in the list."
 # in the default language will be shown instead.
 
 # What is the default language?
-DEFAULT_LANG = "en"
+DEFAULT_LANG = "es"
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
-    "es": "./es",
+    "en": "./en",
     # Example for another language:
     # "es": "./es",
 }
@@ -83,22 +83,20 @@ TRANSLATIONS_PATTERN = "{path}_{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home'),
-        ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
-        ('http://getnikola.com', 'About me'),
-        ('https://twitter.com/getnikola', 'My Twitter'),
-        ('https://github.com/getnikola', 'My Github'),
-    ),
-    "es": (
         ('/index.html', 'Inicio'),
-        ('/archive.html', 'Archivos'),
-        ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
-        ('http://getnikola.com', 'Acerca de mí'),
-        ('https://twitter.com/getnikola', 'Mi Twitter'),
-        ('https://github.com/getnikola', 'Mi Github'),
+        ('/archive.html', 'Archivo'),
+        ('/pages/projects.html', 'Proyectos'),
+        ('https://twitter.com/ariel_17_', 'Mi Twitter'),
+        ('https://github.com/ariel17', 'Mi Github'),
+        ('/pages/about-me.html', 'Acerca de mi'),
+    ),
+    "en": (
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archive'),
+        ('/pages/projects.html', 'Projects'),
+        ('https://twitter.com/ariel_17_', 'My Twitter'),
+        ('https://github.com/ariel17', 'My Github'),
+        ('/pages/about-me.html', 'About me'),
     ),
 }
 
@@ -145,8 +143,8 @@ POSTS = (
     ("posts/*.txt", "posts", "post.tmpl"),
 )
 PAGES = (
-    ("stories/*.rst", "stories", "story.tmpl"),
-    ("stories/*.txt", "stories", "story.tmpl"),
+    ("pages/*.rst", "pages", "story.tmpl"),
+    ("pages/*.txt", "pages", "story.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -329,7 +327,7 @@ COMPILERS = {
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
-THEME = "ariel17"
+THEME = "bootstrap3"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.
@@ -372,14 +370,14 @@ THEME = "ariel17"
 # READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 
 # A HTML fragment describing the license, for the sidebar.
-LICENSE = ""
+# LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # http://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
@@ -407,7 +405,7 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # ANNOTATIONS = False
 
 # Create index.html for story folders?
-# STORY_INDEX = False
+STORY_INDEX = True
 # Enable comments on story pages?
 # COMMENTS_IN_STORIES = False
 # Enable comments on picture gallery pages?
@@ -424,7 +422,7 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # it will instead /foo/default.html => /foo)
 # (Note: This was briefly STRIP_INDEX_HTML in v 5.4.3 and 5.4.4)
 # Default = False
-# STRIP_INDEXES = False
+STRIP_INDEXES = True
 
 # Should the sitemap list directories which only include other directories
 # and no files.
@@ -439,7 +437,7 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # This can be disabled on a per-page/post basis by adding
 #    .. pretty_url: False
 # to the metadata
-# PRETTY_URLS = False
+PRETTY_URLS = True
 
 # If True, publish future dated posts right away instead of scheduling them.
 # Defaults to False.
@@ -549,14 +547,14 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 #""" % SITE_URL
 #
 # If you prefer a google search form, here's an example that should just work:
-#SEARCH_FORM = """
-#<!-- Custom search with google-->
-#<form id="search" action="http://google.com/search" method="get" class="navbar-form pull-left">
-#<input type="hidden" name="q" value="site:%s" />
-#<input type="text" name="q" maxlength="255" results="0" placeholder="Search"/>
-#</form>
-#<!-- End of custom search -->
-#""" % SITE_URL
+SEARCH_FORM = """
+<!-- Custom search with google-->
+<form class="navbar-form navbar-right" id="search" action="http://google.com/search" method="get">
+  <input type="hidden" name="q" value="site:%s" />
+  <input type="text" name="q" maxlength="255" results="0" class="form-control" placeholder="Search...">
+</form>
+<!-- End of custom search -->
+""" % SITE_URL
 
 # Also, there is a local search plugin you can use, based on Tipue, but it requires setting several
 # options:
