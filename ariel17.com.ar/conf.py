@@ -91,8 +91,8 @@ NAVIGATION_LINKS = {
         ('https://github.com/ariel17', 'Mi Github'),
     ),
     "en": (
-        ('/index.html', 'Home'),
-        ('/archive.html', 'Archive'),
+        ('/en/index.html', 'Home'),
+        ('/en/archive.html', 'Archive'),
         ('/pages/projects/', 'Projects'),
         ('/pages/about-me/', 'About me'),
         ('https://twitter.com/ariel_17_', 'My Twitter'),
