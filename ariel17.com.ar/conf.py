@@ -85,18 +85,18 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/index.html', 'Inicio'),
         ('/archive.html', 'Archivo'),
-        ('/pages/projects.html', 'Proyectos'),
+        ('/pages/projects/', 'Proyectos'),
+        ('/pages/about-me/', 'Acerca de m&iacute;'),
         ('https://twitter.com/ariel_17_', 'Mi Twitter'),
         ('https://github.com/ariel17', 'Mi Github'),
-        ('/pages/about-me.html', 'Acerca de mi'),
     ),
     "en": (
         ('/index.html', 'Home'),
         ('/archive.html', 'Archive'),
-        ('/pages/projects.html', 'Projects'),
+        ('/pages/projects/', 'Projects'),
+        ('/pages/about-me/', 'About me'),
         ('https://twitter.com/ariel_17_', 'My Twitter'),
         ('https://github.com/ariel17', 'My Github'),
-        ('/pages/about-me.html', 'About me'),
     ),
 }
 
