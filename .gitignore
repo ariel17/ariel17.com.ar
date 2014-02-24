@@ -1,0 +1,14 @@
+# Git ignore rules for current project
+
+# Compiled and objectfiles
+*.py[co]
+
+# SQLite database files
+*.db
+
+# Build artifacts
+cache
+output
+
+# Editor meta
+.*.sw[op]
