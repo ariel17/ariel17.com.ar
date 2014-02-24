@@ -73,7 +73,7 @@ TRANSLATIONS = {
 # this pattern is also used for metadata:
 #     something.meta -> something.meta.pl
 
-TRANSLATIONS_PATTERN = "{path}_{ext}.{lang}"
+TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
 
 # If you don't want your Polish files to be considered Perl code, use this:
 # TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
@@ -93,8 +93,8 @@ NAVIGATION_LINKS = {
     "en": (
         ('/en/index.html', 'Home'),
         ('/en/archive.html', 'Archive'),
-        ('/pages/projects/', 'Projects'),
-        ('/pages/about-me/', 'About me'),
+        ('/en/pages/projects/', 'Projects'),
+        ('/en/pages/about-me/', 'About me'),
         ('https://twitter.com/ariel_17_', 'My Twitter'),
         ('https://github.com/ariel17', 'My Github'),
     ),
