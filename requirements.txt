@@ -1,1 +1,4 @@
+# Ariel17 site requirements
 Nikola==6.3.0
+requests==2.2.1
+webassets==0.9

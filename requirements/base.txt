@@ -1,2 +1,0 @@
-# Base requirements for a Python environment
-Nikola==6.3.0
