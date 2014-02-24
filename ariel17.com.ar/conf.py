@@ -422,7 +422,7 @@ STORY_INDEX = True
 # it will instead /foo/default.html => /foo)
 # (Note: This was briefly STRIP_INDEX_HTML in v 5.4.3 and 5.4.4)
 # Default = False
-STRIP_INDEXES = True
+# STRIP_INDEXES = False
 
 # Should the sitemap list directories which only include other directories
 # and no files.
