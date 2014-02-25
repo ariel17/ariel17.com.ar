@@ -1,0 +1,64 @@
+.. title: Projects
+.. slug: projects
+.. date: 2014/02/24 04:08:09
+.. tags: 
+.. link: 
+.. description: A list of my own projects.
+.. type: text
+
+#. `This site`_
+#. `Poppurri`_
+
+This site
+---------
+URL
+  http://www.ariel17.com.ar/
+Repository
+  https://github.com/ariel17/ariel17.com.ar
+Description
+  My personal page where to expose my projects and professional interests.
+Technology involved
+  * Nikola_: A Python_ static content generator. The theme used was made with
+             `Twitter Bootstrap`_, a web design framework that is responsive to
+             browser's characteristics where it is being viewed.
+  * Nginx_: A lightweight, easy configuration web server.
+Is active
+  Yes.
+Status
+  On development.
+
+Poppurri
+--------
+URL
+  http://www.poppurri.com.ar/
+Repository
+  https://github.com/ariel17/poppurri
+Description
+  Un sitio de venta de productos manufacturados. La propuesta inicial fue un
+  sitio para exponer fotos de la manufactura de familiares directos pero se
+  expandió y se encuentra abierto a la comunidad.
+Technology involved
+  * Django_: Framework Python_ para programación web.
+  * Memcache_: Caché centralizada de objetos en memoria.
+  * PostgreSQL_: Base de datos relacional.
+  * `Twitter Bootstrap`_: A web site framework. It is responsive to different
+                          kind of browsers, adapting the way the content is
+                          being shown.
+  * Nginx_: A lightweight, easy configuration web server, as proxy between
+            domain and the Django_ application.
+  * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model
+               (1 master process -- N child processes) to administrate how
+               workers are being created.
+Is active.
+  Yes.
+Status
+  On development.
+
+.. _Nikola: http://getnikola.com/
+.. _Django: http://www.djangoproject.com/
+.. _Python: http://www.python.org/
+.. _PostgreSQL: http://www.postgresql.org/
+.. _Memcache: http://memcached.org/
+.. _`Twitter Bootstrap`: http://getbootstrap.com/
+.. _Nginx: http://nginx.org/ 
+.. _Gunicorn: http://gunicorn.org/
