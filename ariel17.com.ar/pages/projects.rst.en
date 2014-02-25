@@ -15,12 +15,12 @@ URL
   http://www.ariel17.com.ar/
 Repository
   https://github.com/ariel17/ariel17.com.ar
+On line since
+  2014-02-24
 Description
   My personal page where to expose my projects and professional interests.
 Technology involved
-  * Nikola_: A Python_ static content generator. The theme used was made with
-             `Twitter Bootstrap`_, a web design framework that is responsive to
-             browser's characteristics where it is being viewed.
+  * Nikola_: A Python_ static content generator. The theme used was made with `Twitter Bootstrap`_, a web design framework that is responsive to browser's characteristics where it is being viewed.
   * Nginx_: A lightweight, easy configuration web server.
 Is active
   Yes.
@@ -33,22 +33,17 @@ URL
   http://www.poppurri.com.ar/
 Repository
   https://github.com/ariel17/poppurri
+On line since
+  2014-02-02
 Description
-  Un sitio de venta de productos manufacturados. La propuesta inicial fue un
-  sitio para exponer fotos de la manufactura de familiares directos pero se
-  expandió y se encuentra abierto a la comunidad.
+  A manufactured goods selling site. The initial proposal was a place to display photos about manufacturing product of relatives but it expanded and now is open to the community.
 Technology involved
-  * Django_: Framework Python_ para programación web.
-  * Memcache_: Caché centralizada de objetos en memoria.
-  * PostgreSQL_: Base de datos relacional.
-  * `Twitter Bootstrap`_: A web site framework. It is responsive to different
-                          kind of browsers, adapting the way the content is
-                          being shown.
-  * Nginx_: A lightweight, easy configuration web server, as proxy between
-            domain and the Django_ application.
-  * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model
-               (1 master process -- N child processes) to administrate how
-               workers are being created.
+  * Django_: A Python_ framework for web applications.
+  * Memcache_: An object in-memory centralized cache.
+  * PostgreSQL_: The relational database.
+  * `Twitter Bootstrap`_: A web site framework. It is responsive to different kind of browsers, adapting the way the content is being shown.
+  * Nginx_: A lightweight, easy configuration web server, as proxy between domain and the Django_ application.
+  * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model (1 master process -- N child processes) to administrate how workers are being created.
 Is active.
   Yes.
 Status
