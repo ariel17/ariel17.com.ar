@@ -18,7 +18,10 @@ Repository
 Description
   My personal page where to expose my projects and professional interests.
 Technology involved
-  * Nikola_: a Python_ static content generator.
+  * Nikola_: A Python_ static content generator. The theme used was made with
+             `Twitter Bootstrap`_, a web design framework that is responsive to
+             browser's characteristics where it is being viewed.
+  * Nginx_: A lightweight, easy configuration web server.
 Is active
   Yes.
 Status
@@ -31,13 +34,22 @@ URL
 Repository
   https://github.com/ariel17/poppurri
 Description
-  TODO
+  Un sitio de venta de productos manufacturados. La propuesta inicial fue un
+  sitio para exponer fotos de la manufactura de familiares directos pero se
+  expandió y se encuentra abierto a la comunidad.
 Technology involved
-  * Django_: Framework Python_.
-  * Memcache_: TODO
-  * PostgreSQL_: TODO
-  * `Twitter Bootstrap`_: TODO
-Is active
+  * Django_: Framework Python_ para programación web.
+  * Memcache_: Caché centralizada de objetos en memoria.
+  * PostgreSQL_: Base de datos relacional.
+  * `Twitter Bootstrap`_: A web site framework. It is responsive to different
+                          kind of browsers, adapting the way the content is
+                          being shown.
+  * Nginx_: A lightweight, easy configuration web server, as proxy between
+            domain and the Django_ application.
+  * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model
+               (1 master process -- N child processes) to administrate how
+               workers are being created.
+Is active.
   Yes.
 Status
   On development.
@@ -47,4 +59,6 @@ Status
 .. _Python: http://www.python.org/
 .. _PostgreSQL: http://www.postgresql.org/
 .. _Memcache: http://memcached.org/
-.. _`Twitter Bootstrap`: 
+.. _`Twitter Bootstrap`: http://getbootstrap.com/
+.. _Nginx: http://nginx.org/ 
+.. _Gunicorn: http://gunicorn.org/
