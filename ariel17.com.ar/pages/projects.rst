@@ -2,7 +2,7 @@
 .. slug: projects
 .. date: 2014/02/24 04:08:09
 .. tags: 
-.. link: 
+.. link:
 .. description: Una lista de mis proyectos.
 .. type: text
 
@@ -18,7 +18,8 @@ Repositorio
 Descripción
   Mi página personal donde exponer mis proyectos e intereses profesionales.
 Tecnologías utilizadas:
-  * Nikola_: generador de contenido estático hecho en Python.
+  * Nikola_: generador de contenido estático hecho en Python_.
+  * Nginx_: TODO
 Está activo
   Sí.
 Estado
@@ -35,10 +36,12 @@ Descripción
   sitio para exponer fotos de la manufactura de familiares directos pero se
   expandió y se encuentra abierto a la comunidad.
 Tecnologías utilizadas
-  * Django_: Framework Python_.
-  * Memcache_: TODO
-  * PostgreSQL_: TODO
+  * Django_: Framework Python_ para programación web.
+  * Memcache_: Caché centralizada.
+  * PostgreSQL_: Base de datos relacional.
   * `Twitter Bootstrap`_: TODO
+  * Nginx_: Web server liviano y de fácil configuración.
+  * Gunicorn_: TODO
 Está activo
   Sí.
 Estado
@@ -49,4 +52,6 @@ Estado
 .. _Python: http://www.python.org/
 .. _PostgreSQL: http://www.postgresql.org/
 .. _Memcache: http://memcached.org/
-.. _`Twitter Bootstrap`: 
+.. _`Twitter Bootstrap`: http://getbootstrap.com/
+.. _Nginx: TODO
+.. _Gunicorn: TODO
