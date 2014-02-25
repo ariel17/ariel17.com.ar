@@ -17,11 +17,10 @@ Repositorio
   https://github.com/ariel17/ariel17.com.ar
 Descripción
   Mi página personal donde exponer mis proyectos e intereses profesionales.
+En línea desde
+  2014-02-24
 Tecnologías utilizadas:
-  * Nikola_: Generador de contenido estático hecho en Python_. El tema usado
-             se hizo con `Twitter Bootstrap`_, un framework para diseño de
-             sitios web que responde a las características del navegador donde
-             se está viendo.
+  * Nikola_: Generador de contenido estático hecho en Python_. El tema usado se hizo con `Twitter Bootstrap`_, un framework para diseño de sitios web que responde a las características del navegador donde se está viendo.
   * Nginx_: Un web server liviano y de fácil configuración.
 Está activo
   Sí.
@@ -34,22 +33,17 @@ URL
   http://www.poppurri.com.ar/
 Repositorio
   https://github.com/ariel17/poppurri
+En línea desde
+  2014-02-02
 Descripción
-  Un sitio de venta de productos manufacturados. La propuesta inicial fue un
-  sitio para exponer fotos de la manufactura de familiares directos pero se
-  expandió y se encuentra abierto a la comunidad.
+  Un sitio de venta de productos manufacturados. La propuesta inicial fue un sitio para exponer fotos de la manufactura de familiares directos pero se expandió y ahora se encuentra abierto a la comunidad.
 Tecnologías utilizadas
-  * Django_: Framework Python_ para programación web.
+  * Django_: Un framework Python_ para aplicaciones web.
   * Memcache_: Caché centralizada de objetos en memoria.
   * PostgreSQL_: Base de datos relacional.
-  * `Twitter Bootstrap`_: Framework para diseño de sitios web. Es sensible a
-                          los diferentes tipos de navegador, adaptando la forma
-                          de mostrar el contenido.
-  * Nginx_: Web server liviano y de fácil configuración, haciendo de proxy
-            entre el dominio y la aplicación Django_.
-  * Gunicorn_: Un web server WSGI para Unix hecho en Python_. Utiliza el modelo
-               pre-fork (1 proceso maestro -- N procesos hijos) para
-               administrar cómo se crean los workers.
+  * `Twitter Bootstrap`_: Framework para diseño de sitios web. Es sensible a los diferentes tipos de navegador, adaptando la forma de mostrar el contenido.
+  * Nginx_: Web server liviano y de fácil configuración, haciendo de proxy entre el dominio y la aplicación Django_.
+  * Gunicorn_: Un web server WSGI para Unix hecho en Python_. Utiliza el modelo pre-fork (1 proceso maestro -- N procesos hijos) para administrar cómo se crean los workers.
 Está activo
   Sí.
 Estado
