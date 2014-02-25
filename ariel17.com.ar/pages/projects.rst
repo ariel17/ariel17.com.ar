@@ -1,4 +1,4 @@
-.. title: Projectos
+.. title: Proyectos
 .. slug: projects
 .. date: 2014/02/24 04:08:09
 .. tags: 
