@@ -245,6 +245,7 @@ COMPILERS = {
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = [
+    'rm -rf cache output',
     'nikola build',
     'rsync -avp --delete --progress -r -e ssh output/* ariel17:~/www',
 ]
