@@ -6,6 +6,8 @@
 .. description: Una lista de mis proyectos.
 .. type: text
 
+Esta es una lista de los proyectos en los que estoy trabajando, tanto de sistemas como de otras ocupaciones.
+
 #. `Este sitio`_
 #. `Poppurri`_
 
