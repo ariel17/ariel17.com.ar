@@ -309,14 +309,14 @@ DEPLOY_COMMANDS = [
 
 # Galleries are folders in galleries/
 # Final location of galleries will be output / GALLERY_PATH / gallery_name
-# GALLERY_PATH = "galleries"
-# THUMBNAIL_SIZE = 180
-# MAX_IMAGE_SIZE = 1280
-# USE_FILENAME_AS_TITLE = True
-# EXTRA_IMAGE_EXTENSIONS = []
-#
+GALLERY_PATH = "galleries"
+THUMBNAIL_SIZE = 180
+MAX_IMAGE_SIZE = 1280
+USE_FILENAME_AS_TITLE = True
+EXTRA_IMAGE_EXTENSIONS = []
+
 # If set to False, it will sort by filename instead. Defaults to True
-# GALLERY_SORT_BY_DATE = True
+GALLERY_SORT_BY_DATE = True
 
 # #############################################################################
 # HTML fragments and diverse things that are used by the templates
