@@ -8,8 +8,15 @@
 
 This is a list about projects that I am working on, both in systems as in other occupations.
 
-#. `This site`_
-#. `Poppurri`_
+* Systems
+
+  * `This site`_
+  * `Poppurri`_
+  * `Conejo`_
+
+* Miscellaneous
+
+  * `Greenhouse`_
 
 -------------------------------------------------------------------------------
 
@@ -42,6 +49,7 @@ On line since
 Description
   A manufactured goods selling site. The initial proposal was a place to display photos about manufacturing product of relatives but it expanded and now is open to the community.
 Technology involved
+  * Ubuntu_: A VPS_ with Linux Ubuntu_ 13.10 as operative system.
   * Django_: A Python_ framework for web applications.
   * Memcache_: An object in-memory centralized cache.
   * PostgreSQL_: The relational database.
@@ -53,6 +61,37 @@ Is active.
 Status
   On development.
 
+Greenhouse
+----------
+URL
+  Not defined yet. 
+Description
+  A greenhouse to grow vegetables in the backyard.
+Is active
+  Yes.
+Status
+  On development.
+
+Conejo
+------
+URL
+  Not defined yet. 
+Repository
+  https://github.com/ariel17/conejo
+On line since
+  Not defined yet. 
+Description
+  A monitoring client for RabbitMQ_ server's queues status.
+Technology involved
+  * `Android SDK`_: Development tools for Android_ platform's applications.
+  * Gradle_: Automatization tool for building, testing and deploying applications. It is open source.
+  * RabbitMQ_: Open source asynchronous messaging middleware_ that implements AMQP_ protocol.
+Is active
+  Yes.
+Status
+  On development.
+
+
 .. _Nikola: http://getnikola.com/
 .. _Django: http://www.djangoproject.com/
 .. _Python: http://www.python.org/
@@ -61,3 +100,11 @@ Status
 .. _`Twitter Bootstrap`: http://getbootstrap.com/
 .. _Nginx: http://nginx.org/ 
 .. _Gunicorn: http://gunicorn.org/
+.. _`Android SDK`: https://developer.android.com/sdk/
+.. _Gradle: http://www.gradle.org/
+.. _RabbitMQ: https://www.rabbitmq.com/
+.. _Android: http://www.android.com/
+.. _AMQP: http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol
+.. _middleware: http://en.wikipedia.org/wiki/Middleware 
+.. _Ubuntu: http://www.ubuntu.com/
+.. _VPS: http://en.wikipedia.org/wiki/Virtual_private_server
