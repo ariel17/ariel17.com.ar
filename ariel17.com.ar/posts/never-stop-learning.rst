@@ -6,7 +6,7 @@
 .. description: 
 .. type: text
 
-Cuando empecé la primaria, me acuerdo haberme preguntado *¿Hasta cuándo hay que
+Cuando empecé la primaria, recuerdo haberme preguntado *¿Hasta cuándo hay que
 ir al colegio?*. Indagué un poco y me enteré de la existencia de la secundaria,
 la universidad y luego de hacer algunas cuentas con los dedos llegué a la
 respuesta: hasta los 25 años. Más o menos.
@@ -18,25 +18,25 @@ primeras que me marcaron de arriba abajo en la vida: *Ari, eso no importa; uno
 tiene que estudiar siempre*. Pero ese *siempre* parecía una promesa tan
 cruel, que no me atreví a creerle.
 
-El tiempo pasó y así como la voz de mi papá me hizo un marca, yo me hice a mí
-mismo no creyéndole. Este castigo debía terminar en algún momento.
+La primaria pasó. La secundaria pasó. Aprendí a programar y me puse a trabajar.
+En el medio de todo eso me di cuenta de que sí, uno nunca tiene que dejar de
+aprender; *un día aprendidendo cosas nuevas es un día bien aprovechado* dice mi
+mamá. Pero también aprendí que no todos mantienen la llama prendida en cuanto a
+estudiar se refiere y eso es una de las peores cosas que le pueden pasar a uno.
 
-Nunca aprendí a disfrutar libros. Nunca tuve tiempo porque siempre había algo
-más divertido que hacer o mirar en la tele y cuando empecé la universidad,
-siempre había algún apunte pendiente. En la casa de mis padres teníamos algunos
-y siempre los miré con algo de recelo... como si supieran algo que yo no se y
-no estuvieran tan dispuestos a compartir.
+Si un día llegás a pensar que ya sabés suficiente o lo que ya sabés te impide
+aprender cosas nuevas (`¡no tengo tiempo para eso!`_), entonces **hay algo que
+estás encarando mal**.
 
-De nuevo, el tiempo pasó. A mediados del 2010 leí Beowulf_ como una especie de
-desafío (20 hojas). Me encantó; al día siguiente me compré
-`Entrevista con el vampiro`_ y lo leí en un par de semanas, durante el viaje en
-tren al trabajo. Y después me fui a Tolkien_, a `Ursula Le Guin`_... Y no pude
-parar. **Entonces entendí que lo que perdí fue mi adolescencia sin esos
-mundos**. Ahí encontré muchas respuestas que no había podido responder.
+Siempre hay algo para aprender, no importa lo que sea: tocar la guitarra,
+programar, revocar una pared, jardinería, tejer... si te gusta, aprendé todo lo
+que puedas, leé todos los días. Si te gusta, vas a leer sobre eso incluso en
+tus vacaciones; no va a ser una carga, va a ser un placer, por que te llama y
+te atrae. Buscá y hablá con otros que hagan lo mismo que vos, que tengan los
+mismos intereses y compartí experiencias. Escuchá y ayudá a otros que recién
+empiezan, porque eso también es aprender. Buscar qué no sabés para poder
+aprenderlo se hará una costumbre.
 
-Nunca dejes de leer y, sobre todo, nunca dejes de aprender. 
+Nunca dejes de leer y, sobre todo, **nunca dejes de aprender**. 
 
-.. _Beowulf: http://es.wikipedia.org/wiki/Beowulf
-.. _`Entrevista con el vampiro`: http://es.wikipedia.org/wiki/Entrevista_con_el_vampiro
-.. _Tolkien: http://es.wikipedia.org/wiki/Tolkien
-.. _`Ursula Le Guin`: http://es.wikipedia.org/wiki/Ursula_K._Le_Guin
+.. _`¡no tengo tiempo para eso!`: http://lifehacker.com/5929536/erase-i-dont-have-time-from-your-vocabulary/all
