@@ -64,8 +64,8 @@ menos. Dormí una hora menos. Y leé o practicá. No es fácil pero vale la pena
 intentarlo porque al final de cuentas, es por vos mismo que estás haciendo el
 esfuerzo.
 
-El secreto
-----------
+Entonces...
+-----------
 
 Nunca dejes de leer y, sobre todo, **nunca dejes de aprender**. 
 
