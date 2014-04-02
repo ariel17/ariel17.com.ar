@@ -64,7 +64,7 @@ Estado
 Invernadero
 -----------
 URL
-  Sin definir aún.
+  `http://ariel17.com.ar/galleries/greenhouse/ </galleries/greenhouse/>`_ 
 Descripción
   Un invernadero para cultivar verduras en el patio de casa.
 Está activo
