@@ -29,8 +29,8 @@ Estructura
 * Alambre blanco.
 * Alambre negro.
   
-Material de protección
-----------------------
+Cerramiento
+-----------
 
 * Tela antihelada: 10 m x 4 m (próximo a reemplazarse).
 * Chinches: para el amarre de la tela en la madera.
