@@ -6,12 +6,107 @@
 .. description: Invernadero de madera y plástico.
 .. type: text
 
-Dimensiones
------------
+El primer objetivo del proyecto es crear una estructura que proteja las
+plantaciones que se encuentren debajo y sea lo suficientemente resistente para
+soportar tanto las inclemencias del ambiente como el peso de algún producto
+para el cerramiento. El segundo objetivo a lograr es más generalista y se
+define como *"tratar de gastar la menor cantidad posible de dinero"* en el
+proceso.
 
-En construcción.
 
-Procedimiento
--------------
+Materiales
+==========
 
-En construcción.
+Estructura
+----------
+
+* Madera reutilizada: pallets_ y otras maderas abandonadas en la vía pública.
+* Clavos de 2,5".
+* Tornillos para madera.
+* Tarugos para pared.
+* Tornillos para pared.
+* `Pitones para pared`_.
+* Alambre blanco.
+* Alambre negro.
+  
+Material de protección
+----------------------
+
+* Tela antihelada: 10 m x 4 m (próximo a reemplazarse).
+* Chinches: para el amarre de la tela en la madera.
+* Lona PVC cristal: pendiente.
+
+Construcción
+============
+
+Búsqueda y traslado de madera
+-----------------------------
+
+Las maderas utilizadas para armar la estructura son la mayor parte palets
+abandonados en la vía pública. La calidad y el tipo de madera no son idénticos.
+
+Armado de la estructura
+-----------------------
+La proximidad a la pared de ladrillos fue aprovechada, ahorrándose un lado para
+el cerramiento. La estructura es similar a un techo a *2 aguas*; las medidas
+son:
+
+* 1,7 m de alto en las columnas (desde el piso).
+* 3,8 m x 2,7 m de superficie.
+* 2,5 m de alto en el techo.
+* 1,7 m de largo para cada lado del techo.
+
+
+Las maderas que funcionan como columnas fueron enterradas 30 cm y la tierra que
+rodea las mismas fue pisonada para reforzar la sujeción. Se utilizaron las
+maderas de los palets de mejor calidad y de madera más dura. Cuando se agregó
+una madera para unir ambas columnas se hizo evidente la necesidad de agregar
+una más que de soporte longitudinal, ésta última no fue enterrada más de lo
+suficiente para que no se moviera (5 cm). También se le agregó una madera al
+nivel del piso para evitar que el peso de la estructura la entierre más aún.
+
+Para las aguas del techo se utilizaron palets con madera de menor calidad y más
+cortas, por lo que se tuvo que unir las mismas con clavos y tornillos para
+obtener la longitud requerida. Colocar las maderas que funcionan como soporte
+de las aguas del techo fue un caso particular en cada una:
+
+- Soporte de aguas exterior izquierdo: no presentó inconvenientes ya que el
+  mismo se atornilló a una columna de madera y el otro extremo fue atornillado
+  a una columna de ladrillos.
+- Soporte de aguas exterior derecho: al igual que el anterior, fue atornillado
+  a una columna de madera pero el extremo de la pared se tuvo que colocar un
+  taco de madera que funcionara como soporte de la misma y en conjunto con
+  alambre negro y un pitón sujetarla para que no hubiese movimiento horizontal.
+- Soporte de aguas intermedio: Al no tener soporte horizontal del lado de la
+  pared, se utilizó la misma estrategia anterior. En el lado de opuesto, el del
+  transversal de madera, ocurría una situación similar: se agregaron tacos al
+  transversal para evitar el movimiento horizontal y se utilizón alambre negro
+  para reducir el movimiento vertical. **Pendiente:** agregar un taco de forma
+  horizontal para reducir la presión vertical sobre el alambre.
+
+Una vez instalados los soportes para las aguas del techo, se atornillaron
+maderas longitudinalmente en la parte más alta para reducir el movimiento, una
+de cada lado del techo.
+También se reutilizaron los pitones con alambre blanco para atar la madera que
+une las columnas de madera y disminuir la posibilidad de desplazamiento hacia
+el exterior de las columnas.
+
+Instalación del cerramiento  
+---------------------------
+
+Para el cerramiento se utilizó en un principio `tela antihelada`_ y se la clavó
+a los bordes utilizando chinches, pero este material va a ser reemplazado por
+lona de PVC cristal.
+
+Conclusiones
+------------
+
+#. **La tela antihelada no es un buen material como cerramiento:** La tela no
+   soportó la tensión en un área a cubrir tan grande. Al ser una tela tan fina
+   y quebradiza (se puede cortar con la mano si se la separa) la fuerza del
+   viento hace que se raje en los puntos de soporte y la fricción con la misma
+   madera a la que está agarrada la desgasta hasta romperla.
+
+.. _pallets: http://es.wikipedia.org/wiki/Pallet
+.. _`Pitones para pared`: http://mla-s2-p.mlstatic.com/50-pitones-cerrados-n6-de-acero-zincado-para-pared-o-madera-4778-MLA3857200102_022013-F.jpg
+.. _`tela antihelada`: http://www.diaadia.com.ar/tu-dia/tu-jardin/tela-antihelada-para-proteger-tus-plantas
