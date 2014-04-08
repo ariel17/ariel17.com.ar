@@ -70,19 +70,20 @@ cortas, por lo que se tuvo que unir las mismas con clavos y tornillos para
 obtener la longitud requerida. Colocar las maderas que funcionan como soporte
 de las aguas del techo fue un caso particular en cada una:
 
-- Soporte de aguas exterior izquierdo: no presentó inconvenientes ya que el
+- **Soporte de aguas exterior izquierdo:** no presentó inconvenientes ya que el
   mismo se atornilló a una columna de madera y el otro extremo fue atornillado
   a una columna de ladrillos.
-- Soporte de aguas exterior derecho: al igual que el anterior, fue atornillado
-  a una columna de madera pero el extremo de la pared se tuvo que colocar un
-  taco de madera que funcionara como soporte de la misma y en conjunto con
-  alambre negro y un pitón sujetarla para que no hubiese movimiento horizontal.
-- Soporte de aguas intermedio: Al no tener soporte horizontal del lado de la
-  pared, se utilizó la misma estrategia anterior. En el lado de opuesto, el del
-  transversal de madera, ocurría una situación similar: se agregaron tacos al
-  transversal para evitar el movimiento horizontal y se utilizón alambre negro
-  para reducir el movimiento vertical. **Pendiente:** agregar un taco de forma
-  horizontal para reducir la presión vertical sobre el alambre.
+- **Soporte de aguas exterior derecho:** al igual que el anterior, fue
+  atornillado a una columna de madera pero el extremo de la pared se tuvo que
+  colocar un taco de madera que funcionara como soporte de la misma y en
+  conjunto con alambre negro y un pitón sujetarla para que no hubiese
+  movimiento horizontal.
+- **Soporte de aguas intermedio:** Al no tener soporte horizontal del lado de
+  la pared, se utilizó la misma estrategia anterior. En el lado de opuesto, el
+  del transversal de madera, ocurría una situación similar: se agregaron tacos
+  al transversal para evitar el movimiento horizontal y se utilizón alambre
+  negro para reducir el movimiento vertical. **Pendiente:** agregar un taco de
+  forma horizontal para reducir la presión vertical sobre el alambre.
 
 Una vez instalados los soportes para las aguas del techo, se atornillaron
 maderas longitudinalmente en la parte más alta para reducir el movimiento, una
