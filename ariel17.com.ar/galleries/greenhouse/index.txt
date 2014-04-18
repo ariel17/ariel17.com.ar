@@ -6,13 +6,17 @@
 .. description: Invernadero de madera y plástico.
 .. type: text
 
+.. figure:: /galleries/projects/greenhouse.jpg
+   :alt: Invernadero
+   :align: left
+   :figwidth: 350
+
 El primer objetivo del proyecto es crear una estructura que proteja las
 plantaciones que se encuentren debajo y sea lo suficientemente resistente para
 soportar tanto las inclemencias del ambiente como el peso de algún producto
 para el cerramiento. El segundo objetivo a lograr es más generalista y se
 define como *"tratar de gastar la menor cantidad posible de dinero"* en el
 proceso.
-
 
 Materiales
 ==========
