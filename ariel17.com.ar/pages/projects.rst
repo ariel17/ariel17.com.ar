@@ -17,7 +17,7 @@ de otras ocupaciones.
          <img src="/galleries/projects/ariel17.com.ar.png" alt="Página personal de Ariel">
          <div class="caption">
            <h3>Ariel17</h3>
-           <p>Esta página personal.</p>
+           <p>Esta página personal</p>
            <p>
              <a href="http://www.ariel17.com.ar/" class="btn btn-primary" role="button">
                Ir al sitio
@@ -77,10 +77,10 @@ de otras ocupaciones.
 
      <div class="col-sm-6 col-md-4">
        <div class="thumbnail">
-         <img src="/galleries/projects/greenhouse.jpg" alt="Apuntes">
+         <img src="/galleries/projects/greenhouse.jpg" alt="Invernadero">
          <div class="caption">
            <h3>Invernadero</h3>
-           <p>Invernadero en el patio trasero.</p>
+           <p>Invernadero en el patio trasero</p>
            <p>
              <a href="/galleries/greenhouse/" class="btn btn-primary" role="button">
                Página del proyecto

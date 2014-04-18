@@ -6,105 +6,87 @@
 .. description: A list of my own projects.
 .. type: text
 
-This is a list about projects that I am working on, both in systems as in other occupations.
+A list about projects that I am working on, both in systems as in other
+occupations.
 
-* Systems
+.. raw:: html
 
-  * `This site`_
-  * `Poppurri`_
-  * `Conejo`_
+   <div class="row">
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/projects/ariel17.com.ar.png" alt="Ariel's site">
+         <div class="caption">
+           <h3>Ariel17</h3>
+           <p>This personal page</p>
+           <p>
+             <a href="http://www.ariel17.com.ar/" class="btn btn-primary" role="button">
+               Go to site
+             </a>
+             <a href="/pages/ariel17" class="btn btn-default" role="button">
+               Project page
+             </a>
+             <a href="https://github.com/ariel17/ariel17.com.ar" class="btn btn-default" role="button">
+               Repository
+             </a>
+           </p>
+         </div>
+       </div>
+     </div>
 
-* Miscellaneous
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/projects/poppurri.com.ar.png" alt="Poppurri">
+         <div class="caption">
+           <h3>Poppurri</h3>
+           <p>Handmade products sales site</p>
+           <p>
+             <a href="https://www.poppurri.com.ar/" class="btn btn-primary" role="button">
+               Go to site
+             </a>
+             <a href="/pages/poppurri" class="btn btn-default" role="button">
+               Project page
+             </a>
+             <a href="https://github.com/ariel17/poppurri" class="btn btn-default" role="button">
+               Repository
+             </a>
+           </p>
+         </div>
+       </div>
+     </div>
 
-  * `Greenhouse`_
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/projects/notes.png" alt="Notes">
+         <div class="caption">
+           <h3>Notes</h3>
+           <p>Notes on different courses</p>
+           <p>
+             <a href="http://www.ariel17.com.ar/notes/" class="btn btn-primary" role="button">
+               Go to site
+             </a>
+             <a href="/pages/notes/" class="btn btn-default" role="button">
+               Projecto page
+             </a>
+             <a href="https://github.com/ariel17/notes" class="btn btn-default" role="button">
+               Repository
+             </a>
+           </p>
+         </div>
+       </div>
+     </div>
 
--------------------------------------------------------------------------------
-
-This site
----------
-URL
-  http://www.ariel17.com.ar/
-Repository
-  https://github.com/ariel17/ariel17.com.ar
-On line since
-  2014-02-24
-Description
-  My personal page where to expose my projects and professional interests.
-Technology involved
-  * Nikola_: A Python_ static content generator. The theme used was made with `Twitter Bootstrap`_, a web design framework that is responsive to browser's characteristics where it is being viewed.
-  * Nginx_: A lightweight, easy configuration web server.
-Is active
-  Yes.
-Status
-  On development.
-
-Poppurri
---------
-URL
-  http://www.poppurri.com.ar/
-Repository
-  https://github.com/ariel17/poppurri
-On line since
-  2014-02-02
-Description
-  A manufactured goods selling site. The initial proposal was a place to display photos about manufacturing product of relatives but it expanded and now is open to the community.
-Technology involved
-  * Ubuntu_: A VPS_ with Linux Ubuntu_ 13.10 as operative system.
-  * Django_: A Python_ framework for web applications.
-  * Memcache_: An object in-memory centralized cache.
-  * PostgreSQL_: The relational database.
-  * `Twitter Bootstrap`_: A web site framework. It is responsive to different kind of browsers, adapting the way the content is being shown.
-  * Nginx_: A lightweight, easy configuration web server, as proxy between domain and the Django_ application.
-  * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model (1 master process -- N child processes) to administrate how workers are being created.
-Is active.
-  Yes.
-Status
-  On development.
-
-Greenhouse
-----------
-URL
-  `http://ariel17.com.ar/galleries/greenhouse/ </galleries/greenhouse/>`_ 
-Description
-  A greenhouse to grow vegetables in the backyard.
-Is active
-  Yes.
-Status
-  On development.
-
-Conejo
-------
-URL
-  Not defined yet. 
-Repository
-  https://github.com/ariel17/conejo
-On line since
-  Not defined yet. 
-Description
-  A monitoring client for RabbitMQ_ server's queues status.
-Technology involved
-  * `Android SDK`_: Development tools for Android_ platform's applications.
-  * Gradle_: Automatization tool for building, testing and deploying applications. It is open source.
-  * RabbitMQ_: Open source asynchronous messaging middleware_ that implements AMQP_ protocol.
-Is active
-  Yes.
-Status
-  On development.
-
-
-.. _Nikola: http://getnikola.com/
-.. _Django: http://www.djangoproject.com/
-.. _Python: http://www.python.org/
-.. _PostgreSQL: http://www.postgresql.org/
-.. _Memcache: http://memcached.org/
-.. _`Twitter Bootstrap`: http://getbootstrap.com/
-.. _Nginx: http://nginx.org/ 
-.. _Gunicorn: http://gunicorn.org/
-.. _`Android SDK`: https://developer.android.com/sdk/
-.. _Gradle: http://www.gradle.org/
-.. _RabbitMQ: https://www.rabbitmq.com/
-.. _Android: http://www.android.com/
-.. _AMQP: http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol
-.. _middleware: http://en.wikipedia.org/wiki/Middleware 
-.. _Ubuntu: http://www.ubuntu.com/
-.. _VPS: http://en.wikipedia.org/wiki/Virtual_private_server
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/projects/greenhouse.jpg" alt="Greenhouse">
+         <div class="caption">
+           <h3>Greenhouse</h3>
+           <p>A greenhouse in the backyard</p>
+           <p>
+             <a href="/galleries/greenhouse/" class="btn btn-primary" role="button">
+               Project page
+             </a>
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
