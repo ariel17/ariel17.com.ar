@@ -112,10 +112,11 @@ Conclusiones
    y quebradiza (se puede cortar con la mano si se la separa) la fuerza del
    viento hace que se raje en los puntos de soporte y la fricción con la misma
    madera a la que está agarrada la desgasta hasta romperla.
-#. La lona de PVC contiene gran cantidad de humedad aún con 2 lados abiertos.
-   Es notable el conglomerado de insectos que buscan refugiarse en este
-   ambiente artificial cuando cae el sol. La temperatura también se mantiene
-   más alta por debajo del techo que en los alrededores de la estructura.
+#. **La lona de PVC contiene gran cantidad de humedad aún con 2 lados
+   abiertos**. Es notable el conglomerado de insectos que buscan refugiarse en
+   este ambiente artificial cuando cae el sol. **La temperatura también se
+   mantiene más alta** por debajo del techo que en los alrededores de la
+   estructura.
 
 .. _pallets: http://es.wikipedia.org/wiki/Pallet
 .. _`Pitones para pared`: http://mla-s2-p.mlstatic.com/50-pitones-cerrados-n6-de-acero-zincado-para-pared-o-madera-4778-MLA3857200102_022013-F.jpg
