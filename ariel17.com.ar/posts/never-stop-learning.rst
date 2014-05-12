@@ -39,6 +39,7 @@ movimiento.
 El plan
 -------
 
+.. class:: thumbnail
 .. figure:: /galleries/never-stop-learning/reading.jpg
    :width: 800 px
    :scale: 50 %

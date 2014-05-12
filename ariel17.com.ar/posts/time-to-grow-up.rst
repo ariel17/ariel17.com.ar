@@ -6,6 +6,7 @@
 .. description: ¿Y qué tal si quiero enseñar Linux a mi hijo?
 .. type: text
 
+.. class:: thumbnail
 .. image:: /galleries/time-to-grow-up/working_hard.jpg
    :width: 800 px
    :scale: 50 %
