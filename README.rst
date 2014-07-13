@@ -11,6 +11,8 @@ configuration to this site is located in the configuration file named
 How to install, create posts and build
 --------------------------------------
 
+#. Install O.S. requirements (asuming Ubuntu): ``sudo apt-get install libxml2-dev libxslt1-dev python-dev``
+#. Create a new virtual environment: ``virtualenv env --no-site-packages env``
 #. Install Python requirements: ``pip install -r requirements.txt``
 #. Create a new post: ``nikola new_post``
 #. Compile the content: ``nikola build``
