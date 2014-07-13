@@ -1,16 +1,15 @@
 .. title: Broken properties
 .. slug: broken-properties
 .. date: 2014/07/12 19:56:51
-.. tags: programación, python, django
+.. tags: programming, python, django
 .. link: http://www.stavros.io/posts/how-replace-django-model-field-property/
 .. description: 
 .. type: text
 
-Ayer estuve peleando un rato largo durante el día tratando de reemplazar un
-campo en un modelo de Django_ con **property**. Property es un mecanismo en el
-lenguaje Python_ para implementar getters y setters de un campo en una clase de
-manera transparente (*de forma pytónica* dirían algunos). Acá un ejemplo
-sencillo:
+Yesterday I was fighting a while during the day trying to replace a model field
+in Django_ with **property**. Property is a mechanism in Python_ language to
+implement getters and setters for a class field in a transparent way (*in a 
+pythonic way* some might say). Here a very simple example:
 
 .. code-block:: python
 
@@ -49,7 +48,7 @@ sencillo:
            self._foo = value
 
 
-Así se usaría la clase ``Foo`` recién implementada:
+So this way the recently implemented ``Foo`` class would be used:
 
 .. code-block:: bash
 
@@ -75,16 +74,16 @@ Así se usaría la clase ``Foo`` recién implementada:
    ValueError: foo field cannot be greater than 10
    >>>
 
-`Acá se puede leer la documentación oficial`_ acerca de esta funcionalidad.
+`The official documentation about this functionality`_ can be found easily.
 
 
-El problema con Django
-======================
+The problem with Django
+=======================
 
-Implementar esta funcionalidad en Django_ para los campos de un modelo no es un
-problema en absoluto. El problema reside en querer utilizar las demás ventajas
-que ofrece el framework sobre el campo en el que se utilizó esta solución. Voy
-a ejemplificarlo con un proyecto muy simple:
+Implement this functionality in Django for model fields is not a problem at
+all. The problem resides on using the other advantages this framework offers
+over the field used for this solution. I'm going to make a simple example with
+a Django_ project:
 
 .. code-block:: bash
 
@@ -105,11 +104,10 @@ a ejemplificarlo con un proyecto muy simple:
    (env)~/brokenprop/brokenprop$ chmod +x manage.py && ./manage.py startapp propapp
 
 
-El proyecto de pruebas ya está inicializado. Por defecto Django_ trae
-configurado SQLite_ como base de datos y para este ejemplo es más que
-suficiente. Voy a editar el módulo de modelos de la aplicación ``proapp`` e
-implementar setter y getter en una clase. El resultado es muy similar al
-ejemplo anterior:
+The test project was initialized. By default Django_ has configured SQLite_ as
+database engine and for this example it is more than enough. I'm going to edit
+the ``propapp`` application's models module and implement getter and setter in
+a class. The result is very similar to the previous example:
 
 .. code-block:: python
 
@@ -148,7 +146,7 @@ ejemplo anterior:
            # doing the things that a setter method does ...
            self._foo = value
 
-Ya tengo el modelo con un campo y sus respectivos métodos. Así debería usarlos:
+So there it is: a field model with its methods. Here is how to use them:
 
 .. code-block:: bash
 
@@ -166,8 +164,8 @@ Ya tengo el modelo con un campo y sus respectivos métodos. Así debería usarlo
    >>> f._foo == f.foo
    True
 
-Todo muy bien hasta acá; es más, todo es igual, sin problemas. Los problemas
-comienzan cuando se quiere usar el campo en una query:
+Everything is ok til here; much more, everything is the same, no problem so
+far. The problems begin when a query on the field is made:
 
 .. code-block:: bash
 
@@ -179,11 +177,10 @@ comienzan cuando se quiere usar el campo en una query:
    FieldError: Cannot resolve keyword 'foo' into field. Choices are: _foo, id
    >>>
 
-Bien, no puedo usar el campo tal como lo debería usar ``:(``. Supongamos
-que asumo este costo y quiero continuar así, no me importa que el nombre
-del campo en las queries no sea el evidente e intuitivo, sino que usaré el
-nombre que le puse con el prefijo ``_`` o lo que se requiera para acceder a
-él:
+Ok, the field cannot be used as it was supposed to be ``:(``. Suppose that this
+cost is worthless for me and I want to continue this way, I don't care that the
+field name is not intuitive enough: I want (and I will) put what it requires to
+be putted to get to the field name:
 
 .. code-block:: bash
 
@@ -217,15 +214,16 @@ nombre que le puse con el prefijo ``_`` o lo que se requiera para acceder a
 
    >>>
 
-**El campo está inaccesible para usarlo en queries**. El issue `#3148`_ del
-track de Django_ habla al respecto, pero la solución planteada, en la que está
-basada este post, no provee la funcionalidad esperada (`mis quejas aquí`_).
+**The field is not reachable to be used on queries**. The issue `#3148`_ on
+Django_'s track system talks about it, but the solution propoused, on which
+this post is based, does not provide the expected functionality (`here my
+complains`_).
 
-Salvo, claro, que **me esté perdiendo algo**.
+Except, of course, that **I miss something**.
 
 .. _Django: https://www.djangoproject.com/
 .. _Python: https://www.python.org/
-.. _`Acá se puede leer la documentación oficial`: https://docs.python.org/2/library/functions.html#property
+.. _`The official documentation about this functionality`: https://docs.python.org/2/library/functions.html#property
 .. _SQLite: http://www.sqlite.org/
 .. _`#3148`: https://code.djangoproject.com/ticket/3148
-.. _`mis quejas aquí`: https://code.djangoproject.com/ticket/3148#comment:51
+.. _`here my complains`: https://code.djangoproject.com/ticket/3148#comment:51
