@@ -72,7 +72,7 @@ Así se usaría la clase ``Foo`` recién implementada:
      File "<stdin>", line 1, in <module>
      File "foo.py", line 31, in foo
        raise ValueError("foo field cannot be greater than 10")
-       ValueError: foo field cannot be greater than 10
+   ValueError: foo field cannot be greater than 10
    >>>
 
 `Acá se puede leer la documentación oficial`_ acerca de esta funcionalidad.
@@ -172,6 +172,7 @@ comienzan cuando se quiere usar el campo en una query:
 .. code-block:: bash
 
    >>> Foo.objects.filter(foo='bar')
+   Traceback (most recent call last):
    ...
    File "/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1283, in names_to_path
      "Choices are: %s" % (name, ", ".join(available)))
@@ -187,24 +188,28 @@ nombre que le pusimos con el prefijo ``_`` o lo que se requiera para acceder a
 .. code-block:: bash
 
    >>> Foo.objects.filter(_foo='bar')
+   Traceback (most recent call last):
    ...
    File "/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 451, in execute
      return Database.Cursor.execute(self, query, params)
    OperationalError: no such table: propapp_foo
 
    >>> Foo.objects.filter(__foo='bar')
+   Traceback (most recent call last):
    ...
    File "/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1283, in names_to_path
      "Choices are: %s" % (name, ", ".join(available)))
    FieldError: Cannot resolve keyword '' into field. Choices are: _foo, id
 
    >>> Foo.objects.filter(propapp__foo='bar')
+   Traceback (most recent call last):
    ...
    File "/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1283, in names_to_path
      "Choices are: %s" % (name, ", ".join(available)))
    FieldError: Cannot resolve keyword 'propapp' into field. Choices are: _foo, id
 
    >>> Foo.objects.filter(propapp_foo='bar')
+   Traceback (most recent call last):
    ...
    File "/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1283, in names_to_path
      "Choices are: %s" % (name, ", ".join(available)))
