@@ -81,10 +81,10 @@ Así se usaría la clase ``Foo`` recién implementada:
 El problema con Django
 ======================
 
-Implementar esta funcionalidad en Django para los campos de un modelo no es un
+Implementar esta funcionalidad en Django_ para los campos de un modelo no es un
 problema en absoluto. El problema reside en querer utilizar las demás ventajas
 que ofrece el framework sobre el campo en el que se utilizó esta solución. Voy
-a ejemplificarlo con un proyecto Django muy simple:
+a ejemplificarlo con un proyecto muy simple:
 
 .. code-block:: bash
 
@@ -148,7 +148,7 @@ ejemplo anterior:
            # doing the things that a setter method does ...
            self._foo = value
 
-Ya tenemos el modelo con un campo y sus respectivos métodos. Vamos a usarlos:
+Ya tengo el modelo con un campo y sus respectivos métodos. Así debería usarlos:
 
 .. code-block:: bash
 
@@ -179,10 +179,10 @@ comienzan cuando se quiere usar el campo en una query:
    FieldError: Cannot resolve keyword 'foo' into field. Choices are: _foo, id
    >>>
 
-Bien, no podemos usar el campo tal como lo deberíamos usar ``:(``. Supongamos
-que asumimos este costo y queremos continuar así, no nos importa que el nombre
-del campo en las queries no sea el evidente e intuitivo, sino que usaremos el
-nombre que le pusimos con el prefijo ``_`` o lo que se requiera para acceder a
+Bien, no puedo usar el campo tal como lo debería usar ``:(``. Supongamos
+que asumo este costo y quiero continuar así, no me importa que el nombre
+del campo en las queries no sea el evidente e intuitivo, sino que usaré el
+nombre que le puse con el prefijo ``_`` o lo que se requiera para acceder a
 él:
 
 .. code-block:: bash
@@ -218,8 +218,8 @@ nombre que le pusimos con el prefijo ``_`` o lo que se requiera para acceder a
    >>>
 
 **El campo está inaccesible para usarlo en queries**. El issue `#3148`_ del
-track de Django habla al respecto, pero la solución planteada, en la que está
-basada este post, no provee la funcionalidad esperada (mis quejas `aquí`_).
+track de Django_ habla al respecto, pero la solución planteada, en la que está
+basada este post, no provee la funcionalidad esperada (`mis quejas aquí`_).
 
 Salvo, claro, que **me esté perdiendo algo**.
 
@@ -228,4 +228,4 @@ Salvo, claro, que **me esté perdiendo algo**.
 .. _`Acá se puede leer la documentación oficial`: https://docs.python.org/2/library/functions.html#property
 .. _SQLite: http://www.sqlite.org/
 .. _`#3148`: https://code.djangoproject.com/ticket/3148
-.. _`aquí`: https://code.djangoproject.com/ticket/3148#comment:51
+.. _`mis quejas aquí`: https://code.djangoproject.com/ticket/3148#comment:51
