@@ -20,7 +20,7 @@ Si el ambiente que deseamos crear (o replicar) consiste sólo de instancias
 Linux existe una herramienta llamada LXC_: Linux Containers. No es una máquina
 virtual sino que provee un *entorno* virtual, separando espacios de procesos
 y redes, funcionalidad que provee el propio núcleo de Linux desde la versión
-2.6.29 con la integración de cgroups_. Sin el overhead de simular una máquina
+2.6.29 con la integración de cgroups_. Sin la sobrecarga de simular una máquina
 virtual por completo hay más recursos disponibles para ser aprovechados.
 
 Pueden obtener más información en la `página oficial de LXC`_.
@@ -66,6 +66,10 @@ interactiva, visualizando las distribuciones y arquitecturas disponibles:
 
 Visualizar las instancias creadas
 ---------------------------------
+
+Para ver las instancias disponibles se puede hacer uso del comando
+:code:`lxc-ls`. Este mostrará sólo los nombres pero usando el parámetro
+:code:`--fancy` flag agregará más información útil sobre ellas:
 
 .. code-block:: bash
 
@@ -115,7 +119,7 @@ consideramos necesario:
    ~$ sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  # using default configuration
    ~$ sudo service lwp start
 
-Vamos a asumir que se usaron las configuraciones por defecto; si realizaron
+Voy a asumir que se usaron las configuraciones por defecto; si realizaron
 cambios no olviden adaptar los ejemplos de aquí a sus casos particulares. Una
 vez terminada la instalación, abrimos un browser y nos dirigimos a la dirección
 web http://localhost:5000/:
