@@ -78,3 +78,5 @@ sus manos y huesos para alcanzarnos. Tememos lo peor para esos seres, no por lo
 que han sufrido, sino por aquellos de lo que han sido capaces... Hemos olvidado
 cosas que nuestros antepasados han aprendido durante siglos para llegar aquí,
 pero también fuimos purificados.
+
+**Continuará.**
