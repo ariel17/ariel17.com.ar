@@ -1,13 +1,14 @@
 .. title: Cartas para mis amores I
 .. slug: letters-to-my-loves-i
-.. date: 2014/06/28 08:05:26
+.. date: 2014/08/17 01:09:22
 .. tags: cartas
 .. link: 
 .. description: 
 .. type: text
 
 Esto es simplemente un ejercicio de *escribir palabras de manera amateur*. La
-necesidad de exteriorizar palabras, ni más ni menos.
+necesidad de exteriorizar palabras, ni más ni menos. Actualizaciones sobre el
+texto van y vienen ;)
 
 Cartas para mis amores I
 ========================
