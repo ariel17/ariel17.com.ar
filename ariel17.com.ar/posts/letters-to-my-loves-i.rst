@@ -36,10 +36,10 @@ Uno entre miles
 *Nadie estuvo aquí para recibirnos cuando llegamos. Sin embargo, hay un lejano*
 *rumor de que una vez fuimos millones. Millones y millones en los mundos que*
 *inundan esta galaxia pero aquí, en este pequeño planeta bajo este enorme Sol*
-*azul sólo nos estamos extinguiendo y ha sido así desde hace siglos. Ya no*
-*nos llegan palabras desde el confín del vacío y hemos dejado de escuchar.*
-*Solos como al principio, nos vamos, pero dejamos una miríada de vidas, las*
-*nuestras y las de nuestros hijos que han nacido aquí.*
+*azul sólo nos estamos extinguiendo y ha sido así desde hace siglos. No hay*
+*palabras que lleguen desde el confín del vacío. Solos como al principio, nos*
+*vamos, pero dejamos una miríada de vidas, las nuestras y las de nuestros*
+*hijos que han nacido aquí.*
 
 Es difícil escribir sobre uno mismo y tampoco es fácil hablar del camino
 recorrido viéndolo tan obvio hacia atrás pero tan complicado de discernir
@@ -75,7 +75,7 @@ tiempo. Ya no miramos hacia ese sistema planetario; allí, donde debería estar
 el resplandor de una estrella, el hogar distante, está el negro del vacío y es
 como si la Muerte misma nos estuviese devolviéndonos la mirada. Es la entropía
 a la que todos estamos cayendo como en una cascada, personificada, estirando
-sus manos y huesos para alcanzarnos. Tememos lo peor para esos seres, no por lo
+sus manos y huesos para atraparnos. Tememos lo peor para esos seres, no por lo
 que han sufrido, sino por aquellos de lo que han sido capaces... Hemos olvidado
 cosas que nuestros antepasados han aprendido durante siglos para llegar aquí,
 pero también fuimos purificados.
