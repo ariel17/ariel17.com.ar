@@ -20,7 +20,7 @@ Uno entre miles
 *que ha logrado flotar en las aguas de lo infinto y de tan lejos ha llegado*
 *que ha casi desaparacido por completo: es un grano fino en una playa extraña*
 *bajo una estrella que no lo ha visto nunca. Ya pronto seremos parte de este*
-*mundo pero de una manera que no me complace porque sólo seremos parte del *
+*mundo pero de una manera que no me complace porque sólo seremos parte del*
 *paisaje. Nuestra historia, nuestra sangre, lo que somos y representamos*
 *desaparecerá en un par de siglos. Somos un pasado viviente más la huella del*
 *camino donde termina el futuro puede verse a simple vista, aproximándose para*
