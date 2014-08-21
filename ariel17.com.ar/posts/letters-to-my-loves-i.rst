@@ -18,10 +18,10 @@ Uno entre miles
 
 *Esta es mi historia, una entre 2 mil más. La historia de una roca en el mar*
 *que ha logrado flotar en las aguas de lo infinto y de tan lejos ha llegado*
-*que ha casi desaparacido por completo: sólo es un grano fino en una playa*
-*extraña bajo una estrella que no lo ha visto nunca. Ya pronto seremos parte*
-*de este mundo pero de una manera que no me complace porque sólo seremos parte*
-*del paisaje. Nuestra historia, nuestra sangre, lo que somos y representamos*
+*que ha casi desaparacido por completo: es un grano fino en una playa extraña*
+*bajo una estrella que no lo ha visto nunca. Ya pronto seremos parte de este*
+*mundo pero de una manera que no me complace porque sólo seremos parte del *
+*paisaje. Nuestra historia, nuestra sangre, lo que somos y representamos*
 *desaparecerá en un par de siglos. Somos un pasado viviente más la huella del*
 *camino donde termina el futuro puede verse a simple vista, aproximándose para*
 *encontrarnos al fin. Todos escribimos porque en parte somos un relato que*
@@ -36,9 +36,10 @@ Uno entre miles
 *Nadie estuvo aquí para recibirnos cuando llegamos. Sin embargo, hay un lejano*
 *rumor de que una vez fuimos millones. Millones y millones en los mundos que*
 *inundan esta galaxia pero aquí, en este pequeño planeta bajo este enorme Sol*
-*azul sólo nos estamos extinguiendo y ha sido así desde hace siglos. Solos*
-*como al principio, nos vamos, pero dejamos una miríada de vidas, las nuestras
-*y las de nuestros hijos que han nacido aquí.*
+*azul sólo nos estamos extinguiendo y ha sido así desde hace siglos. Ya no*
+*nos llegan palabras desde el confín del vacío y hemos dejado de escuchar.*
+*Solos como al principio, nos vamos, pero dejamos una miríada de vidas, las*
+*nuestras y las de nuestros hijos que han nacido aquí.*
 
 Es difícil escribir sobre uno mismo y tampoco es fácil hablar del camino
 recorrido viéndolo tan obvio hacia atrás pero tan complicado de discernir
@@ -80,3 +81,5 @@ cosas que nuestros antepasados han aprendido durante siglos para llegar aquí,
 pero también fuimos purificados.
 
 **Continuará.**
+
+* Actualización: 2014/08/21 12:36:22
