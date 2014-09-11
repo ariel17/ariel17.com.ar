@@ -20,8 +20,8 @@ Uno entre miles
 *que ha logrado flotar en las aguas de lo infinto y de tan lejos ha llegado*
 *que ha casi desaparacido por completo: es un grano fino en una playa extraña*
 *bajo una estrella que no lo ha visto nunca. Ya pronto seremos parte de este*
-*mundo pero de una manera que no me complace porque sólo seremos parte del*
-*paisaje. Nuestra historia, nuestra sangre, lo que somos y representamos*
+*mundo pero de una manera que no me complace porque daremos forma al silencio*
+*del paisaje. Nuestra historia, nuestra sangre, lo que somos y representamos*
 *desaparecerá en un par de siglos. Somos un pasado viviente más la huella del*
 *camino donde termina el futuro puede verse a simple vista, aproximándose para*
 *encontrarnos al fin. Todos escribimos porque en parte somos un relato que*
@@ -76,10 +76,10 @@ el resplandor de una estrella, el hogar distante, está el negro del vacío y es
 como si la Muerte misma nos estuviese devolviéndonos la mirada. Es la entropía
 a la que todos estamos cayendo como en una cascada, personificada, estirando
 sus manos y huesos para atraparnos. Tememos lo peor para esos seres, no por lo
-que han sufrido, sino por aquellos de lo que han sido capaces... Hemos olvidado
+que han sufrido, sino por aquello de lo que han sido capaces... Hemos olvidado
 cosas que nuestros antepasados han aprendido durante siglos para llegar aquí,
 pero también fuimos purificados.
 
 **Continuará.**
 
-* Actualización: 2014/08/21 12:36:22
+* Actualización: 2014/09/11 01:11:52
