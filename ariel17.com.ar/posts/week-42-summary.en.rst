@@ -1,5 +1,5 @@
-.. title: Week #42 - Summary
-.. slug: week-42-summary
+.. title: Week 2014#42 - Summary
+.. slug: week-2014-42-summary
 .. date: 2014/10/17 09:45:07
 .. tags: week, summary
 .. link: 
