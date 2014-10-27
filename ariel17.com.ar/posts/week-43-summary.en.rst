@@ -18,13 +18,13 @@ Books I am reading/I readed
 Technology that I learned/I used
 ================================
 
-* npyscreen_: A Python widget library and application framework for programming
-  terminal or console applications.
-* cement_: A CLI application framework for Python.
-* PonyORM_: A Python ORM framework that enforces Python's language for making
+* `npyscreen`_: A Python widget library and application framework for
+  programming terminal or console applications.
+* `cement`_: A CLI application framework for Python.
+* `PonyORM`_: A Python ORM framework that enforces Python's language for making
   queries.
-* Puppet_: A configuration management utility. I am using it for Vagrant box
-           provisioning and soon I will use it for my production servers :)
+* `Puppet`_: A configuration management utility. I am using it for Vagrant box
+  provisioning and soon I will use it for my production servers :)
 
 Personal projects that I started/I am doing
 ===========================================
@@ -39,10 +39,10 @@ Personal projects that I started/I am doing
 .. _`Andrew Hunt`: http://en.wikipedia.org/wiki/Andy_Hunt_(author)
 .. _`David Thomas`: http://en.wikipedia.org/wiki/Dave_Thomas_(programmer)
 .. _`Úrsula K. Le Guin`: http://es.wikipedia.org/wiki/Ursula_K._Le_Guin
-.. _npyscreen: http://npyscreen.readthedocs.org/introduction.html
-.. _cement: http://builtoncement.org/
-.. _PonyORM: http://ponyorm.com/
-.. _Puppet: http://puppetlabs.com/
+.. _`npyscreen`: http://npyscreen.readthedocs.org/introduction.html
+.. _`cement`: http://builtoncement.org/
+.. _`PonyORM`: http://ponyorm.com/
+.. _`Puppet`: http://puppetlabs.com/
 .. _Puppet3: http://bitfieldconsulting.com/puppet-beginners-guide
 .. |Puppet3| replace:: *Puppet 3 Begginer's Guide*
 .. _`John Arundel`: http://bitfieldconsulting.com/about

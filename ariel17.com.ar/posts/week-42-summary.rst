@@ -29,7 +29,7 @@ Tecnologías que aprendí/usé
 * `Django Tastypie`_: Creación de un proyecto de ejemplo para demostrar a muy
   alto nivel las capacidades de este framework.
 * `Vagrant`_: Replicar el servidor de producción para realizar pruebas de
-   deploy en mi PC sin necesidad de servidores de terceros.
+  deploy en mi PC sin necesidad de servidores de terceros.
 
 Proyectos personales que empecé/estoy haciendo
 ==============================================

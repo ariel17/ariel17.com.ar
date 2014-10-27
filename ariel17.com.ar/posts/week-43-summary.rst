@@ -18,14 +18,14 @@ Libros que estoy leyendo/leí
 Tecnología que aprendí/usé
 ==========================
 
-* npyscreen_: Una biblioteca de widgets y framework de aplicaciones para
-              programar aplicaciones para terminales o consola.
-* cement_: Un framework de aplicaciones CLI para Python.
-* PonyORM_: Un ORM para Python que utiliza el mismo lenguaje para realizar las
-            consultas.
-* Puppet_: Un utilitario para la administración de la configuración. Lo estoy
-           usando con Vagrant para provisionar los requerimientos de la máquina
-           virtual y pronto lo usaré para mis servidores de producción :)
+- `npyscreen`_: Una biblioteca de widgets y framework de aplicaciones para
+  programar aplicaciones para terminales o consola.
+- `cement`_: Un framework de aplicaciones CLI para Python.
+- `PonyORM`_: Un ORM para Python que utiliza el mismo lenguaje para realizar
+  las consultas.
+- `Puppet`_: Un utilitario para la administración de la configuración. Lo estoy
+  usando con Vagrant para provisionar los requerimientos de la máquina virtual
+  y pronto lo usaré para mis servidores de producción :)
 
 Proyectos personales que empecé/estoy haciendo
 ==============================================
@@ -40,10 +40,10 @@ Proyectos personales que empecé/estoy haciendo
 .. _`Andrew Hunt`: http://en.wikipedia.org/wiki/Andy_Hunt_(author)
 .. _`David Thomas`: http://en.wikipedia.org/wiki/Dave_Thomas_(programmer)
 .. _`Úrsula K. Le Guin`: http://es.wikipedia.org/wiki/Ursula_K._Le_Guin
-.. _npyscreen: http://npyscreen.readthedocs.org/introduction.html
-.. _cement: http://builtoncement.org/
-.. _PonyORM: http://ponyorm.com/
-.. _Puppet: http://puppetlabs.com/
+.. _`npyscreen`: http://npyscreen.readthedocs.org/introduction.html
+.. _`cement`: http://builtoncement.org/
+.. _`PonyORM`: http://ponyorm.com/
+.. _`Puppet`: http://puppetlabs.com/
 .. _Puppet3: http://bitfieldconsulting.com/puppet-beginners-guide
 .. |Puppet3| replace:: *Puppet 3 Begginer's Guide*
 .. _`John Arundel`: http://bitfieldconsulting.com/about
