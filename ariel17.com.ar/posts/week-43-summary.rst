@@ -11,22 +11,21 @@ El resumen para la semana #43: muy movida pero concentrada en sus actividades.
 Libros que estoy leyendo/leí
 ============================
 
-* |Rocannon|_ by `Úrsula K. Le Guin`_
-* |PragProg|_ by `Andrew Hunt`_ and `David Thomas`_
-* |Puppet3|_ by `John Arundel`_
+* |Rocannon|_ de `Úrsula K. Le Guin`_
+* |PragProg|_ de `Andrew Hunt`_ y `David Thomas`_
+* |Puppet3|_ de `John Arundel`_
 
 Tecnología que aprendí/usé
 ==========================
 
-* npyscreen_: A Python widget library and application framework for programming
-  terminal or console applications.
-* cement_: A CLI application framework for Python.
-* PonyORM_: A Python ORM framework that enforces Python's language for making
-  queries.
-* Puppet_: A configuration management utility. It can be used with Vagrant to
-           configure operative system requirements in the box. I am using it
-           for Vagrant box provisioning and soon I will use it for my
-           production servers :)
+* npyscreen_: Una biblioteca de widgets y framework de aplicaciones para
+              programar aplicaciones para terminales o consola.
+* cement_: Un framework de aplicaciones CLI para Python.
+* PonyORM_: Un ORM para Python que utiliza el mismo lenguaje para realizar las
+            consultas.
+* Puppet_: Un utilitario para la administración de la configuración. Lo estoy
+           usando con Vagrant para provisionar los requerimientos de la máquina
+           virtual y pronto lo usaré para mis servidores de producción :)
 
 Proyectos personales que empecé/estoy haciendo
 ==============================================

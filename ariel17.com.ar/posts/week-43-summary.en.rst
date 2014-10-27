@@ -23,10 +23,8 @@ Technology that I learned/I used
 * cement_: A CLI application framework for Python.
 * PonyORM_: A Python ORM framework that enforces Python's language for making
   queries.
-* Puppet_: A configuration management utility. It can be used with Vagrant to
-           configure operative system requirements in the box. I am using it
-           for Vagrant box provisioning and soon I will use it for my
-           production servers :)
+* Puppet_: A configuration management utility. I am using it for Vagrant box
+           provisioning and soon I will use it for my production servers :)
 
 Personal projects that I started/I am doing
 ===========================================
