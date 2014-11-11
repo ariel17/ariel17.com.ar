@@ -211,6 +211,19 @@ error:
 
 Happy weekend! :)
 
+**UPDATE on 2014-11-11:** python-social-auth_ has updated the documentation
+about how to refresh tokens: http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token
+
+Today I have found that refresh_tokens also expires, so the correct
+``approval_promt`` value to use is ``auto``:
+
+.. code-block:: python
+
+   SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {
+       'access_type': 'offline',  # Enables the refreshing grant
+       'approval_promt': 'auto'  # Enables refresh_token, for ever and ever
+   }
+
 .. _Django: https://www.djangoproject.com/
 .. _python-social-auth: http://psa.matiasaguirre.net/
 .. _google-api-python-client: https://developers.google.com/api-client-library/python/

@@ -212,6 +212,19 @@ del token cuando sucede un error de autenticación:
 
 ¡Buen fin de semana! :)
 
+**ACTUALIZACIÓN del 2014-11-11:** python-social-auth_ ha actualizado la
+documentación acerca de cómo renovar tokens: http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token
+ 
+Hoy encontré que los refresh_tokens también expiran, así que el valor correcto
+de ``approval_promt`` a usar es ``auto``:
+
+.. code-block:: python
+
+   SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {
+       'access_type': 'offline', # Activa el permiso de renovación
+       'approval_promt': 'auto'  # Activa refresh_token, por siempre y para siempre
+   }
+
 .. _Django: https://www.djangoproject.com/
 .. _python-social-auth: http://psa.matiasaguirre.net/
 .. _google-api-python-client: https://developers.google.com/api-client-library/python/
