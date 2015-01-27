@@ -8,8 +8,8 @@
 
 El pasado te atormenta. Te llama. Te ve de lejos y vos lo ves a él. Tu futuro y
 tu pasado se encuentran en ese presente raro, algo rancio. Todo es ligeramente
-igual al pasado, sólo que más viejo, con algunas canas pero los mismos ojos.
-Pero nunca la misma sombra.
+igual a antes, sólo que más viejo, con algunas canas pero los mismos ojos. Pero
+nunca la misma sombra.
 
 Camino rápido porque -por lo que se- quiero escaparme de él. El camino se
 convierte en una escalada muy empinada donde todo lo que fui y sentí hace
