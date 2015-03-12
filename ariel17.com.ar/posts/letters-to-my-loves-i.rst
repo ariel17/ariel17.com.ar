@@ -80,6 +80,9 @@ que han sufrido, sino por aquello de lo que han sido capaces... Hemos olvidado
 cosas que nuestros antepasados han aprendido durante siglos para llegar aquí,
 pero también fuimos purificados.
 
-**Continuará.**
+*Continúa en* |post|_.
 
 * Actualización: 2014/09/11 01:11:52
+
+.. _post: http://www.ariel17.com.ar/posts/letters-to-my-loves-ii/
+.. |post| replace:: *Carta para mis amores II*
