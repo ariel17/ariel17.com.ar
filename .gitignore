@@ -12,3 +12,6 @@ output
 
 # Editor meta
 .*.sw[op]
+
+# Rope
+.rope*
