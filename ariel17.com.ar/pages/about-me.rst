@@ -22,7 +22,7 @@ Diseñar sitios web nunca fue mi fuerte; yo soy un desarrollador backend nato...
 aunque estoy perdiendo el miedo aprendiendo a crear interfaces. Dentro de poco
 haré un sitio web decente, ya van a ver :D
 
-Para contacto **profesional** utilizo LinkedIn_ o contacto simplement por
+Para contacto **profesional** utilizo LinkedIn_ o contacto simplemente por
 email_. Uso Twitter con el usuario `@ariel_17_`_ para comentarios espontáneos o
 compartir sitios que me han llamado la atención. No suelo hacer declaraciones
 explosivas; soy bastante sincero por lo que no hay mucho con qué sorprender a
