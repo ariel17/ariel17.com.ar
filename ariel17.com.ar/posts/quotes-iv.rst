@@ -48,7 +48,7 @@ Si a los programadores les pagaran para sacar código...
 *Si a los programagadores les pagaran para sacar código en vez de escribir
 nuevo código, el software sería un muchísimo mejor.*
 
--Nicholas Negroponte, Profesor de Technología de Medios en Massachusetts
+-Nicholas Negroponte, Profesor de Tecnología de Medios en Massachusetts
 Institute of Technology y presidente fundador del Laboratorio de Medios de MIT.
 
 .. _`El libro está disponible gratuitamente para ser descargado en su página`: https://gettingreal.37signals.com/

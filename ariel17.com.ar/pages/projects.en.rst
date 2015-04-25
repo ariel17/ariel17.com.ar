@@ -89,4 +89,22 @@ occupations.
          </div>
        </div>
      </div>
+
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/learning-to-teach-i-docker/slides.png" alt="Diapositivas de la charla Docker">
+         <div class="caption">
+           <h3>Docker presentation</h3>
+           <p>Presentación for an in-site talk about Docker on <a href="https://www.movile.com/en/">Movile</a></p>
+           <p>
+             <a href="http://ariel17.github.io/docker-talk/" class="btn btn-primary" role="button">
+               Go to presentation
+             </a>
+             <a href="https://github.com/ariel17/docker-talk" class="btn btn-default" role="button">
+               Repositorio
+             </a>
+           </p>
+         </div>
+       </div>
+
    </div>

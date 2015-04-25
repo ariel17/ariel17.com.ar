@@ -40,9 +40,6 @@ de otras ocupaciones.
            <h3>Poppurri</h3>
            <p>Sitio de venta de productos manufacturados.</p>
            <p>
-             <a href="https://www.poppurri.com.ar/" class="btn btn-primary" role="button">
-               Ir al sitio
-             </a>
              <a href="/pages/poppurri" class="btn btn-default" role="button">
                Página del proyecto
              </a>
@@ -89,4 +86,23 @@ de otras ocupaciones.
          </div>
        </div>
      </div>
+
+     <div class="col-sm-6 col-md-4">
+       <div class="thumbnail">
+         <img src="/galleries/learning-to-teach-i-docker/slides.png" alt="Diapositivas de la charla Docker">
+         <div class="caption">
+           <h3>Diapositivas Docker</h3>
+           <p>Presentación en diapositivas para una charla acerca de Docker en <a href="https://www.movile.com/en/">Movile</a></p>
+           <p>
+             <a href="http://ariel17.github.io/docker-talk/" class="btn btn-primary" role="button">
+               Ver presentación
+             </a>
+             <a href="https://github.com/ariel17/docker-talk" class="btn btn-default" role="button">
+               Repositorio
+             </a>
+           </p>
+         </div>
+       </div>
+     </div>
+
    </div>

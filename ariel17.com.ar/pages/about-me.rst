@@ -23,7 +23,7 @@ aunque estoy perdiendo el miedo aprendiendo a crear interfaces. Dentro de poco
 haré un sitio web decente, ya van a ver :D
 
 Para contacto **profesional** utilizo LinkedIn_ o contacto simplemente por
-email_. Uso Twitter con el usuario `@ariel_17_`_ para comentarios espontáneos o
+email_. Uso Twitter con el usuario |twitter|_ para comentarios espontáneos o
 compartir sitios que me han llamado la atención. No suelo hacer declaraciones
 explosivas; soy bastante sincero por lo que no hay mucho con qué sorprender a
 la gente XD.
@@ -32,6 +32,7 @@ trabajando/trabajé.
 
 .. _GitHub: https://github.com/ariel17?tab=repositories
 .. _LinkedIn: http://www.linkedin.com/pub/ariel-gerardo-rios/33/158/227
-.. _`@ariel_17_`: https://twitter.com/ariel_17_
+.. _twitter: https://twitter.com/ariel_17_
+.. |twitter| replace:: @ariel_17_
 .. _Proyectos: http://www.ariel17.com.ar/pages/projects/
 .. _email: ariel.gerardo.rios@gmail.com
