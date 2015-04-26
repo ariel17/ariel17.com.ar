@@ -20,6 +20,8 @@ Repository
   https://github.com/ariel17/poppurri
 On line since
   2014-02-02
+Finished on
+  2015-02-01
 Description
   A manufactured goods selling site. The initial proposal was a place to
   display photos about manufacturing product of relatives but it expanded and
@@ -36,10 +38,6 @@ Technology involved
   * Gunicorn_: A Python_ WSGI web server for Unix. It uses the pre-fork model
     (1 master process -- N child processes) to administrate how workers are
     being created.
-Is active.
-  Yes.
-Status
-  On development.
 
 .. _Django: http://www.djangoproject.com/
 .. _Python: http://www.python.org/

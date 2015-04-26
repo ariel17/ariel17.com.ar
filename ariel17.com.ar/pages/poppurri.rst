@@ -20,6 +20,8 @@ Repositorio
   https://github.com/ariel17/poppurri
 En línea desde
   2014-02-02
+Finalizó en
+  2015-02-01
 Descripción
   Un sitio de venta de productos manufacturados. La propuesta inicial fue un sitio para exponer fotos de la manufactura de familiares directos pero se expandió y ahora se encuentra abierto a la comunidad.
 Tecnologías utilizadas
@@ -30,10 +32,6 @@ Tecnologías utilizadas
   * `Twitter Bootstrap`_: Framework para diseño de sitios web. Es sensible a los diferentes tipos de navegador, adaptando la forma de mostrar el contenido.
   * Nginx_: Web server liviano y de fácil configuración, haciendo de proxy entre el dominio y la aplicación Django_.
   * Gunicorn_: Un web server WSGI para Unix hecho en Python_. Utiliza el modelo pre-fork (1 proceso maestro -- N procesos hijos) para administrar cómo se crean los workers.
-Está activo
-  Sí.
-Estado
-  En desarrollo.
 
 .. _Django: http://www.djangoproject.com/
 .. _Python: http://www.python.org/
