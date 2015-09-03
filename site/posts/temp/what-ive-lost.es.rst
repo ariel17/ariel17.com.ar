@@ -23,14 +23,13 @@ como si las hojas de jeruco marcaran un camino que mis piés nunca más marcará
 Les habría contado a los niños la historia de mis ancestros todas las tardes,
 durante la Hora de la Concialición. Les habría contado de cómo el amor llevó a
 tanto fuego sobre la tierra, a la luz azul sobre la estrella que nos ilumina.
-Un azul tan fuerte
 
-Todo eso hubiese sido más fácil.
+Pero no. Porque todo eso hubiese sido más fácil que perder lo intangible.
 
 La última vez, el día que ya no hubo nada más en mí para perder, estuve rodeado
 de gente. Pude ver cómo el muro se terminaba, entre la gente y yo, de a un
 ladrillo a la vez hasta llegar al final, como si la luz desapareciera incluso
-en el último instante. Era de noche, las luces danzaban con la canción que
+en el último instante. Era de noche, el fuego danzaba con la canción que
 declaraba el fin del otoño y el comienzo del destino que había nacido conmigo.
 Era el comienzo, lo sentía. Darme cuenta de que... me faltaba... algo... que me
 separaba del mundo incluso aceleró el hecho de verme a mí mismo salir de entre
