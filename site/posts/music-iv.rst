@@ -37,6 +37,6 @@ This is mass madness, you maniacs! In God's name, you people are the real
 thing!  *WE* are the illusion! So turn off your television sets. Turn them off
 now. Turn them off right now. Turn them off and leave them off! Turn them off
 right in the middle of the sentence I'm speaking to you now! TURN THEM OFF...
-Because less than fifteen percent of you read books.. Because the only truth
+Because less than fifteen percent of you read books. Because the only truth
 you know is what you get over this tube. Right now, there is a whole, an entire
 generation that never knew anything.
