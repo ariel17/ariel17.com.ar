@@ -11,32 +11,43 @@
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/J2CBOG16G6E" frameborder="0" allowfullscreen></iframe>
 
-This is no longer a nation of independent individuals. It's a nation of some
-200-odd million transistorized, deodorized, whiter-that-white, steel-belted
-bodies, totally unnecessary as human beings, and as replaceable as piston
-rods... Well, the time has come to say, is dehumanization such a bad word.
-Because good or bad, that's what is so. The whole world is becoming humanoid:
-creatures that look human but aren't. The whole world not just us. We're just
-the most advanced country, so we're getting there first.
+Ésta ya no es más una nación de inviduos independientes. Es una nación de
+alrededor 200 millones de tontos transistorizados, deodorizados, más blnco que
+el blanco, cuerpos adornados con acero, totalmente innecesarios como seres
+humanos, y tan reemplazables como el émbolo de un pistón... Bueno, ha llegado
+el momento de decir que la deshumanización es una mala palabra. Porque bien o
+mal, eso es lo que es. El mundo entero se está volviendo humanoide: creaturas
+que parecen humanos pero no lo son. El mundo entero, no sólo nosotros. Nosotros
+sólo somos el país más avanzado, así que vamos a llegar ahí primero.
 
-So, you listen to me. Listen to me: Television is not the truth! Television is
-a God-damned amusement park! Television is a circus, a carnival, a traveling
-troupe of acrobats, storytellers, dancers, singers, jugglers, side-show freaks,
-lion tamers, and football players. We're in the boredom-killing business! **So
-if you want the truth... Go to God! Go to your gurus! Go to yourselves! Because
-that's the only place you're ever going to find any real truth.**
+Así que, escúchenme. Escúchenme: ¡la televisión no es la verdad! ¡La televisión
+es un parque de atracciones maldecido por Dios! La televisión es un circo, un
+carnaval, un grupo viajero de acróbatas, contadores de cuentos, bailarines,
+cantantes, malabaristas, monstruos de feria, domadores de leones, y jugadores
+de fútbol. ¡Estamos en el negocio de matar el aburrimiento! **Así que si
+quieren la verdad... ¡Vayan a Dios! ¡Vayan a sus gurúes! ¡Vayan a Uds. mismos!
+Porque ahí es el único lugar donde van a encontrar cualquier verdad real.**
 
-We deal in *illusions*, man! None of it is true!  But you people sit there, day
-after day, night after night, all ages, colors, creeds... We're all you know.
-You're beginning to believe the illusions we're spinning here. You're beginning
-to think that the tube is reality, and that your own lives are unreal. You do
-whatever the tube tells you! You dress like the tube, you eat like the tube,
-you raise your children like the tube, you even *think* like the tube!
+¡Hacemos *ilusiones*, hombre! ¡Nada de ésto es verdad! Pero Uds. gente se
+sientan ahí, día tras día, noche tras noche, todas las edades, colores,
+credos... somos todo lo que saben. Están comenzando a creerse las ilusiones que
+hacemos girar aquí. Están empezando a creer que el tubo es la realidad, y que
+sus propias vidas son irreales. ¡Hacen lo que sea que el tubo les dice! Se
+visten como en el tubo, comen como en el tubo, crian a sus hijos como el tubo,
+incluso *piensan* como el tubo.
 
-This is mass madness, you maniacs! In God's name, you people are the real
-thing!  *WE* are the illusion! So turn off your television sets. Turn them off
-now. Turn them off right now. Turn them off and leave them off! Turn them off
-right in the middle of the sentence I'm speaking to you now! TURN THEM OFF...
-Because less than fifteen percent of you read books. Because the only truth
-you know is what you get over this tube. Right now, there is a whole, an entire
-generation that never knew anything.
+¡Es una locura en masa, maniáticos! ¡En el nombre de Dios, Uds. gente son lo
+real! ¡*Nosotros* somos la ilusión! Así que apaguen sus equipos de televisión.
+Apáguenlos ahora. Apáguenlos ahora mismo. ¡Apáguenlos y dejenlos apagados!
+¡Apáguenlos ahora durante esta oración que estoy diciendo! APÁGUENLOS... Porque
+menos del cincuenta porciento de Uds. leen libros. Porque la única verdad que
+saben es la que viene por este tubo. Ahora mismo, hay toda, una generación
+entera que nunca supo nada.
+
+
+Fuente del texto (a parte del video)
+------------------------------------
+
+.. raw:: html
+
+   <iframe width="420" height="315" src="https://www.youtube.com/embed/3pfS5wjc2LA" frameborder="0" allowfullscreen></iframe>
