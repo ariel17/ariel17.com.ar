@@ -9,9 +9,9 @@
 
 Hace ya varias semanas que vengo leyendo el libro |Kanban|_ del señor
 |Anderson|_ y me siento muy motivado por él. Al principio lo agarré y pensé
-*Sigh... oooootra metodología más, otra que viene a salvar el mundo y los
-proyectos con su agilidad y promesas* pero durante la lectura hubieron varios
-puntos atractivos:
+*oooootra metodología más, otra que viene a salvar el mundo y los proyectos con
+su agilidad y promesas* pero durante la lectura hubieron varios puntos
+atractivos:
 
 * *Tirar* de la lista de pendientes en vez de *empujar*.
 * Reducción del multitasking.
