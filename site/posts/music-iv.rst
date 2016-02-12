@@ -12,7 +12,7 @@
    <iframe width="560" height="315" src="https://www.youtube.com/embed/J2CBOG16G6E" frameborder="0" allowfullscreen></iframe>
 
 Ésta ya no es más una nación de inviduos independientes. Es una nación de
-alrededor 200 millones de tontos transistorizados, deodorizados, más blancos
+alrededor de 200 millones de tontos transistorizados, deodorizados, más blancos
 que el blanco, cuerpos adornados con acero, totalmente innecesarios como seres
 humanos, y tan reemplazables como el émbolo de un pistón... Bueno, ha llegado
 el momento de decir que la deshumanización es una mala palabra. Porque bien o
