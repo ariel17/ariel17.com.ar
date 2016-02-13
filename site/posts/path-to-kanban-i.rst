@@ -65,7 +65,7 @@ Tipos de tarea y prioridad
 
 Los tipos de tarea que habían eran muy diversos. Multiplicados por la cantidad
 de niveles de prioridad había una cantidad nefasta de *tipos de servicio* [1]_
-donde no se tenía en claro el tipo de servicio esperado en cada uno:
+donde no se tenía en claro qué se esperaba de cada uno:
 
 * Analysis
 * Bug
