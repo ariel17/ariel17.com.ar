@@ -156,7 +156,7 @@ error:
            http = credentials.authorize(http)
            service = build(serviceName='calendar', version='v3', http=http)
 
-           data = self.get_gc_data(user)
+           data = self.get_google_data(user)
            logger.debug(u'Creating event with data: %r', data)
 
            try:
