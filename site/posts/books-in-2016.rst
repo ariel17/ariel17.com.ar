@@ -10,13 +10,31 @@
 Estos son los libros que voy a leer durante el 2016; muchos son de repaso, para
 refrescar conceptos e ideas:
 
+Técnicos
+--------
+
 * |ct|_, de Ben Rady & Rod Coffin
 * |dp|_, de Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 * |pa|_, de Martin Fowler
-* |pp|_, de Andrew Hunt, David Thomas
 * |rb|_, de David Chelimsky
-* |tg|_, de Brian W. Fizpatrick, Ben Collins-Sussman
 * |ts|_, de Donella H. Meadows
+
+Comportamiento
+--------------
+
+* |pp|_, de Andrew Hunt, David Thomas
+* |tg|_, de Brian W. Fizpatrick, Ben Collins-Sussman
+* |ec|_, de Estanislao Bachrach
+
+
+Novelas
+-------
+
+* |mn|_, de David Wellington (#2)
+* |mp|_, de David Wellington (#3)
+* |lc|_, de Jorge Fernández Díaz
+* |vl|_, de Anne Rice
+* |ce|_, de Arthur C. Clarke
 
 ¡Salud!
 
@@ -34,3 +52,15 @@ refrescar conceptos e ideas:
 .. _tg: https://www.goodreads.com/book/show/14514115-team-geek
 .. |ts| replace:: Thinking in Systems: A Primer
 .. _ts: https://www.goodreads.com/book/show/3828902-thinking-in-systems
+.. |ec| replace:: EnCambio
+.. _ec: https://www.goodreads.com/book/show/23204502-encambio
+.. |mn| replace:: Monster Nation
+.. _mn: https://www.goodreads.com/book/show/79076.Monster_Nation
+.. |mp| replace:: Monster Planet
+.. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
+.. |lc| replace:: La logia de Cádiz
+.. _lc: https://www.goodreads.com/book/show/7013891-la-logia-de-c-diz
+.. |vl| replace:: Lestat El Vampiro (Crónicas #2)
+.. _vl: https://www.goodreads.com/book/show/6304688-lestat-el-vampiro
+.. |ce| replace:: El fin de la infancia
+.. _ce: https://www.goodreads.com/book/show/6267163-el-fin-de-la-infancia
