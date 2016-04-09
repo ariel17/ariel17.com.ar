@@ -46,8 +46,8 @@ pensar que ya debería ser la hora de terminar... pero, qué va, tocaría un poc
 para él. Se sentía satisfecho de sí mismo.
 
 Y tocó porque el corazón latía fuerte en su pecho. Cerró los ojos y sintió su
-alma cantar a través de sus dedos. Había fogonazos de furia cuando las llemas
-de sus dedos chocaban con las cuerdas y eso lo confundía. En su interior nunca
+alma cantar a través de sus dedos. Había fogonazos de furia cuando las yemas de
+sus dedos chocaban con las cuerdas y eso lo confundía. En su interior nunca
 pudo darle un nombre concreto a lo que sentía: *¿amor? ¿será odio en realidad?
 Se parece más al amor*, pero su padre se había ido muy rápido y lo había
 necesitado durante mucho tiempo... La soledad y el amor discutían en la música
@@ -59,9 +59,9 @@ calor de la habitación; es más, había un aura a su alrededor... pareciera de
 vapor... que difuminaba sus bordes. Al volverse a Julio levantó su rostro y los
 ojos reptilianos, amarillos, atravesaron su pecho hasta su escencia. Los bordes
 de la habitación también se perdieron en la niebla negra en la que se
-transformaba la piel de... eso. Julio quedó helado frente a esta presencia, sin
-dar crédito a lo que veía. Sus piés lo llevaron temerosamente hacia atrás
-mientras observaba como *éso* cambiaba su forma en algo horrible y enorme,
+transformaba la piel de... *eso*. Julio quedó helado frente a esta presencia,
+sin dar crédito a lo que veía. Sus piés lo llevaron temerosamente hacia atrás
+mientras observaba como *eso* cambiaba su forma en algo horrible y enorme,
 mediante latidos sin ritmo alguno en todo el cuerpo, destapando la sucia piel
 maldita.
 
