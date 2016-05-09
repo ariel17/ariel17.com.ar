@@ -7,6 +7,8 @@
 .. description: 
 .. type: text
 
+`Ir al siguiente post: Camino a Kanban II <http://ariel17.com.ar/posts/path-to-kanban-ii/>`_
+
 Hace ya varias semanas que vengo leyendo el libro |Kanban|_ del señor
 |Anderson|_ y me siento muy motivado por él. Al principio lo agarré y pensé
 *oooootra metodología más, otra que viene a salvar el mundo y los proyectos con
@@ -123,8 +125,17 @@ mucho:
 Siguentes pasos
 ---------------
 
-Será determinar el nivel de servicio esperado para cada combinación (coherente)
-de tipos y prioridades.
+.. raw:: html
+
+   <strike>
+     Ser&aacute; determinar el nivel de servicio esperado para cada
+     combinaci&oacute;n (coherente) de tipos y prioridades.
+   </strike>
+
+Crear una pizarra Kanban para reflejar los estados y obtener estadísticas
+iniciales.
+
+`Ir al siguiente post: Camino a Kanban II <http://ariel17.com.ar/posts/path-to-kanban-ii/>`_
 
 .. |kanban| replace:: "Kanban: Successful Evolutionary Change for Your Technology Business"
 .. _Kanban: http://www.goodreads.com/book/show/8086552-kanban
