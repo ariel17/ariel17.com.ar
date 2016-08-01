@@ -10,6 +10,9 @@
 Estos son los libros que voy a leer durante el 2016; muchos son de repaso, para
 refrescar conceptos e ideas:
 
+* **Update 31/07**: Agregada la sección *Emprendedorismo* y actualizado el
+  progreso.
+
 Técnicos
 --------
 
@@ -22,10 +25,14 @@ Técnicos
 Comportamiento
 --------------
 
-* |pp|_, de Andrew Hunt, David Thomas
-* |tg|_, de Brian W. Fizpatrick, Ben Collins-Sussman
-* |ec|_, de Estanislao Bachrach
+* |pp|_, de Andrew Hunt, David Thomas; **✔**.
+* |tg|_, de Brian W. Fizpatrick, Ben Collins-Sussman; **✔**.
+* |ec|_, de Estanislao Bachrach; **⏳**.
 
+Emprendedorismo
+---------------
+
+* |ae|_, de Guy Kawasaky; **✔**.
 
 Novelas
 -------
@@ -34,7 +41,7 @@ Novelas
 * |mp|_, de David Wellington (#3)
 * |lc|_, de Jorge Fernández Díaz
 * |vl|_, de Anne Rice
-* |ce|_, de Arthur C. Clarke
+* |ce|_, de Arthur C. Clarke; **✔**.
 
 ¡Salud!
 
@@ -64,3 +71,5 @@ Novelas
 .. _vl: https://www.goodreads.com/book/show/6304688-lestat-el-vampiro
 .. |ce| replace:: El fin de la infancia
 .. _ce: https://www.goodreads.com/book/show/6267163-el-fin-de-la-infancia
+.. |ae| replace:: El arte de empezar 2.0: La guía definitiva para empezar cualquier negocio en un mundo 2.0
+.. _ae: http://www.goodreads.com/book/show/29349243-el-arte-de-empezar-2-0?from_search=true
