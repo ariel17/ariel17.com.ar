@@ -18,9 +18,7 @@ reflejara el flujo planteado:
 .. container::
 
    .. image:: /galleries/path-to-kanban-ii/kanban-i.jpg
-      :class: img-responsive
       :alt: Primer intento de pizarra Kanban
-      :align: center
 
 Se planteó un esquema de colores para las prioridades. En la parte inferior
 central se puede ver la definición del mismo donde se plantea:

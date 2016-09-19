@@ -123,28 +123,28 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Inicio', 'icon-home'),
-        ('/archive.html', 'Archivos', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('/pages/about-me/', 'Sobre mí', 'icon-user'),
-        ('https://twitter.com/ariel_17_', 'Mi Twitter', 'icon-twitter'),
-        ('https://github.com/ariel17', 'Mi Github', 'icon-github'),
+        ('/index.html', 'Inicio'),
+        ('/archive.html', 'Archivos'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('/pages/about-me/', 'Sobre mí'),
+        ('https://twitter.com/ariel_17_', 'Twitter'),
+        ('https://github.com/ariel17', 'Github'),
     ),
 
     "en": (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('https://getnikola.com', 'About me', 'icon-user'),
-        ('https://twitter.com/ariel_17_', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/ariel17', 'My Github', 'icon-github'),
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('/pages/about-me/', 'About me'),
+        ('https://twitter.com/ariel_17_', 'Twitter'),
+        ('https://github.com/ariel17', 'Github'),
     ),
 }
 
 # Name of the theme to use.
-THEME="zen"
+THEME="monospace"
 
 # Below this point, everything is optional
 
@@ -606,7 +606,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # vs
 # xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'monokai'
 
 # If you use 'site-reveal' theme you can select several subthemes
 # THEME_REVEAL_CONFIG_SUBTHEME = 'sky'
