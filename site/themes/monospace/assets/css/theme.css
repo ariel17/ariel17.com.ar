@@ -22,3 +22,10 @@ div.sidebar, div.admonition, div.attention, div.caution, div.danger, div.error, 
 ul.breadcrumb > li:before {
     content: " / ";
 }
+.postbox {
+    margin-bottom: 30px;
+}
+
+ul.unstyled {
+    margin-top: 20px;
+}
