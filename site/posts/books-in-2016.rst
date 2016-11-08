@@ -48,6 +48,8 @@ Novelas
 * |lc|_, de Jorge Fernández Díaz
 * |vl|_, de Anne Rice
 * |ce|_, de Arthur C. Clarke; **✔**.
+* |ci|_, de Ursula K. Le Guin; **✔**.
+* |tz|_, de J. E. Álamo; **✔**.
 
 ¡Salud!
 
@@ -87,3 +89,7 @@ Novelas
 .. _rangle: http://rangle.io/
 .. |ca| replace:: C programming for Arduino
 .. _ca: http://www.goodreads.com/book/show/17946760-c-programming-for-arduino
+.. |ci| replace:: Ciudad de Ilusiones
+.. _ci: http://www.goodreads.com/book/show/201889.City_of_Illusions
+.. |tz| replace:: Tom Z Stone - Imagine
+.. _tz: https://www.goodreads.com/book/show/27411709-tom-z-stone-imagine
