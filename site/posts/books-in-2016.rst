@@ -1,38 +1,44 @@
-.. title: Libros para el 2016
+.. title: Libros en 2016
 .. slug: books-in-2016
-.. date: 2016-03-09 00:34:20 UTC-03:00
+.. date: 2016-11-08 11:43:20 UTC-03:00
 .. tags: libros
 .. category: 
 .. link: 
 .. description: 
 .. type: text
 
-Estos son los libros que voy a leer durante el 2016; muchos son de repaso, para
-refrescar conceptos e ideas:
+Estos son los libros que estoy leyendo durante el 2016; muchos son de repaso,
+para refrescar conceptos e ideas:
 
-* **Update 31/07**: Agregada la sección *Emprendedorismo* y actualizado el
-  progreso.
+**Update 31/07**
+  Agregada la sección *Emprendedorismo* y actualizado el progreso.
+
+**Update 08/11**
+  Agregados aún más libros :P y actualizado el progreso.
 
 Técnicos
 --------
 
-* |ct|_, de Ben Rady & Rod Coffin
-* |dp|_, de Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
-* |pa|_, de Martin Fowler
-* |rb|_, de David Chelimsky
-* |ts|_, de Donella H. Meadows
+* |ct|_, de Ben Rady & Rod Coffin.
+* |dp|_, de Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides; **☕**.
+* |pa|_, de Martin Fowler.
+* |rb|_, de David Chelimsky.
+* |ts|_, de Donella H. Meadows.
+* |a2|_, de la |rangle|_; **☕**.
+* |ca|_, de Julien Bayle; **☕**.
 
 Comportamiento
 --------------
 
 * |pp|_, de Andrew Hunt, David Thomas; **✔**.
 * |tg|_, de Brian W. Fizpatrick, Ben Collins-Sussman; **✔**.
-* |ec|_, de Estanislao Bachrach; **⏳**.
+* |ec|_, de Estanislao Bachrach; **☕**.
 
 Emprendedorismo
 ---------------
 
 * |ae|_, de Guy Kawasaky; **✔**.
+* |ls|_, de Eric Ries; **☕**.
 
 Novelas
 -------
@@ -73,3 +79,11 @@ Novelas
 .. _ce: https://www.goodreads.com/book/show/6267163-el-fin-de-la-infancia
 .. |ae| replace:: El arte de empezar 2.0: La guía definitiva para empezar cualquier negocio en un mundo 2.0
 .. _ae: http://www.goodreads.com/book/show/29349243-el-arte-de-empezar-2-0?from_search=true
+.. |ls| replace:: The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses
+.. _ls: http://www.goodreads.com/book/show/10127019-the-lean-startup
+.. |a2| replace:: Angular 2 Trainig
+.. _a2: https://angular-2-training-book.rangle.io/
+.. |rangle| replace:: Rangle.io
+.. _rangle: http://rangle.io/
+.. |ca| replace:: C programming for Arduino
+.. _ca: http://www.goodreads.com/book/show/17946760-c-programming-for-arduino
