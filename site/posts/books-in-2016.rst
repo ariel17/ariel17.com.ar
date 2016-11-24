@@ -1,6 +1,6 @@
 .. title: Libros en 2016
 .. slug: books-in-2016
-.. date: 2016-11-08 11:43:20 UTC-03:00
+.. date: 2016-11-23 21:43:20 UTC-03:00
 .. tags: libros
 .. category: 
 .. link: 
@@ -38,7 +38,7 @@ Emprendedorismo
 ---------------
 
 * |ae|_, de Guy Kawasaky; **✔**.
-* |ls|_, de Eric Ries; **☕**.
+* |ls|_, de Eric Ries; **✔**.
 
 Novelas
 -------
