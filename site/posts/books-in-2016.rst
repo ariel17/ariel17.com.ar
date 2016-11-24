@@ -16,6 +16,9 @@ para refrescar conceptos e ideas:
 **Update 08/11**
   Agregados aún más libros :P y actualizado el progreso.
 
+**Update 23/11**
+  Actualizado el progreso.
+
 Técnicos
 --------
 
