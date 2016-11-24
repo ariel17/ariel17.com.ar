@@ -23,7 +23,7 @@ Técnicos
 * |dp|_, de Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides; **☕**.
 * |pa|_, de Martin Fowler.
 * |rb|_, de David Chelimsky.
-* |ts|_, de Donella H. Meadows.
+* |ts|_, de Donella H. Meadows; **☕**.
 * |a2|_, de la |rangle|_; **☕**.
 * |ca|_, de Julien Bayle; **☕**.
 
@@ -43,10 +43,10 @@ Emprendedorismo
 Novelas
 -------
 
-* |mn|_, de David Wellington (#2)
-* |mp|_, de David Wellington (#3)
-* |lc|_, de Jorge Fernández Díaz
-* |vl|_, de Anne Rice
+* |mn|_, de David Wellington (#2).
+* |mp|_, de David Wellington (#3).
+* |lc|_, de Jorge Fernández Díaz.
+* |vl|_, de Anne Rice.
 * |ce|_, de Arthur C. Clarke; **✔**.
 * |ci|_, de Ursula K. Le Guin; **✔**.
 * |tz|_, de J. E. Álamo; **✔**.
