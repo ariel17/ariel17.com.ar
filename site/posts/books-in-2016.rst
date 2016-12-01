@@ -1,6 +1,6 @@
 .. title: Libros en 2016
 .. slug: books-in-2016
-.. date: 2016-11-23 21:43:20 UTC-03:00
+.. date: 2016-12-01 17:23:20 UTC-03:00
 .. tags: libros
 .. category: 
 .. link: 
@@ -9,15 +9,6 @@
 
 Estos son los libros que estoy leyendo durante el 2016; muchos son de repaso,
 para refrescar conceptos e ideas:
-
-**Update 31/07**
-  Agregada la sección *Emprendedorismo* y actualizado el progreso.
-
-**Update 08/11**
-  Agregados aún más libros :P y actualizado el progreso.
-
-**Update 23/11**
-  Actualizado el progreso.
 
 Técnicos
 --------
@@ -46,7 +37,7 @@ Emprendedorismo
 Novelas
 -------
 
-* |mn|_, de David Wellington (#2).
+* |mn|_, de David Wellington (#2); **☕**.
 * |mp|_, de David Wellington (#3).
 * |lc|_, de Jorge Fernández Díaz.
 * |vl|_, de Anne Rice.
@@ -55,6 +46,18 @@ Novelas
 * |tz|_, de J. E. Álamo; **✔**.
 
 ¡Salud!
+
+**Update 31/07**
+  Agregada la sección *Emprendedorismo* y actualizado el progreso.
+
+**Update 08/11**
+  Agregados aún más libros :P y actualizado el progreso.
+
+**Update 23/11**
+  Actualizado el progreso.
+
+**Update 01/12**
+  Actualizado el progreso.
 
 .. |ct| replace:: Continuous Testing with Ruby: Better Software Through Faster Feedback
 .. _ct: https://www.goodreads.com/book/show/10053388-continuous-testing-with-ruby
