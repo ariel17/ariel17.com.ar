@@ -37,8 +37,8 @@ Emprendedorismo
 Novelas
 -------
 
-* |mn|_, de David Wellington (#2); **☕**.
-* |mp|_, de David Wellington (#3).
+* |mn|_, de David Wellington (#2); **✔**.
+* |mp|_, de David Wellington (#3); **☕**.
 * |lc|_, de Jorge Fernández Díaz.
 * |vl|_, de Anne Rice.
 * |ce|_, de Arthur C. Clarke; **✔**.
@@ -57,6 +57,9 @@ Novelas
   Actualizado el progreso.
 
 **Update 01/12**
+  Actualizado el progreso.
+
+**Update 26/12**
   Actualizado el progreso.
 
 .. |ct| replace:: Continuous Testing with Ruby: Better Software Through Faster Feedback
