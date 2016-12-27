@@ -123,23 +123,18 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Inicio'),
-        ('/archive.html', 'Archivos'),
         ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
+        ('https://twitter.com/ariel_17_', 'Twitter'),
+        ('https://github.com/ariel17', 'Github'),
+        ('http://ariel17.com.ar/notes/', 'Apuntes'),
         ('/pages/about-me/', 'Sobre mí'),
-        ('https://twitter.com/ariel_17_', 'Twitter'),
-        ('https://github.com/ariel17', 'Github'),
     ),
-
     "en": (
-        ('/index.html', 'Home'),
-        ('/archive.html', 'Archives'),
         ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
-        ('/pages/about-me/', 'About me'),
         ('https://twitter.com/ariel_17_', 'Twitter'),
         ('https://github.com/ariel17', 'Github'),
+        ('http://ariel17.com.ar/notes/', 'Notes'),
+        ('/pages/about-me/', 'About me'),
     ),
 }
 
