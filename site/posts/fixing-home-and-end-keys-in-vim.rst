@@ -11,12 +11,12 @@ Adding this to `~/.vimrc` file fixes incorrect HOME & END key behavior:
 
 .. code-block:: vim
 
-   # Home key
+   " Home key
    imap <esc>OH <esc>0i
    cmap <esc>OH <home>
    nmap <esc>OH 0
 
-   # End key
+   " End key
    nmap <esc>OF $
    imap <esc>OF <esc>$a
    cmap <esc>OF <end>
