@@ -97,7 +97,7 @@ Música
 Estoy aprendiendo a tocar la guitarra, luego de pasarme la vida entera
 preguntándome qué se siente tocar una. Es fascinante. Todavía no saco un tema
 entero y ya cambié de profesor pero siento que es el camino por que debo ir. Mi
-intención es aprender hasta poder seguir un tema de |uaatdb|_ ¡y rockar en
+intención es aprender hasta poder seguir un tema de |uaatdb|_ ¡y rockear en
 casa!.
 
 Lectura
