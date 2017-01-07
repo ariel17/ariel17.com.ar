@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-01-02 05:13:37 UTC-03:00
+.. date: 2017-01-06 21:00:37 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -10,7 +10,7 @@
 Novelas
 =======
 
-* |mp|_, de David Wellington (#3); **☕**.
+* |mp|_, de David Wellington (#3); **✔**.
 * |bd|_, de Philip Pullman (Materia Oscura #1).
 * |ld|_, de Philip Pullman (Materia Oscura #2).
 * |cl|_, de Philip Pullman (Materia Oscura #3).
@@ -19,13 +19,17 @@ Novelas
 Técnicos
 ========
 
-* |ts|_, de Donella H. Meadows.
+* |ts|_, de Donella H. Meadows; **☕**.
 
 Historial de cambios
 ====================
 
 **02/01**
-  Creación de la lista.
+  * Creación de la lista.
+
+**06/01**
+  * Finalización del libro |mp|_ (2017 arrancó al 70% de progreso :P).
+  * Inicio del libro |ts|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
