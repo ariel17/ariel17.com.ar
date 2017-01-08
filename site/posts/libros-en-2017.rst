@@ -21,6 +21,12 @@ Técnicos
 
 * |ts|_, de Donella H. Meadows; **☕**.
 
+Personas
+========
+
+* |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
+* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen.
+
 Historial de cambios
 ====================
 
@@ -30,6 +36,9 @@ Historial de cambios
 **06/01**
   * Finalización del libro |mp|_ (2017 arrancó al 70% de progreso :P).
   * Inicio del libro |ts|_.
+
+**08/01**
+  * Agregados los libros |gty|_ y |dc|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
@@ -48,3 +57,9 @@ Historial de cambios
 
 .. |ts| replace:: Thinking in Systems: A Primer
 .. _ts: https://www.goodreads.com/book/show/3828902-thinking-in-systems
+
+.. |gty| replace:: Getting to Yes: Negotiating an Agreement Without Giving In
+.. _gty: https://www.goodreads.com/book/show/313605.Getting_to_Yes
+
+.. |dc| replace:: Difficult Conversations: How to Discuss What Matters Most
+.. _dc: https://www.goodreads.com/book/show/774088.Difficult_Conversations
