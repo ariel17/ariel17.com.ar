@@ -14,7 +14,7 @@ Novelas
 * |ld|_, de Philip Pullman (Materia Oscura #2).
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
-* |lcn|_, de John Kennedy Toole.
+* |lcn|_, de John Kennedy Toole; **☕**.
 
 Técnicos
 ========
