@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-01-06 21:00:37 UTC-03:00
+.. date: 2017-02-05 22:00:17 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -11,10 +11,10 @@ Novelas
 =======
 
 * |mp|_, de David Wellington (#3); **✔**.
-* |bd|_, de Philip Pullman (Materia Oscura #1).
 * |ld|_, de Philip Pullman (Materia Oscura #2).
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
+* |lcn|_, de John Kennedy Toole.
 
 Técnicos
 ========
@@ -40,6 +40,9 @@ Historial de cambios
 **08/01**
   * Agregados los libros |gty|_ y |dc|_.
 
+**02/05**
+  * Cambiado |bd|_ por |lcn|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -63,3 +66,6 @@ Historial de cambios
 
 .. |dc| replace:: Difficult Conversations: How to Discuss What Matters Most
 .. _dc: https://www.goodreads.com/book/show/774088.Difficult_Conversations
+
+.. |lcn| replace:: La conjura de los necios
+.. _lcn: http://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces
