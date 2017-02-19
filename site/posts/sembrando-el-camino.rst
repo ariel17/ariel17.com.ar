@@ -12,8 +12,8 @@ del abrazo de los hijos cuando llego del trabajo, de las miradas silenciosas
 entre mates amargos mientras los chicos duermen por la mañana, se desprende una
 pausa en el tiempo, un momento de claridad en el pensamiento que me permite ver
 lo feliz que soy, que vivo en la época dorada de mi vida y que no se si incluso
-vendrá algo mejor, pero sí que vivo lo mejor que ha pasado. No me arrepiento de
-ninguna decisión, no tengo rencor con nadie. Estoy muy agradecido.
+vendrá algo mejor, pero sí que vivo lo mejor que meha pasado. No me arrepiento
+de ninguna decisión, no tengo rencor con nadie. Estoy muy agradecido.
 
 Ser consciente de que la felicidad te rodea te hace sentir que el tiempo retoma
 la marcha. Entonces se materializa la idea más vieja que uno mismo de que la
