@@ -35,5 +35,5 @@ de mi casa y en un intento de asir la vida y la felicidad de esos recuerdos,
 puse los caracoles entre las macetas, en la tierra y entre el pasto, junto a la
 ventana, la puerta y el corazón. Planté los recuerdos por toda la casa para que
 el futuro yo recuerde los años dorados, cuando la vida era simple, los hijos
-pequeños y bajo el ala, una esposa que te hace feliz y todo el futuro por
+pequeños y bajo el ala, una esposa que me hace feliz y todo el futuro por
 delante. 
