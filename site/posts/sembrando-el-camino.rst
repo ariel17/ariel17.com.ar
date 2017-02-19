@@ -9,7 +9,7 @@
 
 De encuentros fugaces con mi esposa en la cocina cuando buscamos algo distinto,
 del abrazo de los hijos cuando llego del trabajo, de las miradas silenciosas
-ntre mates amargos mientras los chicos duermen por la mañana, se desprende una
+entre mates amargos mientras los chicos duermen por la mañana, se desprende una
 pausa en el tiempo, un momento de claridad en el pensamiento que me permite ver
 lo feliz que soy, que vivo en la época dorada de mi vida y que no se si incluso
 vendrá algo mejor, pero sí que vivo lo mejor que ha pasado. No me arrepiento de
