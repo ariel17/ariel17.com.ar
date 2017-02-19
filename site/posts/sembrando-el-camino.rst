@@ -28,7 +28,7 @@ y nos dio la paz que necesitábamos.
 Volvimos y la rutina volvió un poco con nosotros, pero hemos cambiado. La
 novedad de los caracoles pasó para los chicos, pero para mí la noticia fue
 descubrir significados renovados. En medio de una soledad breve en mi casa
-descubrí el tesoro traido desde el mar por los chicos, ahora olvidado. El
+encontré el tesoro traido desde el mar por los chicos, ahora olvidado. El
 tiempo se detuvo nuevamente y vi el rastro de la felicidad aún impregnada en
 los caracoles y en la arena, y los junté con las manos y el alma. Salí al patio
 de mi casa y en un intento de asir la vida y la felicidad de esos recuerdos,
