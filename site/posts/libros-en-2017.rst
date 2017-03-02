@@ -15,6 +15,7 @@ Novelas
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **☕**.
+* |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 
 Técnicos
 ========
@@ -43,6 +44,9 @@ Historial de cambios
 **02/05**
   * Cambiado |bd|_ por |lcn|_.
 
+**03/02**
+  * Agregado |pe|_; finalización.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -69,3 +73,6 @@ Historial de cambios
 
 .. |lcn| replace:: La conjura de los necios
 .. _lcn: http://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces
+
+.. |pe| replace:: Planeta de Exilio
+.. _pe: http://www.goodreads.com/book/show/201882.Planet_of_Exile
