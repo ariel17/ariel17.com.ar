@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-02-05 22:00:17 UTC-03:00
+.. date: 2017-03-02 14:00:17 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
