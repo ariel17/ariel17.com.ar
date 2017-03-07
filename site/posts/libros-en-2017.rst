@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-03-02 14:00:17 UTC-03:00
+.. date: 2017-03-07 14:00:17 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -14,7 +14,7 @@ Novelas
 * |ld|_, de Philip Pullman (Materia Oscura #2).
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
-* |lcn|_, de John Kennedy Toole; **☕**.
+* |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 
 Técnicos
@@ -27,6 +27,11 @@ Personas
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
 * |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen.
+
+Históricos
+==========
+
+* |eyc|_, de Daniel Balmaceda; **☕**.
 
 Historial de cambios
 ====================
@@ -46,6 +51,10 @@ Historial de cambios
 
 **03/02**
   * Agregado |pe|_; finalización.
+
+**07/02**
+  * Terminado |lcn|_.
+  * Agregado |eyc|_; inicio.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
@@ -76,3 +85,6 @@ Historial de cambios
 
 .. |pe| replace:: Planeta de Exilio
 .. _pe: http://www.goodreads.com/book/show/201882.Planet_of_Exile
+
+.. |eyc| replace:: Espadas y corazones: El costado humano de la historia argentina
+.. _eyc: http://www.goodreads.com/book/show/28461182-espadas-y-corazones
