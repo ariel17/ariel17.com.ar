@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-03-07 14:00:17 UTC-03:00
+.. date: 2017-03-25 10:06:17 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -11,7 +11,7 @@ Novelas
 =======
 
 * |mp|_, de David Wellington (#3); **✔**.
-* |ld|_, de Philip Pullman (Materia Oscura #2).
+* |ld|_, de Philip Pullman (Materia Oscura #2); **☕**.
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
@@ -26,12 +26,12 @@ Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
-* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen.
+* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen; **☕**.
 
 Históricos
 ==========
 
-* |eyc|_, de Daniel Balmaceda; **☕**.
+* |eyc|_, de Daniel Balmaceda; **✔**.
 
 Historial de cambios
 ====================
@@ -46,15 +46,19 @@ Historial de cambios
 **08/01**
   * Agregados los libros |gty|_ y |dc|_.
 
-**02/05**
+**05/02**
   * Cambiado |bd|_ por |lcn|_.
 
-**03/02**
+**03/03**
   * Agregado |pe|_; finalización.
 
-**07/02**
+**07/03**
   * Terminado |lcn|_.
   * Agregado |eyc|_; inicio.
+
+**22/03**
+  * Terminado |eyc|_.
+  * Inicio |dc|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
