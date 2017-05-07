@@ -126,14 +126,12 @@ NAVIGATION_LINKS = {
         ('/categories/index.html', 'Tags'),
         ('https://twitter.com/ariel_17_', 'Twitter'),
         ('https://github.com/ariel17', 'Github'),
-        ('http://ariel17.com.ar/notes/', 'Apuntes'),
         ('/pages/about-me/', 'Sobre mí'),
     ),
     "en": (
         ('/categories/index.html', 'Tags'),
         ('https://twitter.com/ariel_17_', 'Twitter'),
         ('https://github.com/ariel17', 'Github'),
-        ('http://ariel17.com.ar/notes/', 'Notes'),
         ('/pages/about-me/', 'About me'),
     ),
 }

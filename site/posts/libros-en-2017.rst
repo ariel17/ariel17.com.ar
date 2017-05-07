@@ -26,7 +26,7 @@ Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
-* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen; **☕**.
+* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen; **✔**.
 
 Históricos
 ==========
@@ -59,6 +59,10 @@ Historial de cambios
 **22/03**
   * Terminado |eyc|_.
   * Inicio |dc|_.
+
+**25/04**
+  * Terminado |dc|_.
+  * Inicio |ld|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
