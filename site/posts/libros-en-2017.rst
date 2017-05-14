@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-03-25 10:06:17 UTC-03:00
+.. date: 2017-05-14 20:43:00 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -11,7 +11,7 @@ Novelas
 =======
 
 * |mp|_, de David Wellington (#3); **✔**.
-* |ld|_, de Philip Pullman (Materia Oscura #2); **☕**.
+* |ld|_, de Philip Pullman (Materia Oscura #2); **✔**.
 * |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
@@ -58,11 +58,15 @@ Historial de cambios
 
 **22/03**
   * Terminado |eyc|_.
-  * Inicio |dc|_.
+  * Inicio de |dc|_.
 
 **25/04**
   * Terminado |dc|_.
-  * Inicio |ld|_.
+  * Inicio de |ld|_.
+
+**10/05**
+  * Terminado |ld|_.
+  * Inicio de |ts|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
