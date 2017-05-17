@@ -69,8 +69,7 @@ Arquitectura
            server backend3;
        }
    
-   log_format upstreamlog '[$time_local] upstream $upstream_addr: $request upstream_response_time $upstream_response_time msec $msec request_time $request_time';
-       
+       log_format upstreamlog '[$time_local] upstream $upstream_addr: $request upstream_response_time $upstream_response_time msec $msec request_time $request_time';
    
        server {
            listen 80;
