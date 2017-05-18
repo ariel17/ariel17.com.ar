@@ -12,7 +12,7 @@ Novelas
 
 * |mp|_, de David Wellington (#3); **✔**.
 * |ld|_, de Philip Pullman (Materia Oscura #2); **✔**.
-* |cl|_, de Philip Pullman (Materia Oscura #3); **☕**.
+* |cl|_, de Philip Pullman (Materia Oscura #3).
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
@@ -20,13 +20,14 @@ Novelas
 Técnicos
 ========
 
-* |ts|_, de Donella H. Meadows; **☕**.
+* |ts|_, de Donella H. Meadows.
 
 Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
 * |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen; **✔**.
+* |7|_, de Stephen R. Covey; **☕**.
 
 Históricos
 ==========
@@ -68,6 +69,9 @@ Historial de cambios
   * Terminado |ld|_.
   * Inicio de |ts|_.
 
+**17/05**
+  * Agregado |7|_; inicio (reemplazo de |ts|_).
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -100,3 +104,6 @@ Historial de cambios
 
 .. |eyc| replace:: Espadas y corazones: El costado humano de la historia argentina
 .. _eyc: http://www.goodreads.com/book/show/28461182-espadas-y-corazones
+
+.. |7| replace:: 7 hábitos de la gente altamente efectiva
+.. _7: https://www.goodreads.com/book/show/33519024-los-7-h-bitos-de-la-gente-altamente-efectiva
