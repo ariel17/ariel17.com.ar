@@ -14,6 +14,9 @@ var files = {
     javascript: [
         './bower_components/jquery/dist/jquery.js',
         './bower_components/bootstrap-less/js/collapse.js'
+    ],
+    images: [
+        './assets/img/**/*'
     ]
 };
 
@@ -37,8 +40,17 @@ gulp.task('js', function() {
     .pipe(gulp.dest('public/js'));
 });
 
+gulp.task('images', function() {
+  gulp.src(files.images)
+    .pipe(gulp.dest('public/img'));
+});
+
 gulp.task('sync', function() {
-    gulp.watch(files.less, ['less']);
+    gulp.watch(files.less, ['less']).on("change", browserSync.reload);
+    gulp.watch(files.javascript, ['js']).on("change", browserSync.reload);
+    gulp.watch(files.images, ['images']).on("change", browserSync.reload);
+    gulp.watch(files.html).on("change", browserSync.reload);
+
     browserSync.init({
         server: {
             baseDir: "./"
@@ -46,4 +58,4 @@ gulp.task('sync', function() {
     });
 });
 
-gulp.task('default', ['less', 'js', 'sync']);
+gulp.task('default', ['less', 'js', 'images', 'sync']);
