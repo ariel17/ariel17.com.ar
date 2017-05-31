@@ -6,6 +6,7 @@ var browserSync = require('browser-sync').create();
 var files = {
     less: [
       './bower_components/bootstrap-less/less/bootstrap.less',
+      './bower_components/font-awesome/less/font-awesome.less',
       './assets/less/**/*.less'
     ],
     html: [
@@ -17,6 +18,12 @@ var files = {
     ],
     images: [
         './assets/img/**/*'
+    ],
+    css: [
+        './assets/css/**/*'
+    ],
+    fonts: [
+        './bower_components/font-awesome/fonts/**/*'
     ]
 };
 
@@ -45,10 +52,22 @@ gulp.task('images', function() {
     .pipe(gulp.dest('public/img'));
 });
 
+gulp.task('css', function() {
+  gulp.src(files.css)
+    .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('fonts', function() {
+  gulp.src(files.fonts)
+    .pipe(gulp.dest('public/fonts'));
+});
+
 gulp.task('sync', function() {
     gulp.watch(files.less, ['less']).on("change", browserSync.reload);
     gulp.watch(files.javascript, ['js']).on("change", browserSync.reload);
     gulp.watch(files.images, ['images']).on("change", browserSync.reload);
+    gulp.watch(files.css, ['css']).on("change", browserSync.reload);
+    gulp.watch(files.fonts, ['fonts']).on("change", browserSync.reload);
     gulp.watch(files.html).on("change", browserSync.reload);
 
     browserSync.init({
@@ -58,4 +77,4 @@ gulp.task('sync', function() {
     });
 });
 
-gulp.task('default', ['less', 'js', 'images', 'sync']);
+gulp.task('default', ['less', 'js', 'images', 'css', 'fonts', 'sync']);
