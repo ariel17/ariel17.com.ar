@@ -13,5 +13,8 @@
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0"
+  },
+  "dependencies": {
+    "hexo": "^3.3.7"
   }
 }
