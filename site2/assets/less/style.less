@@ -5,6 +5,7 @@
 html, body {
   height: 100%;
   font-family: 'Inconsolata';
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -22,6 +23,10 @@ html, body {
     .navbar-toggle {
         border-color: #fff;
     }
+
+    .navbar-right {
+        margin-right: 30px;
+    }
 }
 
 .navbar-inverse {
@@ -31,6 +36,10 @@ html, body {
                 background-color: @violet;
             }
         }
+    }
+
+    li {
+        margin-right: 5px;
     }
 }
 
@@ -55,22 +64,50 @@ html, body {
         font-size: 7em;
         font-weight: bold;
     }
-    
+
+    .btn {
+        font-size: 2em;
+        border-radius: 15px;
+        margin: 20px;
+    }
+
+    .btn-primary {
+        color: #000;
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    .btn-default {
+        color: #fff;
+        background-color: transparent;
+        border-color: #fff;
+    }
   }
 }
 
 section {
-    .inner {
-        padding: 200px;
+    padding: 50px;
+}
+
+.skills {
+    font-size: 1.5em;
+    background-color: @violet;
+    color: #fff;
+}
+
+.about {
+    p {
+        padding: 40px;
     }
 }
 
 footer {
-    padding: 30px;
+    padding: 50px;
     background-color: @base03;
     color: #fff;
 
     .links {
+        padding: 20px;
         a {
             text-decoration: none;
             color: #fff;
@@ -89,8 +126,8 @@ footer {
     }
 
     .copyright {
-        margin: 40px;
-        font-size: 1em;
+        margin: 20px;
+        font-size: 1.5em;
     }
 }
 
