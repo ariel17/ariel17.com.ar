@@ -1,27 +1,11 @@
-<div class='row text-center'>
- <h1><%= config.author %></h1>
-    <p><%= config.subtitle %></p>
-
-</div>
-<div class='row'>
- <ul>
- <% page.posts.each(function(post){ %>
-     <li>
-      <h3>
-                <a href="<%- url_for(post.path) %>">
-           <%= post.title %>
-          </a>
-            </h3>
-            <div class='text-muted'>
-                <%= date(post.date, config.date_format) %> 
-            </div>
-            
-            <% if(post.excerpt) { %>
-                <p>
-                    <%- post.excerpt %>
-                </p>
-            <% } %>
-     </li>
-   <% }) %>
- </ul>
+<div class="row col-md-offset-2 col-md-8">
+  <% page.posts.each(function(post){ %>
+    <h2>
+      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <small><%= date(post.date, config.date_format) %></small>
+    </h2>
+    <div class="col-md-offset-2 col-md-8 col-sm-12">
+      <p><%- post.excerpt %></p>
+    </div>
+  <% }) %>
 </div>

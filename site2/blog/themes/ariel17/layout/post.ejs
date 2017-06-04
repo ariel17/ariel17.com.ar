@@ -1,11 +1,12 @@
-<div class='row'>
- <a class='btn btn-default' href='/'>< Home</a>
-</div>
-<div class='row'>
- <h1><%- page.title %></h1>
- <div class='text-muted'>
-        <%= date(page.date, config.date_format) %> 
-    </div>
- <%- page.content %>
+<div class="container-fluid row">
+  <div class="row col-md-offset-2 col-md-8">
+    <h1>
+      <%- page.title %>
+      <small><%= date(page.date, config.date_format) %></small>
+    </h1>
+  </div>
+  <div class="col-md-offset-2 col-md-8">
+    <%- page.content %>
+  </div>
 </div>
 
