@@ -4,7 +4,8 @@
   "description": "Ariel17 site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "./node_modules/.bin/gulp"
   },
   "author": "Ariel Gerardo Ríos",
   "license": "ISC",
