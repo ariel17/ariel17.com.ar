@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "./node_modules/.bin/gulp"
+    "bower": "./node_modules/.bin/bower install",
+    "gulp": "./node_modules/.bin/gulp",
+    "serve": "npm run bower && npm run gulp"
   },
   "author": "Ariel Gerardo Ríos",
   "license": "ISC",
@@ -13,7 +15,8 @@
     "bower": "^1.8.0",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0"
+    "gulp-less": "^3.3.0",
+    "gulp-minify": "^1.0.0"
   },
   "dependencies": {
     "hexo": "^3.3.7"

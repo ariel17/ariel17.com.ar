@@ -1,0 +1,23 @@
+{
+  "name": "ariel17",
+  "description": "Ariel17 site",
+  "main": "index.js",
+  "authors": [
+    "Ariel Gerardo Ríos"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ariel17/ariel17.com.ar",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-less": "^3.3.4",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
+  }
+}
