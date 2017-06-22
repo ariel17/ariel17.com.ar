@@ -5,6 +5,11 @@
   "hexo": {
     "version": "3.3.7"
   },
+  "scripts": {
+      "hexo-generate": "./node_modules/.bin/hexo generate",
+      "hexo-server": "./node_modules/.bin/hexo server",
+      "start": "npm run hexo-generate && npm run hexo-server"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-generator-archive": "^0.1.4",
