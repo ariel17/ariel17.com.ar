@@ -6,6 +6,7 @@
   "scripts": {
     "bower": "./node_modules/.bin/bower install",
     "gulp": "./node_modules/.bin/gulp",
+    "build": "./node_modules/.bin/gulp build",
     "start": "npm run bower && npm run gulp"
   },
   "author": "Ariel Gerardo Ríos",

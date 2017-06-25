@@ -79,4 +79,6 @@ gulp.task('sync', function() {
     });
 });
 
+gulp.task('build', ['less', 'js', 'images', 'css', 'fonts']);
+
 gulp.task('default', ['less', 'js', 'images', 'css', 'fonts', 'sync']);
