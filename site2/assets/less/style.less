@@ -7,23 +7,21 @@ html, body {
   overflow-x: hidden;
 }
 
-.transparent {
-    background: none;
-}
-
 .navbar {
-    border-radius: 0;
     font-size: 1.5em;
     border: 0;
 
     .navbar-brand {
-        color: #fff;
-        font-size: 1.5em;
+        color: white;
+        font-size: 1em;
         font-weight: bold;
+        &:hover {
+            color: @blue;
+        }
     }
 
     .navbar-toggle {
-        border-color: #fff;
+        border-color: white;
     }
 
     .navbar-right {
@@ -32,10 +30,14 @@ html, body {
 }
 
 .navbar-inverse {
+    background-color: @base03;
     .navbar-nav {
-        .active {
+        li {
             a {
-                background-color: @violet;
+                color: white;
+                &:hover {
+                    color: @blue;
+                }
             }
         }
     }
@@ -43,6 +45,11 @@ html, body {
     li {
         margin-right: 5px;
     }
+}
+
+.transparent {
+    background-color: none;
+    background: none;
 }
 
 .intro {
@@ -57,8 +64,8 @@ html, body {
   background-size: cover;
 
   .title {
-    color: #fff;
-    margin-top: 20%;
+    color: white;
+    margin-top: 15%;
     
     h1 {
         font-size: 7em;
@@ -69,18 +76,40 @@ html, body {
         font-size: 2em;
         border-radius: 15px;
         margin: 20px;
+        border-color: white;
     }
 
     .btn-primary {
-        color: #000;
-        background-color: #fff;
-        border-color: #fff;
+        color: black;
+        background-color: white;
     }
 
     .btn-default {
-        color: #fff;
+        color: white;
         background-color: transparent;
-        border-color: #fff;
+    }
+
+    .links {
+        margin: 0;
+        a {
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: @base03;
+            }
+        }
+
+        i {
+            padding: 5px 10px;
+            display: inline-block;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            border: 2px solid white;
+            &:hover {
+                border-color: @base03;
+            }
+        }
     }
   }
 }
@@ -93,9 +122,18 @@ section {
     padding: 50px;
 }
 
+.about {
+    background-color: @base2;
+    p {
+        padding: 40px;
+        font-size: 2em;
+        color: @base02;
+    }
+}
+
 .skills {
-    background-color: @violet;
-    color: #fff;
+    background-color: @base0;
+    color: white;
 
     h2 {
         margin: 30px 0 20px;
@@ -106,7 +144,7 @@ section {
     }
 
     .outer {
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: bold;
         li {
             margin: 0 0 15px 0;
@@ -122,43 +160,13 @@ section {
 
 }
 
-.about {
-    p {
-        padding: 40px;
-        font-size: 2em;
-    }
-}
-
 footer {
-    padding: 50px 0 10px;
+    padding: 10px 0 10px;
     background-color: @base03;
-    color: #fff;
-
-    h2 {
-        margin: 30px 0 80px;
-    }
-
-    .links {
-        margin: 40px 0 50px;
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-    }
-
-    i {
-        padding: 5px 10px;
-        display: inline-block;
-        -moz-border-radius: 100px;
-        -webkit-border-radius: 100px;
-        border-radius: 100px;
-        -moz-box-shadow: 0px 0px 2px #fff;
-        -webkit-box-shadow: 0px 0px 2px #fff;
-        box-shadow: 0px 0px 2px #fff;
-    }
+    color: white;
 
     .copyright {
-        margin: 20px 0 0;
+        margin: 10px 0 10px;
         font-size: 1.5em;
     }
 }
@@ -168,15 +176,45 @@ footer {
 
     .navbar {
         font-size: 1em;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
     }
 
     .intro {
-        .title {
-            margin-top: 75%;
+        background-image: linear-gradient(
+                rgba(43, 54, 193, 0.3), 
+                rgba(43, 54, 193, 0.3)
+            ),url('../img/header-bg-mobile.jpeg');
 
+        .title {
+            margin-top: 45%;
             h1 {
                 font-size: 4em;
             }
+
+            .link {
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .about {
+        p {
+            padding: 20px;
+            font-size: 1.7em;
+            color: @base02;
+        }
+    }
+
+    footer {
+        .copyright {
+            font-size: 1em;
         }
     }
 }

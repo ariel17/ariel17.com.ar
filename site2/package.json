@@ -4,10 +4,9 @@
   "description": "Ariel17 site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "bower": "./node_modules/.bin/bower install",
     "gulp": "./node_modules/.bin/gulp",
-    "serve": "npm run bower && npm run gulp"
+    "start": "npm run bower && npm run gulp"
   },
   "author": "Ariel Gerardo Ríos",
   "license": "ISC",
