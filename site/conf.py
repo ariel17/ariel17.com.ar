@@ -21,10 +21,10 @@ BLOG_AUTHOR = "Ariel Gerardo Ríos"  # (translatable)
 BLOG_TITLE = "Ariel 17"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://ariel17.com.ar/"
+# SITE_URL = "http://ariel17.com.ar/blog/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://ariel17.com.ar/"
+BASE_URL = "http://ariel17.com.ar/"
 BLOG_EMAIL = "ariel.gerardo.rios@gmail.com"
 BLOG_DESCRIPTION = "¿Qué dijo?"  # (translatable)
 
@@ -123,21 +123,15 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/categories/index.html', 'Tags'),
-        ('https://twitter.com/ariel_17_', 'Twitter'),
-        ('https://github.com/ariel17', 'Github'),
-        ('/pages/about-me/', 'Sobre mí'),
+        ('/', 'Home'),
     ),
     "en": (
-        ('/categories/index.html', 'Tags'),
-        ('https://twitter.com/ariel_17_', 'Twitter'),
-        ('https://github.com/ariel17', 'Github'),
-        ('/pages/about-me/', 'About me'),
+        ('/', 'Home'),
     ),
 }
 
 # Name of the theme to use.
-THEME="bootstrap3"
+THEME = "bootstrap3"
 
 # Below this point, everything is optional
 
@@ -209,8 +203,8 @@ TIMEZONE = "America/Argentina/Buenos_Aires"
 #
 
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.rst", "blog", "post.tmpl"),
+    ("posts/*.txt", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "pages", "story.tmpl"),
@@ -352,7 +346,7 @@ HIDDEN_CATEGORIES = []
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
-# INDEX_PATH = ""
+INDEX_PATH = "blog"
 
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
