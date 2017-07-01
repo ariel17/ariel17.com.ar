@@ -16,17 +16,19 @@ Novelas
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
+* |wwz|_, de Max Brooks; **☕**.
 
 Técnicos
 ========
 
-* |ts|_, de Donella H. Meadows.
+* |ts|_, de Donella H. Meadows; **✔**.
+* |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan.
 
 Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
-* |dc|_, de Douglas Stone, Bruce Patton y Sheila Heen; **✔**.
+* |dc|_, de Douglas Stone, Bruce att
 * |7|_, de Stephen R. Covey; **☕**.
 
 Históricos
@@ -72,6 +74,11 @@ Historial de cambios
 **17/05**
   * Agregado |7|_; inicio (reemplazo de |ts|_).
 
+**17/06**
+  * Finalizado |ts|_.
+  * Agregado |wwz|_; inicio.
+  * Agregado |tgpl|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -107,3 +114,9 @@ Historial de cambios
 
 .. |7| replace:: 7 hábitos de la gente altamente efectiva
 .. _7: https://www.goodreads.com/book/show/33519024-los-7-h-bitos-de-la-gente-altamente-efectiva
+
+.. |wwz| replace:: World War Z: An Oral History of the Zombie War
+.. _wwz: http://www.goodreads.com/book/show/8908.World_War_Z
+
+.. |tgpl| replace:: The Go Programming Language
+.. _tgpl: http://www.goodreads.com/book/show/25080953-the-go-programming-language
