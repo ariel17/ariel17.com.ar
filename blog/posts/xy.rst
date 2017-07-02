@@ -24,24 +24,24 @@ usuario no esta utilizando el sistema.
 Analisis
 --------
 
-1. Se utilizara el GPS de los dispositivos Android que los individuos porten
+#. Se utilizara el GPS de los dispositivos Android que los individuos porten
    para obtener la informacion geografica. Para obtener acceder a dicha
    informacion es necesario una aplicacion que pueda capturarla y enviarla a un
    punto de reporte.
 
-1. Siendo que la idea es tener informacion de los individuos aun cuando el
+#. Siendo que la idea es tener informacion de los individuos aun cuando el
    usuario no este usando el sistema, sera necesario tener un punto de
    comunicacion en comun para las partes que idealmente este siempre
    disponible. Se usara un VPS para proveer dicha funcionalidad.
-  
-1. Siguiendo la linea del punto anterior, se implementara una API REST para la
+
+#. Siguiendo la linea del punto anterior, se implementara una API REST para la
    comunicacion entre el server y la aplicacion Andriod.
 
-1. El usuario debera tener una interfaz en la cual pueda cargar datos de
+#. El usuario debera tener una interfaz en la cual pueda cargar datos de
    identificacion de los individuos a monitorear. La misma sera una aplicacion
    web que almacene los datos y los disponibilice en el sistema.
 
-1. La interfaz web tambien sera el medio por el cual se visualizara la posicion
+#. La interfaz web tambien sera el medio por el cual se visualizara la posicion
    de los individuos.
 
 .. image:: https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png
