@@ -409,7 +409,7 @@ REDIRECTIONS = []
 DEPLOY_COMMANDS = {
     'default': [
         'nikola build',
-        'rsync -avp --delete --progress -r -e ssh output/* sauron:/srv/ariel17/www',
+        'rsync -avp --delete --progress -r -e ssh output/* sauron:/srv/ariel17/site/blog/output',
     ]
 }
 
