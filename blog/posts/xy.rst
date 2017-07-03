@@ -47,6 +47,12 @@ Análisis
 
 .. image:: https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png
 
+Observasciones técnicas
+-----------------------
+
+* No se van a usar frameworks.
+* El componente API y Web del sistema serán implementados en Go.
+
 Gestión del proyecto
 --------------------
 
