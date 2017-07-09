@@ -1,5 +1,5 @@
-.. title: (x,y)
-.. slug: xy
+.. title: (x,y) parte 1
+.. slug: xy-parte-1
 .. date: 2017-07-01 21:34:51 UTC-03:00
 .. tags: go, android, idea
 .. category: 
@@ -61,3 +61,11 @@ Gestión del proyecto
 
 .. |repo| replace:: ariel17/xy
 .. _repo: https://github.com/ariel17/xy
+
+Otras entradas
+--------------
+
+* |2|_
+
+.. |2| replace:: (x,y) parte 2
+.. _2: /blog/xy-parte-2/
