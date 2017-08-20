@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Ariel Gerardo Ríos"  # (translatable)
-BLOG_TITLE = "Ariel 17"  # (translatable)
+BLOG_TITLE = "Ariel Gerardo Ríos"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 # SITE_URL = "http://ariel17.com.ar/blog/"
@@ -123,15 +123,13 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/', 'Home'),
     ),
     "en": (
-        ('/', 'Home'),
     ),
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "ariel17"
 
 # Below this point, everything is optional
 

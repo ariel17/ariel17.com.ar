@@ -1,0 +1,70 @@
+## -*- coding: utf-8 -*-
+<%namespace name="base" file="base_helper.tmpl" import="*"/>
+
+<%def name="html_header()">
+    <header id="header">
+        ${html_navigation_links()}
+        %if search_form:
+            <div class="searchform" role="search">
+                ${search_form}
+            </div>
+        %endif
+    </header>
+    ${template_hooks['page_header']()}
+</%def>
+
+<%def name="html_site_title()">
+    <h1 id="brand"><a href="${abs_link(_link("root", None, lang))}" title="" rel="home">
+    %if logo_url:
+        <img src="${logo_url}" alt="${blog_title}" id="logo">
+    %endif
+
+    % if show_blog_title:
+        <span id="blog-title">${blog_title}</span>
+    % endif
+    </a></h1>
+</%def>
+
+<%def name="html_navigation_links()">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">${blog_title}</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home-link"><a href="/">Home</a></li>
+          <li id="blog-link" class="active"><a href="#">Blog</a></li>
+          %for url, text in navigation_links[lang]:
+            % if isinstance(url, tuple):
+              <li> ${text}
+              <ul>
+              %for suburl, text in url:
+                  % if rel_link(permalink, suburl) == "#":
+                      <li class="active"><a href="${permalink}">${text} <span class="sr-only">${messages("(active)", lang)}</span></a></li>
+                  %else:
+                      <li><a href="${suburl}">${text}</a></li>
+                  %endif
+              %endfor
+              </ul>
+            % else:
+              % if rel_link(permalink, url) == "#":
+                <li class="active"><a href="${permalink}">${text} <span class="sr-only">${messages("(active)", lang)}</span></a></li>
+              %else:
+                <li><a href="${url}">${text}</a></li>
+              %endif
+            % endif
+          %endfor
+          ${template_hooks['menu']()}
+          ${template_hooks['menu_alt']()}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</%def>
