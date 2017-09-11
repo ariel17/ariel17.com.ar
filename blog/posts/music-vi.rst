@@ -7,6 +7,6 @@
 .. description: 
 .. type: text
 
-.. raw::
+.. raw:: html
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/dg2Oo8z_yR0" frameborder="0" allowfullscreen></iframe>
