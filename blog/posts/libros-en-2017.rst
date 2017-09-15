@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-07-01 21:01:00 UTC-03:00
+.. date: 2017-09-15 09:06:00 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -12,17 +12,19 @@ Novelas
 
 * |mp|_, de David Wellington (#3); **✔**.
 * |ld|_, de Philip Pullman (Materia Oscura #2); **✔**.
-* |cl|_, de Philip Pullman (Materia Oscura #3).
+* |cl|_, de Philip Pullman (Materia Oscura #3); **✔**.
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
-* |wwz|_, de Max Brooks; **☕**.
+* |wwz|_, de Max Brooks; **✔***.
+* |llttd|_, de  Ava Dellaira; **☕**.
 
 Técnicos
 ========
 
 * |ts|_, de Donella H. Meadows; **✔**.
-* |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan.
+* |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan; **☕**.
+* |cc|_, de Steve McConnell; **☕**.
 
 Personas
 ========
@@ -79,6 +81,20 @@ Historial de cambios
   * Agregado |wwz|_; inicio.
   * Agregado |tgpl|_.
 
+**20/07**
+  * Finalizado |wwz|_.
+  * Inicio de |tgpl|_.
+  * Inicio de |ld|_.
+
+**30/08**
+  * Inicio de |cc|_.
+
+**13/09**
+  * Finalizado |ld|_.
+
+**14/09**
+  * Iniciado |llttd|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -120,3 +136,9 @@ Historial de cambios
 
 .. |tgpl| replace:: The Go Programming Language
 .. _tgpl: http://www.goodreads.com/book/show/25080953-the-go-programming-language
+
+.. |cc| replace:: Code Complete
+.. _cc: https://www.goodreads.com/book/show/4845.Code_Complete
+
+.. |llttd| replace:: Cartas de Amor a los Muertos
+.. _llttd: https://www.goodreads.com/book/show/18140047-love-letters-to-the-dead
