@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-09-15 09:06:00 UTC-03:00
+.. date: 2017-09-24 09:06:00 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -30,8 +30,9 @@ Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
-* |dc|_, de Douglas Stone, Bruce att
+* |dc|_, de Douglas Stone, Bruce Patton, Sheila Heen.
 * |7|_, de Stephen R. Covey; **☕**.
+* |tze|_, de Wayne W. Dyer;  **☕**.
 
 Históricos
 ==========
@@ -95,6 +96,9 @@ Historial de cambios
 **14/09**
   * Iniciado |llttd|_.
 
+**18/09**
+  * Iniciado |tze|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -142,3 +146,6 @@ Historial de cambios
 
 .. |llttd| replace:: Cartas de Amor a los Muertos
 .. _llttd: https://www.goodreads.com/book/show/18140047-love-letters-to-the-dead
+
+.. |tze| replace:: Tus Zonas Erroneas
+.. _tze: https://www.goodreads.com/book/show/357886.Your_Erroneous_Zones
