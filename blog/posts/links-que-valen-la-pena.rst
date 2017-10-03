@@ -9,3 +9,5 @@
 
 * https://www.reddit.com/r/personalfinance/comments/72a60p/jobs_arent_just_money/
 * https://www.reddit.com/r/GetMotivated/comments/70ujmd/image_oc_last_weekend_i_found_myself_lost_and/
+* http://tmrts.com/go-patterns/
+* https://github.com/golang/go/wiki/LearnConcurrency
