@@ -30,7 +30,7 @@ Personas
 ========
 
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
-* |dc|_, de Douglas Stone, Bruce Patton, Sheila Heen.
+* |dc|_, de Douglas Stone, Bruce Patton, Sheila Heen; **✔**.
 * |7|_, de Stephen R. Covey; **☕**.
 * |tze|_, de Wayne W. Dyer;  **☕**.
 
