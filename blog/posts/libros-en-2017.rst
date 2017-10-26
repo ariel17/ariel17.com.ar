@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-09-24 09:06:00 UTC-03:00
+.. date: 2017-10-26 09:24:00 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -17,7 +17,7 @@ Novelas
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 * |wwz|_, de Max Brooks; **✔***.
-* |llttd|_, de  Ava Dellaira; **☕**.
+* |llttd|_, de  Ava Dellaira; **✔**.
 
 Técnicos
 ========
@@ -98,6 +98,9 @@ Historial de cambios
 
 **18/09**
   * Iniciado |tze|_.
+
+**26/10**
+  * Finalizado |llttd|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
