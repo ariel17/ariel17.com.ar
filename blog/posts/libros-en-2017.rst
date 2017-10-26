@@ -16,7 +16,7 @@ Novelas
 * |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
-* |wwz|_, de Max Brooks; **✔***.
+* |wwz|_, de Max Brooks; **✔**.
 * |llttd|_, de  Ava Dellaira; **✔**.
 
 Técnicos
