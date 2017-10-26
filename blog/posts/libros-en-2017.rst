@@ -25,6 +25,7 @@ Técnicos
 * |ts|_, de Donella H. Meadows; **✔**.
 * |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan; **☕**.
 * |cc|_, de Steve McConnell; **☕**.
+* |ga|_, de Aditya Y. Bhargava;  **☕**.
 
 Personas
 ========
@@ -99,6 +100,9 @@ Historial de cambios
 **18/09**
   * Iniciado |tze|_.
 
+**20/09**
+  * Iniciado |ga|_.
+
 **26/10**
   * Finalizado |llttd|_.
 
@@ -152,3 +156,6 @@ Historial de cambios
 
 .. |tze| replace:: Tus Zonas Erroneas
 .. _tze: https://www.goodreads.com/book/show/357886.Your_Erroneous_Zones
+
+.. |ga| replace:: Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People
+.. _ga: https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio
