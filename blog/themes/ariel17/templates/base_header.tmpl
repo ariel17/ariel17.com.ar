@@ -40,7 +40,6 @@
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li id="home-link"><a href="/">Home</a></li>
-          <li id="blog-link" class="active"><a href="#">Blog</a></li>
           %for url, text in navigation_links[lang]:
             % if isinstance(url, tuple):
               <li> ${text}
