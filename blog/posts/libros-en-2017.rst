@@ -33,7 +33,7 @@ Personas
 * |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
 * |dc|_, de Douglas Stone, Bruce Patton, Sheila Heen; **✔**.
 * |7|_, de Stephen R. Covey; **☕**.
-* |tze|_, de Wayne W. Dyer;  **☕**.
+* |tze|_, de Wayne W. Dyer; **✔**.
 
 Históricos
 ==========
@@ -105,6 +105,9 @@ Historial de cambios
 
 **26/10**
   * Finalizado |llttd|_.
+
+**07/11**
+  * Finalizado |tze|_.
 
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
