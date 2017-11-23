@@ -53,8 +53,8 @@
               %endfor
               </ul>
             % else:
-              % if rel_link(permalink, url) == "#":
-                <li class="active"><a href="${permalink}">${text} <span class="sr-only">${messages("(active)", lang)}</span></a></li>
+              % if rel_link(permalink, url) == "":
+                <li class="active"><a href="#">${text}</a></li>
               %else:
                 <li><a href="${url}">${text}</a></li>
               %endif
