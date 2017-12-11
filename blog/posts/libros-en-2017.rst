@@ -13,11 +13,12 @@ Novelas
 * |mp|_, de David Wellington (#3); **✔**.
 * |ld|_, de Philip Pullman (Materia Oscura #2); **✔**.
 * |cl|_, de Philip Pullman (Materia Oscura #3); **✔**.
-* |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
+* |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!); **☕**.
 * |lcn|_, de John Kennedy Toole; **✔**.
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 * |wwz|_, de Max Brooks; **✔**.
 * |llttd|_, de  Ava Dellaira; **✔**.
+* |lrc|_, de Ursula K. Le Guin; **☕**.
 
 Técnicos
 ========
@@ -109,6 +110,9 @@ Historial de cambios
 **07/11**
   * Finalizado |tze|_.
 
+**04/12**
+  * Iniciado |lrc|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -162,3 +166,6 @@ Historial de cambios
 
 .. |ga| replace:: Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People
 .. _ga: https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio
+
+.. |lrc| replace:: La Rueda Celeste
+.. _lrc: https://www.goodreads.com/book/show/16120215-la-rueda-celeste
