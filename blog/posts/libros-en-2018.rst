@@ -10,23 +10,36 @@
 Novelas
 =======
 
-* La Chica del Tren.
-* |er|_, de Ursula K. Le Guin (¡regalo de Papá Noel!).
+* |lcdt|_, de Paula Hawkins.
+* |er|_, de Ursula K. Le Guin.
+* |updmi|_, de Ursula K. Le Guin.
 
 Técnicos
 ========
 
-* |ts|_, de Donella H. Meadows.
 * |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan.
 * |cc|_, de Steve McConnell.
-* |ga|_, de Aditya Y. Bhargava.
+* |mlsp|_, de Richard E. Farley; **📖**.
+* |me|_, de Charles Platt.
 
 Personas
 ========
 
-* |gty|_, de  Roger Fisher, William Ury y Bruce Patton.
 * |7|_, de Stephen R. Covey.
+* |hi|_, de Gabriel Rolón; **📖**.
+* |eh|_, de Martín Caparrós.
 
+Historial de cambios
+====================
+
+**15/12**
+  * Iniciado |mlsp|_.
+
+**30/12**
+  * Iniciado |hi|_.
+
+.. |lcdt| replace:: La Chica del Tren
+.. _lcdt: https://www.goodreads.com/book/show/25270785-la-chica-del-tren
 
 .. |er| replace:: El eterno regreso a casa
 .. _er: https://www.goodreads.com/book/show/13112923-el-eterno-regreso-a-casa
@@ -46,5 +59,17 @@ Personas
 .. |cc| replace:: Code Complete
 .. _cc: https://www.goodreads.com/book/show/4845.Code_Complete
 
-.. |ga| replace:: Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People
-.. _ga: https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio
+.. |hi| replace:: Historias Inconscientes (Vidas al límite)
+.. _hi: https://www.goodreads.com/book/show/22238338-historias-inconscientes
+
+.. |mlsp| replace:: Managing and Leading Software Projects
+.. _mlsp: https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects
+
+.. |eh| replace:: El Hambre
+.. _eh: https://www.goodreads.com/book/show/23158491-el-hambre
+
+.. |updmi| replace:: Un Pescador del Mar Interior
+.. _updmi: https://www.goodreads.com/book/show/429981.Un_Pescador_del_Mar_Interior
+
+.. |me| replace:: MAKE: Electronics: Learning Through Discovery
+.. _me: https://www.goodreads.com/book/show/6945716-make

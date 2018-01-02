@@ -18,7 +18,7 @@ Novelas
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 * |wwz|_, de Max Brooks; **✔**.
 * |llttd|_, de  Ava Dellaira; **✔**.
-* |lrc|_, de Ursula K. Le Guin; **☕**.
+* |lrc|_, de Ursula K. Le Guin; **✔**.
 
 Técnicos
 ========
@@ -44,6 +44,7 @@ Históricos
 * |eyc|_, de Daniel Balmaceda; **✔**.
 
 Historial de cambios
+qa
 ====================
 
 **02/01**
@@ -115,7 +116,8 @@ Historial de cambios
 **04/12**
   * Iniciado |lrc|_.
 
-**20/12**
+**15/12**
+  * Finalizado |lrc|_.
   * Iniciado |mlsp|_.
 
 **30/12**
