@@ -17,8 +17,8 @@ Planificación
 
 * Bibliografía:
 
-  - TODO
-  - TODO
+  - `The Best Resources for Learning to Build Bitcoin and Block Chain Applications <https://medium.com/zapchain-magazine/the-best-resources-for-learning-to-build-bitcoin-and-block-chain-applications-8de1953506f5>`_
+  - `How can I get started in developing applications based on cryptocurrency and/or Blockchain? <https://www.quora.com/How-can-I-get-started-in-developing-applications-based-on-cryptocurrency-and-or-Blockchain>`_.
 
 Desarrollo
 ==========
