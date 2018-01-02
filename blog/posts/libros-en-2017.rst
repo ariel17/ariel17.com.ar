@@ -1,6 +1,6 @@
 .. title: Libros en 2017
 .. slug: libros-en-2017
-.. date: 2017-10-26 09:24:00 UTC-03:00
+.. date: 2017-12-31 09:24:00 UTC-03:00
 .. tags: libros, leer
 .. category: 
 .. link: 
@@ -18,7 +18,7 @@ Novelas
 * |pe|_, de Ursula K. Le Guin (¡regalo de cumpleaños!); **✔**.
 * |wwz|_, de Max Brooks; **✔**.
 * |llttd|_, de  Ava Dellaira; **✔**.
-* |lrc|_, de Ursula K. Le Guin; **☕**.
+* |lrc|_, de Ursula K. Le Guin; **✔**.
 
 Técnicos
 ========
@@ -26,7 +26,8 @@ Técnicos
 * |ts|_, de Donella H. Meadows; **✔**.
 * |tgpl|_, de Alan A. A. Donovan y Brian W. Kernighan; **☕**.
 * |cc|_, de Steve McConnell; **☕**.
-* |ga|_, de Aditya Y. Bhargava;  **☕**.
+* |ga|_, de Aditya Y. Bhargava; **☕**.
+* |mlsp|_, de Richard E. Farley; **☕**.
 
 Personas
 ========
@@ -35,6 +36,7 @@ Personas
 * |dc|_, de Douglas Stone, Bruce Patton, Sheila Heen; **✔**.
 * |7|_, de Stephen R. Covey; **☕**.
 * |tze|_, de Wayne W. Dyer; **✔**.
+* |hi|_, de Gabriel Rolón; **☕**.
 
 Históricos
 ==========
@@ -113,6 +115,13 @@ Historial de cambios
 **04/12**
   * Iniciado |lrc|_.
 
+**15/12**
+  * Finalizado |lrc|_.
+  * Iniciado |mlsp|_.
+
+**30/12**
+  * Iniciado |hi|_.
+
 .. |mp| replace:: Monster Planet
 .. _mp: https://www.goodreads.com/book/show/263549.Monster_Planet
 
@@ -169,3 +178,9 @@ Historial de cambios
 
 .. |lrc| replace:: La Rueda Celeste
 .. _lrc: https://www.goodreads.com/book/show/16120215-la-rueda-celeste
+
+.. |hi| replace:: Historias Inconscientes (Vidas al límite)
+.. _hi: https://www.goodreads.com/book/show/22238338-historias-inconscientes
+
+.. |mlsp| replace:: Managing and Leading Software Projects
+.. _mlsp: https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects
