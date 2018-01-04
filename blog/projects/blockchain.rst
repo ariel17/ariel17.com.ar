@@ -17,10 +17,19 @@ Planificación
 
 * Bibliografía:
 
-  - `The Best Resources for Learning to Build Bitcoin and Block Chain Applications <https://medium.com/zapchain-magazine/the-best-resources-for-learning-to-build-bitcoin-and-block-chain-applications-8de1953506f5>`_.
-  - `How can I get started in developing applications based on cryptocurrency and/or Blockchain? <https://www.quora.com/How-can-I-get-started-in-developing-applications-based-on-cryptocurrency-and-or-Blockchain>`_.
-  - `Mastering Bitcoin 2nd edition: english online <https://github.com/bitcoinbook/bitcoinbook>`_.
-  - `Mastering Bitcoin 1st edition: spanish PDF <https://www.bitcoinbook.info/translations/es/book.pdf>`_.
+  + Referencias:
+
+    - `The Best Resources for Learning to Build Bitcoin and Block Chain Applications <https://medium.com/zapchain-magazine/the-best-resources-for-learning-to-build-bitcoin-and-block-chain-applications-8de1953506f5>`_.
+    - `How can I get started in developing applications based on cryptocurrency and/or Blockchain? <https://www.quora.com/How-can-I-get-started-in-developing-applications-based-on-cryptocurrency-and-or-Blockchain>`_.
+
+  + Libros:
+
+    - `Mastering Bitcoin 2nd edition: english online <https://github.com/bitcoinbook/bitcoinbook>`_.
+    - `Mastering Bitcoin 1st edition: spanish PDF <https://www.bitcoinbook.info/translations/es/book.pdf>`_.
+
+  + Cursos:
+
+    - `Coursera: Bitcoin and Cryptocurrency Technologies <https://es.coursera.org/learn/cryptocurrency>`_.
 
 Desarrollo
 ==========
