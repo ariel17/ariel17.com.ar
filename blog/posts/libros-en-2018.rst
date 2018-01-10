@@ -1,6 +1,6 @@
 .. title: Libros en 2018
 .. slug: libros-en-2018
-.. date: 2018-01-01 00:00:00 UTC-03:00
+.. date: 2018-01-10 00:00:00 UTC-03:00
 .. tags: 
 .. category: 
 .. link: 
@@ -21,22 +21,27 @@ Técnicos
 * |cc|_, de Steve McConnell.
 * |mlsp|_, de Richard E. Farley; **📖**.
 * |me|_, de Charles Platt.
+* |mb|_, de Andreas M. Antonopoulus.
 
 Personas
 ========
 
 * |7|_, de Stephen R. Covey.
-* |hi|_, de Gabriel Rolón; **📖**.
+* |hi|_, de Gabriel Rolón; **✔**.
 * |eh|_, de Martín Caparrós.
 
 Historial de cambios
 ====================
 
-**15/12**
+**15/12/2017**
   * Iniciado |mlsp|_.
 
-**30/12**
+**30/12/2017**
   * Iniciado |hi|_.
+
+**09/01/2018**
+  * Finalizado |hi|_.
+  * Iniciado |mb|_.
 
 .. |lcdt| replace:: La Chica del Tren
 .. _lcdt: https://www.goodreads.com/book/show/25270785-la-chica-del-tren
@@ -73,3 +78,6 @@ Historial de cambios
 
 .. |me| replace:: MAKE: Electronics: Learning Through Discovery
 .. _me: https://www.goodreads.com/book/show/6945716-make
+
+.. |mb| replace:: Mastering Bitcoin
+.. _mb: https://www.goodreads.com/book/show/21820378-mastering-bitcoin
