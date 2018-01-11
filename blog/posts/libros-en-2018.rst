@@ -10,7 +10,7 @@
 Novelas
 =======
 
-* |lcdt|_, de Paula Hawkins.
+* |lcdt|_, de Paula Hawkins; **📖**.
 * |er|_, de Ursula K. Le Guin.
 * |updmi|_, de Ursula K. Le Guin.
 
@@ -21,7 +21,7 @@ Técnicos
 * |cc|_, de Steve McConnell.
 * |mlsp|_, de Richard E. Farley; **📖**.
 * |me|_, de Charles Platt.
-* |mb|_, de Andreas M. Antonopoulus.
+* |mb|_, de Andreas M. Antonopoulus; **📖**.
 
 Personas
 ========
