@@ -10,7 +10,7 @@
 Novelas
 =======
 
-* |lcdt|_, de Paula Hawkins; **📖**.
+* |lcdt|_, de Paula Hawkins; **✔**.
 * |er|_, de Ursula K. Le Guin.
 * |updmi|_, de Ursula K. Le Guin.
 
@@ -42,6 +42,9 @@ Historial de cambios
 **09/01/2018**
   * Finalizado |hi|_.
   * Iniciado |mb|_.
+
+**23/01**
+  * Finalizado |lcdt|_.
 
 .. |lcdt| replace:: La Chica del Tren
 .. _lcdt: https://www.goodreads.com/book/show/25270785-la-chica-del-tren
