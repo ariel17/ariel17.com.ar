@@ -7,4 +7,11 @@
 .. description: 
 .. type: text
 
-Write your post here.
+* Respirar profundo; ante la adversidad, lo primero es la calma y establecer
+  hechos, planificar acciones y tomar cartas en el asunto. Nada va a cambiar
+  sólo por preocuparse.
+* Cambiar sólo una cosa a la vez, con el necesario seguimiento y validación.
+* La planificación inicial va a extenderse más por improvistos.
+* Además de analizar los requerimientos, tener en cuenta y analizar el volumen
+  de datos que el sistema procesará.
+* Verificar supuestos.
