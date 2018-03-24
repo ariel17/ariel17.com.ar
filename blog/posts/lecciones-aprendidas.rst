@@ -15,3 +15,10 @@
 * Además de analizar los requerimientos, tener en cuenta y analizar el volumen
   de datos que el sistema procesará.
 * Verificar supuestos.
+* Para avanzar hay que entender: diagramar sistemas existentes para enteder el
+  contexto y los fundamentos de los requerimientos. |C4|_ ayuda.
+* Ante la falta de evidencia explícita de un evento exterior, asumir que fue
+  el sistema bajo nuestro control el que ha fallado.
+  
+.. _C4: https://c4model.com/
+.. |C4| replace:: C4 Model
