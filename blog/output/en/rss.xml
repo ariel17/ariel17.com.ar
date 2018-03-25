@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos</title><link>https://example.com/</link><description>¿Qué dijo?</description><atom:link href="http://ariel17.com.ar/en/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 15:00:01 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Libros en 2018</title><link>http://ariel17.com.ar/en/blog/libros-en-2018/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="section" id="novelas"&gt;
+&lt;h2&gt;Novelas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/25270785-la-chica-del-tren"&gt;La Chica del Tren&lt;/a&gt;, de Paula Hawkins; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/13112923-el-eterno-regreso-a-casa"&gt;El eterno regreso a casa&lt;/a&gt;, de Ursula K. Le Guin.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/429981.Un_Pescador_del_Mar_Interior"&gt;Un Pescador del Mar Interior&lt;/a&gt;, de Ursula K. Le Guin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tecnicos"&gt;
+&lt;h2&gt;Técnicos&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/25080953-the-go-programming-language"&gt;The Go Programming Language&lt;/a&gt;, de Alan A. A. Donovan y Brian W. Kernighan.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/4845.Code_Complete"&gt;Code Complete&lt;/a&gt;, de Steve McConnell.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects"&gt;Managing and Leading Software Projects&lt;/a&gt;, de Richard E. Farley; &lt;strong&gt;📖&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/6945716-make"&gt;MAKE: Electronics: Learning Through Discovery&lt;/a&gt;, de Charles Platt.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/21820378-mastering-bitcoin"&gt;Mastering Bitcoin&lt;/a&gt;, de Andreas M. Antonopoulus; &lt;strong&gt;📖&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="personas"&gt;
+&lt;h2&gt;Personas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/33519024-los-7-h-bitos-de-la-gente-altamente-efectiva"&gt;7 hábitos de la gente altamente efectiva&lt;/a&gt;, de Stephen R. Covey.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/22238338-historias-inconscientes"&gt;Historias Inconscientes (Vidas al límite)&lt;/a&gt;, de Gabriel Rolón; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/23158491-el-hambre"&gt;El Hambre&lt;/a&gt;, de Martín Caparrós.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="historial-de-cambios"&gt;
+&lt;h2&gt;Historial de cambios&lt;/h2&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;strong&gt;15/12/2017&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects"&gt;Managing and Leading Software Projects&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;30/12/2017&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/22238338-historias-inconscientes"&gt;Historias Inconscientes (Vidas al límite)&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;09/01/2018&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/22238338-historias-inconscientes"&gt;Historias Inconscientes (Vidas al límite)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/21820378-mastering-bitcoin"&gt;Mastering Bitcoin&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;23/01&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/25270785-la-chica-del-tren"&gt;La Chica del Tren&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/libros-en-2018/</guid><pubDate>Wed, 10 Jan 2018 03:00:00 GMT</pubDate></item><item><title>Libros en 2017</title><link>http://ariel17.com.ar/en/blog/libros-en-2017/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="section" id="novelas"&gt;
+&lt;h2&gt;Novelas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/263549.Monster_Planet"&gt;Monster Planet&lt;/a&gt;, de David Wellington (#3); &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/2176517.La_daga"&gt;La daga&lt;/a&gt;, de Philip Pullman (Materia Oscura #2); &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/45487.El_catalejo_lacado"&gt;El catalejo lacado&lt;/a&gt;, de Philip Pullman (Materia Oscura #3); &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/13112923-el-eterno-regreso-a-casa"&gt;El eterno regreso a casa&lt;/a&gt;, de Ursula K. Le Guin (¡regalo de Papá Noel!); &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces"&gt;La conjura de los necios&lt;/a&gt;, de John Kennedy Toole; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/201882.Planet_of_Exile"&gt;Planeta de Exilio&lt;/a&gt;, de Ursula K. Le Guin (¡regalo de cumpleaños!); &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/8908.World_War_Z"&gt;World War Z: An Oral History of the Zombie War&lt;/a&gt;, de Max Brooks; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/18140047-love-letters-to-the-dead"&gt;Cartas de Amor a los Muertos&lt;/a&gt;, de  Ava Dellaira; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/16120215-la-rueda-celeste"&gt;La Rueda Celeste&lt;/a&gt;, de Ursula K. Le Guin; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tecnicos"&gt;
+&lt;h2&gt;Técnicos&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/3828902-thinking-in-systems"&gt;Thinking in Systems: A Primer&lt;/a&gt;, de Donella H. Meadows; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/25080953-the-go-programming-language"&gt;The Go Programming Language&lt;/a&gt;, de Alan A. A. Donovan y Brian W. Kernighan; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/4845.Code_Complete"&gt;Code Complete&lt;/a&gt;, de Steve McConnell; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio"&gt;Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People&lt;/a&gt;, de Aditya Y. Bhargava; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects"&gt;Managing and Leading Software Projects&lt;/a&gt;, de Richard E. Farley; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="personas"&gt;
+&lt;h2&gt;Personas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/313605.Getting_to_Yes"&gt;Getting to Yes: Negotiating an Agreement Without Giving In&lt;/a&gt;, de  Roger Fisher, William Ury y Bruce Patton.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/774088.Difficult_Conversations"&gt;Difficult Conversations: How to Discuss What Matters Most&lt;/a&gt;, de Douglas Stone, Bruce Patton, Sheila Heen; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/33519024-los-7-h-bitos-de-la-gente-altamente-efectiva"&gt;7 hábitos de la gente altamente efectiva&lt;/a&gt;, de Stephen R. Covey; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/357886.Your_Erroneous_Zones"&gt;Tus Zonas Erroneas&lt;/a&gt;, de Wayne W. Dyer; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/22238338-historias-inconscientes"&gt;Historias Inconscientes (Vidas al límite)&lt;/a&gt;, de Gabriel Rolón; &lt;strong&gt;☕&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="historicos"&gt;
+&lt;h2&gt;Históricos&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.goodreads.com/book/show/28461182-espadas-y-corazones"&gt;Espadas y corazones: El costado humano de la historia argentina&lt;/a&gt;, de Daniel Balmaceda; &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="historial-de-cambios"&gt;
+&lt;h2&gt;Historial de cambios&lt;/h2&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;&lt;strong&gt;02/01&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Creación de la lista.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;06/01&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalización del libro &lt;a class="reference external" href="https://www.goodreads.com/book/show/263549.Monster_Planet"&gt;Monster Planet&lt;/a&gt; (2017 arrancó al 70% de progreso :P).&lt;/li&gt;
+&lt;li&gt;Inicio del libro &lt;a class="reference external" href="https://www.goodreads.com/book/show/3828902-thinking-in-systems"&gt;Thinking in Systems: A Primer&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;08/01&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Agregados los libros &lt;a class="reference external" href="https://www.goodreads.com/book/show/313605.Getting_to_Yes"&gt;Getting to Yes: Negotiating an Agreement Without Giving In&lt;/a&gt; y &lt;a class="reference external" href="https://www.goodreads.com/book/show/774088.Difficult_Conversations"&gt;Difficult Conversations: How to Discuss What Matters Most&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;05/02&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Cambiado &lt;a class="reference external" href="https://www.goodreads.com/book/show/20317942-la-br-jula-dorada"&gt;La brújula dorada&lt;/a&gt; por &lt;a class="reference external" href="http://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces"&gt;La conjura de los necios&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;03/03&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Agregado &lt;a class="reference external" href="http://www.goodreads.com/book/show/201882.Planet_of_Exile"&gt;Planeta de Exilio&lt;/a&gt;; finalización.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;07/03&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Terminado &lt;a class="reference external" href="http://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces"&gt;La conjura de los necios&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Agregado &lt;a class="reference external" href="http://www.goodreads.com/book/show/28461182-espadas-y-corazones"&gt;Espadas y corazones: El costado humano de la historia argentina&lt;/a&gt;; inicio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;22/03&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Terminado &lt;a class="reference external" href="http://www.goodreads.com/book/show/28461182-espadas-y-corazones"&gt;Espadas y corazones: El costado humano de la historia argentina&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="https://www.goodreads.com/book/show/774088.Difficult_Conversations"&gt;Difficult Conversations: How to Discuss What Matters Most&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;25/04&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Terminado &lt;a class="reference external" href="https://www.goodreads.com/book/show/774088.Difficult_Conversations"&gt;Difficult Conversations: How to Discuss What Matters Most&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="https://www.goodreads.com/book/show/2176517.La_daga"&gt;La daga&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;10/05&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Terminado &lt;a class="reference external" href="https://www.goodreads.com/book/show/2176517.La_daga"&gt;La daga&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="https://www.goodreads.com/book/show/3828902-thinking-in-systems"&gt;Thinking in Systems: A Primer&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;17/05&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Agregado &lt;a class="reference external" href="https://www.goodreads.com/book/show/33519024-los-7-h-bitos-de-la-gente-altamente-efectiva"&gt;7 hábitos de la gente altamente efectiva&lt;/a&gt;; inicio (reemplazo de &lt;a class="reference external" href="https://www.goodreads.com/book/show/3828902-thinking-in-systems"&gt;Thinking in Systems: A Primer&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;17/06&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/3828902-thinking-in-systems"&gt;Thinking in Systems: A Primer&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Agregado &lt;a class="reference external" href="http://www.goodreads.com/book/show/8908.World_War_Z"&gt;World War Z: An Oral History of the Zombie War&lt;/a&gt;; inicio.&lt;/li&gt;
+&lt;li&gt;Agregado &lt;a class="reference external" href="http://www.goodreads.com/book/show/25080953-the-go-programming-language"&gt;The Go Programming Language&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;20/07&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="http://www.goodreads.com/book/show/8908.World_War_Z"&gt;World War Z: An Oral History of the Zombie War&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="http://www.goodreads.com/book/show/25080953-the-go-programming-language"&gt;The Go Programming Language&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="https://www.goodreads.com/book/show/2176517.La_daga"&gt;La daga&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;30/08&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Inicio de &lt;a class="reference external" href="https://www.goodreads.com/book/show/4845.Code_Complete"&gt;Code Complete&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;13/09&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/2176517.La_daga"&gt;La daga&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;14/09&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/18140047-love-letters-to-the-dead"&gt;Cartas de Amor a los Muertos&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;18/09&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/357886.Your_Erroneous_Zones"&gt;Tus Zonas Erroneas&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;20/09&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/22847284-grokking-algorithms-an-illustrated-guide-for-programmers-and-other-curio"&gt;Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;26/10&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/18140047-love-letters-to-the-dead"&gt;Cartas de Amor a los Muertos&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;07/11&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/357886.Your_Erroneous_Zones"&gt;Tus Zonas Erroneas&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;04/12&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/16120215-la-rueda-celeste"&gt;La Rueda Celeste&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;15/12&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Finalizado &lt;a class="reference external" href="https://www.goodreads.com/book/show/16120215-la-rueda-celeste"&gt;La Rueda Celeste&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/5115607-managing-and-leading-software-projects"&gt;Managing and Leading Software Projects&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;30/12&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Iniciado &lt;a class="reference external" href="https://www.goodreads.com/book/show/22238338-historias-inconscientes"&gt;Historias Inconscientes (Vidas al límite)&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/libros-en-2017/</guid><pubDate>Sun, 31 Dec 2017 12:24:00 GMT</pubDate></item><item><title>Links semana #40</title><link>http://ariel17.com.ar/en/blog/links-2017-10-02/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://dev.to/lpasqualis/personal-brand-development-for-software-engineers-ac6"&gt;https://dev.to/lpasqualis/personal-brand-development-for-software-engineers-ac6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/LappleApple/awesome-leading-and-managing/blob/master/Abilities-Qualities-Values.md"&gt;https://github.com/LappleApple/awesome-leading-and-managing/blob/master/Abilities-Qualities-Values.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://clypd.com/database-testing-patterns-in-go/"&gt;http://clypd.com/database-testing-patterns-in-go/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><guid>http://ariel17.com.ar/en/blog/links-2017-10-02/</guid><pubDate>Tue, 03 Oct 2017 15:24:37 GMT</pubDate></item><item><title>Links que valen la pena</title><link>http://ariel17.com.ar/en/blog/links-que-valen-la-pena/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.reddit.com/r/personalfinance/comments/72a60p/jobs_arent_just_money/"&gt;https://www.reddit.com/r/personalfinance/comments/72a60p/jobs_arent_just_money/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.reddit.com/r/GetMotivated/comments/70ujmd/image_oc_last_weekend_i_found_myself_lost_and/"&gt;https://www.reddit.com/r/GetMotivated/comments/70ujmd/image_oc_last_weekend_i_found_myself_lost_and/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://tmrts.com/go-patterns/"&gt;http://tmrts.com/go-patterns/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/golang/go/wiki/LearnConcurrency"&gt;https://github.com/golang/go/wiki/LearnConcurrency&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><guid>http://ariel17.com.ar/en/blog/links-que-valen-la-pena/</guid><pubDate>Mon, 25 Sep 2017 18:39:26 GMT</pubDate></item><item><title>Music VII</title><link>http://ariel17.com.ar/en/blog/music-vii/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/0LFhsYwNuvQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><guid>http://ariel17.com.ar/en/blog/music-vii/</guid><pubDate>Mon, 11 Sep 2017 20:02:14 GMT</pubDate></item><item><title>Music VI</title><link>http://ariel17.com.ar/en/blog/music-vi/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dg2Oo8z_yR0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><guid>http://ariel17.com.ar/en/blog/music-vi/</guid><pubDate>Mon, 11 Sep 2017 20:00:39 GMT</pubDate></item><item><title>Music V</title><link>http://ariel17.com.ar/en/blog/music-v/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/er416Ad3R1g" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><guid>http://ariel17.com.ar/en/blog/music-v/</guid><pubDate>Mon, 11 Sep 2017 19:57:16 GMT</pubDate></item><item><title>(x,y) parte 2</title><link>http://ariel17.com.ar/en/blog/xy-parte-2/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
+significativas del mismo.&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-1"&gt;&lt;/a&gt;./xy
+&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-2"&gt;&lt;/a&gt;  ├── android
+&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-3"&gt;&lt;/a&gt;  ├── api
+&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-4"&gt;&lt;/a&gt;  └── web
+&lt;/pre&gt;&lt;div class="section" id="android"&gt;
+&lt;h2&gt;Android&lt;/h2&gt;
+&lt;p&gt;La aplicación es por ahora sólamente un formulario que solicita un PIN
+existente y lo envía a otro Intent. Es el template para que en la siguiente
+iteración agregue la comunicación con la API y reporte de errores de la misma.&lt;/p&gt;
+&lt;style&gt;
+  .android {
+    margin-right: 20px;
+  }
+&lt;/style&gt;&lt;img alt="/galleries/xy/android1.png" class="android" src="http://ariel17.com.ar/galleries/xy/android1.png"&gt;
+&lt;img alt="/galleries/xy/android2.png" class="android" src="http://ariel17.com.ar/galleries/xy/android2.png"&gt;
+&lt;img alt="/galleries/xy/android3.png" class="android" src="http://ariel17.com.ar/galleries/xy/android3.png"&gt;
+&lt;/div&gt;
+&lt;div class="section" id="api"&gt;
+&lt;h2&gt;API&lt;/h2&gt;
+&lt;p&gt;Hasta el momento, la API sólo responde de manera simulada el procesamiento de
+los datos que recibe.&lt;/p&gt;
+&lt;div class="section" id="subjects"&gt;
+&lt;h3&gt;Subjects&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;URL: &lt;cite&gt;/subjects&lt;/cite&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Representa a las operaciones relacionadas con las personas o cosas que se
+desea seguir en la superficie.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/subjects  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-4"&gt;&lt;/a&gt;Content-Type: application/json
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:26:37 GMT
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-6"&gt;&lt;/a&gt;Content-Length: 91
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Current"&lt;/span&gt;:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Latitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"Longitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"CreatedAt"&lt;/span&gt;:&lt;span class="s2"&gt;"0001-01-01T00:00:00Z"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;,&lt;span class="s2"&gt;"History"&lt;/span&gt;:null&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="registration"&gt;
+&lt;h3&gt;Registration&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;URL: &lt;cite&gt;/registration&lt;/cite&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Es el punto de registro de los dispositivos a seguir. El pin es un valor
+alfanumérico que se supone ya creado por la misma plataforma y asociado a un
+usuario existente que quiere agregar ese dispositivo. La operación asocia el
+mismo con el usuario y provee un ID único para facilitar la entrega de los
+datos de localización.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/register --data &lt;span class="s2"&gt;"pin=1234"&lt;/span&gt;  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-4"&gt;&lt;/a&gt;Content-Type: application/json
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:29:38 GMT
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-6"&gt;&lt;/a&gt;Content-Length: 98
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"success"&lt;/span&gt;:true,&lt;span class="s2"&gt;"message"&lt;/span&gt;:&lt;span class="s2"&gt;"Successfully created ID."&lt;/span&gt;,&lt;span class="s2"&gt;"id"&lt;/span&gt;:&lt;span class="s2"&gt;"65336dad-9e7f-4c7a-9f5b-04eeb1a5149c"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Se hace evidente que &lt;cite&gt;/register&lt;/cite&gt; es un recurso que pertenece a &lt;cite&gt;/subjects&lt;/cite&gt;; lo
+moveré en la siguiente iteración.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="web"&gt;
+&lt;h2&gt;Web&lt;/h2&gt;
+&lt;p&gt;Se configuró el sistema de template nativo de Go (a forma de prueba de
+concepto) y los paquetes NPM a usar en el futuro: &lt;a class="reference external" href="https://gruntjs.com/"&gt;Grunt&lt;/a&gt;, &lt;a class="reference external" href="https://bower.io/"&gt;Bower&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="otras-entradas"&gt;
+&lt;h2&gt;Otras entradas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://ariel17.com.ar/blog/xy-parte-1/"&gt;(x,y) parte 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/xy-parte-2/</guid><pubDate>Sun, 09 Jul 2017 22:20:46 GMT</pubDate></item><item><title>(x,y) parte 1</title><link>http://ariel17.com.ar/en/blog/xy-parte-1/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Quiero hacer un proyecto personal en Go, también quiero hacer uno en Android, y
+para aprovechar ambas intenciones voy a usarlas en un mismo objetivo: &lt;strong&gt;un
+sistema de rastreo de personas&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="section" id="definicion-del-problema"&gt;
+&lt;h2&gt;Definición del &lt;em&gt;problema&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Un sistema capaz de proveer a un usuario la informacion geográfica de ciertos
+individuos (previamente indicados por éste) y ubicarlos en un mapa. En
+condiciones ideales, el margen de error respecto a la posición real de la
+persona no debe superar los 60 segundos. Se debe guardar el historial de
+posiciones de los individuos registrados durante el período de 1 día, aún si el
+usuario no está utilizando el sistema.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="analisis"&gt;
+&lt;h2&gt;Análisis&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Se utilizará el GPS de los dispositivos Android que los individuos porten
+para obtener la información geográfica. Para obtener acceder a dicha
+información es necesario una aplicación que pueda capturarla y enviarla a un
+punto de reporte.&lt;/li&gt;
+&lt;li&gt;Siendo que la idea es tener información de los individuos aún cuando el
+usuario no esté usando el sistema, será necesario tener un punto de
+comunicación en común para las partes que idealmente esté siempre
+disponible. Se usará un VPS para proveer dicha funcionalidad.&lt;/li&gt;
+&lt;li&gt;Siguiendo la línea del punto anterior, se implementará una API REST para la
+comunicación entre el server y la aplicación Andriod.&lt;/li&gt;
+&lt;li&gt;El usuario deberá tener una interfaz en la cual pueda cargar datos de
+identificación de los individuos a monitorear. La misma será una aplicación
+web que almacene los datos y los disponibilice en el sistema.&lt;/li&gt;
+&lt;li&gt;La interfaz web también será el medio por el cual se visualizará la posición
+de los individuos, comunicándose con la API para obtener las
+actualizaciones.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png" src="https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png"&gt;
+&lt;/div&gt;
+&lt;div class="section" id="observasciones-tecnicas"&gt;
+&lt;h2&gt;Observasciones técnicas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;No se van a usar frameworks.&lt;/li&gt;
+&lt;li&gt;El componente API y Web del sistema serán implementados en Go.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gestion-del-proyecto"&gt;
+&lt;h2&gt;Gestión del proyecto&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Repositorio: &lt;a class="reference external" href="https://github.com/ariel17/xy"&gt;ariel17/xy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/ariel17/xy/milestones"&gt;Milestones&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="otras-entradas"&gt;
+&lt;h2&gt;Otras entradas&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://ariel17.com.ar/blog/xy-parte-2/"&gt;(x,y) parte 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/xy-parte-1/</guid><pubDate>Sun, 02 Jul 2017 00:34:51 GMT</pubDate></item><item><title>Go en ViM</title><link>http://ariel17.com.ar/en/blog/go-en-vim/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Estoy armando mi ambiente local para programar en Go. Estoy analizando quizás
+comenzar a usar &lt;a class="reference external" href="https://code.visualstudio.com/"&gt;Visual Studio Code&lt;/a&gt;, pero como fallback quiero dejar ViM correctamente
+configurado. Se asume que &lt;a class="reference external" href="https://github.com/VundleVim/Vundle.vim"&gt;VundleVim/Vundle.vim&lt;/a&gt; y &lt;a class="reference external" href="https://github.com/scrooloose/nerdtree"&gt;NERD Tree&lt;/a&gt; ya está instalados.&lt;/p&gt;
+&lt;div class="section" id="dependencias-del-sistema-operativo"&gt;
+&lt;h2&gt;Dependencias del sistema operativo&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ViM v7.4&lt;/li&gt;
+&lt;li&gt;Exhuberant ctags v5.8&lt;/li&gt;
+&lt;li&gt;Go v1.8.3&lt;/li&gt;
+&lt;li&gt;Go tags: &lt;cite&gt;go get -u github.com/jstemmer/gotags&lt;/cite&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="plugins-a-usar"&gt;
+&lt;h2&gt;Plugins a usar&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/fatih/vim-go"&gt;fatih/vim-go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/Shougo/neocomplete.vim"&gt;Shougo/neocomplete.vim&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Configuraciones en .vimrc&lt;/p&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;syntax&lt;/span&gt; enable
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;filetype&lt;/span&gt; plugin &lt;span class="k"&gt;on&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;number&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_disable_autoinstall &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Highlight&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_highlight_functions &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_highlight_methods &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_highlight_structs &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_highlight_operators &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:go_highlight_build_constraints &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-13"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Autocomplete&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-14"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:neocomplete#enable_at_startup &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-15"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-16"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Tags&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:tagbar_type_go &lt;span class="p"&gt;=&lt;/span&gt; {
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-18"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'ctagstype'&lt;/span&gt; : &lt;span class="s1"&gt;'go'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-19"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'kinds'&lt;/span&gt;     : [
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-20"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'p:package'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-21"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'i:imports:1'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-22"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'c:constants'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-23"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'v:variables'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-24"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'t:types'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-25"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'n:interfaces'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-26"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'w:fields'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-27"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'e:embedded'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-28"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'m:methods'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-29"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'r:constructor'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-30"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'f:functions'&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-31"&gt;&lt;/a&gt;    \ ]&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-32"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'sro'&lt;/span&gt; : &lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-33"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'kind2scope'&lt;/span&gt; : {
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-34"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'t'&lt;/span&gt; : &lt;span class="s1"&gt;'ctype'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-35"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'n'&lt;/span&gt; : &lt;span class="s1"&gt;'ntype'&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-36"&gt;&lt;/a&gt;    \ }&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-37"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'scope2kind'&lt;/span&gt; : {
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-38"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'ctype'&lt;/span&gt; : &lt;span class="s1"&gt;'t'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-39"&gt;&lt;/a&gt;        \ &lt;span class="s1"&gt;'ntype'&lt;/span&gt; : &lt;span class="s1"&gt;'n'&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-40"&gt;&lt;/a&gt;    \ }&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-41"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'ctagsbin'&lt;/span&gt;  : &lt;span class="s1"&gt;'gotags'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-42"&gt;&lt;/a&gt;    \ &lt;span class="s1"&gt;'ctagsargs'&lt;/span&gt; : &lt;span class="s1"&gt;'-sort -silent'&lt;/span&gt;
+&lt;a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-43"&gt;&lt;/a&gt;\ }
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="todo-junto"&gt;
+&lt;h2&gt;Todo junto&lt;/h2&gt;
+&lt;p&gt;Ejecutando &lt;cite&gt;:GoInstallBinaries&lt;/cite&gt; &lt;a class="reference external" href="https://github.com/fatih/vim-go"&gt;vim-go&lt;/a&gt; termina de instalar los binarios
+necesarios para ser usados dentro de ViM.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/go-en-vim/</guid><pubDate>Fri, 02 Jun 2017 18:24:21 GMT</pubDate></item></channel></rss>

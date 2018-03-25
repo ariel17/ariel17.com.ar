@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (linux)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/linux.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 15:00:02 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fixing home and end keys in Vim</title><link>http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Adding this to &lt;cite&gt;~/.vimrc&lt;/cite&gt; file fixes incorrect HOME &amp;amp; END key behavior:&lt;/p&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Home key&lt;/span&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-2"&gt;&lt;/a&gt;imap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OH &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;i
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-3"&gt;&lt;/a&gt;cmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OH &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;home&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-4"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OH &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" End key&lt;/span&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-7"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OF $
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-8"&gt;&lt;/a&gt;imap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OF &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;$&lt;span class="k"&gt;a&lt;/span&gt;
+&lt;a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-9"&gt;&lt;/a&gt;cmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;esc&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;OF &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>arch</category><category>linux</category><category>vim</category><guid>http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/</guid><pubDate>Thu, 29 Dec 2016 04:03:49 GMT</pubDate></item><item><title>Creando ambientes con Contenedores Linux</title><link>http://ariel17.com.ar/blog/lxc-environments/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Gracias a las herramientas de virtualización es muy fácil hoy en día crear
+rápidamente ambientes compuestos por múltiples instancias. &lt;a class="reference external" href="http://www.vmware.com/"&gt;VMWare&lt;/a&gt; o
+&lt;a class="reference external" href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt; son buenas opciones cuando el sistema operativo a ejecutar en la
+máquina virtual es distinto al del sistema anfitrión, pero a la hora de
+virtualizar un Linux sobre otro Linux el abanico de opciones se abre hacia
+otras opciones más &lt;em&gt;baratas&lt;/em&gt; en cuanto al consumo de recursos.&lt;/p&gt;
+&lt;div class="section" id="linux-containers"&gt;
+&lt;h2&gt;Linux Containers&lt;/h2&gt;
+&lt;p&gt;Si el ambiente que deseamos crear (o replicar) consiste sólo de instancias
+Linux existe una herramienta llamada &lt;a class="reference external" href="https://linuxcontainers.org/"&gt;LXC&lt;/a&gt;: Linux Containers. No es una máquina
+virtual sino que provee un &lt;em&gt;entorno&lt;/em&gt; virtual, separando espacios de procesos
+y redes, funcionalidad que provee el propio núcleo de Linux desde la versión
+2.6.29 con la integración de &lt;a class="reference external" href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"&gt;cgroups&lt;/a&gt;. Sin la sobrecarga de simular una máquina
+virtual por completo hay más recursos disponibles para ser aprovechados.&lt;/p&gt;
+&lt;p&gt;Pueden obtener más información en la &lt;a class="reference external" href="https://linuxcontainers.org/"&gt;página oficial de LXC&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="instalacion"&gt;
+&lt;h3&gt;Instalación&lt;/h3&gt;
+&lt;p&gt;Podemos instalar LXC directamente desde los repositorios de software de la
+distribución que estemos usando:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6a8426b2d2b3488a9709aa69201c44f6-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lxc  &lt;span class="c"&gt;# for Debian-based distros&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;También podemos instalar la versión &lt;em&gt;bleeding edge&lt;/em&gt; directamente desde el
+&lt;a class="reference external" href="https://github.com/lxc/lxc"&gt;repositorio de GitHub&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install git  &lt;span class="c"&gt;# if you don't have installed git yet&lt;/span&gt;
+&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git@github.com:lxc/lxc.git
+&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo su
+&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;#$ cd lxc &amp;amp;&amp;amp; ./autogen.sh &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="creacion-de-intancias"&gt;
+&lt;h3&gt;Creación de intancias&lt;/h3&gt;
+&lt;p&gt;La creación de containers puede realizarse mediante los templates o indicar
+manualmente qué imagen utilizar.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4e62fc9411e84a878f9fce742c778408-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu1 -t ubuntu  &lt;span class="c"&gt;# creates a container named ubuntu1 using the ubuntu template&lt;/span&gt;
+&lt;a name="rest_code_4e62fc9411e84a878f9fce742c778408-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+&lt;/pre&gt;&lt;p&gt;De esta manera, la creación de los containers se realiza sin más intervención
+de parte del usuario. También existe una manera de crearlos de manera
+interactiva, visualizando las distribuciones y arquitecturas disponibles:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5defffefc920475f880d3041c0a2bf1f-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -t download -n ubuntu3
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="visualizar-las-instancias-creadas"&gt;
+&lt;h3&gt;Visualizar las instancias creadas&lt;/h3&gt;
+&lt;p&gt;Para ver las instancias disponibles se puede hacer uso del comando
+&lt;code&gt;lxc-ls&lt;/code&gt;. Este mostrará sólo los nombres pero usando el parámetro
+&lt;code&gt;--fancy&lt;/code&gt; flag agregará más información útil sobre ellas:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-ls --fancy
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-3"&gt;&lt;/a&gt;NAME     STATE    IPV4        IPV6  AUTOSTART
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-4"&gt;&lt;/a&gt;---------------------------------------------
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-5"&gt;&lt;/a&gt;ubuntu1  RUNNING  10.0.3.228  -     NO
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-6"&gt;&lt;/a&gt;ubuntu2  RUNNING  10.0.3.147  -     NO
+&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-7"&gt;&lt;/a&gt;ubuntu3  STOPPED  -           -     NO
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="acceder-a-una-instancia"&gt;
+&lt;h3&gt;Acceder a una instancia&lt;/h3&gt;
+&lt;p&gt;Obtener acceso a la terminal de una instancia puede realizarse con el comando
+&lt;code&gt;lxc-console -n &amp;lt;instance-name&amp;gt;&lt;/code&gt;. Ejecutar este comando es equivalente a
+obtener el acceso a una terminal física del host; &lt;strong&gt;no una conexión remota&lt;/strong&gt;.
+Para poder cerrar la conexión a esta terminal basta con ingresar
+&lt;code&gt;Ctrl-a+q&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5bec73f3d7ef4d7a8696f7c25af1005d-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-console -n db  &lt;span class="c"&gt;# enter Ctrl-a+q to close the session&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="una-consola-web-para-controlar-a-todos"&gt;
+&lt;h2&gt;Una consola web para controlar a todos&lt;/h2&gt;
+&lt;p&gt;Existe un proyecto llamado &lt;a class="reference external" href="http://claudyus.github.io/LXC-Web-Panel/"&gt;LXC Web Panel&lt;/a&gt; (un &lt;a class="reference external" href="http://lxc-webpanel.github.io/"&gt;fork del proyecto original&lt;/a&gt;
+para versiones de lxc&amp;gt;=1.0) que es justamente un sito web para la
+administración de los contenedores Linux. Ofrece además de las herramientas de
+control, reportes estadísiticos para la visualización del consumo de recursos
+tanto del host como de los contenedores.&lt;/p&gt;
+&lt;div class="section" id="instalando-web-panel"&gt;
+&lt;h3&gt;Instalando Web Panel&lt;/h3&gt;
+&lt;p&gt;Para instalar el panel web debemos agregar el paquete a nuestro repositorio
+local, instalarlo y cambiar las configuraciones por defecto si así lo
+consideramos necesario:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://claudyus.github.io/LXC-Web-Panel/ ./"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/lwp.list
+&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get update
+&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-4"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lwp
+&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  &lt;span class="c"&gt;# using default configuration&lt;/span&gt;
+&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-6"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo service lwp start
+&lt;/pre&gt;&lt;p&gt;Voy a asumir que se usaron las configuraciones por defecto; si realizaron
+cambios no olviden adaptar los ejemplos de aquí a sus casos particulares. Una
+vez terminada la instalación, abrimos un browser y nos dirigimos a la dirección
+web &lt;a class="reference external" href="http://localhost:5000/"&gt;http://localhost:5000/&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Login en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/login.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;p&gt;Usando &lt;code&gt;admin&lt;/code&gt; como usuario y contraseña por defecto, accederemos al
+panel y nos mostrará una visión de los recursos utilizados tanto por el host
+como por los contenedores, así como links a configuraciones de red y de las
+instancias:&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Dashboard en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/dashboard.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;p&gt;Accediendo a alguna de las instancias listadas en la región izquierda veremos
+la información asociada a la misma, tal como el estado de ejecución,
+propiedades de red, cantidad de procesadores, límites de memoria, ubicación de
+la imagen, etc.&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Dashboard en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/instance.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="armando-un-esquema-propio"&gt;
+&lt;h2&gt;Armando un esquema propio&lt;/h2&gt;
+&lt;p&gt;Recomiendo leer el post &lt;a class="reference external" href="http://containerops.org/2013/11/19/lxc-networking/"&gt;Exploring LXC Networking&lt;/a&gt; donde se ejemplifica de
+manera profunda cada combinación de configuración según el escenario que se
+quiera establecer, como conectividad al exterior y/o entre nodos y utilización
+de interfaces existentes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="otras-tecnologias-similares"&gt;
+&lt;h2&gt;Otras tecnologías similares&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://openvz.org/"&gt;OpenVZ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://linux-vserver.org/"&gt;Linux-VServer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; (basado en LXC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>desarrollo</category><category>linux</category><category>virtualización</category><guid>http://ariel17.com.ar/blog/lxc-environments/</guid><pubDate>Sat, 02 Aug 2014 13:07:23 GMT</pubDate></item><item><title>Tiempo de crecer</title><link>http://ariel17.com.ar/blog/time-to-grow-up/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;img alt="El que trabaja. Y el papá." class="thumbnail align-left" src="http://ariel17.com.ar/galleries/time-to-grow-up/working_hard.jpg" style="width: 400.0px;"&gt;
+&lt;p&gt;No hace mucho que, cuando trabajaba por las noches en mi casa con la notebook, mi nene traía una pizarra y un teclado viejo que no servía para sentarse a mi lado a darle a las teclas de esa computadora imaginaria y refunfuñar como yo lo hacía. Además de pensar lo afortunado de tener semejante colega haciéndome el aguante a esas horas, se me asomaba la idea de que en algún momento tendría que ponerme manos a la obra en enseñarle &lt;strong&gt;Linux&lt;/strong&gt; de alguna manera. Obviamente no era el momento para abrir las puertas de ese mundo, pero entonces asomó otra pregunta: "&lt;em&gt;¿Y cuándo será el momento preciso?&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;El manejo de la interfaz gráfica de la computadora en los chicos parece ser un conocimiento prácticamente natural; más aún en las interfaces nuevas de los teléfonos y tabletas. Seguramente la asimilación del concepto "&lt;em&gt;muevo el puntero con el mouse + click&lt;/em&gt;" se aprende mediante observación (es mi humilde opinión; no tengo investigación alguna que me lo confirme ;)), ya que en casa usamos la computadora de manera cotidiana y como mucho fue explicarle qué significan algunos símbolos. Al principio fue pinchar todo lo que se veía en la pantalla pero el concepto ya estaba en su mente. Ahora ya maneja sitios complejos como &lt;a class="reference external" href="http://www.youtube.com/"&gt;YouTube&lt;/a&gt; sólo siguiendo la interfaz, ya que todavía no sabe leer.&lt;/p&gt;
+&lt;p&gt;Asumiendo que el aprendizaje de lectura-escritura esté completo de forma que le permita realizar operaciones básicas (leer de la pantalla y escribir palabras con el teclado), sería cuestion de buscar la forma de hacerle interesante el mundo de la informática por afuera de la web... Quizás le interese armar su propia computadora. \o/&lt;/p&gt;
+&lt;div class="section" id="el-equipo-suficiente"&gt;
+&lt;h2&gt;El equipo suficiente&lt;/h2&gt;
+&lt;p&gt;Esta idea la tuvo &lt;em&gt;mucho antes&lt;/em&gt; que yo alguien &lt;em&gt;mucho más inteligente&lt;/em&gt; que yo y creó el proyecto &lt;a class="reference external" href="http://get.kano.me/"&gt;Kano&lt;/a&gt; mediante &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Micromecenazgo"&gt;crowdfunding&lt;/a&gt;: es básicamente una computadora &lt;a class="reference external" href="http://www.raspberrypi.org/"&gt;RaspberryPi&lt;/a&gt; con un sistema operativo Linux, un teclado inalámbrico, un parlante y muchos colores. En mi opinión, si uno tiene el dinero y la paciencia de esperar el envío, este es el mejor regalo que se le puede hacer a un chico y más si se pretende que este chico aprenda por sus propios medios y adquiera el interés por las computadoras más allá de la web y los jueguitos. El precio es de USD$ 129... no está mal.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Pero&lt;/em&gt; yo no suelo tener paciencia para esperar y menos a que una adquisición internacional y voladora llegue de una buena vez a su destino, así que me puse a buscar otras opciones. Y más ganas tuve de buscarlas cuando entendí que &lt;a class="reference external" href="http://get.kano.me/"&gt;Kano&lt;/a&gt; necesita un monitor con entrada &lt;a class="reference external" href="http://es.wikipedia.org/wiki/High-Definition_Multimedia_Interface"&gt;HDMI&lt;/a&gt; para ser usado :/ por lo que deja de ser portable (¡que sea tan chiquito pero no portable no me gusta!). Una buena opción es &lt;a class="reference external" href="http://listado.mercadolibre.com.ar/netbook-usadas"&gt;comprar una netbook&lt;/a&gt;: casi mismo precio, mejores prestaciones y la relación de tamaño entre el teclado y la mano del chico de ~6 años es casi perfecta.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="que-le-vamos-a-instalar"&gt;
+&lt;h2&gt;Qué le vamos a instalar&lt;/h2&gt;
+&lt;p&gt;Linux :D&lt;/p&gt;
+&lt;p&gt;Hay muchas distribuciones para chicos dando vueltas &lt;a class="reference external" href="https://www.google.com.ar/search?q=linux+para+ni%C3%B1os"&gt;según lo que me dijo Google&lt;/a&gt; y a ojo destacan estas tres:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://huayra.conectarigualdad.gob.ar/"&gt;Huayra&lt;/a&gt;: Una distribución basada en &lt;a class="reference external" href="https://www.debian.org/"&gt;Debian&lt;/a&gt; de nacionalidad argentina &amp;lt;3.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.qimo4kids.com/"&gt;Qimo&lt;/a&gt;: Una distro basada en &lt;a class="reference external" href="http://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt;, se ve muy llamativa en la interfaz y simplifica el entorno de trabajo. Pareciera un proyecto encarado seriamente pero no veo que tenga mucha actividad últimamente...&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.edubuntu.org/"&gt;Edubuntu&lt;/a&gt;: Otra basada en &lt;a class="reference external" href="http://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt;. Esta distro está orientada a aportar herramientas académicas y ser usado en ambientes escolares.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.edubuntu.org/"&gt;Edubuntu&lt;/a&gt; quizás sea útil para hacer las tareas, pero lo que más quiero &lt;strong&gt;ahora&lt;/strong&gt; es que aprenda a menejarse él solo dentro del entorno.
+&lt;a class="reference external" href="http://huayra.conectarigualdad.gob.ar/"&gt;Huayra&lt;/a&gt; no parece ofrecerme un entorno más ameno para un niño, por lo que vamos a dejarlo para más adelante también.
+&lt;a class="reference external" href="http://www.qimo4kids.com/"&gt;Qimo&lt;/a&gt; parece ser el indicado para mi objetivo, pero sólo por el momento. Cuando arranquemos definitivamente voy a realizar una nueva evaluación de las distribuciones disponibles.&lt;/p&gt;
+&lt;p&gt;Tiempo de aprender cosas nuevas :D&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>enseñar</category><category>linux</category><guid>http://ariel17.com.ar/blog/time-to-grow-up/</guid><pubDate>Thu, 27 Feb 2014 01:31:14 GMT</pubDate></item></channel></rss>

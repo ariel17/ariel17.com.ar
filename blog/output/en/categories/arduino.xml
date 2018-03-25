@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (arduino)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/arduino.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 14:59:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Links for 2016-09-20</title><link>http://ariel17.com.ar/en/blog/links-for-2016-09-20/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="section" id="internet-of-things"&gt;
+&lt;h2&gt;Internet of Things&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://3dlab-fabcafe.com/ar/en/"&gt;3dLab Fab &amp;amp; Café&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://circuito.io/"&gt;circuito.io&lt;/a&gt;: Instant code and wiring for your project (Arduino).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="java"&gt;
+&lt;h2&gt;Java&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/spring-projects/spring-retry"&gt;spring-retry&lt;/a&gt;: This project provides declarative retry support for Spring
+applications. It is used in Spring Batch, Spring Integration, Spring for
+Apache Hadoop (amongst others).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="javascript"&gt;
+&lt;h2&gt;Javascript&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://javascript.crockford.com/code.html"&gt;Code Conventions for the JavaScript Programming Language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/johnpapa/angular-styleguide"&gt;Angular Style Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.pluralsight.com/courses/angularjs-patterns-clean-code"&gt;AngularJS Patterns: Clean Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tools"&gt;
+&lt;h2&gt;Tools&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://grafana.org/"&gt;Grafana&lt;/a&gt;: Beautiful metric &amp;amp; analytic dashboards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/links-for-2016-09-20/</guid><pubDate>Tue, 20 Sep 2016 03:53:48 GMT</pubDate></item></channel></rss>

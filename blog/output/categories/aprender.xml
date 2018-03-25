@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (aprender)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/aprender.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 15:00:00 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Aprendiendo a enseñar I: Docker</title><link>http://ariel17.com.ar/blog/learning-to-teach-docker/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="figure align-right"&gt;
+&lt;a class="reference external image-reference" href="http://ariel17.github.io/docker-talk/"&gt;&lt;img alt="/galleries/learning-to-teach-i-docker/slides.png" src="http://ariel17.com.ar/galleries/learning-to-teach-i-docker/slides.png" style="width: 400.0px;"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;En &lt;a class="reference external" href="https://www.movile.com/en/"&gt;Movile&lt;/a&gt; (sí, &lt;a class="reference external" href="https://www.youtube.com/watch?v=PirVtiJuvDs"&gt;&lt;em&gt;volví&lt;/em&gt;&lt;/a&gt;) se inició un programa de auto-capacitaciones, donde
+las clases fueron programadas mediante técnica &lt;a class="reference external" href="http://www.proyectosagiles.org/que-es-open-space"&gt;Open Space&lt;/a&gt;. Uno de los temas
+que yo propuse para aprender fue &lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; ya que nunca había trabajado con estas
+herramientas.&lt;/p&gt;
+&lt;p&gt;La cuestión es que era mi tarea encontrar los medios de que alguien
+nos enseñara dicha tecnología... pero mi orgullo y yo no nunca pretendimos que
+esa persona no fuera otra que yo mismo, así que me puse en campaña de aprender
+&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; el pasado fin de semana. El resultado fueron &lt;a class="reference external" href="http://ariel17.github.io/docker-talk/"&gt;&lt;strong&gt;estos slides&lt;/strong&gt;&lt;/a&gt; (hechos
+con &lt;a class="reference external" href="http://sphinx-doc.org/"&gt;Sphinx&lt;/a&gt; y &lt;a class="reference external" href="https://hieroglyph.readthedocs.org/en/latest/"&gt;Hieroglyph&lt;/a&gt;) y una charla de aproximadamente 25 minutos :).&lt;/p&gt;
+&lt;p&gt;Debo mejorar:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Disminuir la velocidad en que abarco los temas: la charla estaba pensada para
+durar ~40 minutos y en realidad duró un poco más de la mitad :(&lt;/li&gt;
+&lt;li&gt;Cambiar el tono de voz para evitar la monotonía.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La próxima clase será de &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; :D Estoy un poquito feliz.&lt;/p&gt;&lt;/div&gt;</description><category>aprender</category><category>enseñar</category><guid>http://ariel17.com.ar/blog/learning-to-teach-docker/</guid><pubDate>Tue, 21 Apr 2015 01:33:23 GMT</pubDate></item><item><title>Nunca dejes de aprender</title><link>http://ariel17.com.ar/blog/never-stop-learning/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Cuando empecé la primaria, recuerdo haberme preguntado &lt;em&gt;¿Hasta cuándo hay que
+ir al colegio?&lt;/em&gt;. Indagué un poco y me enteré de la existencia de la secundaria,
+la universidad y luego de hacer algunas cuentas con los dedos llegué a la
+respuesta: hasta los 25 años. Más o menos.&lt;/p&gt;
+&lt;p&gt;Luego de sorprenderme de mi flamante capacidad de anticiparme a los hechos a mi
+tan corta edad, lo encuentro a mi papá enfrascado en sus estudos. &lt;em&gt;¿Estudiando?
+Pero... ¿vos cuántos años tenés?&lt;/em&gt; y la respuesta que me dió fue una de las
+primeras que me marcaron de arriba abajo en la vida: &lt;em&gt;Ari, eso no importa; uno
+tiene que estudiar siempre&lt;/em&gt;. Pero ese &lt;em&gt;siempre&lt;/em&gt; parecía una promesa tan
+cruel, que no me atreví a creerle.&lt;/p&gt;
+&lt;div class="section" id="la-verdad-de-la-milanesa"&gt;
+&lt;h2&gt;La verdad de la milanesa&lt;/h2&gt;
+&lt;p&gt;La primaria pasó. La secundaria pasó. Empecé la universidad, aprendí a
+programar y me puse a trabajar. En medio de todo eso vino el cachetazo de que
+sí, &lt;strong&gt;uno nunca deja de estudiar... pero sí puede dejar de aprender&lt;/strong&gt;. Seguir
+aprendiendo durante tu vida adulta puede ser mucho más difícil de lo que fue
+durante tu adolescencia y más aún si no se mantiene ese músculo en ejercicio;
+&lt;em&gt;un día en el que aprendiste algo nuevo es un día bien aprovechado&lt;/em&gt; es lo que
+dice mi mamá.&lt;/p&gt;
+&lt;p&gt;Dejar de aprender significa cerrarse uno mismo las puertas nuevas
+posibilidades, aislarse. Si un día llegás a pensar que ya sabés suficiente o
+sentís (y/o verificás) que lo que ya sabés te impide aprender cosas nuevas
+(&lt;a class="reference external" href="http://lifehacker.com/5929536/erase-i-dont-have-time-from-your-vocabulary/all"&gt;¡no tengo tiempo para eso!&lt;/a&gt;), entonces &lt;strong&gt;estás caminando en un sendero que
+te lleva siempre al mismo lugar a donde estás&lt;/strong&gt;. Y vivir se trata de estar en
+movimiento.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="el-plan"&gt;
+&lt;h2&gt;El plan&lt;/h2&gt;
+&lt;div class="thumbnail figure align-right"&gt;
+&lt;img alt="Leyendo antes de dormir." src="http://ariel17.com.ar/galleries/never-stop-learning/reading.jpg" style="width: 400.0px;"&gt;
+&lt;/div&gt;
+&lt;p&gt;Nunca es tarde y siempre hay algo para aprender: tocar la guitarra, programar,
+revocar una pared, jardinería, tejer... &lt;strong&gt;si te gusta, hacelo&lt;/strong&gt;; aprendé todo
+lo que puedas, leé todos los días. Llevate un libro/revista/apunte de eso que
+querés aprender en el bolso o mochila para aprovechar esos tiempos muertos como
+las filas o turnos en el dentista (a nadie le interesan esas revistas de vinos
+o barcos). Si te gusta, vas a leer sobre eso incluso en tus vacaciones; no va a
+ser una carga sino que va a ser un placer por que te llama y te atrae. Y si es
+una carga porque te diste cuenta que en realidad no te interesa tanto como
+creías, entonces pasá a otra cosa que te llame la atención. Buscá y hablá con
+otros que practiquen eso que estás aprendiendo, que tengan los mismos intereses
+y compartí experiencias. Escuchá y ayudá a otros que recién empiezan, porque
+eso también es aprender. Buscar qué no sabés para poder aprenderlo y esta
+actitud se hará una costumbre.&lt;/p&gt;
+&lt;p&gt;Dejá de ver televisión durante 1 hora, nada más. Jugá a los videos 1 hora
+menos. Dormí una hora menos. Y leé o practicá. No es fácil pero vale la pena
+intentarlo porque al final de cuentas, es por vos mismo que estás haciendo el
+esfuerzo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="entonces"&gt;
+&lt;h2&gt;Entonces...&lt;/h2&gt;
+&lt;p&gt;Nunca dejes de leer y, sobre todo, &lt;strong&gt;nunca dejes de aprender&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>aprender</category><guid>http://ariel17.com.ar/blog/never-stop-learning/</guid><pubDate>Mon, 31 Mar 2014 17:56:00 GMT</pubDate></item></channel></rss>

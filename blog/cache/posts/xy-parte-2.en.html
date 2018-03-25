@@ -1,0 +1,72 @@
+<p>El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
+significativas del mismo.</p>
+<pre class="code text"><a name="rest_code_9be832a729d44350ac6fa66276e11dba-1"></a>./xy
+<a name="rest_code_9be832a729d44350ac6fa66276e11dba-2"></a>  ├── android
+<a name="rest_code_9be832a729d44350ac6fa66276e11dba-3"></a>  ├── api
+<a name="rest_code_9be832a729d44350ac6fa66276e11dba-4"></a>  └── web
+</pre><div class="section" id="android">
+<h1>Android</h1>
+<p>La aplicación es por ahora sólamente un formulario que solicita un PIN
+existente y lo envía a otro Intent. Es el template para que en la siguiente
+iteración agregue la comunicación con la API y reporte de errores de la misma.</p>
+<style>
+  .android {
+    margin-right: 20px;
+  }
+</style><img alt="/galleries/xy/android1.png" class="android" src="/galleries/xy/android1.png" />
+<img alt="/galleries/xy/android2.png" class="android" src="/galleries/xy/android2.png" />
+<img alt="/galleries/xy/android3.png" class="android" src="/galleries/xy/android3.png" />
+</div>
+<div class="section" id="api">
+<h1>API</h1>
+<p>Hasta el momento, la API sólo responde de manera simulada el procesamiento de
+los datos que recibe.</p>
+<div class="section" id="subjects">
+<h2>Subjects</h2>
+<ul class="simple">
+<li>URL: <cite>/subjects</cite></li>
+</ul>
+<p>Representa a las operaciones relacionadas con las personas o cosas que se
+desea seguir en la superficie.</p>
+<pre class="code bash"><a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/subjects  <span class="c"># terminal 2</span>
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-4"></a>Content-Type: application/json
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:26:37 GMT
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-6"></a>Content-Length: 91
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-7"></a>
+<a name="rest_code_fcb79f2a3a704a0c922f368e2d7d9062-8"></a><span class="o">{</span><span class="s2">&quot;Current&quot;</span>:<span class="o">{</span><span class="s2">&quot;Latitude&quot;</span>:0,<span class="s2">&quot;Longitude&quot;</span>:0,<span class="s2">&quot;CreatedAt&quot;</span>:<span class="s2">&quot;0001-01-01T00:00:00Z&quot;</span><span class="o">}</span>,<span class="s2">&quot;History&quot;</span>:null<span class="o">}</span>
+</pre></div>
+<div class="section" id="registration">
+<h2>Registration</h2>
+<ul class="simple">
+<li>URL: <cite>/registration</cite></li>
+</ul>
+<p>Es el punto de registro de los dispositivos a seguir. El pin es un valor
+alfanumérico que se supone ya creado por la misma plataforma y asociado a un
+usuario existente que quiere agregar ese dispositivo. La operación asocia el
+mismo con el usuario y provee un ID único para facilitar la entrega de los
+datos de localización.</p>
+<pre class="code bash"><a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/register --data <span class="s2">&quot;pin=1234&quot;</span>  <span class="c"># terminal 2</span>
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-4"></a>Content-Type: application/json
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:29:38 GMT
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-6"></a>Content-Length: 98
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-7"></a>
+<a name="rest_code_c3e0af2aa8394c2196be85c4a04500ee-8"></a><span class="o">{</span><span class="s2">&quot;success&quot;</span>:true,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;Successfully created ID.&quot;</span>,<span class="s2">&quot;id&quot;</span>:<span class="s2">&quot;65336dad-9e7f-4c7a-9f5b-04eeb1a5149c&quot;</span><span class="o">}</span>
+</pre><p>Se hace evidente que <cite>/register</cite> es un recurso que pertenece a <cite>/subjects</cite>; lo
+moveré en la siguiente iteración.</p>
+</div>
+</div>
+<div class="section" id="web">
+<h1>Web</h1>
+<p>Se configuró el sistema de template nativo de Go (a forma de prueba de
+concepto) y los paquetes NPM a usar en el futuro: <a class="reference external" href="https://gruntjs.com/">Grunt</a>, <a class="reference external" href="https://bower.io/">Bower</a>.</p>
+</div>
+<div class="section" id="otras-entradas">
+<h1>Otras entradas</h1>
+<ul class="simple">
+<li><a class="reference external" href="/blog/xy-parte-1/">(x,y) parte 1</a></li>
+</ul>
+</div>

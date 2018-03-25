@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://ariel17.com.ar/en/categories/virtualization/">
+<meta name="viewport" content="width=device-width">
+<title>Posts about virtualization | Ariel Gerardo Ríos</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag virtualization (en)" href="../virtualization.xml">
+<link rel="canonical" href="http://ariel17.com.ar/en/categories/virtualization/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+         
+    <header id="header"><nav class="navbar navbar-inverse navbar-fixed-top"><div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Ariel Gerardo Ríos</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+<li id="home-link"><a href="../../../">Home</a></li>
+                <li><a href="../../../blog">Blog</a></li>
+                <li><a href="../../../projects">Proyects</a></li>
+          
+          
+        </ul>
+</div>
+    </div>
+  </nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../../blog/lxc-environments/" class="u-url">Building environments with Linux Containers</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ariel Gerardo Ríos</span></p>
+            <p class="dateline"><a href="../../blog/lxc-environments/" rel="bookmark"><time class="published dt-published" datetime="2014-08-02T10:07:23-03:00" title="2014-08-02 10:07">2014-08-02 10:07</time></a></p>
+                <p class="commentline">
+        
+    <a href="../../blog/lxc-environments/#disqus_thread" data-disqus-identifier="cache/posts/lxc-environments.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Thanks to virtualization tools is too easy today to quickly build multiple
+instance environments. <a class="reference external" href="http://www.vmware.com/">VMWare</a> or <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a> are good options when the
+operative system to execute on the virtual machine is distinct from the host
+system, but when the objective is to virtualize Linux over Linux the option
+spectrum opens to other <em>cheaper</em> options in the resource consumption.</p>
+<div class="section" id="linux-containers">
+<h2>Linux Containers</h2>
+<p>If we want to build (or replicate) an ambient consisting only of Linux
+instances there is a tool named <a class="reference external" href="https://linuxcontainers.org/">LXC</a>: Linux Containers. It is not a virtual
+machine but it provides a virtual <em>environment</em>, separating process and net
+spaces, functionallity provided by the Linux kernel itself since versio
+2.6.29 with <a class="reference external" href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt">cgroups</a> integration. Without the full virtual machine simulation
+overhead there are more available resources to be used.</p>
+<p>You can get more information about it in the <a class="reference external" href="https://linuxcontainers.org/">official LXC page</a>.</p>
+<div class="section" id="installation">
+<h3>Installation</h3>
+<p>We can install LXC directly from the software repository of our elected
+distribution:</p>
+<pre class="code bash"><a name="rest_code_b9972d029bfc46639d8ffd99d0fde673-1"></a>~<span class="nv">$ </span>sudo apt-get install lxc  <span class="c"># for Debian-based distros</span>
+</pre>
+<p>Also we can install the <em>bleeding edge</em> version directly from the <a class="reference external" href="https://github.com/lxc/lxc">GitHub
+repository</a>:</p>
+<pre class="code bash"><a name="rest_code_b3097f778eff47ac89a567e1be2fe749-1"></a>~<span class="nv">$ </span>sudo apt-get install git  <span class="c"># if you don't have installed git yet</span>
+<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-2"></a>~<span class="nv">$ </span>git clone git@github.com:lxc/lxc.git
+<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-3"></a>~<span class="nv">$ </span>sudo su
+<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-4"></a><span class="c">#$ cd lxc &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+</pre>
+</div>
+<div class="section" id="creating-instances">
+<h3>Creating instances</h3>
+<p>The container creation can be done through templates or manually indicating
+which image to use.</p>
+<pre class="code bash"><a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-1"></a>~<span class="nv">$ </span>lxc-create -n ubuntu1 -t ubuntu  <span class="c"># creates a container named ubuntu1 using the ubuntu template</span>
+<a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-2"></a>~<span class="nv">$ </span>lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+</pre>
+<p>This way, the creation is done without any other intervention from user. There
+is also a way for interactive creation, visualizing distributions and
+available architectures:</p>
+<pre class="code bash"><a name="rest_code_1a48e1202ee241448d707fdd84dfeaf2-1"></a>~<span class="nv">$ </span>lxc-create -t download -n ubuntu3
+</pre>
+</div>
+<div class="section" id="displaying-created-instances">
+<h3>Displaying created instances</h3>
+<p>To show available instances you can make use of <code>lxc-ls</code> command. It will
+only display only the names but using the <code>--fancy</code> flag it will append
+more useful information about them:</p>
+<pre class="code bash"><a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-1"></a>~<span class="nv">$ </span>sudo lxc-ls --fancy
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-2"></a>
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-3"></a>NAME     STATE    IPV4        IPV6  AUTOSTART
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-4"></a>---------------------------------------------
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-5"></a>ubuntu1  RUNNING  10.0.3.228  -     NO
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-6"></a>ubuntu2  RUNNING  10.0.3.147  -     NO
+<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-7"></a>ubuntu3  STOPPED  -           -     NO
+</pre>
+</div>
+<div class="section" id="accessing-an-instance">
+<h3>Accessing an instance</h3>
+<p>Getting access to the instance terminal can be done with the command
+<code>lxc-console -n &lt;instance-name&gt;</code>. Executing this command is the same to
+gain access to the host's phisical terminal; <strong>it is not a remote connection</strong>.
+To close the terminal connection is enough with the <code>Ctrl-a+q</code> input.</p>
+<pre class="code bash"><a name="rest_code_b90815c60f8d4d4a9f4b5a763ab01cc4-1"></a>~<span class="nv">$ </span>sudo lxc-console -n db  <span class="c"># enter Ctrl-a+q to close the session</span>
+</pre>
+</div>
+</div>
+<div class="section" id="a-web-console-to-rule-them-all">
+<h2>A web console to rule them all</h2>
+<p>There is a project called <a class="reference external" href="http://claudyus.github.io/LXC-Web-Panel/">LXC Web Panel</a> (a <a class="reference external" href="http://lxc-webpanel.github.io/">fork from original project</a>
+for lxc&gt;=1.0 versions) that is just a web site for Linux containers management.
+It control tools but also statistic reports for resource consumption
+visualization for all; guests and host.</p>
+<div class="section" id="installing-web-panel">
+<h3>Installing Web Panel</h3>
+<p>To install the web panel we must add the package to our local software
+repository, install it and change the default configurations if we consider it
+necesary to do:</p>
+<pre class="code bash"><a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-1"></a>~<span class="nv">$ </span>wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key <span class="p">|</span> sudo apt-key add -
+<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-2"></a>~<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"deb http://claudyus.github.io/LXC-Web-Panel/ ./"</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/lwp.list
+<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-3"></a>~<span class="nv">$ </span>sudo apt-get update
+<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-4"></a>~<span class="nv">$ </span>sudo apt-get install lwp
+<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-5"></a>~<span class="nv">$ </span>sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  <span class="c"># using default configuration</span>
+<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-6"></a>~<span class="nv">$ </span>sudo service lwp start
+</pre>
+<p>I will assume that default settings were used; if change were made do not
+forget to adapt them to the examples exposed here to you particular cases. Once
+the installation finishes, open a browser and go to the <a class="reference external" href="http://localhost:5000/">http://localhost:5000/</a>
+web address:</p>
+<div class="thumbnail figure align-center">
+<img alt="Login en LXC Web Panel." src="../../../galleries/lxc-for-development/login.png" style="width: 80.0%;">
+</div>
+<p>Using <code>admin</code> as default user and password, we can login to the main
+panel and it will show us a resource consumption visualization for guests and
+hosts; links to instances and networking settings:</p>
+<div class="thumbnail figure align-center">
+<img alt="Dashboard on LXC Web Panel." src="../../../galleries/lxc-for-development/dashboard.png" style="width: 80.0%;">
+</div>
+<p>Accessing to any instance listed on the left pane we will see information
+related to it, as execution staus, network properties, assigned processors,
+memory limits, image location, etc.</p>
+<div class="thumbnail figure align-center">
+<img alt="Instance configuration on LXC Web Panel." src="../../../galleries/lxc-for-development/instance.png" style="width: 80.0%;">
+</div>
+</div>
+</div>
+<div class="section" id="building-a-custom-schema">
+<h2>Building a custom schema</h2>
+<p>I recommend to read the <a class="reference external" href="http://containerops.org/2013/11/19/lxc-networking/">Exploring LXC Networking</a> post where it exemplifies
+in a deeper way each networking setting combination according to the scenario
+you want to set, as outside and/or between-node conectivity and use of existing
+interfaces.</p>
+</div>
+<div class="section" id="other-related-technologies">
+<h2>Other related technologies</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://openvz.org/">OpenVZ</a></li>
+<li><a class="reference external" href="http://linux-vserver.org/">Linux-VServer</a></li>
+<li>
+<a class="reference external" href="https://www.docker.com/">Docker</a> (based on LXC)</li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="ariel17";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p>Contents © 2018         <a href="mailto:ariel.gerardo.rios@gmail.com">Ariel Gerardo Ríos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    
+    
+    <script src="../../../assets/js/bootstrap.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48346337-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

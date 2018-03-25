@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://ariel17.com.ar/en/categories/android/">
+<meta name="viewport" content="width=device-width">
+<title>Posts about android | Ariel Gerardo Ríos</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag android (en)" href="../android.xml">
+<link rel="canonical" href="http://ariel17.com.ar/en/categories/android/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+         
+    <header id="header"><nav class="navbar navbar-inverse navbar-fixed-top"><div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Ariel Gerardo Ríos</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+<li id="home-link"><a href="../../../">Home</a></li>
+                <li><a href="../../../blog">Blog</a></li>
+                <li><a href="../../../projects">Proyects</a></li>
+          
+          
+        </ul>
+</div>
+    </div>
+  </nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../../blog/xy-parte-2/" class="u-url">(x,y) parte 2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ariel Gerardo Ríos</span></p>
+            <p class="dateline"><a href="../../blog/xy-parte-2/" rel="bookmark"><time class="published dt-published" datetime="2017-07-09T19:20:46-03:00" title="2017-07-09 19:20">2017-07-09 19:20</time></a></p>
+                <p class="commentline">
+        
+    <a href="../../blog/xy-parte-2/#disqus_thread" data-disqus-identifier="cache/posts/xy-parte-2.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
+significativas del mismo.</p>
+<pre class="code text"><a name="rest_code_2e47e4807bfe451b951df76873c5c997-1"></a>./xy
+<a name="rest_code_2e47e4807bfe451b951df76873c5c997-2"></a>  ├── android
+<a name="rest_code_2e47e4807bfe451b951df76873c5c997-3"></a>  ├── api
+<a name="rest_code_2e47e4807bfe451b951df76873c5c997-4"></a>  └── web
+</pre>
+<div class="section" id="android">
+<h2>Android</h2>
+<p>La aplicación es por ahora sólamente un formulario que solicita un PIN
+existente y lo envía a otro Intent. Es el template para que en la siguiente
+iteración agregue la comunicación con la API y reporte de errores de la misma.</p>
+<style>
+  .android {
+    margin-right: 20px;
+  }
+</style>
+<img alt="/galleries/xy/android1.png" class="android" src="../../../galleries/xy/android1.png"><img alt="/galleries/xy/android2.png" class="android" src="../../../galleries/xy/android2.png"><img alt="/galleries/xy/android3.png" class="android" src="../../../galleries/xy/android3.png">
+</div>
+<div class="section" id="api">
+<h2>API</h2>
+<p>Hasta el momento, la API sólo responde de manera simulada el procesamiento de
+los datos que recibe.</p>
+<div class="section" id="subjects">
+<h3>Subjects</h3>
+<ul class="simple">
+<li>URL: <cite>/subjects</cite>
+</li>
+</ul>
+<p>Representa a las operaciones relacionadas con las personas o cosas que se
+desea seguir en la superficie.</p>
+<pre class="code bash"><a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/subjects  <span class="c"># terminal 2</span>
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-4"></a>Content-Type: application/json
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:26:37 GMT
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-6"></a>Content-Length: 91
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-7"></a>
+<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-8"></a><span class="o">{</span><span class="s2">"Current"</span>:<span class="o">{</span><span class="s2">"Latitude"</span>:0,<span class="s2">"Longitude"</span>:0,<span class="s2">"CreatedAt"</span>:<span class="s2">"0001-01-01T00:00:00Z"</span><span class="o">}</span>,<span class="s2">"History"</span>:null<span class="o">}</span>
+</pre>
+</div>
+<div class="section" id="registration">
+<h3>Registration</h3>
+<ul class="simple">
+<li>URL: <cite>/registration</cite>
+</li>
+</ul>
+<p>Es el punto de registro de los dispositivos a seguir. El pin es un valor
+alfanumérico que se supone ya creado por la misma plataforma y asociado a un
+usuario existente que quiere agregar ese dispositivo. La operación asocia el
+mismo con el usuario y provee un ID único para facilitar la entrega de los
+datos de localización.</p>
+<pre class="code bash"><a name="rest_code_086b9672a89e4757af76e3182df61758-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_086b9672a89e4757af76e3182df61758-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/register --data <span class="s2">"pin=1234"</span>  <span class="c"># terminal 2</span>
+<a name="rest_code_086b9672a89e4757af76e3182df61758-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_086b9672a89e4757af76e3182df61758-4"></a>Content-Type: application/json
+<a name="rest_code_086b9672a89e4757af76e3182df61758-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:29:38 GMT
+<a name="rest_code_086b9672a89e4757af76e3182df61758-6"></a>Content-Length: 98
+<a name="rest_code_086b9672a89e4757af76e3182df61758-7"></a>
+<a name="rest_code_086b9672a89e4757af76e3182df61758-8"></a><span class="o">{</span><span class="s2">"success"</span>:true,<span class="s2">"message"</span>:<span class="s2">"Successfully created ID."</span>,<span class="s2">"id"</span>:<span class="s2">"65336dad-9e7f-4c7a-9f5b-04eeb1a5149c"</span><span class="o">}</span>
+</pre>
+<p>Se hace evidente que <cite>/register</cite> es un recurso que pertenece a <cite>/subjects</cite>; lo
+moveré en la siguiente iteración.</p>
+</div>
+</div>
+<div class="section" id="web">
+<h2>Web</h2>
+<p>Se configuró el sistema de template nativo de Go (a forma de prueba de
+concepto) y los paquetes NPM a usar en el futuro: <a class="reference external" href="https://gruntjs.com/">Grunt</a>, <a class="reference external" href="https://bower.io/">Bower</a>.</p>
+</div>
+<div class="section" id="otras-entradas">
+<h2>Otras entradas</h2>
+<ul class="simple">
+<li><a class="reference external" href="../../../blog/xy-parte-1/">(x,y) parte 1</a></li>
+</ul>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../../blog/xy-parte-1/" class="u-url">(x,y) parte 1</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ariel Gerardo Ríos</span></p>
+            <p class="dateline"><a href="../../blog/xy-parte-1/" rel="bookmark"><time class="published dt-published" datetime="2017-07-01T21:34:51-03:00" title="2017-07-01 21:34">2017-07-01 21:34</time></a></p>
+                <p class="commentline">
+        
+    <a href="../../blog/xy-parte-1/#disqus_thread" data-disqus-identifier="cache/posts/xy.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Quiero hacer un proyecto personal en Go, también quiero hacer uno en Android, y
+para aprovechar ambas intenciones voy a usarlas en un mismo objetivo: <strong>un
+sistema de rastreo de personas</strong>.</p>
+<div class="section" id="definicion-del-problema">
+<h2>Definición del <em>problema</em>
+</h2>
+<p>Un sistema capaz de proveer a un usuario la informacion geográfica de ciertos
+individuos (previamente indicados por éste) y ubicarlos en un mapa. En
+condiciones ideales, el margen de error respecto a la posición real de la
+persona no debe superar los 60 segundos. Se debe guardar el historial de
+posiciones de los individuos registrados durante el período de 1 día, aún si el
+usuario no está utilizando el sistema.</p>
+</div>
+<div class="section" id="analisis">
+<h2>Análisis</h2>
+<ol class="arabic simple">
+<li>Se utilizará el GPS de los dispositivos Android que los individuos porten
+para obtener la información geográfica. Para obtener acceder a dicha
+información es necesario una aplicación que pueda capturarla y enviarla a un
+punto de reporte.</li>
+<li>Siendo que la idea es tener información de los individuos aún cuando el
+usuario no esté usando el sistema, será necesario tener un punto de
+comunicación en común para las partes que idealmente esté siempre
+disponible. Se usará un VPS para proveer dicha funcionalidad.</li>
+<li>Siguiendo la línea del punto anterior, se implementará una API REST para la
+comunicación entre el server y la aplicación Andriod.</li>
+<li>El usuario deberá tener una interfaz en la cual pueda cargar datos de
+identificación de los individuos a monitorear. La misma será una aplicación
+web que almacene los datos y los disponibilice en el sistema.</li>
+<li>La interfaz web también será el medio por el cual se visualizará la posición
+de los individuos, comunicándose con la API para obtener las
+actualizaciones.</li>
+</ol>
+<img alt="https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png" src="https://raw.githubusercontent.com/ariel17/xy/master/docs/sequence.mmd.png">
+</div>
+<div class="section" id="observasciones-tecnicas">
+<h2>Observasciones técnicas</h2>
+<ul class="simple">
+<li>No se van a usar frameworks.</li>
+<li>El componente API y Web del sistema serán implementados en Go.</li>
+</ul>
+</div>
+<div class="section" id="gestion-del-proyecto">
+<h2>Gestión del proyecto</h2>
+<ul class="simple">
+<li>Repositorio: <a class="reference external" href="https://github.com/ariel17/xy">ariel17/xy</a>
+</li>
+<li>
+<a class="reference external" href="https://github.com/ariel17/xy/milestones">Milestones</a>.</li>
+</ul>
+</div>
+<div class="section" id="otras-entradas">
+<h2>Otras entradas</h2>
+<ul class="simple">
+<li><a class="reference external" href="../../../blog/xy-parte-2/">(x,y) parte 2</a></li>
+</ul>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+        
+       <script>var disqus_shortname="ariel17";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p>Contents © 2018         <a href="mailto:ariel.gerardo.rios@gmail.com">Ariel Gerardo Ríos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    
+    
+    <script src="../../../assets/js/bootstrap.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48346337-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

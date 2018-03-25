@@ -1,0 +1,118 @@
+<p><a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-ii/">Ir al siguiente post: Camino a Kanban II</a></p>
+<p>Hace ya varias semanas que vengo leyendo el libro <a class="reference external" href="http://www.goodreads.com/book/show/8086552-kanban">&quot;Kanban: Successful Evolutionary Change for Your Technology Business&quot;</a> del señor
+<a class="reference external" href="http://www.goodreads.com/author/show/82481.David_J_Anderson">David J. Anderson</a> y me siento muy motivado por él. Al principio lo agarré y pensé
+<em>oooootra metodología más, otra que viene a salvar el mundo y los proyectos con
+su agilidad y promesas</em> pero durante la lectura hubieron varios puntos
+atractivos:</p>
+<ul class="simple">
+<li><em>Tirar</em> de la lista de pendientes en vez de <em>empujar</em>.</li>
+<li>Reducción del multitasking.</li>
+<li>Previsibilidad.</li>
+<li>Creación de tiempos libres para estudiar y/o mejorar los procesos.</li>
+</ul>
+<div class="section" id="estado-actual">
+<h1>Estado actual</h1>
+<p>En <a class="reference external" href="https://www.movile.com/">Movile</a> trabajo como coordinador del equipo de Desarrollo de nuestro país.
+Organizacionalmente estamos asignados para resolver las tareas varios paises
+del cono sur en los que tenemos injerencia. Para organizar el trabajo
+utilizamos sprints semanales llamados <em>Releases</em> en los que se plantean las
+tareas más importantes a atacar, que pueden estar o no en el backlog:
+integraciones con plataformas de terceros, productos nuevos, mejoras, bugs,
+etc.</p>
+<p>Durante la semana se atacan esas tareas priorizadas y trata de entregar el 100%
+de las tareas.</p>
+<div class="container">
+<img alt="Flujo actual" class="img-responsive align-center" src="/galleries/path-to-kanban-i/current-flow.jpg" />
+</div>
+<p>Listado en pasos, sería como el siguiente:</p>
+<ol class="arabic simple">
+<li>Las tareas se crean y se depositan en la cola del backlog.</li>
+<li>Durante la reunión de release se seleccionan y priorizan las tareas a atacar.</li>
+<li>Es posible que durante la duración del sprint lleguen tareas de máxima
+prioridad (llamadas blockers) que deben ser atendidas de inmediato. La
+duración de estas tareas depende mucho de la naturaleza de la misma.</li>
+<li>Durante el sprint se toman tareas asignadas a la release para análisis y
+desarrollo de las mismas.</li>
+<li>Desarrollada la tarea, se realizan pruebas locales para validar su
+funcionamiento. En caso de error vuelve al paso anterior.</li>
+<li>Cuando las pruebas locales son exitosas se procede al despliegue en
+producción del nuevo código. La tarea se marca como lista.</li>
+<li>Se solicita a equipo que valide la nueva funcionalidad en el contexto real.
+En caso de no satisfacer la necesidad se reabre la tarea y ésta vuelve al
+paso 4.</li>
+<li>Si la validación es exitosa, esa misma persona cierra la tarea.</li>
+<li>Se solicita al equipo de QA que realice sus validaciones en busca de fallos
+inadvertidos (no graficado; sólo requerido en cambios visuales o de
+comportamiento de cara al usuario).</li>
+</ol>
+</div>
+<div class="section" id="tipos-de-tarea-y-prioridad">
+<h1>Tipos de tarea y prioridad</h1>
+<p>Los tipos de tarea que habían eran muy diversos. Multiplicados por la cantidad
+de niveles de prioridad había una cantidad nefasta de <em>tipos de servicio</em> <a class="footnote-reference" href="#id3" id="id1">[1]</a>
+donde no se tenía en claro qué se esperaba de cada uno:</p>
+<ul class="simple">
+<li>Analysis</li>
+<li>Bug</li>
+<li>Configuration</li>
+<li>Documentation</li>
+<li>Epic</li>
+<li>Improvement</li>
+<li>Maintenance</li>
+<li>New feature</li>
+<li>Task</li>
+<li>Sub-task</li>
+<li>Technical debt</li>
+</ul>
+<p>Y los niveles de prioridad, en orden decreciente de importancia:</p>
+<ul class="simple">
+<li>Blocker</li>
+<li>P1</li>
+<li>P2</li>
+<li>P3</li>
+<li>Waiting/planned</li>
+<li>Backlog</li>
+</ul>
+</div>
+<div class="section" id="primeros-pasos-hacia-kanban">
+<h1>Primeros pasos hacia Kanban</h1>
+<p>El primer paso fue hacer limpieza sobre los tipos de tarea:</p>
+<div class="container">
+<img alt="Tipos de tareas y prioridades" class="img-responsive align-center" src="/galleries/path-to-kanban-i/issues.jpg" />
+</div>
+<p>El tipo <em>Analysis</em> no está asignado a uno en particular porque fue manipulado
+con más detalle: basado en el contenido fue movido a uno u otro tipo de tarea.
+El resultado final fue este conjunto reducido de tipos:</p>
+<ul class="simple">
+<li>Bug</li>
+<li>Epic</li>
+<li>New feature</li>
+<li>Task</li>
+<li>Sub-task</li>
+<li>Technical debt</li>
+</ul>
+<p>No está en la foto, pero las proridades también sufrieron cambios, aunque no
+mucho:</p>
+<ul class="simple">
+<li>Blocker</li>
+<li>P1</li>
+<li>P2</li>
+<li>P3</li>
+<li>Backlog</li>
+</ul>
+</div>
+<div class="section" id="siguentes-pasos">
+<h1>Siguentes pasos</h1>
+<strike>
+  Ser&aacute; determinar el nivel de servicio esperado para cada
+  combinaci&oacute;n (coherente) de tipos y prioridades.
+</strike><p>Crear una pizarra Kanban para reflejar los estados y obtener estadísticas
+iniciales.</p>
+<p><a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-ii/">Ir al siguiente post: Camino a Kanban II</a></p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Acuerdo de Nivel de Servicio (ANS): <a class="reference external" href="https://es.wikipedia.org/wiki/Acuerdo_de_nivel_de_servicio">https://es.wikipedia.org/wiki/Acuerdo_de_nivel_de_servicio</a></td></tr>
+</tbody>
+</table>
+</div>

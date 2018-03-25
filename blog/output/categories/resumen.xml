@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (resumen)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/resumen.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Semana 2014#43 - Resumen</title><link>http://ariel17.com.ar/blog/week-2014-43-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El resumen para la semana #43: muy movida pero concentrada en sus actividades.&lt;/p&gt;
+&lt;div class="section" id="libros-que-estoy-leyendo-lei"&gt;
+&lt;h2&gt;Libros que estoy leyendo/leí&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/El_mundo_de_Rocannon"&gt;&lt;em&gt;El Mundo de Rocannon&lt;/em&gt;&lt;/a&gt; de &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Ursula_K._Le_Guin"&gt;Úrsula K. Le Guin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/The_Pragmatic_Programmer"&gt;&lt;em&gt;The Pragmatic Programmer: From Journeyman to Master&lt;/em&gt;&lt;/a&gt; de &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Andy_Hunt_(author)"&gt;Andrew Hunt&lt;/a&gt; y &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Dave_Thomas_(programmer)"&gt;David Thomas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://bitfieldconsulting.com/puppet-beginners-guide"&gt;&lt;em&gt;Puppet 3 Begginer's Guide&lt;/em&gt;&lt;/a&gt; de &lt;a class="reference external" href="http://bitfieldconsulting.com/about"&gt;John Arundel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tecnologia-que-aprendi-use"&gt;
+&lt;h2&gt;Tecnología que aprendí/usé&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://npyscreen.readthedocs.org/introduction.html"&gt;npyscreen&lt;/a&gt;: Una biblioteca de widgets y framework de aplicaciones para
+programar aplicaciones para terminales o consola.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://builtoncement.org/"&gt;cement&lt;/a&gt;: Un framework de aplicaciones CLI para Python.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://ponyorm.com/"&gt;PonyORM&lt;/a&gt;: Un ORM para Python que utiliza el mismo lenguaje para realizar
+las consultas.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://puppetlabs.com/"&gt;Puppet&lt;/a&gt;: Un utilitario para la administración de la configuración. Lo estoy
+usando con Vagrant para provisionar los requerimientos de la máquina virtual
+y pronto lo usaré para mis servidores de producción :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="proyectos-personales-que-empece-estoy-haciendo"&gt;
+&lt;h2&gt;Proyectos personales que empecé/estoy haciendo&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.ariel17.com.ar/arynan/base-django"&gt;Proyecto de ejemplo&lt;/a&gt; para provisionar Vagrant usando Puppet.&lt;/li&gt;
+&lt;li&gt;Mantenimiento de la huerta: ¡se vienen nuevos tomates!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>2014</category><category>resumen</category><category>semana</category><guid>http://ariel17.com.ar/blog/week-2014-43-summary/</guid><pubDate>Mon, 27 Oct 2014 13:38:00 GMT</pubDate></item><item><title>Semana 2014#42 - Resumen</title><link>http://ariel17.com.ar/blog/week-2014-42-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Durante la semana estuve pensando la manera de llevar un registro de mis
+actividades. Lo más sencillo que se me ocurrió fue hacer un resumen cerca del
+fin de semana: es un período de tiempo corto para no olvidar la mayoría de los
+sucesos pero suficientemente largo para que sucedan cosas interesantes (aunque
+ésto último tendré que provármelo a mí mismo :P).&lt;/p&gt;
+&lt;div class="section" id="libros-que-estoy-leyendo-lei"&gt;
+&lt;h2&gt;Libros que estoy leyendo/leí&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://es.wikipedia.org/wiki/El_mundo_de_Rocannon"&gt;&lt;em&gt;El Mundo de Rocannon&lt;/em&gt;&lt;/a&gt; de &lt;a class="reference external" href="http://es.wikipedia.org/wiki/Ursula_K._Le_Guin"&gt;Úrsula K. Le Guin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/The_Pragmatic_Programmer"&gt;&lt;em&gt;The Pragmatic Programmer: From Journeyman to Master&lt;/em&gt;&lt;/a&gt; de &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Andy_Hunt_(author)"&gt;Andrew Hunt&lt;/a&gt; y &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Dave_Thomas_(programmer)"&gt;David Thomas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://leanpub.com/l4"&gt;Laravel 4 Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tecnologias-que-aprendi-use"&gt;
+&lt;h2&gt;Tecnologías que aprendí/usé&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://psa.matiasaguirre.net/"&gt;Python Social Auth&lt;/a&gt;: Administración de autenticación OAuth2 en Google (y
+otras plataformas sociales).&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://developers.google.com/accounts/docs/OAuth2?hl=ES"&gt;Google OAuth2&lt;/a&gt;: Autorización de una aplicación para publicación de eventos
+en Google Calendar del cliente.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-tastypie.readthedocs.org/en/latest/toc.html"&gt;Django Tastypie&lt;/a&gt;: Creación de un proyecto de ejemplo para demostrar a muy
+alto nivel las capacidades de este framework.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt;: Replicar el servidor de producción para realizar pruebas de
+deploy en mi PC sin necesidad de servidores de terceros.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="proyectos-personales-que-empece-estoy-haciendo"&gt;
+&lt;h2&gt;Proyectos personales que empecé/estoy haciendo&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.ariel17.com.ar/arynan/know-how/tree/master"&gt;Know-How&lt;/a&gt;: Repositorio de conocimiento unificado.&lt;/li&gt;
+&lt;li&gt;Oficina propia: Vacié un galpón para destinarlo a oficina (muy largo plazo).
+Se ve muy lindo vacío; ¡ahora hay que llenarlo de Ariel!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;¡Buen fin de semana! :D&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>resumen</category><category>semana</category><guid>http://ariel17.com.ar/blog/week-2014-42-summary/</guid><pubDate>Fri, 17 Oct 2014 12:45:07 GMT</pubDate></item></channel></rss>

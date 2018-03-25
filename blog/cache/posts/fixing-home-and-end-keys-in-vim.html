@@ -1,0 +1,11 @@
+<p>Adding this to <cite>~/.vimrc</cite> file fixes incorrect HOME &amp; END key behavior:</p>
+<pre class="code vim"><a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-1"></a><span class="c">&quot; Home key</span>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-2"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>esc<span class="p">&gt;</span><span class="m">0</span>i
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-3"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>home<span class="p">&gt;</span>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-4"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="m">0</span>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-5"></a>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-6"></a><span class="c">&quot; End key</span>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-7"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF $
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-8"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span>esc<span class="p">&gt;</span>$<span class="k">a</span>
+<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-9"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span><span class="k">end</span><span class="p">&gt;</span>
+</pre>

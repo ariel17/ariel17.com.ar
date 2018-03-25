@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (python)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 14:59:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Refreshing tokens on Django for Google Oauth2, the hard way</title><link>http://ariel17.com.ar/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;When I say &lt;em&gt;the hard way&lt;/em&gt; I mean that it was SO difficult &lt;em&gt;to me&lt;/em&gt; to find the
+correct settings combination to getting things done on &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; combining
+&lt;a class="reference external" href="http://psa.matiasaguirre.net/"&gt;python-social-auth&lt;/a&gt; and &lt;a class="reference external" href="https://developers.google.com/api-client-library/python/"&gt;google-api-python-client&lt;/a&gt;. The scenario was so simple
+yet so complicated to put it to work as it should, that I am a little
+frustrated.&lt;/p&gt;
+&lt;div class="section" id="the-scenario"&gt;
+&lt;h2&gt;The scenario&lt;/h2&gt;
+&lt;p&gt;Synchronize custom user events from into their Google Calendar, not in both
+directions only &lt;code&gt;Django -&amp;gt; GCalendar&lt;/code&gt;. The user should authenticate the
+account to use for synchronization only once, but &lt;a class="reference external" href="https://developers.google.com/accounts/docs/OAuth2"&gt;Google Oauth2&lt;/a&gt; tokens has 1
+hour as life time, so they must be refreshed or request for permissions to user
+again. None user information should be updated.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="django-environment"&gt;
+&lt;h2&gt;Django environment&lt;/h2&gt;
+&lt;p&gt;Google already has the &lt;a class="reference external" href="https://developers.google.com/api-client-library/python/"&gt;google-api-python-client&lt;/a&gt; library to easily implement
+authentication and authorization flows but I wanted to use a library that has a
+more elegant implementation: &lt;a class="reference external" href="http://psa.matiasaguirre.net/"&gt;python-social-auth&lt;/a&gt;. Also this last one enables a
+quick way to use &lt;a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#social-backends"&gt;many more backends&lt;/a&gt;, not only Google and &lt;a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#non-social-backends"&gt;not only
+socials&lt;/a&gt;. So this is what I got:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-1"&gt;&lt;/a&gt;# Requirements
+&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-2"&gt;&lt;/a&gt;Django==1.7
+&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-3"&gt;&lt;/a&gt;python-social-auth==0.2.1
+&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-4"&gt;&lt;/a&gt;google-api-python-client==1.2
+&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-5"&gt;&lt;/a&gt;raven==5.0.0  # you *really* should get Sentry! https://getsentry.com/
+&lt;a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-6"&gt;&lt;/a&gt;requests==2.3.0
+&lt;/pre&gt;&lt;p&gt;And the related &lt;code&gt;settings.py&lt;/code&gt; configuration:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;# project/settings.py&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;AUTHENTICATION_BACKENDS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-4"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.backends.google.GoogleOAuth2'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-5"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'django.contrib.auth.backends.ModelBackend'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_LOGIN_REDIRECT_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'/home/'&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_LOGIN_ERROR_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SOCIAL_AUTH_LOGIN_REDIRECT_URL&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_DISCONNECT_REDIRECT_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SOCIAL_AUTH_LOGIN_REDIRECT_URL&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-15"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'https://www.googleapis.com/auth/calendar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-16"&gt;&lt;/a&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-18"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-19"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'access_type'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'offline'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c"&gt;# Enables the refreshing grant&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-20"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'approval_promt'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'force'&lt;/span&gt;  &lt;span class="c"&gt;# Enables refresh_token&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-21"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-23"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_PIPELINE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;  &lt;span class="c"&gt;# Removed user creation and profile update&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-24"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.pipeline.social_auth.social_details'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-25"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.pipeline.social_auth.social_uid'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-26"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.pipeline.social_auth.auth_allowed'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-27"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.pipeline.social_auth.associate_user'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-28"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'social.pipeline.social_auth.load_extra_data'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_250187e70867472e8f753df3a7c6714b-29"&gt;&lt;/a&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;What does all the trick is the extra argument &lt;code&gt;approval_promt&lt;/code&gt; because
+Google only sends the &lt;code&gt;refresh_token&lt;/code&gt; when its present. Despite the fact
+that one already indicated the offline access type: when the refresh moment
+comes one can only do this with that value, none other is valid. &lt;strong&gt;Please,
+refute me.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="synchronizing-and-refreshing"&gt;
+&lt;h2&gt;Synchronizing and refreshing&lt;/h2&gt;
+&lt;p&gt;A custom event model as example with sync + token refreshing on authentication
+error:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;Model definition for appliation ``app``.&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-8"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;logging&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-10"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;apiclient.discovery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-11"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;oauth2client.client&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;AccessTokenCredentials&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;AccessTokenCredentialsError&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-12"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;requests.exceptions&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTTPError&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-13"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;httplib2&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-15"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.contrib.auth.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-16"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-18"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;social.apps.django_app.default.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;UserSocialAuth&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-19"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;social.apps.django_app.utils&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_strategy&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-20"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-21"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;app.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Event&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-23"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-24"&gt;&lt;/a&gt;&lt;span class="n"&gt;logger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getLogger&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-25"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-26"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-27"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CustomEvent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-28"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-29"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    A very simple custom event model.&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-30"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-31"&gt;&lt;/a&gt;    &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-32"&gt;&lt;/a&gt;    &lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-33"&gt;&lt;/a&gt;    &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-34"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-35"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__unicode__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-36"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;u"{0} ({1})"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-37"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-38"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_google_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-39"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-40"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Implementing the Calendar API content required to create an event:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-41"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        https://developers.google.com/google-apps/calendar/v3/reference/events?hl=es#resource&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-42"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-43"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;  &lt;span class="c"&gt;# dummy of course&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-44"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-45"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sync_event&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;retry&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-46"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-47"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Pushes current event to the user's Google Calendar service, if it is enabled.&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-48"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-49"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        :param retry: Indicates if it should retry on an authentication error.&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-50"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        :type retry: ``bool``&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-51"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        :return: Synchronization result from Google API.&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-52"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        :rtype: ``dict`` or ``None``&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-53"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-54"&gt;&lt;/a&gt;        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-55"&gt;&lt;/a&gt;            &lt;span class="n"&gt;provider&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;social_auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'google-oauth2'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-56"&gt;&lt;/a&gt;        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;UserSocialAuth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DoesNotExist&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-57"&gt;&lt;/a&gt;            &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u"Google is not authenticated; nothing to do :("&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-58"&gt;&lt;/a&gt;            &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-59"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-60"&gt;&lt;/a&gt;        &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Syncronizing event &lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt; into Google Calendar for user &lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-61"&gt;&lt;/a&gt;                     &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-62"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-63"&gt;&lt;/a&gt;        &lt;span class="n"&gt;credentials&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;AccessTokenCredentials&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-64"&gt;&lt;/a&gt;            &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extra_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'access_token'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s"&gt;'my-user-agent/1.0'&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-65"&gt;&lt;/a&gt;        &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-66"&gt;&lt;/a&gt;        &lt;span class="n"&gt;http&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;httplib2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Http&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-67"&gt;&lt;/a&gt;        &lt;span class="n"&gt;http&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;credentials&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;authorize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-68"&gt;&lt;/a&gt;        &lt;span class="n"&gt;service&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;serviceName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'calendar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'v3'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-69"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-70"&gt;&lt;/a&gt;        &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_google_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-71"&gt;&lt;/a&gt;        &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Creating event with data: &lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-72"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-73"&gt;&lt;/a&gt;        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-74"&gt;&lt;/a&gt;            &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;events&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-75"&gt;&lt;/a&gt;                &lt;span class="n"&gt;calendarId&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'primary'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-76"&gt;&lt;/a&gt;            &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-77"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-78"&gt;&lt;/a&gt;        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;AccessTokenCredentialsError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-79"&gt;&lt;/a&gt;            &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-80"&gt;&lt;/a&gt;            &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-81"&gt;&lt;/a&gt;                &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refresh_token&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;load_strategy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-82"&gt;&lt;/a&gt;            &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;HTTPError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-83"&gt;&lt;/a&gt;                &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-84"&gt;&lt;/a&gt;                &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-85"&gt;&lt;/a&gt;                    &lt;span class="s"&gt;u"Error trying to refesh token. Authorization object "&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-86"&gt;&lt;/a&gt;                    &lt;span class="s"&gt;"was removed."&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-87"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'response'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-88"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'body'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-89"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'url'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-90"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'status_code'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-91"&gt;&lt;/a&gt;                        &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-92"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'request'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-93"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'url'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-94"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'method'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-95"&gt;&lt;/a&gt;                            &lt;span class="s"&gt;u'body'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-96"&gt;&lt;/a&gt;                        &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-97"&gt;&lt;/a&gt;                    &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-98"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-99"&gt;&lt;/a&gt;        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-100"&gt;&lt;/a&gt;            &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-101"&gt;&lt;/a&gt;                &lt;span class="s"&gt;u'[sync_event] Unexpected exception synchronizing event'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-102"&gt;&lt;/a&gt;                &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-103"&gt;&lt;/a&gt;                    &lt;span class="s"&gt;u'user'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-104"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'pk'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-105"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'email'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-106"&gt;&lt;/a&gt;                    &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-107"&gt;&lt;/a&gt;                    &lt;span class="s"&gt;u'provider'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-108"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'pk'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-109"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'extra_data'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extra_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-110"&gt;&lt;/a&gt;                    &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-111"&gt;&lt;/a&gt;                    &lt;span class="s"&gt;u'event'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-112"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'pk'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-113"&gt;&lt;/a&gt;                        &lt;span class="s"&gt;u'name'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-114"&gt;&lt;/a&gt;                    &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-115"&gt;&lt;/a&gt;                &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-116"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-117"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;retry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-118"&gt;&lt;/a&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sync_event&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-119"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-120"&gt;&lt;/a&gt;        &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u'Event creation result: &lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-121"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Happy weekend! :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE on 2014-11-11:&lt;/strong&gt; &lt;a class="reference external" href="http://psa.matiasaguirre.net/"&gt;python-social-auth&lt;/a&gt; has updated the documentation
+about how to refresh tokens: &lt;a class="reference external" href="http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token"&gt;http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Today I have found that refresh_tokens also expires, so the correct
+&lt;tt class="docutils literal"&gt;approval_promt&lt;/tt&gt; value to use is &lt;tt class="docutils literal"&gt;auto&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-2"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'access_type'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'offline'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c"&gt;# Enables the refreshing grant&lt;/span&gt;
+&lt;a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-3"&gt;&lt;/a&gt;    &lt;span class="s"&gt;'approval_promt'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'auto'&lt;/span&gt;  &lt;span class="c"&gt;# Enables refresh_token, for ever and ever&lt;/span&gt;
+&lt;a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>google</category><category>oauth2</category><category>python</category><category>social</category><guid>http://ariel17.com.ar/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</guid><pubDate>Thu, 30 Oct 2014 13:00:16 GMT</pubDate></item><item><title>Broken properties</title><link>http://ariel17.com.ar/en/blog/broken-properties/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Yesterday I was fighting a while during the day trying to replace a model field
+in &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; with &lt;strong&gt;property&lt;/strong&gt;. Property is a mechanism in &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; language to
+implement getters and setters for a class field in a transparent way (&lt;em&gt;in a
+pythonic way&lt;/em&gt; some might say). Here a very simple example:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;File: foo.py&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;Description: A very simple property implementation on a very simple class.&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-7"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-9"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-13"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    This is a foo class implementation.&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-15"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-18"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@property&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-19"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-20"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-21"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Access the _foo field but doing some dummy calculations.&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-22"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-23"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-24"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-25"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@foo.setter&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-26"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-27"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-28"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Setter for _foo field but doing some "validations".&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-29"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-30"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-31"&gt;&lt;/a&gt;            &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"foo field cannot be greater than 10"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-32"&gt;&lt;/a&gt;
+&lt;a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-33"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;So this way the recently implemented &lt;tt class="docutils literal"&gt;Foo&lt;/tt&gt; class would be used:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;python
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; from foo import Foo
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Foo&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-4"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo  &lt;span class="c"&gt;# _foo field is still accessible&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-5"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-6"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-7"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo &lt;span class="o"&gt;==&lt;/span&gt; f.foo
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-9"&gt;&lt;/a&gt;True
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo  &lt;span class="c"&gt;# since f._foo == 1, random will only return 1&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-11"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; 5
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-13"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo  &lt;span class="c"&gt;# now f._foo == 5; random numbers will vary between 1 and 5&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-14"&gt;&lt;/a&gt;3
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-15"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;  &lt;span class="c"&gt;# this will raise a ValueError exception&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-16"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-17"&gt;&lt;/a&gt;  File &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;, line 1, in &amp;lt;module&amp;gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-18"&gt;&lt;/a&gt;  File &lt;span class="s2"&gt;"foo.py"&lt;/span&gt;, line 31, in foo
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-19"&gt;&lt;/a&gt;    raise ValueError&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"foo field cannot be greater than 10"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-20"&gt;&lt;/a&gt;ValueError: foo field cannot be greater than 10
+&lt;a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-21"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/2/library/functions.html#property"&gt;The official documentation about this functionality&lt;/a&gt; can be found easily.&lt;/p&gt;
+&lt;div class="section" id="the-problem-with-django"&gt;
+&lt;h2&gt;The problem with Django&lt;/h2&gt;
+&lt;p&gt;Implement this functionality in Django for model fields is not a problem at
+all. The problem resides on using the other advantages this framework offers
+over the field used for this solution. I'm going to make a simple example with
+a &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; project:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install python-pip &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo pip install virtualenv
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-3"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir brokenprop &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd &lt;/span&gt;brokenprop
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-6"&gt;&lt;/a&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv env
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-8"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-10"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;pip install django
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-12"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped more output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-14"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;django-admin.py startproject brokenprop &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd &lt;/span&gt;brokenprop
+&lt;a name="rest_code_1a76345c159b40e08ba1871346b65434-15"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;chmod +x manage.py &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./manage.py startapp propapp
+&lt;/pre&gt;&lt;p&gt;The test project was initialized. By default &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; has configured &lt;a class="reference external" href="http://www.sqlite.org/"&gt;SQLite&lt;/a&gt; as
+database engine and for this example it is more than enough. I'm going to edit
+the &lt;tt class="docutils literal"&gt;propapp&lt;/tt&gt; application's models module and implement getter and setter in
+a class. The result is very similar to the previous example:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;File: models.py&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;Description: Model implementations for application 'propapp'.&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-7"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-9"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-13"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    A foo model implementation.&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-15"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-17"&gt;&lt;/a&gt;        &lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-18"&gt;&lt;/a&gt;        &lt;span class="n"&gt;blank&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-19"&gt;&lt;/a&gt;        &lt;span class="n"&gt;null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-20"&gt;&lt;/a&gt;        &lt;span class="n"&gt;db_column&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c"&gt;# keeps the field name as it should&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-21"&gt;&lt;/a&gt;    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-23"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@property&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-24"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-25"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-26"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        The foo getter&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-27"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-28"&gt;&lt;/a&gt;        &lt;span class="c"&gt;# doing the things that a getter method does ...&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-29"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-31"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@foo.setter&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-32"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-33"&gt;&lt;/a&gt;        &lt;span class="c"&gt;# doing the things that a setter method does ...&lt;/span&gt;
+&lt;a name="rest_code_e34021061f774290940a57af7f8c125d-34"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;So there it is: a field model with its methods. Here is how to use them:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;./manage.py syncdb --noinput
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-3"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output &lt;span class="k"&gt;for&lt;/span&gt; sync stuff&lt;span class="o"&gt;)&lt;/span&gt; ...
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-5"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;./manage.py shell
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; from propapp.models import Foo
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Foo&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-9"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'a'&lt;/span&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-11"&gt;&lt;/a&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo &lt;span class="o"&gt;==&lt;/span&gt; f.foo
+&lt;a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-13"&gt;&lt;/a&gt;True
+&lt;/pre&gt;&lt;p&gt;Everything is ok til here; much more, everything is the same, no problem so
+far. The problems begin when a query on the field is made:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-2"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-4"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-5"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-6"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'foo'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;Ok, the field cannot be used as it was supposed to be &lt;tt class="docutils literal"&gt;:(&lt;/tt&gt;. Suppose that this
+cost is worthless for me and I want to continue this way, I don't care that the
+field name is not intuitive enough: I want (and I will) put what it requires to
+be putted to get to the field name:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;_foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-2"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-4"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py"&lt;/span&gt;, line 451, in execute
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-5"&gt;&lt;/a&gt;  &lt;span class="k"&gt;return&lt;/span&gt; Database.Cursor.execute&lt;span class="o"&gt;(&lt;/span&gt;self, query, params&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-6"&gt;&lt;/a&gt;OperationalError: no such table: propapp_foo
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;__foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-9"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-10"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-11"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-12"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-13"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;''&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-15"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;propapp__foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-16"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-17"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-18"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-19"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-20"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'propapp'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-21"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-22"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;propapp_foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-23"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-24"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-25"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-26"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-27"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'propapp_foo'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-28"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b04445aa7cd4468a92bd07a967607d15-29"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;The field is not reachable to be used on queries&lt;/strong&gt;. The issue &lt;a class="reference external" href="https://code.djangoproject.com/ticket/3148"&gt;#3148&lt;/a&gt; on
+&lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;'s track system talks about it, but the solution propoused, on which
+this post is based, does not provide the expected functionality (&lt;a class="reference external" href="https://code.djangoproject.com/ticket/3148#comment:51"&gt;here my
+complains&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Except, of course, that &lt;strong&gt;I miss something&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>django</category><category>programming</category><category>python</category><guid>http://ariel17.com.ar/en/blog/broken-properties/</guid><pubDate>Sat, 12 Jul 2014 22:56:51 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,53 @@
+<p>Using a Docker container running a SSH daemon as idle server, Ansible can run
+playbooks safely in an ephemeral environment. GitLab CI provides a highly
+flexible interface as recipe with <a class="reference external" href="https://docs.gitlab.com/ce/ci/quick_start/#quick-start"><cite>.gitlab-ci.yml</cite></a> file:</p>
+<pre class="code yaml"><a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-1"></a><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ansible/ubuntu14.04-ansible</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-2"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-3"></a><span class="l-Scalar-Plain">variables</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-4"></a>  <span class="l-Scalar-Plain">GIT_STRATEGY</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">clone</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-5"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-6"></a><span class="l-Scalar-Plain">before_script</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-7"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">eval $(ssh-agent -s)</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-8"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir -p ~/.ssh</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-9"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &quot;$SSH_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-10"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">chmod 400 ~/.ssh/id_rsa</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-11"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;Host github.com&#39; &gt; ~/.ssh/config</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-12"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;    User git&#39; &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-13"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;    IdentityFile ~/.ssh/id_rsa&#39; &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-14"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;    IdentitiesOnly yes&#39; &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-15"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;    StrictHostKeyChecking no&#39; &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-16"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule init</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-17"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule update</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-18"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &quot;$ANSIBLE_VAULT_PASSWORD&quot; &gt; &quot;$ANSIBLE_VAULT_PASSWORD_FILE&quot;</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-19"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">apt-get install sshpass -y</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-20"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-21"></a><span class="l-Scalar-Plain">after_script</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-22"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rm -rf .ssh &quot;$ANSIBLE_VAULT_PASSWORD_FILE&quot;</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-23"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-24"></a><span class="l-Scalar-Plain">stages</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-25"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">build</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-26"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">test</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-27"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">production</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-28"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-29"></a><span class="l-Scalar-Plain">syntax_check</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-30"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">build</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-31"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-32"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook --syntax-check playbook.yml</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-33"></a>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-34"></a><span class="l-Scalar-Plain">server01</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-35"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">test</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-36"></a>  <span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-37"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rastasheep/ubuntu-sshd:14.04</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-38"></a>  <span class="l-Scalar-Plain">environment</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">testing</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-39"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-40"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;[server01]&#39; &gt;&gt; inventory</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-41"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo &#39;rastasheep__ubuntu-sshd ansible_connection=ssh ansible_user=root ansible_ssh_pass=root&#39; &gt;&gt; inventory</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-42"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible server01 -m setup</span>
+<a name="rest_code_74457a7ee9d145c1a44948872ff12f3a-43"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook playbook.yml --limit server01</span>
+</pre><p>The cheapest test that can be done is syntax checking. Once it is verified,
+test jobs will be fired in parallel (there can be any number of jobs in each
+stage), each one with an idle server asociated to it. <cite>$SSH_PRIVATE_KEY</cite>,
+<cite>$ANSIBLE_VAULT_PASSWORD</cite> and <cite>$ANSIBLE_VAULT_PASSWORD_FILE</cite> are variables
+provided by GitLab itself, configured previously by the user. For the idle
+server I used the <a class="reference external" href="https://github.com/rastasheep/ubuntu-sshd">ubuntu-sshd</a> Docker image as service only for test jobs. The
+inventory is overrided to match configuration for every node.</p>

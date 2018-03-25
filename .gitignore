@@ -6,10 +6,6 @@
 # SQLite database files
 *.db
 
-# Build artifacts
-cache
-output
-
 # Editor meta
 .*.sw[op]
 

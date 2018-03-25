@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (quotes)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/quotes.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 14:59:57 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Quotes IV</title><link>http://ariel17.com.ar/en/blog/quotes-iv/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;This is an extract from the book &lt;em&gt;Getting Real: The Smarter, Faster, Easier Way
+to Build a Web Application&lt;/em&gt; by 37Signals, page 115 to 116. &lt;a class="reference external" href="https://gettingreal.37signals.com/"&gt;The book is freely
+available to download in its home page&lt;/a&gt; :)&lt;/p&gt;
+&lt;div class="section" id="code-speaks"&gt;
+&lt;h2&gt;Code Speaks&lt;/h2&gt;
+&lt;div class="section" id="listen-when-your-code-pushes-back"&gt;
+&lt;h3&gt;Listen when your code pushes back&lt;/h3&gt;
+&lt;p&gt;Listen to your code. It will offer suggestions. It will push back. It will tell
+you where the pitfalls reside. It will suggest new ways to do things. It will
+help you stick to a model of less software.&lt;/p&gt;
+&lt;p&gt;Is a new feature requiring weeks of time and thousands of lines of code? That's
+your code telling you there's probably a better way. Is there a simple way to
+code something in one hour instead of a complicated way that will take ten
+hours? Again, that's your code guiding you. Listen.&lt;/p&gt;
+&lt;p&gt;Your code can guide you to fixes that are cheap and light. Pay attention when
+an easy path emerges. Sure, the feature that's easy to make might not be
+exactly the same as the feature you originally had in mind but so what? If it
+works well enough and gives you more time to work on something else, it’s a
+keeper.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="listen-up"&gt;
+&lt;h3&gt;Listen up&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Don't worry about design, if you listen to your code a good design will
+appear... Listen to the technical people. If they are complaining about the
+difficulty of making changes, then take such complaints seriously and give them
+time to fix things.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-Martin Fowler, Chief Scientist, ThoughtWorks (from &lt;a class="reference external" href="http://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="if-programmers-got-paid-to-remove-code"&gt;
+&lt;h3&gt;If Programmers Got Paid To Remove Code...&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;If programmers got paid to remove code from sofware instead of writing new
+code, software would be a whole lot better.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-Nicholas Negroponte, Professor of Media Technology at the Massachusetts
+Institute of Technology and founding chairman of MIT's Media Laboratory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>programming</category><category>quotes</category><guid>http://ariel17.com.ar/en/blog/quotes-iv/</guid><pubDate>Sun, 10 Aug 2014 21:57:01 GMT</pubDate></item></channel></rss>

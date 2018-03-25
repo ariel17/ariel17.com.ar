@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
+<head>
+<meta charset="utf-8">
+<base href="http://ariel17.com.ar/blog/go-en-vim/">
+<meta name="viewport" content="width=device-width">
+<title>Go en ViM | Ariel Gerardo Ríos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="canonical" href="http://ariel17.com.ar/blog/go-en-vim/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ariel Gerardo Ríos">
+<link rel="prev" href="../nginx-como-balanceador-de-carga/" title="Nginx como balanceador de carga" type="text/html">
+<link rel="next" href="../xy-parte-1/" title="(x,y) parte 1" type="text/html">
+<meta property="og:site_name" content="Ariel Gerardo Ríos">
+<meta property="og:title" content="Go en ViM">
+<meta property="og:url" content="http://ariel17.com.ar/blog/go-en-vim/">
+<meta property="og:description" content="Estoy armando mi ambiente local para programar en Go. Estoy analizando quizás
+comenzar a usar Visual Studio Code, pero como fallback quiero dejar ViM correctamente
+configurado. Se asume que VundleVim/">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-06-02T15:24:21-03:00">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+    <div id="container">
+         
+    <header id="header"><nav class="navbar navbar-inverse navbar-fixed-top"><div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Ariel Gerardo Ríos</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+<li id="home-link"><a href="../../">Home</a></li>
+                <li><a href="../../blog">Blog</a></li>
+                <li><a href="../../projects">Proyectos</a></li>
+          
+          
+        </ul>
+</div>
+    </div>
+  </nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Go en ViM</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ariel Gerardo Ríos</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-06-02T15:24:21-03:00" itemprop="datePublished" title="2017-06-02 15:24">2017-06-02 15:24</time></a></p>
+                <p class="commentline">
+        
+    <a href=".#disqus_thread" data-disqus-identifier="cache/posts/go-en-vim.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Código fuente</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Estoy armando mi ambiente local para programar en Go. Estoy analizando quizás
+comenzar a usar <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, pero como fallback quiero dejar ViM correctamente
+configurado. Se asume que <a class="reference external" href="https://github.com/VundleVim/Vundle.vim">VundleVim/Vundle.vim</a> y <a class="reference external" href="https://github.com/scrooloose/nerdtree">NERD Tree</a> ya está instalados.</p>
+<div class="section" id="dependencias-del-sistema-operativo">
+<h2>Dependencias del sistema operativo</h2>
+<ul class="simple">
+<li>ViM v7.4</li>
+<li>Exhuberant ctags v5.8</li>
+<li>Go v1.8.3</li>
+<li>Go tags: <cite>go get -u github.com/jstemmer/gotags</cite>
+</li>
+</ul>
+</div>
+<div class="section" id="plugins-a-usar">
+<h2>Plugins a usar</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/fatih/vim-go">fatih/vim-go</a></li>
+<li><a class="reference external" href="https://github.com/Shougo/neocomplete.vim">Shougo/neocomplete.vim</a></li>
+</ul>
+<p>Configuraciones en .vimrc</p>
+<pre class="code vim"><a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-1"></a><span class="nb">syntax</span> enable
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-2"></a><span class="k">filetype</span> plugin <span class="k">on</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-3"></a><span class="k">set</span> <span class="k">number</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-4"></a><span class="k">let</span> <span class="k">g</span>:go_disable_autoinstall <span class="p">=</span> <span class="m">0</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-5"></a>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-6"></a><span class="c">" Highlight</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-7"></a><span class="k">let</span> <span class="k">g</span>:go_highlight_functions <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-8"></a><span class="k">let</span> <span class="k">g</span>:go_highlight_methods <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-9"></a><span class="k">let</span> <span class="k">g</span>:go_highlight_structs <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-10"></a><span class="k">let</span> <span class="k">g</span>:go_highlight_operators <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-11"></a><span class="k">let</span> <span class="k">g</span>:go_highlight_build_constraints <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-12"></a>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-13"></a><span class="c">" Autocomplete</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-14"></a><span class="k">let</span> <span class="k">g</span>:neocomplete#enable_at_startup <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-15"></a>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-16"></a><span class="c">" Tags</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-17"></a><span class="k">let</span> <span class="k">g</span>:tagbar_type_go <span class="p">=</span> {
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-18"></a>    \ <span class="s1">'ctagstype'</span> : <span class="s1">'go'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-19"></a>    \ <span class="s1">'kinds'</span>     : [
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-20"></a>        \ <span class="s1">'p:package'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-21"></a>        \ <span class="s1">'i:imports:1'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-22"></a>        \ <span class="s1">'c:constants'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-23"></a>        \ <span class="s1">'v:variables'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-24"></a>        \ <span class="s1">'t:types'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-25"></a>        \ <span class="s1">'n:interfaces'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-26"></a>        \ <span class="s1">'w:fields'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-27"></a>        \ <span class="s1">'e:embedded'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-28"></a>        \ <span class="s1">'m:methods'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-29"></a>        \ <span class="s1">'r:constructor'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-30"></a>        \ <span class="s1">'f:functions'</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-31"></a>    \ ]<span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-32"></a>    \ <span class="s1">'sro'</span> : <span class="s1">'.'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-33"></a>    \ <span class="s1">'kind2scope'</span> : {
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-34"></a>        \ <span class="s1">'t'</span> : <span class="s1">'ctype'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-35"></a>        \ <span class="s1">'n'</span> : <span class="s1">'ntype'</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-36"></a>    \ }<span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-37"></a>    \ <span class="s1">'scope2kind'</span> : {
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-38"></a>        \ <span class="s1">'ctype'</span> : <span class="s1">'t'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-39"></a>        \ <span class="s1">'ntype'</span> : <span class="s1">'n'</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-40"></a>    \ }<span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-41"></a>    \ <span class="s1">'ctagsbin'</span>  : <span class="s1">'gotags'</span><span class="p">,</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-42"></a>    \ <span class="s1">'ctagsargs'</span> : <span class="s1">'-sort -silent'</span>
+<a name="rest_code_a3ac3ca66e1d479aae458e17923fe175-43"></a>\ }
+</pre>
+</div>
+<div class="section" id="todo-junto">
+<h2>Todo junto</h2>
+<p>Ejecutando <cite>:GoInstallBinaries</cite> <a class="reference external" href="https://github.com/fatih/vim-go">vim-go</a> termina de instalar los binarios
+necesarios para ser usados dentro de ViM.</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../nginx-como-balanceador-de-carga/" rel="prev" title="Nginx como balanceador de carga">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../xy-parte-1/" rel="next" title="(x,y) parte 1">Siguiente publicación</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="ariel17",
+            disqus_url="http://ariel17.com.ar/blog/go-en-vim/",
+        disqus_title="Go en ViM",
+        disqus_identifier="cache/posts/go-en-vim.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="ariel17";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p>Contents © 2018         <a href="mailto:ariel.gerardo.rios@gmail.com">Ariel Gerardo Ríos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    
+    
+    <script src="../../assets/js/bootstrap.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48346337-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

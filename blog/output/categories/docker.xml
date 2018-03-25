@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (docker)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/docker.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 15:00:00 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nginx como balanceador de carga</title><link>http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Suponiendo una aplicación donde se quiera distribuir el tráfico sobre distintas
+instancias para soportar la carga, es posible usar &lt;a class="reference external" href="https://www.nginx.com/"&gt;Nginx&lt;/a&gt; como servidor web y
+al mismo tiempo balanceador de carga.&lt;/p&gt;
+&lt;div class="section" id="arquitectura"&gt;
+&lt;h2&gt;Arquitectura&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;1 Nginx&lt;/li&gt;
+&lt;li&gt;3 simple aplicaciones web como backends&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code yaml"&gt;&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# docker-compose.yml&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-2"&gt;&lt;/a&gt;&lt;span class="nn"&gt;---&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-3"&gt;&lt;/a&gt;&lt;span class="l-Scalar-Plain"&gt;version&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'3'&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-4"&gt;&lt;/a&gt;&lt;span class="l-Scalar-Plain"&gt;services&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-5"&gt;&lt;/a&gt;  &lt;span class="l-Scalar-Plain"&gt;nginx&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-6"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-7"&gt;&lt;/a&gt;      &lt;span class="l-Scalar-Plain"&gt;context&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;.&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-8"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;ports&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-9"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;8080:80&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-10"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;links&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-11"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend1&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-12"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend2&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-13"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend3&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-14"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;depends_on&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-15"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend1&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-16"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend2&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-17"&gt;&lt;/a&gt;      &lt;span class="p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;backend3&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-18"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-19"&gt;&lt;/a&gt;  &lt;span class="l-Scalar-Plain"&gt;backend1&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-20"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-21"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python -m http.server 80&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-23"&gt;&lt;/a&gt;  &lt;span class="l-Scalar-Plain"&gt;backend2&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-24"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-25"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python -m http.server 80&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-26"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-27"&gt;&lt;/a&gt;  &lt;span class="l-Scalar-Plain"&gt;backend3&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-28"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-29"&gt;&lt;/a&gt;    &lt;span class="l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;python -m http.server 80&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code Dockerfile"&gt;&lt;a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;# Dockerfile&lt;/span&gt;
+&lt;a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="s"&gt; nginx&lt;/span&gt;
+&lt;a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-3"&gt;&lt;/a&gt;LABEL maintainer &lt;span class="s2"&gt;"ariel.gerardo.rios@gmail.com"&lt;/span&gt;
+&lt;a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-5"&gt;&lt;/a&gt;COPY &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"nginx.conf"&lt;/span&gt;, &lt;span class="s2"&gt;"/etc/nginx/nginx.conf"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code text"&gt;&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-1"&gt;&lt;/a&gt;# nginx.conf
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-2"&gt;&lt;/a&gt;events{}
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-4"&gt;&lt;/a&gt;http {
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-5"&gt;&lt;/a&gt;    upstream backend {
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-6"&gt;&lt;/a&gt;        server backend1;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-7"&gt;&lt;/a&gt;        server backend2;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-8"&gt;&lt;/a&gt;        server backend3;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-9"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-11"&gt;&lt;/a&gt;    log_format upstreamlog '[$time_local] upstream $upstream_addr: $request upstream_response_time $upstream_response_time msec $msec request_time $request_time';
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-13"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-14"&gt;&lt;/a&gt;        listen 80;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-15"&gt;&lt;/a&gt;        access_log /dev/stdout upstreamlog;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-17"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-18"&gt;&lt;/a&gt;            proxy_pass http://backend;
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-19"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-20"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-21"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="simulacion"&gt;
+&lt;h2&gt;Simulación&lt;/h2&gt;
+&lt;p&gt;El método de selección aplicado por defecto es Round Robin.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;docker-compose build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; docker-compose up  &lt;span class="c"&gt;# localhost:8080&lt;/span&gt;
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-2"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-3"&gt;&lt;/a&gt;nginx_1     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;17/May/2017:01:56:50 +0000&lt;span class="o"&gt;]&lt;/span&gt; upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.003 msec 1494986210.108 request_time 0.003
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-4"&gt;&lt;/a&gt;nginx_1     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;17/May/2017:01:56:50 +0000&lt;span class="o"&gt;]&lt;/span&gt; upstream 172.30.0.3:80: GET /favicon.ico HTTP/1.1 upstream_response_time 0.001 msec 1494986210.130 request_time 0.001
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-5"&gt;&lt;/a&gt;nginx_1     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;17/May/2017:01:56:51 +0000&lt;span class="o"&gt;]&lt;/span&gt; upstream 172.30.0.4:80: GET / HTTP/1.1 upstream_response_time 0.002 msec 1494986211.914 request_time 0.002
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-6"&gt;&lt;/a&gt;nginx_1     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;17/May/2017:01:56:52 +0000&lt;span class="o"&gt;]&lt;/span&gt; upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.004 msec 1494986212.142 request_time 0.004
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-7"&gt;&lt;/a&gt;nginx_1     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;17/May/2017:01:56:52 +0000&lt;span class="o"&gt;]&lt;/span&gt; upstream 172.30.0.3:80: GET / HTTP/1.1 upstream_response_time 0.009 msec 1494986212.396 request_time 0.009
+&lt;a name="rest_code_3c9d844690074ddeb6699480165fb023-8"&gt;&lt;/a&gt;...
+&lt;/pre&gt;&lt;p&gt;Se puede alterar el método de selección modificando el peso de los nodos:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_e06f850b61324bc3ab3d26febd4032da-1"&gt;&lt;/a&gt;upstream backend {
+&lt;a name="rest_code_e06f850b61324bc3ab3d26febd4032da-2"&gt;&lt;/a&gt;    server backend1 weight=5;
+&lt;a name="rest_code_e06f850b61324bc3ab3d26febd4032da-3"&gt;&lt;/a&gt;    server backend2;
+&lt;a name="rest_code_e06f850b61324bc3ab3d26febd4032da-4"&gt;&lt;/a&gt;    server backend3;
+&lt;a name="rest_code_e06f850b61324bc3ab3d26febd4032da-5"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="otros-metodos"&gt;
+&lt;h2&gt;Otros métodos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Persistencia de sesiones:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-1"&gt;&lt;/a&gt;upstream backend {
+&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-2"&gt;&lt;/a&gt;    ip_hash;
+&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-3"&gt;&lt;/a&gt;    server backend1;
+&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-4"&gt;&lt;/a&gt;    server backend2;
+&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-5"&gt;&lt;/a&gt;    server backend3;
+&lt;a name="rest_code_03dce952face4c838efa507d711b1cad-6"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Menos conectado:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-1"&gt;&lt;/a&gt;upstream backend {
+&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-2"&gt;&lt;/a&gt;    least_conn;
+&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-3"&gt;&lt;/a&gt;    server backend1;
+&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-4"&gt;&lt;/a&gt;    server backend2;
+&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-5"&gt;&lt;/a&gt;    server backend3;
+&lt;a name="rest_code_9257ffd1769f46f7997d0d743343ab48-6"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mas-informacion"&gt;
+&lt;h2&gt;Más información&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://nginx.org/en/docs/http/load_balancing.html"&gt;Documentación de Nginx.&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>docker</category><category>nginx</category><category>web</category><guid>http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/</guid><pubDate>Wed, 17 May 2017 01:44:51 GMT</pubDate></item></channel></rss>

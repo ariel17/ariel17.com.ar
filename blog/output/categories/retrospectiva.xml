@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (retrospectiva)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/retrospectiva.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Balance 2016</title><link>http://ariel17.com.ar/blog/balance-2016/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Esta es una revisión rápida del 2016, aprovechando que aún estoy fresquito. :)&lt;/p&gt;
+&lt;div class="section" id="familia-y-amigos"&gt;
+&lt;h2&gt;Familia y amigos&lt;/h2&gt;
+&lt;p&gt;Este año empecé a practicar acercarme más a la gente que quiero, sin esperar a
+que suceda o dejarlo para cuando me acuerde. Quiero participar activamente y si
+bien no alcancé el ideal, sí me quedo con que entendí que ver a la familia y
+disfrutar de los amigos sólo depende de mí, todo está en mí para que sea mejor.
+Este año pude ver todas las puertas disponibles; el que viene quiero mejorar
+para abrir todas las que pueda.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="salud"&gt;
+&lt;h2&gt;Salud&lt;/h2&gt;
+&lt;p&gt;Al fin me encontré con una forma de ejercitar que encaja con mis horarios y mis
+ganas de exigirme: en casa, por la mañana, antes de ir a la oficina, empezando
+con ejercicios que sí me gustan y extendiendo a otros que no tanto. Al menos
+por ahora es un desafío a superar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="proyectos-de-negocio"&gt;
+&lt;h2&gt;Proyectos de negocio&lt;/h2&gt;
+&lt;p&gt;Este año arrancaron con fuerza varios proyectos de negocio, varios de los
+cuales están en plena etapa de armado del prototipo, otros empezando a
+despegar. Fue clave definir objetivos claros y roles para los involucrados, así
+como tiempo a dedicarle a cada uno, para balancear el trabajo y la familia.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="retrospectivas"&gt;
+&lt;h2&gt;Retrospectivas&lt;/h2&gt;
+&lt;p&gt;Hice 21 sesiones, teniendo el primer registro el 20/03 y el último el 05/12. No
+las llevo de forma estricta sino más bien como una forma de afianzar o revisar
+cómo estoy yendo cada cierto tiempo, similar a puntos de control. Me sirvió
+mucho para sincerarme conmigo mismo sobre actividades que no me aportaban nada
+y actitudes que necesitaba cambiar. Muchas veces apliqué &lt;a class="reference external" href="https://es.wikipedia.org/wiki/Los_cinco_%C2%BFPor_qu%C3%A9%3F"&gt;Los 5 ¿por qué?&lt;/a&gt; para buscar la
+causa raíz de alguna situación problemática y plantear acciones acorde a cada
+respuesta; otras veces simplemente me plantié acciones a tomar para mejorar en
+aspectos más urgentes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hobbies"&gt;
+&lt;h2&gt;Hobbies&lt;/h2&gt;
+&lt;p&gt;Este año me reencontré con alguno de mis hobbies y descubrí otros nuevos:&lt;/p&gt;
+&lt;div class="section" id="escritura"&gt;
+&lt;h3&gt;Escritura&lt;/h3&gt;
+&lt;p&gt;Mi amiga la escritura... la abandoné durante muchos años y ahora nos
+encontramos de nuevo, usualmente en el tren, de ida al trabajo o de vuelta a
+casa. Llevo siempre un cuaderno en la mochila y lo tengo lleno de borradores;
+&lt;a class="reference external" href="http://ariel17.com.ar/categories/cartas/"&gt;algunos en la web&lt;/a&gt; y &lt;a class="reference external" href="http://ariel17.com.ar/posts/practica-y-constancia/"&gt;sólo una historia terminada&lt;/a&gt;... bueno, &lt;a class="reference external" href="http://ariel17.com.ar/posts/bailamos/"&gt;casi dos&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A pesar de la inconsistencia, algo concreto puede sacar: la conclusión de que
+sólo con mis ganas no voy a ir lejos en este tema y que necesito ayuda, un
+marco de trabajo para darle estructura lo que escribo. Ahora estoy haciendo un
+curso en &lt;a class="reference external" href="https://www.coursera.org/"&gt;Coursera&lt;/a&gt; sobre &lt;a class="reference external" href="https://www.coursera.org/specializations/creative-writing"&gt;Escritura Creativa&lt;/a&gt; para encontrar justamente esas
+herramientas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="electronica"&gt;
+&lt;h3&gt;Electrónica&lt;/h3&gt;
+&lt;p&gt;Este año me compré un &lt;a class="reference external" href="https://www.arduino.cc/en/Main/ArduinoBoardUno"&gt;Arduino Uno&lt;/a&gt; y algo dentro de mi cabeza se derramó:
+algo que siempre vi de lejos y quise aprender ahora lo tenía en las manos y con
+sólo mi motivación para aprender como obstáculo. Luego descubrí que el tiempo
+que uno le dedica es en realidad el obstáculo, como todo.&lt;/p&gt;
+&lt;p&gt;Estoy haciendo un pequeño proyecto de domótica (la forma más fácil y popular
+de encarar proyectos con esta tecnología, por lo que vi en Internet). Mi
+intención es colocar sensores de movimiento y llevar esa información por medio
+de WiFi a un dispositivo móvil o notificar el suceso mediante alguna
+plataforma. La parte del sensor PIR está resuelto; ahora voy por la plaquita
+WiFi, que no lo es tanto :S El proyecto se llama &lt;a class="reference external" href="https://github.com/ariel17/domoco"&gt;Domoco y está en GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="jardineria"&gt;
+&lt;h3&gt;Jardinería&lt;/h3&gt;
+&lt;p&gt;Relativamente nuevo... cuando vivía con mis padres odiaba dedicarme a las
+plantas y cuando me fui a vivir solo mágicamente el suelo me llamaba. Sin
+embargo, hubo otros años en los que fui muuuucho más activo en sumatoria debo
+decir que el 2016 fue el año de la vagancia en este aspecto. Necesito arrancar
+cuanto antes, pero por favor, si puede ser un día con menos de 40° C de ST,
+mejor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="musica"&gt;
+&lt;h3&gt;Música&lt;/h3&gt;
+&lt;p&gt;Estoy aprendiendo a tocar la guitarra, luego de pasarme la vida entera
+preguntándome qué se siente tocar una. Es fascinante. Todavía no saco un tema
+entero y ya cambié de profesor pero siento que es el camino por que debo ir. Mi
+intención es aprender hasta poder seguir un tema de &lt;a class="reference external" href="https://www.youtube.com/watch?v=6zDT_uGYdVs"&gt;Uncle Acid &amp;amp; the Deadbeats&lt;/a&gt; ¡y rockear en
+casa!.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lectura"&gt;
+&lt;h3&gt;Lectura&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ariel17.com.ar/posts/books-in-2016/"&gt;8 de 19 libros propuestos&lt;/a&gt;. Tristísimo, si me apego sólamente a la lista; el
+problema reside en que estuve leyendo otros por necesidad y unos más se
+agregaron a la lista inicial. Sin contar tampoco otras fuentes, como el RSS.
+Como mejora debería plantear libros a leer no más lejos de 3 meses, cosa de
+adaptarme a los requerimientos del momento.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;2017&lt;/h2&gt;
+&lt;p&gt;¡Listo para tomar la posta del año pasado! El próximo paso será hacer las
+listas con los objetivos a cumplir en cada aspecto.&lt;/p&gt;
+&lt;p&gt;¡Salud!&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>mision</category><category>retrospectiva</category><guid>http://ariel17.com.ar/blog/balance-2016/</guid><pubDate>Mon, 02 Jan 2017 02:44:00 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (django)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/django.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:55 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Broken properties</title><link>http://ariel17.com.ar/blog/broken-properties/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Ayer estuve peleando un rato largo durante el día tratando de reemplazar un
+campo en un modelo de &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; con &lt;strong&gt;property&lt;/strong&gt;. Property es un mecanismo en el
+lenguaje &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; para implementar getters y setters de un campo en una clase de
+manera transparente (&lt;em&gt;de forma pytónica&lt;/em&gt; dirían algunos). Acá un ejemplo
+sencillo:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;File: foo.py&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;Description: A very simple property implementation on a very simple class.&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-7"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-9"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-13"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    This is a foo class implementation.&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-15"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-18"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@property&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-19"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-20"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-21"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Access the _foo field but doing some dummy calculations.&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-22"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-23"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-24"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-25"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@foo.setter&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-26"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-27"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-28"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        Setter for _foo field but doing some "validations".&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-29"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-30"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-31"&gt;&lt;/a&gt;            &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"foo field cannot be greater than 10"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-32"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-33"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Así se usaría la clase &lt;tt class="docutils literal"&gt;Foo&lt;/tt&gt; recién implementada:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;python
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; from foo import Foo
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Foo&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-4"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo  &lt;span class="c"&gt;# _foo field is still accessible&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-5"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-6"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-7"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo &lt;span class="o"&gt;==&lt;/span&gt; f.foo
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-9"&gt;&lt;/a&gt;True
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo  &lt;span class="c"&gt;# since f._foo == 1, random will only return 1&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-11"&gt;&lt;/a&gt;1
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; 5
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-13"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo  &lt;span class="c"&gt;# now f._foo == 5; random numbers will vary between 1 and 5&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-14"&gt;&lt;/a&gt;3
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-15"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;  &lt;span class="c"&gt;# this will raise a ValueError exception&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-16"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-17"&gt;&lt;/a&gt;  File &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;, line 1, in &amp;lt;module&amp;gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-18"&gt;&lt;/a&gt;  File &lt;span class="s2"&gt;"foo.py"&lt;/span&gt;, line 31, in foo
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-19"&gt;&lt;/a&gt;    raise ValueError&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"foo field cannot be greater than 10"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-20"&gt;&lt;/a&gt;ValueError: foo field cannot be greater than 10
+&lt;a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-21"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/2/library/functions.html#property"&gt;Acá se puede leer la documentación oficial&lt;/a&gt; acerca de esta funcionalidad.&lt;/p&gt;
+&lt;div class="section" id="el-problema-con-django"&gt;
+&lt;h2&gt;El problema con Django&lt;/h2&gt;
+&lt;p&gt;Implementar esta funcionalidad en &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; para los campos de un modelo no es un
+problema en absoluto. El problema reside en querer utilizar las demás ventajas
+que ofrece el framework sobre el campo en el que se utilizó esta solución. Voy
+a ejemplificarlo con un proyecto muy simple:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install python-pip &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo pip install virtualenv
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-3"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir brokenprop &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd &lt;/span&gt;brokenprop
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-6"&gt;&lt;/a&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv env
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-8"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-10"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;pip install django
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-12"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped more output&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-14"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;django-admin.py startproject brokenprop &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd &lt;/span&gt;brokenprop
+&lt;a name="rest_code_62e0ecfd89d144769961113d7823cba8-15"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;chmod +x manage.py &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./manage.py startapp propapp
+&lt;/pre&gt;&lt;p&gt;El proyecto de pruebas ya está inicializado. Por defecto &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; trae
+configurado &lt;a class="reference external" href="http://www.sqlite.org/"&gt;SQLite&lt;/a&gt; como base de datos y para este ejemplo es más que
+suficiente. Voy a editar el módulo de modelos de la aplicación &lt;tt class="docutils literal"&gt;proapp&lt;/tt&gt; e
+implementar setter y getter en una clase. El resultado es muy similar al
+ejemplo anterior:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-5"&gt;&lt;/a&gt;&lt;span class="sd"&gt;File: models.py&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;Description: Model implementations for application 'propapp'.&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-7"&gt;&lt;/a&gt;&lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-9"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-13"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    A foo model implementation.&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-15"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-17"&gt;&lt;/a&gt;        &lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-18"&gt;&lt;/a&gt;        &lt;span class="n"&gt;blank&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-19"&gt;&lt;/a&gt;        &lt;span class="n"&gt;null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-20"&gt;&lt;/a&gt;        &lt;span class="n"&gt;db_column&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c"&gt;# keeps the field name as it should&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-21"&gt;&lt;/a&gt;    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-23"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@property&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-24"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-25"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-26"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        The foo getter&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-27"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        """&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-28"&gt;&lt;/a&gt;        &lt;span class="c"&gt;# doing the things that a getter method does ...&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-29"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-31"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@foo.setter&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-32"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-33"&gt;&lt;/a&gt;        &lt;span class="c"&gt;# doing the things that a setter method does ...&lt;/span&gt;
+&lt;a name="rest_code_53749e011c02472d9e6cda6d7803a05b-34"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Ya tengo el modelo con un campo y sus respectivos métodos. Así debería usarlos:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;./manage.py syncdb --noinput
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-3"&gt;&lt;/a&gt;... &lt;span class="o"&gt;(&lt;/span&gt;skipped output &lt;span class="k"&gt;for&lt;/span&gt; sync stuff&lt;span class="o"&gt;)&lt;/span&gt; ...
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-5"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;env&lt;span class="o"&gt;)&lt;/span&gt;~/brokenprop/brokenprop&lt;span class="nv"&gt;$ &lt;/span&gt;./manage.py shell
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; from propapp.models import Foo
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Foo&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-9"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f.foo &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'a'&lt;/span&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-11"&gt;&lt;/a&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; f._foo &lt;span class="o"&gt;==&lt;/span&gt; f.foo
+&lt;a name="rest_code_6f573bd81f174078acae1872b1ed5022-13"&gt;&lt;/a&gt;True
+&lt;/pre&gt;&lt;p&gt;Todo muy bien hasta acá; es más, todo es igual, sin problemas. Los problemas
+comienzan cuando se quiere usar el campo en una query:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-2"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-4"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-5"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-6"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'foo'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;Bien, no puedo usar el campo tal como lo debería usar &lt;tt class="docutils literal"&gt;:(&lt;/tt&gt;. Supongamos
+que asumo este costo y quiero continuar así, no me importa que el nombre
+del campo en las queries no sea el evidente e intuitivo, sino que usaré el
+nombre que le puse con el prefijo &lt;tt class="docutils literal"&gt;_&lt;/tt&gt; o lo que se requiera para acceder a
+él:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;_foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-2"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-4"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py"&lt;/span&gt;, line 451, in execute
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-5"&gt;&lt;/a&gt;  &lt;span class="k"&gt;return&lt;/span&gt; Database.Cursor.execute&lt;span class="o"&gt;(&lt;/span&gt;self, query, params&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-6"&gt;&lt;/a&gt;OperationalError: no such table: propapp_foo
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;__foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-9"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-10"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-11"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-12"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-13"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;''&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-15"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;propapp__foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-16"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-17"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-18"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-19"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-20"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'propapp'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-21"&gt;&lt;/a&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-22"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; Foo.objects.filter&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;propapp_foo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-23"&gt;&lt;/a&gt;Traceback &lt;span class="o"&gt;(&lt;/span&gt;most recent call last&lt;span class="o"&gt;)&lt;/span&gt;:
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-24"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-25"&gt;&lt;/a&gt;File &lt;span class="s2"&gt;"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"&lt;/span&gt;, line 1283, in names_to_path
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-26"&gt;&lt;/a&gt;  &lt;span class="s2"&gt;"Choices are: %s"&lt;/span&gt; % &lt;span class="o"&gt;(&lt;/span&gt;name, &lt;span class="s2"&gt;", "&lt;/span&gt;.join&lt;span class="o"&gt;(&lt;/span&gt;available&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-27"&gt;&lt;/a&gt;FieldError: Cannot resolve keyword &lt;span class="s1"&gt;'propapp_foo'&lt;/span&gt; into field. Choices are: _foo, id
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-28"&gt;&lt;/a&gt;
+&lt;a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-29"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;El campo está inaccesible para usarlo en queries&lt;/strong&gt;. El issue &lt;a class="reference external" href="https://code.djangoproject.com/ticket/3148"&gt;#3148&lt;/a&gt; del
+track de &lt;a class="reference external" href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt; habla al respecto, pero la solución planteada, en la que está
+basada este post, no provee la funcionalidad esperada (&lt;a class="reference external" href="https://code.djangoproject.com/ticket/3148#comment:51"&gt;mis quejas aquí&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Salvo, claro, que &lt;strong&gt;me esté perdiendo algo&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>django</category><category>programación</category><category>python</category><guid>http://ariel17.com.ar/blog/broken-properties/</guid><pubDate>Sat, 12 Jul 2014 22:56:51 GMT</pubDate></item></channel></rss>

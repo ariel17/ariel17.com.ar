@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (desarrollo)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/desarrollo.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 15:00:02 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Building environments with Linux Containers</title><link>http://ariel17.com.ar/en/blog/lxc-environments/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Thanks to virtualization tools is too easy today to quickly build multiple
+instance environments. &lt;a class="reference external" href="http://www.vmware.com/"&gt;VMWare&lt;/a&gt; or &lt;a class="reference external" href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt; are good options when the
+operative system to execute on the virtual machine is distinct from the host
+system, but when the objective is to virtualize Linux over Linux the option
+spectrum opens to other &lt;em&gt;cheaper&lt;/em&gt; options in the resource consumption.&lt;/p&gt;
+&lt;div class="section" id="linux-containers"&gt;
+&lt;h2&gt;Linux Containers&lt;/h2&gt;
+&lt;p&gt;If we want to build (or replicate) an ambient consisting only of Linux
+instances there is a tool named &lt;a class="reference external" href="https://linuxcontainers.org/"&gt;LXC&lt;/a&gt;: Linux Containers. It is not a virtual
+machine but it provides a virtual &lt;em&gt;environment&lt;/em&gt;, separating process and net
+spaces, functionallity provided by the Linux kernel itself since versio
+2.6.29 with &lt;a class="reference external" href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"&gt;cgroups&lt;/a&gt; integration. Without the full virtual machine simulation
+overhead there are more available resources to be used.&lt;/p&gt;
+&lt;p&gt;You can get more information about it in the &lt;a class="reference external" href="https://linuxcontainers.org/"&gt;official LXC page&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="installation"&gt;
+&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;We can install LXC directly from the software repository of our elected
+distribution:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b9972d029bfc46639d8ffd99d0fde673-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lxc  &lt;span class="c"&gt;# for Debian-based distros&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Also we can install the &lt;em&gt;bleeding edge&lt;/em&gt; version directly from the &lt;a class="reference external" href="https://github.com/lxc/lxc"&gt;GitHub
+repository&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b3097f778eff47ac89a567e1be2fe749-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install git  &lt;span class="c"&gt;# if you don't have installed git yet&lt;/span&gt;
+&lt;a name="rest_code_b3097f778eff47ac89a567e1be2fe749-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git@github.com:lxc/lxc.git
+&lt;a name="rest_code_b3097f778eff47ac89a567e1be2fe749-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo su
+&lt;a name="rest_code_b3097f778eff47ac89a567e1be2fe749-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;#$ cd lxc &amp;amp;&amp;amp; ./autogen.sh &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="creating-instances"&gt;
+&lt;h3&gt;Creating instances&lt;/h3&gt;
+&lt;p&gt;The container creation can be done through templates or manually indicating
+which image to use.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu1 -t ubuntu  &lt;span class="c"&gt;# creates a container named ubuntu1 using the ubuntu template&lt;/span&gt;
+&lt;a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+&lt;/pre&gt;&lt;p&gt;This way, the creation is done without any other intervention from user. There
+is also a way for interactive creation, visualizing distributions and
+available architectures:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1a48e1202ee241448d707fdd84dfeaf2-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -t download -n ubuntu3
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="displaying-created-instances"&gt;
+&lt;h3&gt;Displaying created instances&lt;/h3&gt;
+&lt;p&gt;To show available instances you can make use of &lt;code&gt;lxc-ls&lt;/code&gt; command. It will
+only display only the names but using the &lt;code&gt;--fancy&lt;/code&gt; flag it will append
+more useful information about them:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-ls --fancy
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-3"&gt;&lt;/a&gt;NAME     STATE    IPV4        IPV6  AUTOSTART
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-4"&gt;&lt;/a&gt;---------------------------------------------
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-5"&gt;&lt;/a&gt;ubuntu1  RUNNING  10.0.3.228  -     NO
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-6"&gt;&lt;/a&gt;ubuntu2  RUNNING  10.0.3.147  -     NO
+&lt;a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-7"&gt;&lt;/a&gt;ubuntu3  STOPPED  -           -     NO
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="accessing-an-instance"&gt;
+&lt;h3&gt;Accessing an instance&lt;/h3&gt;
+&lt;p&gt;Getting access to the instance terminal can be done with the command
+&lt;code&gt;lxc-console -n &amp;lt;instance-name&amp;gt;&lt;/code&gt;. Executing this command is the same to
+gain access to the host's phisical terminal; &lt;strong&gt;it is not a remote connection&lt;/strong&gt;.
+To close the terminal connection is enough with the &lt;code&gt;Ctrl-a+q&lt;/code&gt; input.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b90815c60f8d4d4a9f4b5a763ab01cc4-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-console -n db  &lt;span class="c"&gt;# enter Ctrl-a+q to close the session&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-web-console-to-rule-them-all"&gt;
+&lt;h2&gt;A web console to rule them all&lt;/h2&gt;
+&lt;p&gt;There is a project called &lt;a class="reference external" href="http://claudyus.github.io/LXC-Web-Panel/"&gt;LXC Web Panel&lt;/a&gt; (a &lt;a class="reference external" href="http://lxc-webpanel.github.io/"&gt;fork from original project&lt;/a&gt;
+for lxc&amp;gt;=1.0 versions) that is just a web site for Linux containers management.
+It control tools but also statistic reports for resource consumption
+visualization for all; guests and host.&lt;/p&gt;
+&lt;div class="section" id="installing-web-panel"&gt;
+&lt;h3&gt;Installing Web Panel&lt;/h3&gt;
+&lt;p&gt;To install the web panel we must add the package to our local software
+repository, install it and change the default configurations if we consider it
+necesary to do:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://claudyus.github.io/LXC-Web-Panel/ ./"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/lwp.list
+&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get update
+&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-4"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lwp
+&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  &lt;span class="c"&gt;# using default configuration&lt;/span&gt;
+&lt;a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-6"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo service lwp start
+&lt;/pre&gt;&lt;p&gt;I will assume that default settings were used; if change were made do not
+forget to adapt them to the examples exposed here to you particular cases. Once
+the installation finishes, open a browser and go to the &lt;a class="reference external" href="http://localhost:5000/"&gt;http://localhost:5000/&lt;/a&gt;
+web address:&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Login en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/login.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;p&gt;Using &lt;code&gt;admin&lt;/code&gt; as default user and password, we can login to the main
+panel and it will show us a resource consumption visualization for guests and
+hosts; links to instances and networking settings:&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Dashboard on LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/dashboard.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;p&gt;Accessing to any instance listed on the left pane we will see information
+related to it, as execution staus, network properties, assigned processors,
+memory limits, image location, etc.&lt;/p&gt;
+&lt;div class="thumbnail figure align-center"&gt;
+&lt;img alt="Instance configuration on LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/instance.png" style="width: 80.0%;"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="building-a-custom-schema"&gt;
+&lt;h2&gt;Building a custom schema&lt;/h2&gt;
+&lt;p&gt;I recommend to read the &lt;a class="reference external" href="http://containerops.org/2013/11/19/lxc-networking/"&gt;Exploring LXC Networking&lt;/a&gt; post where it exemplifies
+in a deeper way each networking setting combination according to the scenario
+you want to set, as outside and/or between-node conectivity and use of existing
+interfaces.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="other-related-technologies"&gt;
+&lt;h2&gt;Other related technologies&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://openvz.org/"&gt;OpenVZ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://linux-vserver.org/"&gt;Linux-VServer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; (based on LXC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>development</category><category>linux</category><category>virtualization</category><guid>http://ariel17.com.ar/en/blog/lxc-environments/</guid><pubDate>Sat, 02 Aug 2014 13:07:23 GMT</pubDate></item></channel></rss>

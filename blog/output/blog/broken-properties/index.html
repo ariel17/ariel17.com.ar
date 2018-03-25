@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
+<head>
+<meta charset="utf-8">
+<base href="http://ariel17.com.ar/blog/broken-properties/">
+<meta name="viewport" content="width=device-width">
+<title>Broken properties | Ariel Gerardo Ríos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="canonical" href="http://ariel17.com.ar/blog/broken-properties/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ariel Gerardo Ríos">
+<link rel="prev" href="../quotes-ii/" title="Citas II" type="text/html">
+<link rel="next" href="../quotes-iii/" title="Citas III" type="text/html">
+<meta property="og:site_name" content="Ariel Gerardo Ríos">
+<meta property="og:title" content="Broken properties">
+<meta property="og:url" content="http://ariel17.com.ar/blog/broken-properties/">
+<meta property="og:description" content="Ayer estuve peleando un rato largo durante el día tratando de reemplazar un
+campo en un modelo de Django con property. Property es un mecanismo en el
+lenguaje Python para implementar getters y setters">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-07-12T19:56:51-03:00">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="programación">
+<meta property="article:tag" content="python">
+<link rel="alternate" hreflang="en" href="../../en/blog/broken-properties/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+    <div id="container">
+         
+    <header id="header"><nav class="navbar navbar-inverse navbar-fixed-top"><div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Ariel Gerardo Ríos</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+<li id="home-link"><a href="../../">Home</a></li>
+                <li><a href="../../blog">Blog</a></li>
+                <li><a href="../../projects">Proyectos</a></li>
+          
+          
+        </ul>
+</div>
+    </div>
+  </nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Broken properties</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Ariel Gerardo Ríos</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-07-12T19:56:51-03:00" itemprop="datePublished" title="2014-07-12 19:56">2014-07-12 19:56</time></a></p>
+                <p class="commentline">
+        
+    <a href=".#disqus_thread" data-disqus-identifier="cache/posts/broken-properties.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Código fuente</a></p>
+
+                    <p class="linkline"><a href="http://www.stavros.io/posts/how-replace-django-model-field-property/">Sitio original</a></p>
+        </div>
+        
+        <div class="metadata posttranslations translations">
+            <h3 class="posttranslations-intro">También disponible en:</h3>
+                <p><a href="../../en/blog/broken-properties/" rel="alternate" hreflang="en">English</a></p>
+        </div>
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Ayer estuve peleando un rato largo durante el día tratando de reemplazar un
+campo en un modelo de <a class="reference external" href="https://www.djangoproject.com/">Django</a> con <strong>property</strong>. Property es un mecanismo en el
+lenguaje <a class="reference external" href="https://www.python.org/">Python</a> para implementar getters y setters de un campo en una clase de
+manera transparente (<em>de forma pytónica</em> dirían algunos). Acá un ejemplo
+sencillo:</p>
+<pre class="code python"><a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-3"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-4"></a><span class="sd">"""</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-5"></a><span class="sd">File: foo.py</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-6"></a><span class="sd">Description: A very simple property implementation on a very simple class.</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-7"></a><span class="sd">"""</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-8"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-9"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-10"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-11"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-13"></a>    <span class="sd">"""</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-14"></a><span class="sd">    This is a foo class implementation.</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-15"></a><span class="sd">    """</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-17"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-18"></a>    <span class="nd">@property</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-19"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-20"></a>        <span class="sd">"""</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-21"></a><span class="sd">        Access the _foo field but doing some dummy calculations.</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-22"></a><span class="sd">        """</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-23"></a>        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span><span class="p">)</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-24"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-25"></a>    <span class="nd">@foo.setter</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-26"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-27"></a>        <span class="sd">"""</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-28"></a><span class="sd">        Setter for _foo field but doing some "validations".</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-29"></a><span class="sd">        """</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-30"></a>        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-31"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">"foo field cannot be greater than 10"</span><span class="p">)</span>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-32"></a>
+<a name="rest_code_bc82c1b3a64f47e79c655d99a13d2c57-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
+</pre>
+<p>Así se usaría la clase <tt class="docutils literal">Foo</tt> recién implementada:</p>
+<pre class="code bash"><a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-1"></a>~<span class="nv">$ </span>python
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-2"></a>&gt;&gt;&gt; from foo import Foo
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-3"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-4"></a>&gt;&gt;&gt; f._foo  <span class="c"># _foo field is still accessible</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-5"></a>1
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-6"></a>&gt;&gt;&gt; f.foo
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-7"></a>1
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-8"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-9"></a>True
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-10"></a>&gt;&gt;&gt; f.foo  <span class="c"># since f._foo == 1, random will only return 1</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-11"></a>1
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-12"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> 5
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-13"></a>&gt;&gt;&gt; f.foo  <span class="c"># now f._foo == 5; random numbers will vary between 1 and 5</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-14"></a>3
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-15"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="m">20</span>  <span class="c"># this will raise a ValueError exception</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-17"></a>  File <span class="s2">"&lt;stdin&gt;"</span>, line 1, in &lt;module&gt;
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-18"></a>  File <span class="s2">"foo.py"</span>, line 31, in foo
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-19"></a>    raise ValueError<span class="o">(</span><span class="s2">"foo field cannot be greater than 10"</span><span class="o">)</span>
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-20"></a>ValueError: foo field cannot be greater than 10
+<a name="rest_code_8ce8cb66f80a42639acc4a4b0f4bb2d5-21"></a>&gt;&gt;&gt;
+</pre>
+<p><a class="reference external" href="https://docs.python.org/2/library/functions.html#property">Acá se puede leer la documentación oficial</a> acerca de esta funcionalidad.</p>
+<div class="section" id="el-problema-con-django">
+<h2>El problema con Django</h2>
+<p>Implementar esta funcionalidad en <a class="reference external" href="https://www.djangoproject.com/">Django</a> para los campos de un modelo no es un
+problema en absoluto. El problema reside en querer utilizar las demás ventajas
+que ofrece el framework sobre el campo en el que se utilizó esta solución. Voy
+a ejemplificarlo con un proyecto muy simple:</p>
+<pre class="code bash"><a name="rest_code_62e0ecfd89d144769961113d7823cba8-1"></a>~<span class="nv">$ </span>sudo apt-get install python-pip <span class="o">&amp;&amp;</span> sudo pip install virtualenv
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-2"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-3"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-4"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-5"></a>~<span class="nv">$ </span>mkdir brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-6"></a>~/brokenprop<span class="nv">$ </span>virtualenv env
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-7"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-8"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-9"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-10"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>pip install django
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-11"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-12"></a>... <span class="o">(</span>skipped more output<span class="o">)</span>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-13"></a>
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-14"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>django-admin.py startproject brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
+<a name="rest_code_62e0ecfd89d144769961113d7823cba8-15"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>chmod +x manage.py <span class="o">&amp;&amp;</span> ./manage.py startapp propapp
+</pre>
+<p>El proyecto de pruebas ya está inicializado. Por defecto <a class="reference external" href="https://www.djangoproject.com/">Django</a> trae
+configurado <a class="reference external" href="http://www.sqlite.org/">SQLite</a> como base de datos y para este ejemplo es más que
+suficiente. Voy a editar el módulo de modelos de la aplicación <tt class="docutils literal">proapp</tt> e
+implementar setter y getter en una clase. El resultado es muy similar al
+ejemplo anterior:</p>
+<pre class="code python"><a name="rest_code_53749e011c02472d9e6cda6d7803a05b-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-3"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-4"></a><span class="sd">"""</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-5"></a><span class="sd">File: models.py</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-6"></a><span class="sd">Description: Model implementations for application 'propapp'.</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-7"></a><span class="sd">"""</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-8"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-9"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-10"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-11"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-13"></a>    <span class="sd">"""</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-14"></a><span class="sd">    A foo model implementation.</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-15"></a><span class="sd">    """</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-17"></a>        <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-18"></a>        <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-19"></a>        <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-20"></a>        <span class="n">db_column</span><span class="o">=</span><span class="s">'foo'</span><span class="p">,</span>  <span class="c"># keeps the field name as it should</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-21"></a>    <span class="p">)</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-22"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-23"></a>    <span class="nd">@property</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-24"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-25"></a>        <span class="sd">"""</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-26"></a><span class="sd">        The foo getter</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-27"></a><span class="sd">        """</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-28"></a>        <span class="c"># doing the things that a getter method does ...</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-29"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-30"></a>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-31"></a>    <span class="nd">@foo.setter</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-32"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-33"></a>        <span class="c"># doing the things that a setter method does ...</span>
+<a name="rest_code_53749e011c02472d9e6cda6d7803a05b-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
+</pre>
+<p>Ya tengo el modelo con un campo y sus respectivos métodos. Así debería usarlos:</p>
+<pre class="code bash"><a name="rest_code_6f573bd81f174078acae1872b1ed5022-1"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py syncdb --noinput
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-2"></a>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-3"></a>... <span class="o">(</span>skipped output <span class="k">for</span> sync stuff<span class="o">)</span> ...
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-4"></a>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-5"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py shell
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-6"></a>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-7"></a>&gt;&gt;&gt; from propapp.models import Foo
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-8"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-9"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="s1">'a'</span>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-10"></a>&gt;&gt;&gt; f._foo
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-11"></a><span class="s1">'a'</span>
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-12"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
+<a name="rest_code_6f573bd81f174078acae1872b1ed5022-13"></a>True
+</pre>
+<p>Todo muy bien hasta acá; es más, todo es igual, sin problemas. Los problemas
+comienzan cuando se quiere usar el campo en una query:</p>
+<pre class="code bash"><a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-3"></a>...
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-5"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-6"></a>FieldError: Cannot resolve keyword <span class="s1">'foo'</span> into field. Choices are: _foo, id
+<a name="rest_code_f666ce85fe624050ab143c09a95d5e6f-7"></a>&gt;&gt;&gt;
+</pre>
+<p>Bien, no puedo usar el campo tal como lo debería usar <tt class="docutils literal">:(</tt>. Supongamos
+que asumo este costo y quiero continuar así, no me importa que el nombre
+del campo en las queries no sea el evidente e intuitivo, sino que usaré el
+nombre que le puse con el prefijo <tt class="docutils literal">_</tt> o lo que se requiera para acceder a
+él:</p>
+<pre class="code bash"><a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-3"></a>...
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py"</span>, line 451, in execute
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-5"></a>  <span class="k">return</span> Database.Cursor.execute<span class="o">(</span>self, query, params<span class="o">)</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-6"></a>OperationalError: no such table: propapp_foo
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-7"></a>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-8"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-9"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-10"></a>...
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-11"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-12"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-13"></a>FieldError: Cannot resolve keyword <span class="s1">''</span> into field. Choices are: _foo, id
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-14"></a>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-15"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-17"></a>...
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-18"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-19"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-20"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp'</span> into field. Choices are: _foo, id
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-21"></a>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-22"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-23"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-24"></a>...
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-25"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-26"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-27"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp_foo'</span> into field. Choices are: _foo, id
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-28"></a>
+<a name="rest_code_802a1280c59c43f989b326d0a85cd7a0-29"></a>&gt;&gt;&gt;
+</pre>
+<p><strong>El campo está inaccesible para usarlo en queries</strong>. El issue <a class="reference external" href="https://code.djangoproject.com/ticket/3148">#3148</a> del
+track de <a class="reference external" href="https://www.djangoproject.com/">Django</a> habla al respecto, pero la solución planteada, en la que está
+basada este post, no provee la funcionalidad esperada (<a class="reference external" href="https://code.djangoproject.com/ticket/3148#comment:51">mis quejas aquí</a>).</p>
+<p>Salvo, claro, que <strong>me esté perdiendo algo</strong>.</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/django/" rel="tag">django</a></li>
+            <li><a class="tag p-category" href="../../categories/programacion/" rel="tag">programación</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../quotes-ii/" rel="prev" title="Citas II">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../quotes-iii/" rel="next" title="Citas III">Siguiente publicación</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="ariel17",
+            disqus_url="http://ariel17.com.ar/blog/broken-properties/",
+        disqus_title="Broken properties",
+        disqus_identifier="cache/posts/broken-properties.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="ariel17";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p>Contents © 2018         <a href="mailto:ariel.gerardo.rios@gmail.com">Ariel Gerardo Ríos</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    
+    
+    <script src="../../assets/js/bootstrap.min.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48346337-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

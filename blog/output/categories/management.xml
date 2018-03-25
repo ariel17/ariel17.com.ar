@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (management)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/management.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:56 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Links for 2016-09-21</title><link>http://ariel17.com.ar/blog/links-for-2016-09-21/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://programmers.stackexchange.com/questions/33816/how-to-recognize-a-good-programmer"&gt;How to recognize a good programmer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions"&gt;The Five Essential Phone-Screen Questions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><category>hiring</category><category>links</category><category>management</category><guid>http://ariel17.com.ar/blog/links-for-2016-09-21/</guid><pubDate>Wed, 21 Sep 2016 16:34:36 GMT</pubDate></item><item><title>Camino a Kanban II</title><link>http://ariel17.com.ar/blog/path-to-kanban-ii/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-i/"&gt;Ir al post anterior: Camino a Kanban I&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="intento-1"&gt;
+&lt;h2&gt;Intento #1&lt;/h2&gt;
+&lt;p&gt;Con los datos recopilados en la etapa 1 elaboramos un dashboard donde se
+reflejara el flujo planteado:&lt;/p&gt;
+&lt;div class="container"&gt;
+&lt;img alt="Primer intento de pizarra Kanban" src="http://ariel17.com.ar/galleries/path-to-kanban-ii/kanban-i.jpg"&gt;
+&lt;/div&gt;
+&lt;p&gt;Se planteó un esquema de colores para las prioridades. En la parte inferior
+central se puede ver la definición del mismo donde se plantea:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Blanco:&lt;/strong&gt; Blocker.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verde:&lt;/strong&gt; P1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Celeste:&lt;/strong&gt; P2&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amarillo:&lt;/strong&gt; P3&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Púrpura:&lt;/strong&gt; subtareas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los tickets del backlog eran analizados y una vez colocados en la columna
+"Analizados" se utilizaban como base para obtener un subconjunto, según las
+prioridades del negocio, el cual iba a formar el siguiente sprint.&lt;/p&gt;
+&lt;p&gt;El límite de trabajo en curso (WIP) era considerado por prioridad.&lt;/p&gt;
+&lt;p&gt;Los tickets bloqueados fueron marcados con una cinta de color.&lt;/p&gt;
+&lt;p&gt;Los tickets que eran cerrados sin atacar o cancelados eran colocados en la
+parte inferior derecha (el tacho de basura).&lt;/p&gt;
+&lt;div class="section" id="problemas"&gt;
+&lt;h3&gt;Problemas&lt;/h3&gt;
+&lt;p&gt;En la misma foto se puede apreciar que el esquema de colores fallaba porque &lt;em&gt;la
+prioridad es una variable&lt;/em&gt; (hay tickets de color P1 en la fila de P3): debido a
+una ventana de oportunidad en el negocio, el objetivo a mediano plazo puede
+convertirse en uno a corto plazo.&lt;/p&gt;
+&lt;p&gt;Asignar el límite WIP horizontalmente fue un error de concepto: los mismos
+deben asignarse por columna.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="intento-2"&gt;
+&lt;h2&gt;Intento #2&lt;/h2&gt;
+&lt;p&gt;Habiendo observado los problemas mencionados, se hicieron algunas
+modificaciones sobre el tablero:&lt;/p&gt;
+&lt;div class="container"&gt;
+&lt;img alt="Segundo intento de pizarra Kanban" class="img-responsive align-center" src="http://ariel17.com.ar/galleries/path-to-kanban-ii/kanban-ii.jpg"&gt;
+&lt;/div&gt;
+&lt;p&gt;Límite WIP por columna: valores iniciales se plantearon de forma aleatoria.&lt;/p&gt;
+&lt;p&gt;Se agregó información sobre los &lt;a class="reference external" href="https://confluence.atlassian.com/agile067/glossary/epic"&gt;epics&lt;/a&gt; que están en curso, para ayudar a
+obtener una imagen &lt;a class="reference external" href="https://es.wikipedia.org/wiki/Top-down_y_bottom-up"&gt;top-down&lt;/a&gt; del estado del sistema. También se agregó
+estadísticas obtenidas mediante sprints pasadas:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Lead time:&lt;/strong&gt; tiempo promedio de aquellos tickets terminado en cerrarse
+dentro del sprint (desde que se inicia el sprint hasta que llega al estado
+"Validación OK"). No se toman fechas pasadas previas al sprint, aunque un
+ticket haya sobrevivido por más de uno.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; Cantidad de tickets promedio que se completan en los sprints.
+Este número es un promedio de todos los sprints pasados y funciona como una
+proyección a lo que se debería esperar e incluso mejorar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los colores ya no significan nada; la prioridad del ticket está dada por su
+posición en el tablero.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;Problemas&lt;/h3&gt;
+&lt;p&gt;La columna "Analizado" está colapsada. Ésto no se debe a que los valores WIP
+no están funcionando, sino a que ese estado no está considerado dentro del
+flujo real del sistema; sólo a partir de la columna "Release". Cualquier avance
+que pudiéramos hacer respecto al backlog, &lt;em&gt;seguía siendo backlog&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;De las epics, no se sabe cuál está en curso y cuál está siendo analizada o en
+otro estado.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="intento-3"&gt;
+&lt;h2&gt;Intento #3&lt;/h2&gt;
+&lt;p&gt;Se extendió el flujo oficial del equipo para absorver más estados:&lt;/p&gt;
+&lt;div class="container"&gt;
+&lt;img alt="Segundo intento de pizarra Kanban" class="img-responsive align-center" src="http://ariel17.com.ar/galleries/path-to-kanban-ii/kanban-iii.jpg"&gt;
+&lt;/div&gt;
+&lt;p&gt;Los nuevos (o casi):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;A analizar&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;En análisis&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Listo para empezar:&lt;/strong&gt; la antigua columna "Analizado".&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bloqueado:&lt;/strong&gt; significa que la tarea está esperando alguna otra de otro
+equipo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ahora el sprint parte del backlog. Las prioridades del negocio nos aconsejan
+qué tickets deben ser depositados para análisis y en consecuencia son atacados
+desde esa etapa como parte misma del desarrollo, evitando avanzar a ciegas
+sobre una tarea.&lt;/p&gt;
+&lt;p&gt;En la foto no se ve, pero se agregó unas columnas similares para los tickets
+epics:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Para empezar&lt;/li&gt;
+&lt;li&gt;En curso&lt;/li&gt;
+&lt;li&gt;Terminado&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="siguientes-pasos"&gt;
+&lt;h2&gt;Siguientes pasos&lt;/h2&gt;
+&lt;p&gt;Trasladar lo reflejado en el pizarrón a herramientas informáticas.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-i/"&gt;Ir al post anterior: Camino a Kanban I&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>management</category><guid>http://ariel17.com.ar/blog/path-to-kanban-ii/</guid><pubDate>Mon, 09 May 2016 09:47:58 GMT</pubDate></item><item><title>Camino a Kanban I</title><link>http://ariel17.com.ar/blog/path-to-kanban-i/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-ii/"&gt;Ir al siguiente post: Camino a Kanban II&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hace ya varias semanas que vengo leyendo el libro &lt;a class="reference external" href="http://www.goodreads.com/book/show/8086552-kanban"&gt;"Kanban: Successful Evolutionary Change for Your Technology Business"&lt;/a&gt; del señor
+&lt;a class="reference external" href="http://www.goodreads.com/author/show/82481.David_J_Anderson"&gt;David J. Anderson&lt;/a&gt; y me siento muy motivado por él. Al principio lo agarré y pensé
+&lt;em&gt;oooootra metodología más, otra que viene a salvar el mundo y los proyectos con
+su agilidad y promesas&lt;/em&gt; pero durante la lectura hubieron varios puntos
+atractivos:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;em&gt;Tirar&lt;/em&gt; de la lista de pendientes en vez de &lt;em&gt;empujar&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Reducción del multitasking.&lt;/li&gt;
+&lt;li&gt;Previsibilidad.&lt;/li&gt;
+&lt;li&gt;Creación de tiempos libres para estudiar y/o mejorar los procesos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="estado-actual"&gt;
+&lt;h2&gt;Estado actual&lt;/h2&gt;
+&lt;p&gt;En &lt;a class="reference external" href="https://www.movile.com/"&gt;Movile&lt;/a&gt; trabajo como coordinador del equipo de Desarrollo de nuestro país.
+Organizacionalmente estamos asignados para resolver las tareas varios paises
+del cono sur en los que tenemos injerencia. Para organizar el trabajo
+utilizamos sprints semanales llamados &lt;em&gt;Releases&lt;/em&gt; en los que se plantean las
+tareas más importantes a atacar, que pueden estar o no en el backlog:
+integraciones con plataformas de terceros, productos nuevos, mejoras, bugs,
+etc.&lt;/p&gt;
+&lt;p&gt;Durante la semana se atacan esas tareas priorizadas y trata de entregar el 100%
+de las tareas.&lt;/p&gt;
+&lt;div class="container"&gt;
+&lt;img alt="Flujo actual" class="img-responsive align-center" src="http://ariel17.com.ar/galleries/path-to-kanban-i/current-flow.jpg"&gt;
+&lt;/div&gt;
+&lt;p&gt;Listado en pasos, sería como el siguiente:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Las tareas se crean y se depositan en la cola del backlog.&lt;/li&gt;
+&lt;li&gt;Durante la reunión de release se seleccionan y priorizan las tareas a atacar.&lt;/li&gt;
+&lt;li&gt;Es posible que durante la duración del sprint lleguen tareas de máxima
+prioridad (llamadas blockers) que deben ser atendidas de inmediato. La
+duración de estas tareas depende mucho de la naturaleza de la misma.&lt;/li&gt;
+&lt;li&gt;Durante el sprint se toman tareas asignadas a la release para análisis y
+desarrollo de las mismas.&lt;/li&gt;
+&lt;li&gt;Desarrollada la tarea, se realizan pruebas locales para validar su
+funcionamiento. En caso de error vuelve al paso anterior.&lt;/li&gt;
+&lt;li&gt;Cuando las pruebas locales son exitosas se procede al despliegue en
+producción del nuevo código. La tarea se marca como lista.&lt;/li&gt;
+&lt;li&gt;Se solicita a equipo que valide la nueva funcionalidad en el contexto real.
+En caso de no satisfacer la necesidad se reabre la tarea y ésta vuelve al
+paso 4.&lt;/li&gt;
+&lt;li&gt;Si la validación es exitosa, esa misma persona cierra la tarea.&lt;/li&gt;
+&lt;li&gt;Se solicita al equipo de QA que realice sus validaciones en busca de fallos
+inadvertidos (no graficado; sólo requerido en cambios visuales o de
+comportamiento de cara al usuario).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tipos-de-tarea-y-prioridad"&gt;
+&lt;h2&gt;Tipos de tarea y prioridad&lt;/h2&gt;
+&lt;p&gt;Los tipos de tarea que habían eran muy diversos. Multiplicados por la cantidad
+de niveles de prioridad había una cantidad nefasta de &lt;em&gt;tipos de servicio&lt;/em&gt; &lt;a class="footnote-reference" href="http://ariel17.com.ar/blog/path-to-kanban-i/#id3" id="id1"&gt;[1]&lt;/a&gt;
+donde no se tenía en claro qué se esperaba de cada uno:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Analysis&lt;/li&gt;
+&lt;li&gt;Bug&lt;/li&gt;
+&lt;li&gt;Configuration&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;li&gt;Epic&lt;/li&gt;
+&lt;li&gt;Improvement&lt;/li&gt;
+&lt;li&gt;Maintenance&lt;/li&gt;
+&lt;li&gt;New feature&lt;/li&gt;
+&lt;li&gt;Task&lt;/li&gt;
+&lt;li&gt;Sub-task&lt;/li&gt;
+&lt;li&gt;Technical debt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Y los niveles de prioridad, en orden decreciente de importancia:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Blocker&lt;/li&gt;
+&lt;li&gt;P1&lt;/li&gt;
+&lt;li&gt;P2&lt;/li&gt;
+&lt;li&gt;P3&lt;/li&gt;
+&lt;li&gt;Waiting/planned&lt;/li&gt;
+&lt;li&gt;Backlog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="primeros-pasos-hacia-kanban"&gt;
+&lt;h2&gt;Primeros pasos hacia Kanban&lt;/h2&gt;
+&lt;p&gt;El primer paso fue hacer limpieza sobre los tipos de tarea:&lt;/p&gt;
+&lt;div class="container"&gt;
+&lt;img alt="Tipos de tareas y prioridades" class="img-responsive align-center" src="http://ariel17.com.ar/galleries/path-to-kanban-i/issues.jpg"&gt;
+&lt;/div&gt;
+&lt;p&gt;El tipo &lt;em&gt;Analysis&lt;/em&gt; no está asignado a uno en particular porque fue manipulado
+con más detalle: basado en el contenido fue movido a uno u otro tipo de tarea.
+El resultado final fue este conjunto reducido de tipos:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Bug&lt;/li&gt;
+&lt;li&gt;Epic&lt;/li&gt;
+&lt;li&gt;New feature&lt;/li&gt;
+&lt;li&gt;Task&lt;/li&gt;
+&lt;li&gt;Sub-task&lt;/li&gt;
+&lt;li&gt;Technical debt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No está en la foto, pero las proridades también sufrieron cambios, aunque no
+mucho:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Blocker&lt;/li&gt;
+&lt;li&gt;P1&lt;/li&gt;
+&lt;li&gt;P2&lt;/li&gt;
+&lt;li&gt;P3&lt;/li&gt;
+&lt;li&gt;Backlog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="siguentes-pasos"&gt;
+&lt;h2&gt;Siguentes pasos&lt;/h2&gt;
+&lt;strike&gt;
+  Será determinar el nivel de servicio esperado para cada
+  combinación (coherente) de tipos y prioridades.
+&lt;/strike&gt;&lt;p&gt;Crear una pizarra Kanban para reflejar los estados y obtener estadísticas
+iniciales.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ariel17.com.ar/posts/path-to-kanban-ii/"&gt;Ir al siguiente post: Camino a Kanban II&lt;/a&gt;&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://ariel17.com.ar/blog/path-to-kanban-i/#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Acuerdo de Nivel de Servicio (ANS): &lt;a class="reference external" href="https://es.wikipedia.org/wiki/Acuerdo_de_nivel_de_servicio"&gt;https://es.wikipedia.org/wiki/Acuerdo_de_nivel_de_servicio&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>management</category><guid>http://ariel17.com.ar/blog/path-to-kanban-i/</guid><pubDate>Fri, 12 Feb 2016 12:27:08 GMT</pubDate></item></channel></rss>

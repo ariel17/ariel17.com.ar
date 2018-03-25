@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (quotes)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/quotes.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:57 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Citas IV</title><link>http://ariel17.com.ar/blog/quotes-iv/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Este es un extracto del libro &lt;em&gt;Getting Real: The Smarter, Faster, Easier Way
+to Build a Web Application&lt;/em&gt; de 37Signals, páginas 115 a 116. &lt;a class="reference external" href="https://gettingreal.37signals.com/"&gt;El libro está
+disponible gratuitamente para ser descargado en su página&lt;/a&gt; :)&lt;/p&gt;
+&lt;div class="section" id="el-codigo-habla"&gt;
+&lt;h2&gt;El código habla&lt;/h2&gt;
+&lt;div class="section" id="escucha-cuando-tu-codigo-te-devuelve-el-golpe"&gt;
+&lt;h3&gt;Escuchá cuando tu código te devuelve el golpe&lt;/h3&gt;
+&lt;p&gt;Escuchá tu código. Te va a dar sugerencias. Te va a devolver el golpe. Te va a
+decir dónde residen las dificultades. Te va a sugerir nuevas maneras de hacer
+las cosas. Te va a ayudar a apegarte a un modelo de menos software.&lt;/p&gt;
+&lt;p&gt;¿La nueva característica requiere semanas de tiempo y miles de líneas de
+código? Ese es tu código diciéndote que probablemente hay una mejor manera.
+¿Hay una manera simple de programar algo en una hora en vez de la manera
+complicada que va a tomar diez horas? Otra vez, ese es tu código guiándote.
+Escuchá.&lt;/p&gt;
+&lt;p&gt;Tu código puede guiarte a correcciones que son baratas y livianas. Prestá
+atención cuando un camino fácil emerge. Seguro, la característica que es fácil
+de hacer quizás no sea exactamente la misma que la característica que tenías en
+mente ¿y qué? Si funciona suficientemente bien y te da más tiempo para trabajar
+en algo más, se va a quedar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="escucha"&gt;
+&lt;h3&gt;Escuchá&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;No te preocupes por el diseño, si escuchás a tu código un buen diseño va a
+aparecer... Escuchá a los técnicos. Si se están quejando acerca de las
+dificultades de hacer cambios, entonces tomá esas quejas seriamente y dales
+tiempo para arreglar las cosas.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-Martin Fowler, Científico en Jefe, ThoughtWorks (de &lt;a class="reference external" href="http://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="si-a-los-programadores-les-pagaran-para-sacar-codigo"&gt;
+&lt;h3&gt;Si a los programadores les pagaran para sacar código...&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Si a los programagadores les pagaran para sacar código en vez de escribir
+nuevo código, el software sería un muchísimo mejor.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;-Nicholas Negroponte, Profesor de Tecnología de Medios en Massachusetts
+Institute of Technology y presidente fundador del Laboratorio de Medios de MIT.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>citas</category><category>programación</category><guid>http://ariel17.com.ar/blog/quotes-iv/</guid><pubDate>Sun, 10 Aug 2014 21:57:01 GMT</pubDate></item></channel></rss>

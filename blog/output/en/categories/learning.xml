@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (learning)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/learning.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 14:59:54 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning to teach I: Docker</title><link>http://ariel17.com.ar/en/blog/learning-to-teach-i-docker/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="figure align-right"&gt;
+&lt;a class="reference external image-reference" href="http://ariel17.github.io/docker-talk/"&gt;&lt;img alt="/galleries/learning-to-teach-i-docker/slides.png" src="http://ariel17.com.ar/galleries/learning-to-teach-i-docker/slides.png" style="width: 400.0px;"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;In &lt;a class="reference external" href="https://www.movile.com/en/"&gt;Movile&lt;/a&gt; (yes, &lt;a class="reference external" href="https://www.youtube.com/watch?v=PirVtiJuvDs"&gt;&lt;em&gt;I'm back&lt;/em&gt;&lt;/a&gt;) had begun an auto-training program, where the
+classes where scheduled with &lt;a class="reference external" href="http://www.proyectosagiles.org/que-es-open-space"&gt;Open Space&lt;/a&gt; technique. One topic porposed by me
+was to learnd &lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; since I never worked with this tools.&lt;/p&gt;
+&lt;p&gt;It was my work to find the ways to bring someone who could teach us this
+technology... but my pride and I never pretended that this person to be any
+other than me, so I sit my head to learn &lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; this last weekend. The result
+was &lt;a class="reference external" href="http://ariel17.github.io/docker-talk/"&gt;&lt;strong&gt;these slides&lt;/strong&gt;&lt;/a&gt; (made with &lt;a class="reference external" href="http://sphinx-doc.org/"&gt;Sphinx&lt;/a&gt; and &lt;a class="reference external" href="https://hieroglyph.readthedocs.org/en/latest/"&gt;Hieroglyph&lt;/a&gt;) and a 25 minutes talk
+:).&lt;/p&gt;
+&lt;p&gt;I need to improve:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Slow down the talk velocity on topics: the talk was thinked to last ~40
+minutes and instead it lasted a bit more than the half of time.&lt;/li&gt;
+&lt;li&gt;Change the voice tone to avoid monotony.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next class is about &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; :D I'm kinda happy.&lt;/p&gt;&lt;/div&gt;</description><category>learning</category><category>teaching</category><guid>http://ariel17.com.ar/en/blog/learning-to-teach-i-docker/</guid><pubDate>Tue, 21 Apr 2015 01:33:23 GMT</pubDate></item></channel></rss>
