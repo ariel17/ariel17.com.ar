@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (leer)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/leer.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 15:00:01 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Libros en 2017</title><link>http://ariel17.com.ar/en/blog/libros-en-2017/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="section" id="novelas"&gt;
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (leer)</title><link>https://example.com/</link><description></description><atom:link href="/en/categories/leer.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 16:12:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Libros en 2017</title><link>/en/blog/libros-en-2017/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="section" id="novelas"&gt;
 &lt;h2&gt;Novelas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.goodreads.com/book/show/263549.Monster_Planet"&gt;Monster Planet&lt;/a&gt;, de David Wellington (#3); &lt;strong&gt;✔&lt;/strong&gt;.&lt;/li&gt;
@@ -163,4 +163,4 @@
 &lt;/ul&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>http://ariel17.com.ar/en/blog/libros-en-2017/</guid><pubDate>Sun, 31 Dec 2017 12:24:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><guid>/en/blog/libros-en-2017/</guid><pubDate>Sun, 31 Dec 2017 12:24:00 GMT</pubDate></item></channel></rss>

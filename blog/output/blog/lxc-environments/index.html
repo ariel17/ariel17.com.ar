@@ -2,21 +2,21 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/blog/lxc-environments/">
+<base href=".">
 <meta name="description" content="Crear ambientes de desarrollo usando LXC">
 <meta name="viewport" content="width=device-width">
 <title>Creando ambientes con Contenedores Linux | Ariel Gerardo Ríos</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://ariel17.com.ar/blog/lxc-environments/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" content="Crear ambientes de desarrollo usando LXC">
 <meta name="author" content="Ariel Gerardo Ríos">
 <link rel="prev" href="../quotes-iii/" title="Citas III" type="text/html">
 <link rel="next" href="../quotes-iv/" title="Citas IV" type="text/html">
 <meta property="og:site_name" content="Ariel Gerardo Ríos">
 <meta property="og:title" content="Creando ambientes con Contenedores Linux">
-<meta property="og:url" content="http://ariel17.com.ar/blog/lxc-environments/">
+<meta property="og:url" content="/blog/lxc-environments/">
 <meta property="og:description" content="Crear ambientes de desarrollo usando LXC">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-08-02T10:07:23-03:00">
@@ -92,27 +92,27 @@ virtual por completo hay más recursos disponibles para ser aprovechados.</p>
 <h3>Instalación</h3>
 <p>Podemos instalar LXC directamente desde los repositorios de software de la
 distribución que estemos usando:</p>
-<pre class="code bash"><a name="rest_code_6a8426b2d2b3488a9709aa69201c44f6-1"></a>~<span class="nv">$ </span>sudo apt-get install lxc  <span class="c"># for Debian-based distros</span>
+<pre class="code bash"><a name="rest_code_3b9f6cf235d94956a9b065bb05aff4c5-1"></a>~<span class="nv">$ </span>sudo apt-get install lxc  <span class="c"># for Debian-based distros</span>
 </pre>
 <p>También podemos instalar la versión <em>bleeding edge</em> directamente desde el
 <a class="reference external" href="https://github.com/lxc/lxc">repositorio de GitHub</a>:</p>
-<pre class="code bash"><a name="rest_code_43d923fddf84465f8effe36c40ed7efd-1"></a>~<span class="nv">$ </span>sudo apt-get install git  <span class="c"># if you don't have installed git yet</span>
-<a name="rest_code_43d923fddf84465f8effe36c40ed7efd-2"></a>~<span class="nv">$ </span>git clone git@github.com:lxc/lxc.git
-<a name="rest_code_43d923fddf84465f8effe36c40ed7efd-3"></a>~<span class="nv">$ </span>sudo su
-<a name="rest_code_43d923fddf84465f8effe36c40ed7efd-4"></a><span class="c">#$ cd lxc &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+<pre class="code bash"><a name="rest_code_460976f2264447ec91f56a0a24dbf71d-1"></a>~<span class="nv">$ </span>sudo apt-get install git  <span class="c"># if you don't have installed git yet</span>
+<a name="rest_code_460976f2264447ec91f56a0a24dbf71d-2"></a>~<span class="nv">$ </span>git clone git@github.com:lxc/lxc.git
+<a name="rest_code_460976f2264447ec91f56a0a24dbf71d-3"></a>~<span class="nv">$ </span>sudo su
+<a name="rest_code_460976f2264447ec91f56a0a24dbf71d-4"></a><span class="c">#$ cd lxc &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install</span>
 </pre>
 </div>
 <div class="section" id="creacion-de-intancias">
 <h3>Creación de intancias</h3>
 <p>La creación de containers puede realizarse mediante los templates o indicar
 manualmente qué imagen utilizar.</p>
-<pre class="code bash"><a name="rest_code_4e62fc9411e84a878f9fce742c778408-1"></a>~<span class="nv">$ </span>lxc-create -n ubuntu1 -t ubuntu  <span class="c"># creates a container named ubuntu1 using the ubuntu template</span>
-<a name="rest_code_4e62fc9411e84a878f9fce742c778408-2"></a>~<span class="nv">$ </span>lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+<pre class="code bash"><a name="rest_code_4f760f805b05466daef7f8c352b7933f-1"></a>~<span class="nv">$ </span>lxc-create -n ubuntu1 -t ubuntu  <span class="c"># creates a container named ubuntu1 using the ubuntu template</span>
+<a name="rest_code_4f760f805b05466daef7f8c352b7933f-2"></a>~<span class="nv">$ </span>lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
 </pre>
 <p>De esta manera, la creación de los containers se realiza sin más intervención
 de parte del usuario. También existe una manera de crearlos de manera
 interactiva, visualizando las distribuciones y arquitecturas disponibles:</p>
-<pre class="code bash"><a name="rest_code_5defffefc920475f880d3041c0a2bf1f-1"></a>~<span class="nv">$ </span>lxc-create -t download -n ubuntu3
+<pre class="code bash"><a name="rest_code_839a67fa328a463583339f74d5d4de17-1"></a>~<span class="nv">$ </span>lxc-create -t download -n ubuntu3
 </pre>
 </div>
 <div class="section" id="visualizar-las-instancias-creadas">
@@ -120,13 +120,13 @@ interactiva, visualizando las distribuciones y arquitecturas disponibles:</p>
 <p>Para ver las instancias disponibles se puede hacer uso del comando
 <code>lxc-ls</code>. Este mostrará sólo los nombres pero usando el parámetro
 <code>--fancy</code> flag agregará más información útil sobre ellas:</p>
-<pre class="code bash"><a name="rest_code_0ae360a33b2049049c9252f1827c4278-1"></a>~<span class="nv">$ </span>sudo lxc-ls --fancy
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-2"></a>
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-3"></a>NAME     STATE    IPV4        IPV6  AUTOSTART
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-4"></a>---------------------------------------------
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-5"></a>ubuntu1  RUNNING  10.0.3.228  -     NO
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-6"></a>ubuntu2  RUNNING  10.0.3.147  -     NO
-<a name="rest_code_0ae360a33b2049049c9252f1827c4278-7"></a>ubuntu3  STOPPED  -           -     NO
+<pre class="code bash"><a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-1"></a>~<span class="nv">$ </span>sudo lxc-ls --fancy
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-2"></a>
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-3"></a>NAME     STATE    IPV4        IPV6  AUTOSTART
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-4"></a>---------------------------------------------
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-5"></a>ubuntu1  RUNNING  10.0.3.228  -     NO
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-6"></a>ubuntu2  RUNNING  10.0.3.147  -     NO
+<a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-7"></a>ubuntu3  STOPPED  -           -     NO
 </pre>
 </div>
 <div class="section" id="acceder-a-una-instancia">
@@ -136,7 +136,7 @@ interactiva, visualizando las distribuciones y arquitecturas disponibles:</p>
 obtener el acceso a una terminal física del host; <strong>no una conexión remota</strong>.
 Para poder cerrar la conexión a esta terminal basta con ingresar
 <code>Ctrl-a+q</code>.</p>
-<pre class="code bash"><a name="rest_code_5bec73f3d7ef4d7a8696f7c25af1005d-1"></a>~<span class="nv">$ </span>sudo lxc-console -n db  <span class="c"># enter Ctrl-a+q to close the session</span>
+<pre class="code bash"><a name="rest_code_9b7e1e27b9184627841e1bcbf8ea4d33-1"></a>~<span class="nv">$ </span>sudo lxc-console -n db  <span class="c"># enter Ctrl-a+q to close the session</span>
 </pre>
 </div>
 </div>
@@ -152,12 +152,12 @@ tanto del host como de los contenedores.</p>
 <p>Para instalar el panel web debemos agregar el paquete a nuestro repositorio
 local, instalarlo y cambiar las configuraciones por defecto si así lo
 consideramos necesario:</p>
-<pre class="code bash"><a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-1"></a>~<span class="nv">$ </span>wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key <span class="p">|</span> sudo apt-key add -
-<a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-2"></a>~<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"deb http://claudyus.github.io/LXC-Web-Panel/ ./"</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/lwp.list
-<a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-3"></a>~<span class="nv">$ </span>sudo apt-get update
-<a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-4"></a>~<span class="nv">$ </span>sudo apt-get install lwp
-<a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-5"></a>~<span class="nv">$ </span>sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  <span class="c"># using default configuration</span>
-<a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-6"></a>~<span class="nv">$ </span>sudo service lwp start
+<pre class="code bash"><a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-1"></a>~<span class="nv">$ </span>wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key <span class="p">|</span> sudo apt-key add -
+<a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-2"></a>~<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"deb http://claudyus.github.io/LXC-Web-Panel/ ./"</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/lwp.list
+<a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-3"></a>~<span class="nv">$ </span>sudo apt-get update
+<a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-4"></a>~<span class="nv">$ </span>sudo apt-get install lwp
+<a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-5"></a>~<span class="nv">$ </span>sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  <span class="c"># using default configuration</span>
+<a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-6"></a>~<span class="nv">$ </span>sudo service lwp start
 </pre>
 <p>Voy a asumir que se usaron las configuraciones por defecto; si realizaron
 cambios no olviden adaptar los ejemplos de aquí a sus casos particulares. Una
@@ -218,7 +218,7 @@ de interfaces existentes.</p>
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="ariel17",
-            disqus_url="http://ariel17.com.ar/blog/lxc-environments/",
+            disqus_url="/blog/lxc-environments/",
         disqus_title="Creando ambientes con Contenedores Linux",
         disqus_identifier="cache/posts/lxc-environments.html",
         disqus_config = function () {

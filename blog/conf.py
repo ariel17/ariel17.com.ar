@@ -24,7 +24,7 @@ BLOG_TITLE = "Ariel Gerardo Ríos"  # (translatable)
 # SITE_URL = "http://ariel17.com.ar/blog/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://ariel17.com.ar/"
+BASE_URL = "/"
 BLOG_EMAIL = "ariel.gerardo.rios@gmail.com"
 BLOG_DESCRIPTION = "¿Qué dijo?"  # (translatable)
 

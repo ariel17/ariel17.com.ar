@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (go)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/go.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:54 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>(x,y) parte 2</title><link>http://ariel17.com.ar/blog/xy-parte-2/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (go)</title><link>https://example.com/</link><description></description><atom:link href="/categories/go.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 16:12:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>(x,y) parte 2</title><link>/blog/xy-parte-2/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
 significativas del mismo.&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-1"&gt;&lt;/a&gt;./xy
-&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-2"&gt;&lt;/a&gt;  ├── android
-&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-3"&gt;&lt;/a&gt;  ├── api
-&lt;a name="rest_code_2e47e4807bfe451b951df76873c5c997-4"&gt;&lt;/a&gt;  └── web
+&lt;pre class="code text"&gt;&lt;a name="rest_code_292c0faff18243ea9e74f40cc3c06951-1"&gt;&lt;/a&gt;./xy
+&lt;a name="rest_code_292c0faff18243ea9e74f40cc3c06951-2"&gt;&lt;/a&gt;  ├── android
+&lt;a name="rest_code_292c0faff18243ea9e74f40cc3c06951-3"&gt;&lt;/a&gt;  ├── api
+&lt;a name="rest_code_292c0faff18243ea9e74f40cc3c06951-4"&gt;&lt;/a&gt;  └── web
 &lt;/pre&gt;&lt;div class="section" id="android"&gt;
 &lt;h2&gt;Android&lt;/h2&gt;
 &lt;p&gt;La aplicación es por ahora sólamente un formulario que solicita un PIN
@@ -14,9 +14,9 @@ iteración agregue la comunicación con la API y reporte de errores de la misma.
   .android {
     margin-right: 20px;
   }
-&lt;/style&gt;&lt;img alt="/galleries/xy/android1.png" class="android" src="http://ariel17.com.ar/galleries/xy/android1.png"&gt;
-&lt;img alt="/galleries/xy/android2.png" class="android" src="http://ariel17.com.ar/galleries/xy/android2.png"&gt;
-&lt;img alt="/galleries/xy/android3.png" class="android" src="http://ariel17.com.ar/galleries/xy/android3.png"&gt;
+&lt;/style&gt;&lt;img alt="/galleries/xy/android1.png" class="android" src="/galleries/xy/android1.png"&gt;
+&lt;img alt="/galleries/xy/android2.png" class="android" src="/galleries/xy/android2.png"&gt;
+&lt;img alt="/galleries/xy/android3.png" class="android" src="/galleries/xy/android3.png"&gt;
 &lt;/div&gt;
 &lt;div class="section" id="api"&gt;
 &lt;h2&gt;API&lt;/h2&gt;
@@ -29,14 +29,14 @@ los datos que recibe.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Representa a las operaciones relacionadas con las personas o cosas que se
 desea seguir en la superficie.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/subjects  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-4"&gt;&lt;/a&gt;Content-Type: application/json
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:26:37 GMT
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-6"&gt;&lt;/a&gt;Content-Length: 91
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Current"&lt;/span&gt;:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Latitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"Longitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"CreatedAt"&lt;/span&gt;:&lt;span class="s2"&gt;"0001-01-01T00:00:00Z"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;,&lt;span class="s2"&gt;"History"&lt;/span&gt;:null&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/subjects  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-4"&gt;&lt;/a&gt;Content-Type: application/json
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:26:37 GMT
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-6"&gt;&lt;/a&gt;Content-Length: 91
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Current"&lt;/span&gt;:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"Latitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"Longitude"&lt;/span&gt;:0,&lt;span class="s2"&gt;"CreatedAt"&lt;/span&gt;:&lt;span class="s2"&gt;"0001-01-01T00:00:00Z"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;,&lt;span class="s2"&gt;"History"&lt;/span&gt;:null&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="registration"&gt;
 &lt;h3&gt;Registration&lt;/h3&gt;
@@ -48,14 +48,14 @@ alfanumérico que se supone ya creado por la misma plataforma y asociado a un
 usuario existente que quiere agregar ese dispositivo. La operación asocia el
 mismo con el usuario y provee un ID único para facilitar la entrega de los
 datos de localización.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/register --data &lt;span class="s2"&gt;"pin=1234"&lt;/span&gt;  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-4"&gt;&lt;/a&gt;Content-Type: application/json
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:29:38 GMT
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-6"&gt;&lt;/a&gt;Content-Length: 98
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_086b9672a89e4757af76e3182df61758-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"success"&lt;/span&gt;:true,&lt;span class="s2"&gt;"message"&lt;/span&gt;:&lt;span class="s2"&gt;"Successfully created ID."&lt;/span&gt;,&lt;span class="s2"&gt;"id"&lt;/span&gt;:&lt;span class="s2"&gt;"65336dad-9e7f-4c7a-9f5b-04eeb1a5149c"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-1"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;go run main.go &lt;span class="m"&gt;9090&lt;/span&gt;  &lt;span class="c"&gt;# terminal 1&lt;/span&gt;
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-2"&gt;&lt;/a&gt;~/xy/api&lt;span class="nv"&gt;$ &lt;/span&gt;curl -i -X POST http://localhost:9090/register --data &lt;span class="s2"&gt;"pin=1234"&lt;/span&gt;  &lt;span class="c"&gt;# terminal 2&lt;/span&gt;
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-3"&gt;&lt;/a&gt;HTTP/1.1 &lt;span class="m"&gt;201&lt;/span&gt; Created
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-4"&gt;&lt;/a&gt;Content-Type: application/json
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-5"&gt;&lt;/a&gt;Date: Sun, &lt;span class="m"&gt;09&lt;/span&gt; Jul &lt;span class="m"&gt;2017&lt;/span&gt; 22:29:38 GMT
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-6"&gt;&lt;/a&gt;Content-Length: 98
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-8"&gt;&lt;/a&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"success"&lt;/span&gt;:true,&lt;span class="s2"&gt;"message"&lt;/span&gt;:&lt;span class="s2"&gt;"Successfully created ID."&lt;/span&gt;,&lt;span class="s2"&gt;"id"&lt;/span&gt;:&lt;span class="s2"&gt;"65336dad-9e7f-4c7a-9f5b-04eeb1a5149c"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Se hace evidente que &lt;cite&gt;/register&lt;/cite&gt; es un recurso que pertenece a &lt;cite&gt;/subjects&lt;/cite&gt;; lo
 moveré en la siguiente iteración.&lt;/p&gt;
 &lt;/div&gt;
@@ -68,9 +68,9 @@ concepto) y los paquetes NPM a usar en el futuro: &lt;a class="reference externa
 &lt;div class="section" id="otras-entradas"&gt;
 &lt;h2&gt;Otras entradas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://ariel17.com.ar/blog/xy-parte-1/"&gt;(x,y) parte 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="/blog/xy-parte-1/"&gt;(x,y) parte 1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>android</category><category>go</category><category>idea</category><guid>http://ariel17.com.ar/blog/xy-parte-2/</guid><pubDate>Sun, 09 Jul 2017 22:20:46 GMT</pubDate></item><item><title>(x,y) parte 1</title><link>http://ariel17.com.ar/blog/xy-parte-1/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Quiero hacer un proyecto personal en Go, también quiero hacer uno en Android, y
+&lt;/div&gt;&lt;/div&gt;</description><category>android</category><category>go</category><category>idea</category><guid>/blog/xy-parte-2/</guid><pubDate>Sun, 09 Jul 2017 22:20:46 GMT</pubDate></item><item><title>(x,y) parte 1</title><link>/blog/xy-parte-1/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Quiero hacer un proyecto personal en Go, también quiero hacer uno en Android, y
 para aprovechar ambas intenciones voy a usarlas en un mismo objetivo: &lt;strong&gt;un
 sistema de rastreo de personas&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="section" id="definicion-del-problema"&gt;
@@ -121,6 +121,6 @@ actualizaciones.&lt;/li&gt;
 &lt;div class="section" id="otras-entradas"&gt;
 &lt;h2&gt;Otras entradas&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://ariel17.com.ar/blog/xy-parte-2/"&gt;(x,y) parte 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="/blog/xy-parte-2/"&gt;(x,y) parte 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>android</category><category>go</category><category>idea</category><guid>http://ariel17.com.ar/blog/xy-parte-1/</guid><pubDate>Sun, 02 Jul 2017 00:34:51 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>android</category><category>go</category><category>idea</category><guid>/blog/xy-parte-1/</guid><pubDate>Sun, 02 Jul 2017 00:34:51 GMT</pubDate></item></channel></rss>

@@ -2,12 +2,12 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/en/categories/google/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Posts about google | Ariel Gerardo Ríos</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS for tag google (en)" href="../google.xml">
-<link rel="canonical" href="http://ariel17.com.ar/en/categories/google/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -68,43 +68,43 @@ authentication and authorization flows but I wanted to use a library that has a
 more elegant implementation: <a class="reference external" href="http://psa.matiasaguirre.net/">python-social-auth</a>. Also this last one enables a
 quick way to use <a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#social-backends">many more backends</a>, not only Google and <a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#non-social-backends">not only
 socials</a>. So this is what I got:</p>
-<pre class="code text"><a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-1"></a># Requirements
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-2"></a>Django==1.7
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-3"></a>python-social-auth==0.2.1
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-4"></a>google-api-python-client==1.2
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-5"></a>raven==5.0.0  # you *really* should get Sentry! https://getsentry.com/
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-6"></a>requests==2.3.0
+<pre class="code text"><a name="rest_code_e86183dd259f4186a28628dc92344ba3-1"></a># Requirements
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-2"></a>Django==1.7
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-3"></a>python-social-auth==0.2.1
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-4"></a>google-api-python-client==1.2
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-5"></a>raven==5.0.0  # you *really* should get Sentry! https://getsentry.com/
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-6"></a>requests==2.3.0
 </pre>
 <p>And the related <code>settings.py</code> configuration:</p>
-<pre class="code python"><a name="rest_code_250187e70867472e8f753df3a7c6714b-1"></a><span class="c"># project/settings.py</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-2"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-3"></a><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-4"></a>    <span class="s">'social.backends.google.GoogleOAuth2'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-5"></a>    <span class="s">'django.contrib.auth.backends.ModelBackend'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-6"></a><span class="p">)</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-7"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-8"></a><span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span> <span class="o">=</span> <span class="s">'/home/'</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-9"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-10"></a><span class="n">SOCIAL_AUTH_LOGIN_ERROR_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-11"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-12"></a><span class="n">SOCIAL_AUTH_DISCONNECT_REDIRECT_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-13"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-14"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE</span> <span class="o">=</span> <span class="p">[</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-15"></a>    <span class="s">'https://www.googleapis.com/auth/calendar'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-16"></a><span class="p">]</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-17"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-18"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-19"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-20"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'force'</span>  <span class="c"># Enables refresh_token</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-21"></a><span class="p">}</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-22"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-23"></a><span class="n">SOCIAL_AUTH_PIPELINE</span> <span class="o">=</span> <span class="p">(</span>  <span class="c"># Removed user creation and profile update</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-24"></a>    <span class="s">'social.pipeline.social_auth.social_details'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-25"></a>    <span class="s">'social.pipeline.social_auth.social_uid'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-26"></a>    <span class="s">'social.pipeline.social_auth.auth_allowed'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-27"></a>    <span class="s">'social.pipeline.social_auth.associate_user'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-28"></a>    <span class="s">'social.pipeline.social_auth.load_extra_data'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-29"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_89f811de5eaf444f881a49af2506d92a-1"></a><span class="c"># project/settings.py</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-2"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-3"></a><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-4"></a>    <span class="s">'social.backends.google.GoogleOAuth2'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-5"></a>    <span class="s">'django.contrib.auth.backends.ModelBackend'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-6"></a><span class="p">)</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-7"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-8"></a><span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span> <span class="o">=</span> <span class="s">'/home/'</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-9"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-10"></a><span class="n">SOCIAL_AUTH_LOGIN_ERROR_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-11"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-12"></a><span class="n">SOCIAL_AUTH_DISCONNECT_REDIRECT_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-13"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-14"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-15"></a>    <span class="s">'https://www.googleapis.com/auth/calendar'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-16"></a><span class="p">]</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-17"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-18"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-19"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-20"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'force'</span>  <span class="c"># Enables refresh_token</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-21"></a><span class="p">}</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-22"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-23"></a><span class="n">SOCIAL_AUTH_PIPELINE</span> <span class="o">=</span> <span class="p">(</span>  <span class="c"># Removed user creation and profile update</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-24"></a>    <span class="s">'social.pipeline.social_auth.social_details'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-25"></a>    <span class="s">'social.pipeline.social_auth.social_uid'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-26"></a>    <span class="s">'social.pipeline.social_auth.auth_allowed'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-27"></a>    <span class="s">'social.pipeline.social_auth.associate_user'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-28"></a>    <span class="s">'social.pipeline.social_auth.load_extra_data'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-29"></a><span class="p">)</span>
 </pre>
 <p>What does all the trick is the extra argument <code>approval_promt</code> because
 Google only sends the <code>refresh_token</code> when its present. Despite the fact
@@ -116,137 +116,137 @@ refute me.</strong></p>
 <h2>Synchronizing and refreshing</h2>
 <p>A custom event model as example with sync + token refreshing on authentication
 error:</p>
-<pre class="code python"><a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-1"></a><span class="c">#!/usr/bin/env python</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-3"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-4"></a><span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-5"></a><span class="sd">Model definition for appliation ``app``.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-6"></a><span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-7"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-8"></a><span class="kn">import</span> <span class="nn">logging</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-9"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-10"></a><span class="kn">from</span> <span class="nn">apiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-11"></a><span class="kn">from</span> <span class="nn">oauth2client.client</span> <span class="kn">import</span> <span class="n">AccessTokenCredentials</span><span class="p">,</span> <span class="n">AccessTokenCredentialsError</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-12"></a><span class="kn">from</span> <span class="nn">requests.exceptions</span> <span class="kn">import</span> <span class="n">HTTPError</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-13"></a><span class="kn">import</span> <span class="nn">httplib2</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-14"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-15"></a><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-16"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-17"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-18"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.default.models</span> <span class="kn">import</span> <span class="n">UserSocialAuth</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-19"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.utils</span> <span class="kn">import</span> <span class="n">load_strategy</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-20"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-21"></a><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Event</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-22"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-23"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-24"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-25"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-26"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-27"></a><span class="k">class</span> <span class="nc">CustomEvent</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-28"></a>    <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-29"></a><span class="sd">    A very simple custom event model.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-30"></a><span class="sd">    """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-31"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-32"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-33"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-34"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-35"></a>    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-36"></a>        <span class="k">return</span> <span class="s">u"{0} ({1})"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-37"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-38"></a>    <span class="k">def</span> <span class="nf">get_google_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-39"></a>        <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-40"></a><span class="sd">        Implementing the Calendar API content required to create an event:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-41"></a><span class="sd">        https://developers.google.com/google-apps/calendar/v3/reference/events?hl=es#resource</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-42"></a><span class="sd">        """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-43"></a>        <span class="k">return</span> <span class="p">{}</span>  <span class="c"># dummy of course</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-44"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-45"></a>    <span class="k">def</span> <span class="nf">sync_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-46"></a>        <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-47"></a><span class="sd">        Pushes current event to the user's Google Calendar service, if it is enabled.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-48"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-49"></a><span class="sd">        :param retry: Indicates if it should retry on an authentication error.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-50"></a><span class="sd">        :type retry: ``bool``</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-51"></a><span class="sd">        :return: Synchronization result from Google API.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-52"></a><span class="sd">        :rtype: ``dict`` or ``None``</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-53"></a><span class="sd">        """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-54"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-55"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">social_auth</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s">'google-oauth2'</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-56"></a>        <span class="k">except</span> <span class="n">UserSocialAuth</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-57"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u"Google is not authenticated; nothing to do :("</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-58"></a>            <span class="k">return</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-59"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-60"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Syncronizing event </span><span class="si">%r</span><span class="s"> into Google Calendar for user </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-61"></a>                     <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-62"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-63"></a>        <span class="n">credentials</span> <span class="o">=</span> <span class="n">AccessTokenCredentials</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-64"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">],</span> <span class="s">'my-user-agent/1.0'</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-65"></a>        <span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-66"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">httplib2</span><span class="o">.</span><span class="n">Http</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-67"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">http</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-68"></a>        <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">serviceName</span><span class="o">=</span><span class="s">'calendar'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'v3'</span><span class="p">,</span> <span class="n">http</span><span class="o">=</span><span class="n">http</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-69"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-70"></a>        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_google_data</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-71"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Creating event with data: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-72"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-73"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-74"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">events</span><span class="p">()</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-75"></a>                <span class="n">calendarId</span><span class="o">=</span><span class="s">'primary'</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">data</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-76"></a>            <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-77"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-78"></a>        <span class="k">except</span> <span class="n">AccessTokenCredentialsError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-79"></a>            <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-80"></a>            <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-81"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">(</span><span class="n">load_strategy</span><span class="p">())</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-82"></a>            <span class="k">except</span> <span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-83"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-84"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-85"></a>                    <span class="s">u"Error trying to refesh token. Authorization object "</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-86"></a>                    <span class="s">"was removed."</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-87"></a>                        <span class="s">u'response'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-88"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-89"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-90"></a>                            <span class="s">u'status_code'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-91"></a>                        <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-92"></a>                        <span class="s">u'request'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-93"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-94"></a>                            <span class="s">u'method'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-95"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-96"></a>                        <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-97"></a>                    <span class="p">})</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-98"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-99"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-100"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-101"></a>                <span class="s">u'[sync_event] Unexpected exception synchronizing event'</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-102"></a>                <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-103"></a>                    <span class="s">u'user'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-104"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-105"></a>                        <span class="s">u'email'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-106"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-107"></a>                    <span class="s">u'provider'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-108"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-109"></a>                        <span class="s">u'extra_data'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-110"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-111"></a>                    <span class="s">u'event'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-112"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-113"></a>                        <span class="s">u'name'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-114"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-115"></a>                <span class="p">})</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-116"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-117"></a>        <span class="k">if</span> <span class="n">retry</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-118"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_event</span><span class="p">(</span><span class="n">retry</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-119"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-120"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Event creation result: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-121"></a>        <span class="k">return</span> <span class="n">result</span>
+<pre class="code python"><a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-3"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-4"></a><span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-5"></a><span class="sd">Model definition for appliation ``app``.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-6"></a><span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-7"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-8"></a><span class="kn">import</span> <span class="nn">logging</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-9"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-10"></a><span class="kn">from</span> <span class="nn">apiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-11"></a><span class="kn">from</span> <span class="nn">oauth2client.client</span> <span class="kn">import</span> <span class="n">AccessTokenCredentials</span><span class="p">,</span> <span class="n">AccessTokenCredentialsError</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-12"></a><span class="kn">from</span> <span class="nn">requests.exceptions</span> <span class="kn">import</span> <span class="n">HTTPError</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-13"></a><span class="kn">import</span> <span class="nn">httplib2</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-14"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-15"></a><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-16"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-17"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-18"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.default.models</span> <span class="kn">import</span> <span class="n">UserSocialAuth</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-19"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.utils</span> <span class="kn">import</span> <span class="n">load_strategy</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-20"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-21"></a><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Event</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-22"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-23"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-24"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-25"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-26"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-27"></a><span class="k">class</span> <span class="nc">CustomEvent</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-28"></a>    <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-29"></a><span class="sd">    A very simple custom event model.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-30"></a><span class="sd">    """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-31"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-32"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-33"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-34"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-35"></a>    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-36"></a>        <span class="k">return</span> <span class="s">u"{0} ({1})"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-37"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-38"></a>    <span class="k">def</span> <span class="nf">get_google_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-39"></a>        <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-40"></a><span class="sd">        Implementing the Calendar API content required to create an event:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-41"></a><span class="sd">        https://developers.google.com/google-apps/calendar/v3/reference/events?hl=es#resource</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-42"></a><span class="sd">        """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-43"></a>        <span class="k">return</span> <span class="p">{}</span>  <span class="c"># dummy of course</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-44"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-45"></a>    <span class="k">def</span> <span class="nf">sync_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-46"></a>        <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-47"></a><span class="sd">        Pushes current event to the user's Google Calendar service, if it is enabled.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-48"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-49"></a><span class="sd">        :param retry: Indicates if it should retry on an authentication error.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-50"></a><span class="sd">        :type retry: ``bool``</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-51"></a><span class="sd">        :return: Synchronization result from Google API.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-52"></a><span class="sd">        :rtype: ``dict`` or ``None``</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-53"></a><span class="sd">        """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-54"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-55"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">social_auth</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s">'google-oauth2'</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-56"></a>        <span class="k">except</span> <span class="n">UserSocialAuth</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-57"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u"Google is not authenticated; nothing to do :("</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-58"></a>            <span class="k">return</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-59"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-60"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Syncronizing event </span><span class="si">%r</span><span class="s"> into Google Calendar for user </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-61"></a>                     <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-62"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-63"></a>        <span class="n">credentials</span> <span class="o">=</span> <span class="n">AccessTokenCredentials</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-64"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">],</span> <span class="s">'my-user-agent/1.0'</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-65"></a>        <span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-66"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">httplib2</span><span class="o">.</span><span class="n">Http</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-67"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">http</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-68"></a>        <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">serviceName</span><span class="o">=</span><span class="s">'calendar'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'v3'</span><span class="p">,</span> <span class="n">http</span><span class="o">=</span><span class="n">http</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-69"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-70"></a>        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_google_data</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-71"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Creating event with data: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-72"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-73"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-74"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">events</span><span class="p">()</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-75"></a>                <span class="n">calendarId</span><span class="o">=</span><span class="s">'primary'</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">data</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-76"></a>            <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-77"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-78"></a>        <span class="k">except</span> <span class="n">AccessTokenCredentialsError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-79"></a>            <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-80"></a>            <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-81"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">(</span><span class="n">load_strategy</span><span class="p">())</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-82"></a>            <span class="k">except</span> <span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-83"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-84"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-85"></a>                    <span class="s">u"Error trying to refesh token. Authorization object "</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-86"></a>                    <span class="s">"was removed."</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-87"></a>                        <span class="s">u'response'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-88"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-89"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-90"></a>                            <span class="s">u'status_code'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-91"></a>                        <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-92"></a>                        <span class="s">u'request'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-93"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-94"></a>                            <span class="s">u'method'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-95"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-96"></a>                        <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-97"></a>                    <span class="p">})</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-98"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-99"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-100"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-101"></a>                <span class="s">u'[sync_event] Unexpected exception synchronizing event'</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-102"></a>                <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-103"></a>                    <span class="s">u'user'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-104"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-105"></a>                        <span class="s">u'email'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-106"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-107"></a>                    <span class="s">u'provider'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-108"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-109"></a>                        <span class="s">u'extra_data'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-110"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-111"></a>                    <span class="s">u'event'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-112"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-113"></a>                        <span class="s">u'name'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-114"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-115"></a>                <span class="p">})</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-116"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-117"></a>        <span class="k">if</span> <span class="n">retry</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-118"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_event</span><span class="p">(</span><span class="n">retry</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-119"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-120"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Event creation result: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-121"></a>        <span class="k">return</span> <span class="n">result</span>
 </pre>
 <p>Happy weekend! :)</p>
 <p><strong>UPDATE on 2014-11-11:</strong> <a class="reference external" href="http://psa.matiasaguirre.net/">python-social-auth</a> has updated the documentation
 about how to refresh tokens: <a class="reference external" href="http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token">http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token</a></p>
 <p>Today I have found that refresh_tokens also expires, so the correct
 <tt class="docutils literal">approval_promt</tt> value to use is <tt class="docutils literal">auto</tt>:</p>
-<pre class="code python"><a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-1"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-2"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-3"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'auto'</span>  <span class="c"># Enables refresh_token, for ever and ever</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-4"></a><span class="p">}</span>
+<pre class="code python"><a name="rest_code_d278dc085bda49938d12cf3fe5c99812-1"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-2"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-3"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'auto'</span>  <span class="c"># Enables refresh_token, for ever and ever</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-4"></a><span class="p">}</span>
 </pre>
 </div>
 </div>

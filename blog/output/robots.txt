@@ -1,2 +1,2 @@
-Sitemap: http://ariel17.com.ar/sitemapindex.xml
+Sitemap: /sitemapindex.xml
 

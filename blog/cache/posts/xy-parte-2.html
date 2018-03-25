@@ -1,9 +1,9 @@
 <p>El código del proyecto lo dividí en 3 directorios, conteniendo las partes más
 significativas del mismo.</p>
-<pre class="code text"><a name="rest_code_2e47e4807bfe451b951df76873c5c997-1"></a>./xy
-<a name="rest_code_2e47e4807bfe451b951df76873c5c997-2"></a>  ├── android
-<a name="rest_code_2e47e4807bfe451b951df76873c5c997-3"></a>  ├── api
-<a name="rest_code_2e47e4807bfe451b951df76873c5c997-4"></a>  └── web
+<pre class="code text"><a name="rest_code_292c0faff18243ea9e74f40cc3c06951-1"></a>./xy
+<a name="rest_code_292c0faff18243ea9e74f40cc3c06951-2"></a>  ├── android
+<a name="rest_code_292c0faff18243ea9e74f40cc3c06951-3"></a>  ├── api
+<a name="rest_code_292c0faff18243ea9e74f40cc3c06951-4"></a>  └── web
 </pre><div class="section" id="android">
 <h1>Android</h1>
 <p>La aplicación es por ahora sólamente un formulario que solicita un PIN
@@ -28,14 +28,14 @@ los datos que recibe.</p>
 </ul>
 <p>Representa a las operaciones relacionadas con las personas o cosas que se
 desea seguir en la superficie.</p>
-<pre class="code bash"><a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/subjects  <span class="c"># terminal 2</span>
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-3"></a>HTTP/1.1 <span class="m">201</span> Created
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-4"></a>Content-Type: application/json
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:26:37 GMT
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-6"></a>Content-Length: 91
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-7"></a>
-<a name="rest_code_3930ed8e8468490cba945d1a0ef98b16-8"></a><span class="o">{</span><span class="s2">&quot;Current&quot;</span>:<span class="o">{</span><span class="s2">&quot;Latitude&quot;</span>:0,<span class="s2">&quot;Longitude&quot;</span>:0,<span class="s2">&quot;CreatedAt&quot;</span>:<span class="s2">&quot;0001-01-01T00:00:00Z&quot;</span><span class="o">}</span>,<span class="s2">&quot;History&quot;</span>:null<span class="o">}</span>
+<pre class="code bash"><a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/subjects  <span class="c"># terminal 2</span>
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-4"></a>Content-Type: application/json
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:26:37 GMT
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-6"></a>Content-Length: 91
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-7"></a>
+<a name="rest_code_bb0c58d306bf4ae7ae652b31c0d8a0b8-8"></a><span class="o">{</span><span class="s2">&quot;Current&quot;</span>:<span class="o">{</span><span class="s2">&quot;Latitude&quot;</span>:0,<span class="s2">&quot;Longitude&quot;</span>:0,<span class="s2">&quot;CreatedAt&quot;</span>:<span class="s2">&quot;0001-01-01T00:00:00Z&quot;</span><span class="o">}</span>,<span class="s2">&quot;History&quot;</span>:null<span class="o">}</span>
 </pre></div>
 <div class="section" id="registration">
 <h2>Registration</h2>
@@ -47,14 +47,14 @@ alfanumérico que se supone ya creado por la misma plataforma y asociado a un
 usuario existente que quiere agregar ese dispositivo. La operación asocia el
 mismo con el usuario y provee un ID único para facilitar la entrega de los
 datos de localización.</p>
-<pre class="code bash"><a name="rest_code_086b9672a89e4757af76e3182df61758-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
-<a name="rest_code_086b9672a89e4757af76e3182df61758-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/register --data <span class="s2">&quot;pin=1234&quot;</span>  <span class="c"># terminal 2</span>
-<a name="rest_code_086b9672a89e4757af76e3182df61758-3"></a>HTTP/1.1 <span class="m">201</span> Created
-<a name="rest_code_086b9672a89e4757af76e3182df61758-4"></a>Content-Type: application/json
-<a name="rest_code_086b9672a89e4757af76e3182df61758-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:29:38 GMT
-<a name="rest_code_086b9672a89e4757af76e3182df61758-6"></a>Content-Length: 98
-<a name="rest_code_086b9672a89e4757af76e3182df61758-7"></a>
-<a name="rest_code_086b9672a89e4757af76e3182df61758-8"></a><span class="o">{</span><span class="s2">&quot;success&quot;</span>:true,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;Successfully created ID.&quot;</span>,<span class="s2">&quot;id&quot;</span>:<span class="s2">&quot;65336dad-9e7f-4c7a-9f5b-04eeb1a5149c&quot;</span><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-1"></a>~/xy/api<span class="nv">$ </span>go run main.go <span class="m">9090</span>  <span class="c"># terminal 1</span>
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-2"></a>~/xy/api<span class="nv">$ </span>curl -i -X POST http://localhost:9090/register --data <span class="s2">&quot;pin=1234&quot;</span>  <span class="c"># terminal 2</span>
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-3"></a>HTTP/1.1 <span class="m">201</span> Created
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-4"></a>Content-Type: application/json
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-5"></a>Date: Sun, <span class="m">09</span> Jul <span class="m">2017</span> 22:29:38 GMT
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-6"></a>Content-Length: 98
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-7"></a>
+<a name="rest_code_9bc5219f4457412db651b2adbe48c5bb-8"></a><span class="o">{</span><span class="s2">&quot;success&quot;</span>:true,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;Successfully created ID.&quot;</span>,<span class="s2">&quot;id&quot;</span>:<span class="s2">&quot;65336dad-9e7f-4c7a-9f5b-04eeb1a5149c&quot;</span><span class="o">}</span>
 </pre><p>Se hace evidente que <cite>/register</cite> es un recurso que pertenece a <cite>/subjects</cite>; lo
 moveré en la siguiente iteración.</p>
 </div>

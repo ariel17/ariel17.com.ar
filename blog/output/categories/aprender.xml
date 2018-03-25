@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (aprender)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/aprender.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 15:00:00 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Aprendiendo a enseñar I: Docker</title><link>http://ariel17.com.ar/blog/learning-to-teach-docker/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="figure align-right"&gt;
-&lt;a class="reference external image-reference" href="http://ariel17.github.io/docker-talk/"&gt;&lt;img alt="/galleries/learning-to-teach-i-docker/slides.png" src="http://ariel17.com.ar/galleries/learning-to-teach-i-docker/slides.png" style="width: 400.0px;"&gt;&lt;/a&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (aprender)</title><link>https://example.com/</link><description></description><atom:link href="/categories/aprender.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 16:13:03 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Aprendiendo a enseñar I: Docker</title><link>/blog/learning-to-teach-docker/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;div class="figure align-right"&gt;
+&lt;a class="reference external image-reference" href="http://ariel17.github.io/docker-talk/"&gt;&lt;img alt="/galleries/learning-to-teach-i-docker/slides.png" src="/galleries/learning-to-teach-i-docker/slides.png" style="width: 400.0px;"&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;p&gt;En &lt;a class="reference external" href="https://www.movile.com/en/"&gt;Movile&lt;/a&gt; (sí, &lt;a class="reference external" href="https://www.youtube.com/watch?v=PirVtiJuvDs"&gt;&lt;em&gt;volví&lt;/em&gt;&lt;/a&gt;) se inició un programa de auto-capacitaciones, donde
 las clases fueron programadas mediante técnica &lt;a class="reference external" href="http://www.proyectosagiles.org/que-es-open-space"&gt;Open Space&lt;/a&gt;. Uno de los temas
@@ -17,7 +17,7 @@ con &lt;a class="reference external" href="http://sphinx-doc.org/"&gt;Sphinx&lt;
 durar ~40 minutos y en realidad duró un poco más de la mitad :(&lt;/li&gt;
 &lt;li&gt;Cambiar el tono de voz para evitar la monotonía.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;La próxima clase será de &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; :D Estoy un poquito feliz.&lt;/p&gt;&lt;/div&gt;</description><category>aprender</category><category>enseñar</category><guid>http://ariel17.com.ar/blog/learning-to-teach-docker/</guid><pubDate>Tue, 21 Apr 2015 01:33:23 GMT</pubDate></item><item><title>Nunca dejes de aprender</title><link>http://ariel17.com.ar/blog/never-stop-learning/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Cuando empecé la primaria, recuerdo haberme preguntado &lt;em&gt;¿Hasta cuándo hay que
+&lt;p&gt;La próxima clase será de &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; :D Estoy un poquito feliz.&lt;/p&gt;&lt;/div&gt;</description><category>aprender</category><category>enseñar</category><guid>/blog/learning-to-teach-docker/</guid><pubDate>Tue, 21 Apr 2015 01:33:23 GMT</pubDate></item><item><title>Nunca dejes de aprender</title><link>/blog/never-stop-learning/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Cuando empecé la primaria, recuerdo haberme preguntado &lt;em&gt;¿Hasta cuándo hay que
 ir al colegio?&lt;/em&gt;. Indagué un poco y me enteré de la existencia de la secundaria,
 la universidad y luego de hacer algunas cuentas con los dedos llegué a la
 respuesta: hasta los 25 años. Más o menos.&lt;/p&gt;
@@ -46,7 +46,7 @@ movimiento.&lt;/p&gt;
 &lt;div class="section" id="el-plan"&gt;
 &lt;h2&gt;El plan&lt;/h2&gt;
 &lt;div class="thumbnail figure align-right"&gt;
-&lt;img alt="Leyendo antes de dormir." src="http://ariel17.com.ar/galleries/never-stop-learning/reading.jpg" style="width: 400.0px;"&gt;
+&lt;img alt="Leyendo antes de dormir." src="/galleries/never-stop-learning/reading.jpg" style="width: 400.0px;"&gt;
 &lt;/div&gt;
 &lt;p&gt;Nunca es tarde y siempre hay algo para aprender: tocar la guitarra, programar,
 revocar una pared, jardinería, tejer... &lt;strong&gt;si te gusta, hacelo&lt;/strong&gt;; aprendé todo
@@ -69,4 +69,4 @@ esfuerzo.&lt;/p&gt;
 &lt;div class="section" id="entonces"&gt;
 &lt;h2&gt;Entonces...&lt;/h2&gt;
 &lt;p&gt;Nunca dejes de leer y, sobre todo, &lt;strong&gt;nunca dejes de aprender&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>aprender</category><guid>http://ariel17.com.ar/blog/never-stop-learning/</guid><pubDate>Mon, 31 Mar 2014 17:56:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>aprender</category><guid>/blog/never-stop-learning/</guid><pubDate>Mon, 31 Mar 2014 17:56:00 GMT</pubDate></item></channel></rss>

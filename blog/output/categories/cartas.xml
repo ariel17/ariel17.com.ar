@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (cartas)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/cartas.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:56 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cartas para mis amores II</title><link>http://ariel17.com.ar/blog/letters-to-my-loves-ii/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (cartas)</title><link>https://example.com/</link><description></description><atom:link href="/categories/cartas.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 16:13:01 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cartas para mis amores II</title><link>/blog/letters-to-my-loves-ii/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;Fecha: 1357 DC, día 14 del mes de Werel, 14h 16m.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Hoy desperté con &lt;em&gt;el miedo durmiendo de mi lado&lt;/em&gt;, como dice mi padre: es el
@@ -60,7 +60,7 @@ olvidar.
 
 Llegué ahí la noche misma de la Primera Destrucción.
 &lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Continuará.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</description><category>cartas</category><guid>http://ariel17.com.ar/blog/letters-to-my-loves-ii/</guid><pubDate>Thu, 12 Mar 2015 03:36:26 GMT</pubDate></item><item><title>Cartas para mis amores I</title><link>http://ariel17.com.ar/blog/letters-to-my-loves-i/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Esto es simplemente un ejercicio de &lt;em&gt;escribir palabras de manera amateur&lt;/em&gt;. La
+&lt;p&gt;&lt;strong&gt;Continuará.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</description><category>cartas</category><guid>/blog/letters-to-my-loves-ii/</guid><pubDate>Thu, 12 Mar 2015 03:36:26 GMT</pubDate></item><item><title>Cartas para mis amores I</title><link>/blog/letters-to-my-loves-i/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Esto es simplemente un ejercicio de &lt;em&gt;escribir palabras de manera amateur&lt;/em&gt;. La
 necesidad de exteriorizar palabras, ni más ni menos. Actualizaciones sobre el
 texto van y vienen ;)&lt;/p&gt;
 &lt;div class="section" id="cartas-para-mis-amores-i"&gt;
@@ -129,4 +129,4 @@ pero también fuimos purificados.&lt;/p&gt;
 &lt;li&gt;Actualización: 2014/09/11 01:11:52&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>cartas</category><guid>http://ariel17.com.ar/blog/letters-to-my-loves-i/</guid><pubDate>Sun, 17 Aug 2014 04:09:22 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>cartas</category><guid>/blog/letters-to-my-loves-i/</guid><pubDate>Sun, 17 Aug 2014 04:09:22 GMT</pubDate></item></channel></rss>

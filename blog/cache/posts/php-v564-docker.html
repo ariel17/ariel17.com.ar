@@ -4,54 +4,54 @@ Ubuntu v15.05 y a pesar de todos los que suspiran cuando cuentan <a class="refer
 tuvo esa versión a mí me hizo llorar desconsoladamente cuando no logré
 configurar el logueo de errores.</p>
 <p>Usando esta configuración para el contenedor:</p>
-<pre class="code docker"><a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-1"></a><span class="k">FROM</span><span class="s"> ubuntu:15.04</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-2"></a><span class="k">MAINTAINER</span><span class="s"> Ariel Gerardo Ríos &lt;ariel.gerardo.rios@gmail.com&gt;</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-3"></a><span class="k">MAINTAINER</span><span class="s"> Carlos Damián Ríos &lt;carlos.damian.rios@gmail.com&gt;</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-4"></a>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-5"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;apt-get&quot;</span>, <span class="s2">&quot;update&quot;</span><span class="o">]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-6"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;apt-get&quot;</span>, <span class="s2">&quot;install&quot;</span>, <span class="s2">&quot;-y&quot;</span>, <span class="s2">&quot;php5-cli&quot;</span>, <span class="s2">&quot;php5-gd&quot;</span>, <span class="s2">&quot;php5-fpm&quot;</span>, <span class="s2">&quot;php5-mcrypt&quot;</span>, <span class="s2">&quot;php5-mysql&quot;</span>, <span class="s2">&quot;php5-curl&quot;</span>, <span class="s2">&quot;libssh2-php&quot;</span><span class="o">]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-7"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;php5enmod&quot;</span>, <span class="s2">&quot;mcrypt&quot;</span><span class="o">]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-8"></a>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-9"></a>COPY <span class="o">[</span><span class="s2">&quot;www.conf&quot;</span>, <span class="s2">&quot;/etc/php5/fpm/pool.d/www.conf&quot;</span><span class="o">]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-10"></a>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-11"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;mkdir&quot;</span>, <span class="s2">&quot;-p&quot;</span>, <span class="s2">&quot;/4ws/pilot&quot;</span><span class="o">]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-12"></a><span class="k">WORKDIR</span><span class="s"> /4ws/pilot</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-13"></a><span class="k">VOLUME</span><span class="s"> [&quot;/4ws/pilot&quot;]</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-14"></a>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-15"></a><span class="k">EXPOSE</span><span class="s"> 9000</span>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-16"></a>
-<a name="rest_code_b2722a02e4c844ce8350dffb2c8f8602-17"></a><span class="k">CMD</span><span class="s"> [&quot;php5-fpm&quot;, &quot;-F&quot;, &quot;-R&quot;]</span>
+<pre class="code docker"><a name="rest_code_79983d7bef00455e814ee22da7a4f36d-1"></a><span class="k">FROM</span><span class="s"> ubuntu:15.04</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-2"></a><span class="k">MAINTAINER</span><span class="s"> Ariel Gerardo Ríos &lt;ariel.gerardo.rios@gmail.com&gt;</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-3"></a><span class="k">MAINTAINER</span><span class="s"> Carlos Damián Ríos &lt;carlos.damian.rios@gmail.com&gt;</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-4"></a>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-5"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;apt-get&quot;</span>, <span class="s2">&quot;update&quot;</span><span class="o">]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-6"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;apt-get&quot;</span>, <span class="s2">&quot;install&quot;</span>, <span class="s2">&quot;-y&quot;</span>, <span class="s2">&quot;php5-cli&quot;</span>, <span class="s2">&quot;php5-gd&quot;</span>, <span class="s2">&quot;php5-fpm&quot;</span>, <span class="s2">&quot;php5-mcrypt&quot;</span>, <span class="s2">&quot;php5-mysql&quot;</span>, <span class="s2">&quot;php5-curl&quot;</span>, <span class="s2">&quot;libssh2-php&quot;</span><span class="o">]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-7"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;php5enmod&quot;</span>, <span class="s2">&quot;mcrypt&quot;</span><span class="o">]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-8"></a>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-9"></a>COPY <span class="o">[</span><span class="s2">&quot;www.conf&quot;</span>, <span class="s2">&quot;/etc/php5/fpm/pool.d/www.conf&quot;</span><span class="o">]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-10"></a>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-11"></a><span class="k">RUN</span> <span class="o">[</span><span class="s2">&quot;mkdir&quot;</span>, <span class="s2">&quot;-p&quot;</span>, <span class="s2">&quot;/4ws/pilot&quot;</span><span class="o">]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-12"></a><span class="k">WORKDIR</span><span class="s"> /4ws/pilot</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-13"></a><span class="k">VOLUME</span><span class="s"> [&quot;/4ws/pilot&quot;]</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-14"></a>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-15"></a><span class="k">EXPOSE</span><span class="s"> 9000</span>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-16"></a>
+<a name="rest_code_79983d7bef00455e814ee22da7a4f36d-17"></a><span class="k">CMD</span><span class="s"> [&quot;php5-fpm&quot;, &quot;-F&quot;, &quot;-R&quot;]</span>
 </pre><p>con esta configuración del pool de FPM:</p>
-<pre class="code ini"><a name="rest_code_398e90ddf5624076a5e05fee47c34d74-1"></a><span class="k">[www]</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-2"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-3"></a><span class="na">user</span> <span class="o">=</span> <span class="s">root</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-4"></a><span class="na">group</span> <span class="o">=</span> <span class="s">root</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-5"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-6"></a><span class="na">listen</span> <span class="o">=</span> <span class="s">9000</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-7"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-8"></a><span class="na">pm</span> <span class="o">=</span> <span class="s">dynamic</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-9"></a><span class="na">pm.max_children</span> <span class="o">=</span> <span class="s">5</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-10"></a><span class="na">pm.start_servers</span> <span class="o">=</span> <span class="s">2</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-11"></a><span class="na">pm.min_spare_servers</span> <span class="o">=</span> <span class="s">1</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-12"></a><span class="na">pm.max_spare_servers</span> <span class="o">=</span> <span class="s">3</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-13"></a><span class="na">pm.status_path</span> <span class="o">=</span> <span class="s">/status</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-14"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-15"></a><span class="na">ping.path</span> <span class="o">=</span> <span class="s">/ping</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-16"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-17"></a><span class="na">access.log</span> <span class="o">=</span> <span class="s">/var/log/$pool.access.log</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-18"></a><span class="na">access.format</span> <span class="o">=</span> <span class="s">&quot;%R - %u %t \&quot;%m %r%Q%q\&quot; %s %f %{mili}d %{kilo}M %C%%&quot;</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-19"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-20"></a><span class="na">chdir</span> <span class="o">=</span> <span class="s">/</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-21"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-22"></a><span class="na">catch_workers_output</span> <span class="o">=</span> <span class="s">yes</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-23"></a>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-24"></a><span class="na">php_flag[display_errors]</span> <span class="o">=</span> <span class="s">on</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-25"></a><span class="na">php_admin_value[error_log]</span> <span class="o">=</span> <span class="s">/var/log/fpm-php.www.log</span>
-<a name="rest_code_398e90ddf5624076a5e05fee47c34d74-26"></a><span class="na">php_admin_flag[log_errors]</span> <span class="o">=</span> <span class="s">on</span>
+<pre class="code ini"><a name="rest_code_abdc09b403474434916886a33d5eacba-1"></a><span class="k">[www]</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-2"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-3"></a><span class="na">user</span> <span class="o">=</span> <span class="s">root</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-4"></a><span class="na">group</span> <span class="o">=</span> <span class="s">root</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-5"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-6"></a><span class="na">listen</span> <span class="o">=</span> <span class="s">9000</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-7"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-8"></a><span class="na">pm</span> <span class="o">=</span> <span class="s">dynamic</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-9"></a><span class="na">pm.max_children</span> <span class="o">=</span> <span class="s">5</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-10"></a><span class="na">pm.start_servers</span> <span class="o">=</span> <span class="s">2</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-11"></a><span class="na">pm.min_spare_servers</span> <span class="o">=</span> <span class="s">1</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-12"></a><span class="na">pm.max_spare_servers</span> <span class="o">=</span> <span class="s">3</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-13"></a><span class="na">pm.status_path</span> <span class="o">=</span> <span class="s">/status</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-14"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-15"></a><span class="na">ping.path</span> <span class="o">=</span> <span class="s">/ping</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-16"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-17"></a><span class="na">access.log</span> <span class="o">=</span> <span class="s">/var/log/$pool.access.log</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-18"></a><span class="na">access.format</span> <span class="o">=</span> <span class="s">&quot;%R - %u %t \&quot;%m %r%Q%q\&quot; %s %f %{mili}d %{kilo}M %C%%&quot;</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-19"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-20"></a><span class="na">chdir</span> <span class="o">=</span> <span class="s">/</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-21"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-22"></a><span class="na">catch_workers_output</span> <span class="o">=</span> <span class="s">yes</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-23"></a>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-24"></a><span class="na">php_flag[display_errors]</span> <span class="o">=</span> <span class="s">on</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-25"></a><span class="na">php_admin_value[error_log]</span> <span class="o">=</span> <span class="s">/var/log/fpm-php.www.log</span>
+<a name="rest_code_abdc09b403474434916886a33d5eacba-26"></a><span class="na">php_admin_flag[log_errors]</span> <span class="o">=</span> <span class="s">on</span>
 </pre><p>no había forma de hacerlo reaccionar para que guardara los logs; cuanta
 respuesta obtenía para todos las requisiciones era un HTTP 500 sin detalles en
 el cuerpo de la respuesta o en los archivos de logs.</p>
 <p>Sin querer compilar PHP desde cero, la solución más rápida fue degradar la
 versión de Ubuntu a la 14.04 que tiene como versión por defecto de PHP la 5.5:</p>
-<pre class="code docker"><a name="rest_code_980401e103ac47d1994123b0f0341569-1"></a><span class="k">FROM</span><span class="s"> ubuntu:14.04</span>
+<pre class="code docker"><a name="rest_code_f466d7409f0240628c769cf38339598e-1"></a><span class="k">FROM</span><span class="s"> ubuntu:14.04</span>
 </pre><p>Y santo remedio.</p>

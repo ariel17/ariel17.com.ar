@@ -2,19 +2,19 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Nginx como balanceador de carga | Ariel Gerardo Ríos</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ariel Gerardo Ríos">
 <link rel="prev" href="../mercadopago-en-bower/" title="Mercadopago en Bower" type="text/html">
 <link rel="next" href="../go-en-vim/" title="Go en ViM" type="text/html">
 <meta property="og:site_name" content="Ariel Gerardo Ríos">
 <meta property="og:title" content="Nginx como balanceador de carga">
-<meta property="og:url" content="http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/">
+<meta property="og:url" content="/blog/nginx-como-balanceador-de-carga/">
 <meta property="og:description" content="Suponiendo una aplicación donde se quiera distribuir el tráfico sobre distintas
 instancias para soportar la carga, es posible usar Nginx como servidor web y
 al mismo tiempo balanceador de carga.
@@ -79,83 +79,83 @@ al mismo tiempo balanceador de carga.</p>
 <li>1 Nginx</li>
 <li>3 simple aplicaciones web como backends</li>
 </ul>
-<pre class="code yaml"><a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-1"></a><span class="c1"># docker-compose.yml</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-2"></a><span class="nn">---</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-3"></a><span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="s">'3'</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-4"></a><span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-5"></a>  <span class="l-Scalar-Plain">nginx</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-6"></a>    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-7"></a>      <span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">.</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-8"></a>    <span class="l-Scalar-Plain">ports</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-9"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">8080:80</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-10"></a>    <span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-11"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend1</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-12"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend2</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-13"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend3</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-14"></a>    <span class="l-Scalar-Plain">depends_on</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-15"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend1</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-16"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend2</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-17"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend3</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-18"></a>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-19"></a>  <span class="l-Scalar-Plain">backend1</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-20"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-21"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-22"></a>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-23"></a>  <span class="l-Scalar-Plain">backend2</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-24"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-25"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-26"></a>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-27"></a>  <span class="l-Scalar-Plain">backend3</span><span class="p-Indicator">:</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-28"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
-<a name="rest_code_dd320b8f279b40728ce1b8356bbaf511-29"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
+<pre class="code yaml"><a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-1"></a><span class="c1"># docker-compose.yml</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-2"></a><span class="nn">---</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-3"></a><span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="s">'3'</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-4"></a><span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-5"></a>  <span class="l-Scalar-Plain">nginx</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-6"></a>    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-7"></a>      <span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">.</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-8"></a>    <span class="l-Scalar-Plain">ports</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-9"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">8080:80</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-10"></a>    <span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-11"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend1</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-12"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend2</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-13"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend3</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-14"></a>    <span class="l-Scalar-Plain">depends_on</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-15"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend1</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-16"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend2</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-17"></a>      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">backend3</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-18"></a>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-19"></a>  <span class="l-Scalar-Plain">backend1</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-20"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-21"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-22"></a>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-23"></a>  <span class="l-Scalar-Plain">backend2</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-24"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-25"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-26"></a>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-27"></a>  <span class="l-Scalar-Plain">backend3</span><span class="p-Indicator">:</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-28"></a>    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
+<a name="rest_code_e8a6f347270242e29879b8f91dfdc0c6-29"></a>    <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python -m http.server 80</span>
 </pre>
-<pre class="code Dockerfile"><a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-1"></a><span class="c"># Dockerfile</span>
-<a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-2"></a><span class="k">FROM</span><span class="s"> nginx</span>
-<a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-3"></a>LABEL maintainer <span class="s2">"ariel.gerardo.rios@gmail.com"</span>
-<a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-4"></a>
-<a name="rest_code_e53b3c3b400f42b3b168b02ce177215b-5"></a>COPY <span class="o">[</span><span class="s2">"nginx.conf"</span>, <span class="s2">"/etc/nginx/nginx.conf"</span><span class="o">]</span>
+<pre class="code Dockerfile"><a name="rest_code_265fdb83ae7f4b389804c036b515c3ca-1"></a><span class="c"># Dockerfile</span>
+<a name="rest_code_265fdb83ae7f4b389804c036b515c3ca-2"></a><span class="k">FROM</span><span class="s"> nginx</span>
+<a name="rest_code_265fdb83ae7f4b389804c036b515c3ca-3"></a>LABEL maintainer <span class="s2">"ariel.gerardo.rios@gmail.com"</span>
+<a name="rest_code_265fdb83ae7f4b389804c036b515c3ca-4"></a>
+<a name="rest_code_265fdb83ae7f4b389804c036b515c3ca-5"></a>COPY <span class="o">[</span><span class="s2">"nginx.conf"</span>, <span class="s2">"/etc/nginx/nginx.conf"</span><span class="o">]</span>
 </pre>
-<pre class="code text"><a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-1"></a># nginx.conf
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-2"></a>events{}
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-3"></a>
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-4"></a>http {
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-5"></a>    upstream backend {
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-6"></a>        server backend1;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-7"></a>        server backend2;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-8"></a>        server backend3;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-9"></a>    }
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-10"></a>
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-11"></a>    log_format upstreamlog '[$time_local] upstream $upstream_addr: $request upstream_response_time $upstream_response_time msec $msec request_time $request_time';
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-12"></a>
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-13"></a>    server {
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-14"></a>        listen 80;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-15"></a>        access_log /dev/stdout upstreamlog;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-16"></a>
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-17"></a>        location / {
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-18"></a>            proxy_pass http://backend;
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-19"></a>        }
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-20"></a>    }
-<a name="rest_code_cc06df36756b40b8bbd4d13a0fbcf7b7-21"></a>}
+<pre class="code text"><a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-1"></a># nginx.conf
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-2"></a>events{}
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-3"></a>
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-4"></a>http {
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-5"></a>    upstream backend {
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-6"></a>        server backend1;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-7"></a>        server backend2;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-8"></a>        server backend3;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-9"></a>    }
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-10"></a>
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-11"></a>    log_format upstreamlog '[$time_local] upstream $upstream_addr: $request upstream_response_time $upstream_response_time msec $msec request_time $request_time';
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-12"></a>
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-13"></a>    server {
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-14"></a>        listen 80;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-15"></a>        access_log /dev/stdout upstreamlog;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-16"></a>
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-17"></a>        location / {
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-18"></a>            proxy_pass http://backend;
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-19"></a>        }
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-20"></a>    }
+<a name="rest_code_8ffa7f3df8b646d99b68c7883d717b2a-21"></a>}
 </pre>
 </div>
 <div class="section" id="simulacion">
 <h2>Simulación</h2>
 <p>El método de selección aplicado por defecto es Round Robin.</p>
-<pre class="code bash"><a name="rest_code_3c9d844690074ddeb6699480165fb023-1"></a>~<span class="nv">$ </span>docker-compose build <span class="o">&amp;&amp;</span> docker-compose up  <span class="c"># localhost:8080</span>
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-2"></a>...
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-3"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:50 +0000<span class="o">]</span> upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.003 msec 1494986210.108 request_time 0.003
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-4"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:50 +0000<span class="o">]</span> upstream 172.30.0.3:80: GET /favicon.ico HTTP/1.1 upstream_response_time 0.001 msec 1494986210.130 request_time 0.001
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-5"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:51 +0000<span class="o">]</span> upstream 172.30.0.4:80: GET / HTTP/1.1 upstream_response_time 0.002 msec 1494986211.914 request_time 0.002
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-6"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:52 +0000<span class="o">]</span> upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.004 msec 1494986212.142 request_time 0.004
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-7"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:52 +0000<span class="o">]</span> upstream 172.30.0.3:80: GET / HTTP/1.1 upstream_response_time 0.009 msec 1494986212.396 request_time 0.009
-<a name="rest_code_3c9d844690074ddeb6699480165fb023-8"></a>...
+<pre class="code bash"><a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-1"></a>~<span class="nv">$ </span>docker-compose build <span class="o">&amp;&amp;</span> docker-compose up  <span class="c"># localhost:8080</span>
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-2"></a>...
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-3"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:50 +0000<span class="o">]</span> upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.003 msec 1494986210.108 request_time 0.003
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-4"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:50 +0000<span class="o">]</span> upstream 172.30.0.3:80: GET /favicon.ico HTTP/1.1 upstream_response_time 0.001 msec 1494986210.130 request_time 0.001
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-5"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:51 +0000<span class="o">]</span> upstream 172.30.0.4:80: GET / HTTP/1.1 upstream_response_time 0.002 msec 1494986211.914 request_time 0.002
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-6"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:52 +0000<span class="o">]</span> upstream 172.30.0.2:80: GET / HTTP/1.1 upstream_response_time 0.004 msec 1494986212.142 request_time 0.004
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-7"></a>nginx_1     <span class="p">|</span> <span class="o">[</span>17/May/2017:01:56:52 +0000<span class="o">]</span> upstream 172.30.0.3:80: GET / HTTP/1.1 upstream_response_time 0.009 msec 1494986212.396 request_time 0.009
+<a name="rest_code_51b06201696e4f9e8d1583fd39b3f30f-8"></a>...
 </pre>
 <p>Se puede alterar el método de selección modificando el peso de los nodos:</p>
-<pre class="code text"><a name="rest_code_e06f850b61324bc3ab3d26febd4032da-1"></a>upstream backend {
-<a name="rest_code_e06f850b61324bc3ab3d26febd4032da-2"></a>    server backend1 weight=5;
-<a name="rest_code_e06f850b61324bc3ab3d26febd4032da-3"></a>    server backend2;
-<a name="rest_code_e06f850b61324bc3ab3d26febd4032da-4"></a>    server backend3;
-<a name="rest_code_e06f850b61324bc3ab3d26febd4032da-5"></a>}
+<pre class="code text"><a name="rest_code_980ddcdc920b4aeb9f824cfead212386-1"></a>upstream backend {
+<a name="rest_code_980ddcdc920b4aeb9f824cfead212386-2"></a>    server backend1 weight=5;
+<a name="rest_code_980ddcdc920b4aeb9f824cfead212386-3"></a>    server backend2;
+<a name="rest_code_980ddcdc920b4aeb9f824cfead212386-4"></a>    server backend3;
+<a name="rest_code_980ddcdc920b4aeb9f824cfead212386-5"></a>}
 </pre>
 </div>
 <div class="section" id="otros-metodos">
@@ -163,22 +163,22 @@ al mismo tiempo balanceador de carga.</p>
 <ul>
 <li>
 <p class="first">Persistencia de sesiones:</p>
-<pre class="code text"><a name="rest_code_03dce952face4c838efa507d711b1cad-1"></a>upstream backend {
-<a name="rest_code_03dce952face4c838efa507d711b1cad-2"></a>    ip_hash;
-<a name="rest_code_03dce952face4c838efa507d711b1cad-3"></a>    server backend1;
-<a name="rest_code_03dce952face4c838efa507d711b1cad-4"></a>    server backend2;
-<a name="rest_code_03dce952face4c838efa507d711b1cad-5"></a>    server backend3;
-<a name="rest_code_03dce952face4c838efa507d711b1cad-6"></a>}
+<pre class="code text"><a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-1"></a>upstream backend {
+<a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-2"></a>    ip_hash;
+<a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-3"></a>    server backend1;
+<a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-4"></a>    server backend2;
+<a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-5"></a>    server backend3;
+<a name="rest_code_0787ac2707c74fd5b88d41f677df9bec-6"></a>}
 </pre>
 </li>
 <li>
 <p class="first">Menos conectado:</p>
-<pre class="code text"><a name="rest_code_9257ffd1769f46f7997d0d743343ab48-1"></a>upstream backend {
-<a name="rest_code_9257ffd1769f46f7997d0d743343ab48-2"></a>    least_conn;
-<a name="rest_code_9257ffd1769f46f7997d0d743343ab48-3"></a>    server backend1;
-<a name="rest_code_9257ffd1769f46f7997d0d743343ab48-4"></a>    server backend2;
-<a name="rest_code_9257ffd1769f46f7997d0d743343ab48-5"></a>    server backend3;
-<a name="rest_code_9257ffd1769f46f7997d0d743343ab48-6"></a>}
+<pre class="code text"><a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-1"></a>upstream backend {
+<a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-2"></a>    least_conn;
+<a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-3"></a>    server backend1;
+<a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-4"></a>    server backend2;
+<a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-5"></a>    server backend3;
+<a name="rest_code_faa98d4393c74d1fbce610ecb2cecd72-6"></a>}
 </pre>
 </li>
 </ul>
@@ -207,7 +207,7 @@ al mismo tiempo balanceador de carga.</p>
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="ariel17",
-            disqus_url="http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/",
+            disqus_url="/blog/nginx-como-balanceador-de-carga/",
         disqus_title="Nginx como balanceador de carga",
         disqus_identifier="cache/posts/nginx-como-balanceador-de-carga.html",
         disqus_config = function () {

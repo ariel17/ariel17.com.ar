@@ -6,1231 +6,1231 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://ariel17.com.ar/2014/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/2014/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/2015/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/2015/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/2016/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/2016/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/2017/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/2017/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/2018/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/2018/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/archive.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/archive.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/ansible-ci-on-gitlab/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/" />
+  <loc>/blog/ansible-ci-on-gitlab/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/ansible-ci-on-gitlab/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/bailamos/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/bailamos/" />
+  <loc>/blog/bailamos/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/bailamos/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/balance-2016/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/balance-2016/" />
+  <loc>/blog/balance-2016/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/balance-2016/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/books-in-2016/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/books-in-2016/" />
+  <loc>/blog/books-in-2016/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/books-in-2016/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/broken-properties/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/broken-properties/" />
+  <loc>/blog/broken-properties/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/broken-properties/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/clojure-brazil/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/clojure-brazil/" />
+  <loc>/blog/clojure-brazil/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/clojure-brazil/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/fixing-home-and-end-keys-in-vim/" />
+  <loc>/blog/fixing-home-and-end-keys-in-vim/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/fixing-home-and-end-keys-in-vim/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/go-en-vim/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/go-en-vim/" />
+  <loc>/blog/go-en-vim/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/go-en-vim/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/hello-world/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/hello-world/" />
+  <loc>/blog/hello-world/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/hello-world/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/huerta-is-back/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/huerta-is-back/" />
+  <loc>/blog/huerta-is-back/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/huerta-is-back/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/i-choose-you/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/i-choose-you/" />
+  <loc>/blog/i-choose-you/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/i-choose-you/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/im-grown/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/im-grown/" />
+  <loc>/blog/im-grown/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/im-grown/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/index-1.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/index-1.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/index-2.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/index-2.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/index-3.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/index-3.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/index-4.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/index-4.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/index-5.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/blog/index-5.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/learning-to-teach-docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/learning-to-teach-i-docker/" />
+  <loc>/blog/learning-to-teach-docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/learning-to-teach-i-docker/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/letters-to-my-loves-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/letters-to-my-loves-i/" />
+  <loc>/blog/letters-to-my-loves-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/letters-to-my-loves-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/letters-to-my-loves-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/letters-to-my-loves-ii/" />
+  <loc>/blog/letters-to-my-loves-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/letters-to-my-loves-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/libros-en-2017/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/libros-en-2017/" />
+  <loc>/blog/libros-en-2017/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/libros-en-2017/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/libros-en-2018/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/libros-en-2018/" />
+  <loc>/blog/libros-en-2018/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/libros-en-2018/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-2017-10-02/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-2017-10-02/" />
+  <loc>/blog/links-2017-10-02/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-2017-10-02/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-for-2016-09-19/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-for-2016-09-19/" />
+  <loc>/blog/links-for-2016-09-19/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-for-2016-09-19/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-for-2016-09-20/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-for-2016-09-20/" />
+  <loc>/blog/links-for-2016-09-20/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-for-2016-09-20/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-for-2016-09-21/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-for-2016-09-21/" />
+  <loc>/blog/links-for-2016-09-21/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-for-2016-09-21/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-for-2016-09-23/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-for-2016-09-23/" />
+  <loc>/blog/links-for-2016-09-23/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-for-2016-09-23/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/links-que-valen-la-pena/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/links-que-valen-la-pena/" />
+  <loc>/blog/links-que-valen-la-pena/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/links-que-valen-la-pena/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/loneliness/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/loneliness/" />
+  <loc>/blog/loneliness/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/loneliness/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/lxc-environments/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/lxc-environments/" />
+  <loc>/blog/lxc-environments/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/lxc-environments/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/mercadopago-en-bower/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/mercadopago-en-bower/" />
+  <loc>/blog/mercadopago-en-bower/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/mercadopago-en-bower/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/mision-personal-v2017/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/mision-personal-v2017/" />
+  <loc>/blog/mision-personal-v2017/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/mision-personal-v2017/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-ii/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-ii/" />
+  <loc>/blog/music-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-iii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-iii/" />
+  <loc>/blog/music-iii/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-iii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-iv/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-iv/" />
+  <loc>/blog/music-iv/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-iv/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-v/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-v/" />
+  <loc>/blog/music-v/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-v/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-vi/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-vi/" />
+  <loc>/blog/music-vi/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-vi/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music-vii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music-vii/" />
+  <loc>/blog/music-vii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music-vii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/music_i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/music_i/" />
+  <loc>/blog/music_i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/music_i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/necochea-charts/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/necochea-charts/" />
+  <loc>/blog/necochea-charts/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/necochea-charts/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/never-stop-learning/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/never-stop-learning/" />
+  <loc>/blog/never-stop-learning/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/never-stop-learning/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/nginx-como-balanceador-de-carga/" />
+  <loc>/blog/nginx-como-balanceador-de-carga/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/nginx-como-balanceador-de-carga/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/panooma-technique/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/panooma-technique/" />
+  <loc>/blog/panooma-technique/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/panooma-technique/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/path-to-kanban-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/path-to-kanban-i/" />
+  <loc>/blog/path-to-kanban-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/path-to-kanban-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/path-to-kanban-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/path-to-kanban-ii/" />
+  <loc>/blog/path-to-kanban-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/path-to-kanban-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/php-v564-docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/php-v564-docker/" />
+  <loc>/blog/php-v564-docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/php-v564-docker/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/practica-y-constancia/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/practica-y-constancia/" />
+  <loc>/blog/practica-y-constancia/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/practica-y-constancia/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/quotes-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/quotes-i/" />
+  <loc>/blog/quotes-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/quotes-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/quotes-ii/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/quotes-ii/" />
+  <loc>/blog/quotes-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/quotes-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/quotes-iii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/quotes-iii/" />
+  <loc>/blog/quotes-iii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/quotes-iii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/quotes-iv/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/quotes-iv/" />
+  <loc>/blog/quotes-iv/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/quotes-iv/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/quotes-v/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/quotes-v/" />
+  <loc>/blog/quotes-v/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/quotes-v/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/random/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/random/" />
+  <loc>/blog/random/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/random/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/" />
+  <loc>/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/sembrando-el-camino/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/sembrando-el-camino/" />
+  <loc>/blog/sembrando-el-camino/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/sembrando-el-camino/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/time-to-grow-up/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/time-to-grow-up/" />
+  <loc>/blog/time-to-grow-up/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/time-to-grow-up/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/un-rato-para-pensar/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/un-rato-para-pensar/" />
+  <loc>/blog/un-rato-para-pensar/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/un-rato-para-pensar/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/week-2014-42-summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/week-2014-42-summary/" />
+  <loc>/blog/week-2014-42-summary/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/week-2014-42-summary/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/week-2014-43-summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/week-2014-43-summary/" />
+  <loc>/blog/week-2014-43-summary/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/week-2014-43-summary/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/xy-parte-1/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/xy-parte-1/" />
+  <loc>/blog/xy-parte-1/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/xy-parte-1/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/blog/xy-parte-2/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/blog/xy-parte-2/" />
+  <loc>/blog/xy-parte-2/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/blog/xy-parte-2/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
+  <loc>/categories/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/2014/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/2014/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/android/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/android/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/angular/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/angular/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/aprender/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/aprender/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/arch/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/arch/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/arduino/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/arduino/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/books/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/books/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/cartas/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/cartas/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/citas/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/citas/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/code/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/code/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/desarrollo/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/desarrollo/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/development/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/development/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/django/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/django/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/ensenar/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/ensenar/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/go/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/go/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/google/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/google/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/graficos/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/graficos/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/hiring/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/hiring/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/idea/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/idea/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/iot/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/iot/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/java/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/java/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/javascript/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/javascript/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/learning/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/learning/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/leer/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/leer/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/libre/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/libre/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/libros/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/libros/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/links/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/links/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/linux/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/linux/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/management/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/management/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/misc/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/misc/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/mision/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/mision/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/music/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/music/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/musica/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/musica/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/nginx/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/nginx/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/oauth2/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/oauth2/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/programacion/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/programacion/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/programming/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/programming/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/python/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/python/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/quotes/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/quotes/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/random/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/random/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/resumen/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/resumen/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/retrospectiva/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/retrospectiva/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/semana/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/semana/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/social/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/social/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/spring/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/spring/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/summary/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/teaching/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/teaching/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/tools/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/tools/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/vacaciones/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/vacaciones/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/vim/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/vim/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/virtualizacion/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/virtualizacion/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/virtualization/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/virtualization/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/web/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/web/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/categories/week/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/categories/week/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/2014/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/2014/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/2015/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/2015/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/2016/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/2016/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/2017/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/2017/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/2018/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/2018/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/archive.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/archive.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/ansible-ci-on-gitlab/" />
+  <loc>/en/blog/ansible-ci-on-gitlab/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/ansible-ci-on-gitlab/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/bailamos/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/bailamos/" />
+  <loc>/en/blog/bailamos/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/bailamos/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/balance-2016/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/balance-2016/" />
+  <loc>/en/blog/balance-2016/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/balance-2016/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/books-in-2016/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/books-in-2016/" />
+  <loc>/en/blog/books-in-2016/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/books-in-2016/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/broken-properties/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/broken-properties/" />
+  <loc>/en/blog/broken-properties/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/broken-properties/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/clojure-brazil/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/clojure-brazil/" />
+  <loc>/en/blog/clojure-brazil/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/clojure-brazil/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/fixing-home-and-end-keys-in-vim/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/" />
+  <loc>/en/blog/fixing-home-and-end-keys-in-vim/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/fixing-home-and-end-keys-in-vim/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/go-en-vim/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/go-en-vim/" />
+  <loc>/en/blog/go-en-vim/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/go-en-vim/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/hello-world/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/hello-world/" />
+  <loc>/en/blog/hello-world/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/hello-world/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/huerta-is-back/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/huerta-is-back/" />
+  <loc>/en/blog/huerta-is-back/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/huerta-is-back/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/i-choose-you/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/i-choose-you/" />
+  <loc>/en/blog/i-choose-you/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/i-choose-you/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/im-grown/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/im-grown/" />
+  <loc>/en/blog/im-grown/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/im-grown/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/index-1.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/index-1.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/index-2.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/index-2.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/index-3.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/index-3.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/index-4.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/index-4.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/index-5.html</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/blog/index-5.html</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/learning-to-teach-i-docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/learning-to-teach-docker/" />
+  <loc>/en/blog/learning-to-teach-i-docker/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/learning-to-teach-docker/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/letters-to-my-loves-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/letters-to-my-loves-i/" />
+  <loc>/en/blog/letters-to-my-loves-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/letters-to-my-loves-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/letters-to-my-loves-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/letters-to-my-loves-ii/" />
+  <loc>/en/blog/letters-to-my-loves-ii/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/letters-to-my-loves-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/libros-en-2017/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/libros-en-2017/" />
+  <loc>/en/blog/libros-en-2017/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/libros-en-2017/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/libros-en-2018/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/libros-en-2018/" />
+  <loc>/en/blog/libros-en-2018/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/libros-en-2018/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-2017-10-02/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-2017-10-02/" />
+  <loc>/en/blog/links-2017-10-02/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-2017-10-02/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-for-2016-09-19/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-for-2016-09-19/" />
+  <loc>/en/blog/links-for-2016-09-19/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-for-2016-09-19/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-for-2016-09-20/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-for-2016-09-20/" />
+  <loc>/en/blog/links-for-2016-09-20/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-for-2016-09-20/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-for-2016-09-21/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-for-2016-09-21/" />
+  <loc>/en/blog/links-for-2016-09-21/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-for-2016-09-21/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-for-2016-09-23/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-for-2016-09-23/" />
+  <loc>/en/blog/links-for-2016-09-23/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-for-2016-09-23/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/links-que-valen-la-pena/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/links-que-valen-la-pena/" />
+  <loc>/en/blog/links-que-valen-la-pena/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/links-que-valen-la-pena/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/loneliness/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/loneliness/" />
+  <loc>/en/blog/loneliness/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/loneliness/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/lxc-environments/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/lxc-environments/" />
+  <loc>/en/blog/lxc-environments/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/lxc-environments/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/mercadopago-en-bower/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/mercadopago-en-bower/" />
+  <loc>/en/blog/mercadopago-en-bower/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/mercadopago-en-bower/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/mision-personal-v2017/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/mision-personal-v2017/" />
+  <loc>/en/blog/mision-personal-v2017/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/mision-personal-v2017/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-ii/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-ii/" />
+  <loc>/en/blog/music-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-iii/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-iii/" />
+  <loc>/en/blog/music-iii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-iii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-iv/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-iv/" />
+  <loc>/en/blog/music-iv/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-iv/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-v/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-v/" />
+  <loc>/en/blog/music-v/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-v/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-vi/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-vi/" />
+  <loc>/en/blog/music-vi/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-vi/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music-vii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music-vii/" />
+  <loc>/en/blog/music-vii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music-vii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/music_i/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/music_i/" />
+  <loc>/en/blog/music_i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/music_i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/necochea-charts/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/necochea-charts/" />
+  <loc>/en/blog/necochea-charts/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/necochea-charts/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/never-stop-learning/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/never-stop-learning/" />
+  <loc>/en/blog/never-stop-learning/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/never-stop-learning/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/nginx-como-balanceador-de-carga/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/nginx-como-balanceador-de-carga/" />
+  <loc>/en/blog/nginx-como-balanceador-de-carga/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/nginx-como-balanceador-de-carga/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/panooma-technique/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/panooma-technique/" />
+  <loc>/en/blog/panooma-technique/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/panooma-technique/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/path-to-kanban-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/path-to-kanban-i/" />
+  <loc>/en/blog/path-to-kanban-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/path-to-kanban-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/path-to-kanban-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/path-to-kanban-ii/" />
+  <loc>/en/blog/path-to-kanban-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/path-to-kanban-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/php-v564-docker/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/php-v564-docker/" />
+  <loc>/en/blog/php-v564-docker/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/php-v564-docker/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/practica-y-constancia/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/practica-y-constancia/" />
+  <loc>/en/blog/practica-y-constancia/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/practica-y-constancia/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/quotes-i/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/quotes-i/" />
+  <loc>/en/blog/quotes-i/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/quotes-i/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/quotes-ii/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/quotes-ii/" />
+  <loc>/en/blog/quotes-ii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/quotes-ii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/quotes-iii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/quotes-iii/" />
+  <loc>/en/blog/quotes-iii/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/quotes-iii/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/quotes-iv/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/quotes-iv/" />
+  <loc>/en/blog/quotes-iv/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/quotes-iv/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/quotes-v/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/quotes-v/" />
+  <loc>/en/blog/quotes-v/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/quotes-v/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/random/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/random/" />
+  <loc>/en/blog/random/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/random/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/" />
+  <loc>/en/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/refreshing-tokens-on-django-for-google-oauth2-the-hard-way/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/sembrando-el-camino/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/sembrando-el-camino/" />
+  <loc>/en/blog/sembrando-el-camino/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/sembrando-el-camino/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/time-to-grow-up/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/time-to-grow-up/" />
+  <loc>/en/blog/time-to-grow-up/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/time-to-grow-up/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/un-rato-para-pensar/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/un-rato-para-pensar/" />
+  <loc>/en/blog/un-rato-para-pensar/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/un-rato-para-pensar/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/week-2014-42-summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/week-2014-42-summary/" />
+  <loc>/en/blog/week-2014-42-summary/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/week-2014-42-summary/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/week-2014-43-summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/week-2014-43-summary/" />
+  <loc>/en/blog/week-2014-43-summary/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/week-2014-43-summary/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/xy-parte-1/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/xy-parte-1/" />
+  <loc>/en/blog/xy-parte-1/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/xy-parte-1/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/blog/xy-parte-2/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/blog/xy-parte-2/" />
+  <loc>/en/blog/xy-parte-2/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/blog/xy-parte-2/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/</loc>
-  <lastmod>2018-03-25T15:00:00Z</lastmod>
+  <loc>/en/categories/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/2014/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/2014/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/android/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/android/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/angular/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/angular/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/aprender/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/aprender/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/arch/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/arch/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/arduino/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/arduino/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/books/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/books/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/cartas/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/cartas/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/citas/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/citas/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/code/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/code/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/desarrollo/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/desarrollo/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/development/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/development/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/django/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/django/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/ensenar/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/ensenar/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/go/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/go/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/google/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/google/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/graficos/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/graficos/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/hiring/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/hiring/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/idea/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/idea/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/iot/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/iot/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/java/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/java/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/javascript/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/javascript/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/learning/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/learning/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/leer/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/leer/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/libre/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/libre/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/libros/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/libros/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/links/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/links/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/linux/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/linux/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/management/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/management/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/misc/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/misc/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/mision/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/mision/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/music/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/music/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/musica/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/musica/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/nginx/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/nginx/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/oauth2/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/oauth2/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/programacion/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/programacion/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/programming/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/programming/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/python/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/python/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/quotes/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/quotes/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/random/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/random/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/resumen/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/resumen/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/retrospectiva/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/retrospectiva/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/semana/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/semana/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/social/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/social/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/spring/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/spring/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/summary/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/summary/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/teaching/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/teaching/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/tools/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/tools/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/vacaciones/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/vacaciones/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/vim/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/vim/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/virtualizacion/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/virtualizacion/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/virtualization/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/virtualization/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/web/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/web/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/categories/week/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/categories/week/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/huerta-is-back/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/huerta-is-back/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/learning-to-teach-i-docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/learning-to-teach-i-docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/loneliness/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/loneliness/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/lxc-for-development/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/lxc-for-development/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/never-stop-learning/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/never-stop-learning/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/path-to-kanban-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/path-to-kanban-i/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/path-to-kanban-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/path-to-kanban-ii/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/projects/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/projects/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/quotes-iv/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/quotes-iv/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/time-to-grow-up/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/time-to-grow-up/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/galleries/xy/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/galleries/xy/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/projects/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/en/projects/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/projects/blockchain/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/projects/blockchain/" />
+  <loc>/en/projects/blockchain/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/projects/blockchain/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/en/projects/electronics/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="es" href="http://ariel17.com.ar/projects/electronics/" />
+  <loc>/en/projects/electronics/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="/projects/electronics/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/huerta-is-back/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/huerta-is-back/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/learning-to-teach-i-docker/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/learning-to-teach-i-docker/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/loneliness/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/loneliness/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/lxc-for-development/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/lxc-for-development/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/never-stop-learning/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/never-stop-learning/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/path-to-kanban-i/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/path-to-kanban-i/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/path-to-kanban-ii/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/path-to-kanban-ii/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/projects/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/projects/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/quotes-iv/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/quotes-iv/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/time-to-grow-up/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/time-to-grow-up/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/galleries/xy/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/galleries/xy/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/projects/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
+  <loc>/projects/</loc>
+  <lastmod>2018-03-25T16:12:00Z</lastmod>
  </url>
  <url>
-  <loc>http://ariel17.com.ar/projects/blockchain/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/projects/blockchain/" />
+  <loc>/projects/blockchain/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/projects/blockchain/" />
  </url>
  <url>
-  <loc>http://ariel17.com.ar/projects/electronics/</loc>
-  <lastmod>2018-03-25T14:59:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="http://ariel17.com.ar/en/projects/electronics/" />
+  <loc>/projects/electronics/</loc>
+  <lastmod>2018-03-25T16:13:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="/en/projects/electronics/" />
  </url>
 </urlset>

@@ -2,12 +2,12 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/en/categories/virtualizacion/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Posts about virtualización | Ariel Gerardo Ríos</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS for tag virtualización (en)" href="../virtualizacion.xml">
-<link rel="canonical" href="http://ariel17.com.ar/en/categories/virtualizacion/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -66,27 +66,27 @@ overhead there are more available resources to be used.</p>
 <h3>Installation</h3>
 <p>We can install LXC directly from the software repository of our elected
 distribution:</p>
-<pre class="code bash"><a name="rest_code_b9972d029bfc46639d8ffd99d0fde673-1"></a>~<span class="nv">$ </span>sudo apt-get install lxc  <span class="c"># for Debian-based distros</span>
+<pre class="code bash"><a name="rest_code_3d2354ad67e745fb849fe987015406c4-1"></a>~<span class="nv">$ </span>sudo apt-get install lxc  <span class="c"># for Debian-based distros</span>
 </pre>
 <p>Also we can install the <em>bleeding edge</em> version directly from the <a class="reference external" href="https://github.com/lxc/lxc">GitHub
 repository</a>:</p>
-<pre class="code bash"><a name="rest_code_b3097f778eff47ac89a567e1be2fe749-1"></a>~<span class="nv">$ </span>sudo apt-get install git  <span class="c"># if you don't have installed git yet</span>
-<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-2"></a>~<span class="nv">$ </span>git clone git@github.com:lxc/lxc.git
-<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-3"></a>~<span class="nv">$ </span>sudo su
-<a name="rest_code_b3097f778eff47ac89a567e1be2fe749-4"></a><span class="c">#$ cd lxc &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+<pre class="code bash"><a name="rest_code_4b3c0fa62a89437baa7828c21c119e7a-1"></a>~<span class="nv">$ </span>sudo apt-get install git  <span class="c"># if you don't have installed git yet</span>
+<a name="rest_code_4b3c0fa62a89437baa7828c21c119e7a-2"></a>~<span class="nv">$ </span>git clone git@github.com:lxc/lxc.git
+<a name="rest_code_4b3c0fa62a89437baa7828c21c119e7a-3"></a>~<span class="nv">$ </span>sudo su
+<a name="rest_code_4b3c0fa62a89437baa7828c21c119e7a-4"></a><span class="c">#$ cd lxc &amp;&amp; ./autogen.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install</span>
 </pre>
 </div>
 <div class="section" id="creating-instances">
 <h3>Creating instances</h3>
 <p>The container creation can be done through templates or manually indicating
 which image to use.</p>
-<pre class="code bash"><a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-1"></a>~<span class="nv">$ </span>lxc-create -n ubuntu1 -t ubuntu  <span class="c"># creates a container named ubuntu1 using the ubuntu template</span>
-<a name="rest_code_041482479a3b4ebca1a36d9a8c598cb7-2"></a>~<span class="nv">$ </span>lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+<pre class="code bash"><a name="rest_code_f5774077de174ca89d45ea8e3a944777-1"></a>~<span class="nv">$ </span>lxc-create -n ubuntu1 -t ubuntu  <span class="c"># creates a container named ubuntu1 using the ubuntu template</span>
+<a name="rest_code_f5774077de174ca89d45ea8e3a944777-2"></a>~<span class="nv">$ </span>lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
 </pre>
 <p>This way, the creation is done without any other intervention from user. There
 is also a way for interactive creation, visualizing distributions and
 available architectures:</p>
-<pre class="code bash"><a name="rest_code_1a48e1202ee241448d707fdd84dfeaf2-1"></a>~<span class="nv">$ </span>lxc-create -t download -n ubuntu3
+<pre class="code bash"><a name="rest_code_bb0fae0f3d2c4f6caeac37fafec49419-1"></a>~<span class="nv">$ </span>lxc-create -t download -n ubuntu3
 </pre>
 </div>
 <div class="section" id="displaying-created-instances">
@@ -94,13 +94,13 @@ available architectures:</p>
 <p>To show available instances you can make use of <code>lxc-ls</code> command. It will
 only display only the names but using the <code>--fancy</code> flag it will append
 more useful information about them:</p>
-<pre class="code bash"><a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-1"></a>~<span class="nv">$ </span>sudo lxc-ls --fancy
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-2"></a>
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-3"></a>NAME     STATE    IPV4        IPV6  AUTOSTART
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-4"></a>---------------------------------------------
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-5"></a>ubuntu1  RUNNING  10.0.3.228  -     NO
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-6"></a>ubuntu2  RUNNING  10.0.3.147  -     NO
-<a name="rest_code_b507b0c0b4ec494596cb564f8dd4b6de-7"></a>ubuntu3  STOPPED  -           -     NO
+<pre class="code bash"><a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-1"></a>~<span class="nv">$ </span>sudo lxc-ls --fancy
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-2"></a>
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-3"></a>NAME     STATE    IPV4        IPV6  AUTOSTART
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-4"></a>---------------------------------------------
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-5"></a>ubuntu1  RUNNING  10.0.3.228  -     NO
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-6"></a>ubuntu2  RUNNING  10.0.3.147  -     NO
+<a name="rest_code_2a16e9f7c9534e0d86e5b2baee27906c-7"></a>ubuntu3  STOPPED  -           -     NO
 </pre>
 </div>
 <div class="section" id="accessing-an-instance">
@@ -109,7 +109,7 @@ more useful information about them:</p>
 <code>lxc-console -n &lt;instance-name&gt;</code>. Executing this command is the same to
 gain access to the host's phisical terminal; <strong>it is not a remote connection</strong>.
 To close the terminal connection is enough with the <code>Ctrl-a+q</code> input.</p>
-<pre class="code bash"><a name="rest_code_b90815c60f8d4d4a9f4b5a763ab01cc4-1"></a>~<span class="nv">$ </span>sudo lxc-console -n db  <span class="c"># enter Ctrl-a+q to close the session</span>
+<pre class="code bash"><a name="rest_code_2a5ad4bee49948129fd72cf37b5aa763-1"></a>~<span class="nv">$ </span>sudo lxc-console -n db  <span class="c"># enter Ctrl-a+q to close the session</span>
 </pre>
 </div>
 </div>
@@ -124,12 +124,12 @@ visualization for all; guests and host.</p>
 <p>To install the web panel we must add the package to our local software
 repository, install it and change the default configurations if we consider it
 necesary to do:</p>
-<pre class="code bash"><a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-1"></a>~<span class="nv">$ </span>wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key <span class="p">|</span> sudo apt-key add -
-<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-2"></a>~<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"deb http://claudyus.github.io/LXC-Web-Panel/ ./"</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/lwp.list
-<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-3"></a>~<span class="nv">$ </span>sudo apt-get update
-<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-4"></a>~<span class="nv">$ </span>sudo apt-get install lwp
-<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-5"></a>~<span class="nv">$ </span>sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  <span class="c"># using default configuration</span>
-<a name="rest_code_337790c7dbd04aadb6a0c50b15820fbd-6"></a>~<span class="nv">$ </span>sudo service lwp start
+<pre class="code bash"><a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-1"></a>~<span class="nv">$ </span>wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key <span class="p">|</span> sudo apt-key add -
+<a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-2"></a>~<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"deb http://claudyus.github.io/LXC-Web-Panel/ ./"</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/lwp.list
+<a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-3"></a>~<span class="nv">$ </span>sudo apt-get update
+<a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-4"></a>~<span class="nv">$ </span>sudo apt-get install lwp
+<a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-5"></a>~<span class="nv">$ </span>sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  <span class="c"># using default configuration</span>
+<a name="rest_code_c2ad14d42b274c72872fb4179bcec8d8-6"></a>~<span class="nv">$ </span>sudo service lwp start
 </pre>
 <p>I will assume that default settings were used; if change were made do not
 forget to adapt them to the examples exposed here to you particular cases. Once

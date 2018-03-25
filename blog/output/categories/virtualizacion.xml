@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (virtualización)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/virtualizacion.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 15:00:01 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando ambientes con Contenedores Linux</title><link>http://ariel17.com.ar/blog/lxc-environments/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Gracias a las herramientas de virtualización es muy fácil hoy en día crear
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (virtualización)</title><link>https://example.com/</link><description></description><atom:link href="/categories/virtualizacion.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 16:13:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creando ambientes con Contenedores Linux</title><link>/blog/lxc-environments/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Gracias a las herramientas de virtualización es muy fácil hoy en día crear
 rápidamente ambientes compuestos por múltiples instancias. &lt;a class="reference external" href="http://www.vmware.com/"&gt;VMWare&lt;/a&gt; o
 &lt;a class="reference external" href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt; son buenas opciones cuando el sistema operativo a ejecutar en la
 máquina virtual es distinto al del sistema anfitrión, pero a la hora de
@@ -18,37 +18,37 @@ virtual por completo hay más recursos disponibles para ser aprovechados.&lt;/p&
 &lt;h3&gt;Instalación&lt;/h3&gt;
 &lt;p&gt;Podemos instalar LXC directamente desde los repositorios de software de la
 distribución que estemos usando:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_6a8426b2d2b3488a9709aa69201c44f6-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lxc  &lt;span class="c"&gt;# for Debian-based distros&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3b9f6cf235d94956a9b065bb05aff4c5-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lxc  &lt;span class="c"&gt;# for Debian-based distros&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;También podemos instalar la versión &lt;em&gt;bleeding edge&lt;/em&gt; directamente desde el
 &lt;a class="reference external" href="https://github.com/lxc/lxc"&gt;repositorio de GitHub&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install git  &lt;span class="c"&gt;# if you don't have installed git yet&lt;/span&gt;
-&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git@github.com:lxc/lxc.git
-&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo su
-&lt;a name="rest_code_43d923fddf84465f8effe36c40ed7efd-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;#$ cd lxc &amp;amp;&amp;amp; ./autogen.sh &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_460976f2264447ec91f56a0a24dbf71d-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install git  &lt;span class="c"&gt;# if you don't have installed git yet&lt;/span&gt;
+&lt;a name="rest_code_460976f2264447ec91f56a0a24dbf71d-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git@github.com:lxc/lxc.git
+&lt;a name="rest_code_460976f2264447ec91f56a0a24dbf71d-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo su
+&lt;a name="rest_code_460976f2264447ec91f56a0a24dbf71d-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;#$ cd lxc &amp;amp;&amp;amp; ./autogen.sh &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="creacion-de-intancias"&gt;
 &lt;h3&gt;Creación de intancias&lt;/h3&gt;
 &lt;p&gt;La creación de containers puede realizarse mediante los templates o indicar
 manualmente qué imagen utilizar.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4e62fc9411e84a878f9fce742c778408-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu1 -t ubuntu  &lt;span class="c"&gt;# creates a container named ubuntu1 using the ubuntu template&lt;/span&gt;
-&lt;a name="rest_code_4e62fc9411e84a878f9fce742c778408-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4f760f805b05466daef7f8c352b7933f-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu1 -t ubuntu  &lt;span class="c"&gt;# creates a container named ubuntu1 using the ubuntu template&lt;/span&gt;
+&lt;a name="rest_code_4f760f805b05466daef7f8c352b7933f-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -n ubuntu2 -t ubuntu-cloud -- -r trusty -T http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-arm64-root.tar.gz
 &lt;/pre&gt;&lt;p&gt;De esta manera, la creación de los containers se realiza sin más intervención
 de parte del usuario. También existe una manera de crearlos de manera
 interactiva, visualizando las distribuciones y arquitecturas disponibles:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5defffefc920475f880d3041c0a2bf1f-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -t download -n ubuntu3
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_839a67fa328a463583339f74d5d4de17-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;lxc-create -t download -n ubuntu3
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="visualizar-las-instancias-creadas"&gt;
 &lt;h3&gt;Visualizar las instancias creadas&lt;/h3&gt;
 &lt;p&gt;Para ver las instancias disponibles se puede hacer uso del comando
 &lt;code&gt;lxc-ls&lt;/code&gt;. Este mostrará sólo los nombres pero usando el parámetro
 &lt;code&gt;--fancy&lt;/code&gt; flag agregará más información útil sobre ellas:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-ls --fancy
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-3"&gt;&lt;/a&gt;NAME     STATE    IPV4        IPV6  AUTOSTART
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-4"&gt;&lt;/a&gt;---------------------------------------------
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-5"&gt;&lt;/a&gt;ubuntu1  RUNNING  10.0.3.228  -     NO
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-6"&gt;&lt;/a&gt;ubuntu2  RUNNING  10.0.3.147  -     NO
-&lt;a name="rest_code_0ae360a33b2049049c9252f1827c4278-7"&gt;&lt;/a&gt;ubuntu3  STOPPED  -           -     NO
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-ls --fancy
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-3"&gt;&lt;/a&gt;NAME     STATE    IPV4        IPV6  AUTOSTART
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-4"&gt;&lt;/a&gt;---------------------------------------------
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-5"&gt;&lt;/a&gt;ubuntu1  RUNNING  10.0.3.228  -     NO
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-6"&gt;&lt;/a&gt;ubuntu2  RUNNING  10.0.3.147  -     NO
+&lt;a name="rest_code_b45637dc0fbe495ba2cde7299f4b6c45-7"&gt;&lt;/a&gt;ubuntu3  STOPPED  -           -     NO
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="acceder-a-una-instancia"&gt;
 &lt;h3&gt;Acceder a una instancia&lt;/h3&gt;
@@ -57,7 +57,7 @@ interactiva, visualizando las distribuciones y arquitecturas disponibles:&lt;/p&
 obtener el acceso a una terminal física del host; &lt;strong&gt;no una conexión remota&lt;/strong&gt;.
 Para poder cerrar la conexión a esta terminal basta con ingresar
 &lt;code&gt;Ctrl-a+q&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5bec73f3d7ef4d7a8696f7c25af1005d-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-console -n db  &lt;span class="c"&gt;# enter Ctrl-a+q to close the session&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9b7e1e27b9184627841e1bcbf8ea4d33-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo lxc-console -n db  &lt;span class="c"&gt;# enter Ctrl-a+q to close the session&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="una-consola-web-para-controlar-a-todos"&gt;
@@ -72,32 +72,32 @@ tanto del host como de los contenedores.&lt;/p&gt;
 &lt;p&gt;Para instalar el panel web debemos agregar el paquete a nuestro repositorio
 local, instalarlo y cambiar las configuraciones por defecto si así lo
 consideramos necesario:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
-&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://claudyus.github.io/LXC-Web-Panel/ ./"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/lwp.list
-&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get update
-&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-4"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lwp
-&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  &lt;span class="c"&gt;# using default configuration&lt;/span&gt;
-&lt;a name="rest_code_1b836314e0104b73a9989b29e62b1f4b-6"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo service lwp start
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-1"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;wget -O - http://claudyus.github.io/LXC-Web-Panel/claudyus.gpg.key &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-2"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"deb http://claudyus.github.io/LXC-Web-Panel/ ./"&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/lwp.list
+&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-3"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get update
+&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-4"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install lwp
+&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-5"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo cp /etc/lwp/lwp.example.conf /etc/lwp/lwp.conf  &lt;span class="c"&gt;# using default configuration&lt;/span&gt;
+&lt;a name="rest_code_11f1c232d74a489dbc9b77998dfc532f-6"&gt;&lt;/a&gt;~&lt;span class="nv"&gt;$ &lt;/span&gt;sudo service lwp start
 &lt;/pre&gt;&lt;p&gt;Voy a asumir que se usaron las configuraciones por defecto; si realizaron
 cambios no olviden adaptar los ejemplos de aquí a sus casos particulares. Una
 vez terminada la instalación, abrimos un browser y nos dirigimos a la dirección
 web &lt;a class="reference external" href="http://localhost:5000/"&gt;http://localhost:5000/&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="thumbnail figure align-center"&gt;
-&lt;img alt="Login en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/login.png" style="width: 80.0%;"&gt;
+&lt;img alt="Login en LXC Web Panel." src="/galleries/lxc-for-development/login.png" style="width: 80.0%;"&gt;
 &lt;/div&gt;
 &lt;p&gt;Usando &lt;code&gt;admin&lt;/code&gt; como usuario y contraseña por defecto, accederemos al
 panel y nos mostrará una visión de los recursos utilizados tanto por el host
 como por los contenedores, así como links a configuraciones de red y de las
 instancias:&lt;/p&gt;
 &lt;div class="thumbnail figure align-center"&gt;
-&lt;img alt="Dashboard en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/dashboard.png" style="width: 80.0%;"&gt;
+&lt;img alt="Dashboard en LXC Web Panel." src="/galleries/lxc-for-development/dashboard.png" style="width: 80.0%;"&gt;
 &lt;/div&gt;
 &lt;p&gt;Accediendo a alguna de las instancias listadas en la región izquierda veremos
 la información asociada a la misma, tal como el estado de ejecución,
 propiedades de red, cantidad de procesadores, límites de memoria, ubicación de
 la imagen, etc.&lt;/p&gt;
 &lt;div class="thumbnail figure align-center"&gt;
-&lt;img alt="Dashboard en LXC Web Panel." src="http://ariel17.com.ar/galleries/lxc-for-development/instance.png" style="width: 80.0%;"&gt;
+&lt;img alt="Dashboard en LXC Web Panel." src="/galleries/lxc-for-development/instance.png" style="width: 80.0%;"&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -115,4 +115,4 @@ de interfaces existentes.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://linux-vserver.org/"&gt;Linux-VServer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; (basado en LXC)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>desarrollo</category><category>linux</category><category>virtualización</category><guid>http://ariel17.com.ar/blog/lxc-environments/</guid><pubDate>Sat, 02 Aug 2014 13:07:23 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>desarrollo</category><category>linux</category><category>virtualización</category><guid>/blog/lxc-environments/</guid><pubDate>Sat, 02 Aug 2014 13:07:23 GMT</pubDate></item></channel></rss>

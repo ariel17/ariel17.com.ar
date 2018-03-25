@@ -2,12 +2,12 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/en/categories/python/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Posts about python | Ariel Gerardo Ríos</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS for tag python (en)" href="../python.xml">
-<link rel="canonical" href="http://ariel17.com.ar/en/categories/python/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -68,43 +68,43 @@ authentication and authorization flows but I wanted to use a library that has a
 more elegant implementation: <a class="reference external" href="http://psa.matiasaguirre.net/">python-social-auth</a>. Also this last one enables a
 quick way to use <a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#social-backends">many more backends</a>, not only Google and <a class="reference external" href="http://psa.matiasaguirre.net/docs/backends/index.html#non-social-backends">not only
 socials</a>. So this is what I got:</p>
-<pre class="code text"><a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-1"></a># Requirements
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-2"></a>Django==1.7
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-3"></a>python-social-auth==0.2.1
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-4"></a>google-api-python-client==1.2
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-5"></a>raven==5.0.0  # you *really* should get Sentry! https://getsentry.com/
-<a name="rest_code_680dcc689d8f4a4c81186dd94ba069fd-6"></a>requests==2.3.0
+<pre class="code text"><a name="rest_code_e86183dd259f4186a28628dc92344ba3-1"></a># Requirements
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-2"></a>Django==1.7
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-3"></a>python-social-auth==0.2.1
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-4"></a>google-api-python-client==1.2
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-5"></a>raven==5.0.0  # you *really* should get Sentry! https://getsentry.com/
+<a name="rest_code_e86183dd259f4186a28628dc92344ba3-6"></a>requests==2.3.0
 </pre>
 <p>And the related <code>settings.py</code> configuration:</p>
-<pre class="code python"><a name="rest_code_250187e70867472e8f753df3a7c6714b-1"></a><span class="c"># project/settings.py</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-2"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-3"></a><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-4"></a>    <span class="s">'social.backends.google.GoogleOAuth2'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-5"></a>    <span class="s">'django.contrib.auth.backends.ModelBackend'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-6"></a><span class="p">)</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-7"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-8"></a><span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span> <span class="o">=</span> <span class="s">'/home/'</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-9"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-10"></a><span class="n">SOCIAL_AUTH_LOGIN_ERROR_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-11"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-12"></a><span class="n">SOCIAL_AUTH_DISCONNECT_REDIRECT_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-13"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-14"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE</span> <span class="o">=</span> <span class="p">[</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-15"></a>    <span class="s">'https://www.googleapis.com/auth/calendar'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-16"></a><span class="p">]</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-17"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-18"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-19"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-20"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'force'</span>  <span class="c"># Enables refresh_token</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-21"></a><span class="p">}</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-22"></a>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-23"></a><span class="n">SOCIAL_AUTH_PIPELINE</span> <span class="o">=</span> <span class="p">(</span>  <span class="c"># Removed user creation and profile update</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-24"></a>    <span class="s">'social.pipeline.social_auth.social_details'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-25"></a>    <span class="s">'social.pipeline.social_auth.social_uid'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-26"></a>    <span class="s">'social.pipeline.social_auth.auth_allowed'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-27"></a>    <span class="s">'social.pipeline.social_auth.associate_user'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-28"></a>    <span class="s">'social.pipeline.social_auth.load_extra_data'</span><span class="p">,</span>
-<a name="rest_code_250187e70867472e8f753df3a7c6714b-29"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_89f811de5eaf444f881a49af2506d92a-1"></a><span class="c"># project/settings.py</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-2"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-3"></a><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-4"></a>    <span class="s">'social.backends.google.GoogleOAuth2'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-5"></a>    <span class="s">'django.contrib.auth.backends.ModelBackend'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-6"></a><span class="p">)</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-7"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-8"></a><span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span> <span class="o">=</span> <span class="s">'/home/'</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-9"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-10"></a><span class="n">SOCIAL_AUTH_LOGIN_ERROR_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-11"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-12"></a><span class="n">SOCIAL_AUTH_DISCONNECT_REDIRECT_URL</span> <span class="o">=</span> <span class="n">SOCIAL_AUTH_LOGIN_REDIRECT_URL</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-13"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-14"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-15"></a>    <span class="s">'https://www.googleapis.com/auth/calendar'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-16"></a><span class="p">]</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-17"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-18"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-19"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-20"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'force'</span>  <span class="c"># Enables refresh_token</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-21"></a><span class="p">}</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-22"></a>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-23"></a><span class="n">SOCIAL_AUTH_PIPELINE</span> <span class="o">=</span> <span class="p">(</span>  <span class="c"># Removed user creation and profile update</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-24"></a>    <span class="s">'social.pipeline.social_auth.social_details'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-25"></a>    <span class="s">'social.pipeline.social_auth.social_uid'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-26"></a>    <span class="s">'social.pipeline.social_auth.auth_allowed'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-27"></a>    <span class="s">'social.pipeline.social_auth.associate_user'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-28"></a>    <span class="s">'social.pipeline.social_auth.load_extra_data'</span><span class="p">,</span>
+<a name="rest_code_89f811de5eaf444f881a49af2506d92a-29"></a><span class="p">)</span>
 </pre>
 <p>What does all the trick is the extra argument <code>approval_promt</code> because
 Google only sends the <code>refresh_token</code> when its present. Despite the fact
@@ -116,137 +116,137 @@ refute me.</strong></p>
 <h2>Synchronizing and refreshing</h2>
 <p>A custom event model as example with sync + token refreshing on authentication
 error:</p>
-<pre class="code python"><a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-1"></a><span class="c">#!/usr/bin/env python</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-3"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-4"></a><span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-5"></a><span class="sd">Model definition for appliation ``app``.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-6"></a><span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-7"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-8"></a><span class="kn">import</span> <span class="nn">logging</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-9"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-10"></a><span class="kn">from</span> <span class="nn">apiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-11"></a><span class="kn">from</span> <span class="nn">oauth2client.client</span> <span class="kn">import</span> <span class="n">AccessTokenCredentials</span><span class="p">,</span> <span class="n">AccessTokenCredentialsError</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-12"></a><span class="kn">from</span> <span class="nn">requests.exceptions</span> <span class="kn">import</span> <span class="n">HTTPError</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-13"></a><span class="kn">import</span> <span class="nn">httplib2</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-14"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-15"></a><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-16"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-17"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-18"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.default.models</span> <span class="kn">import</span> <span class="n">UserSocialAuth</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-19"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.utils</span> <span class="kn">import</span> <span class="n">load_strategy</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-20"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-21"></a><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Event</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-22"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-23"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-24"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-25"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-26"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-27"></a><span class="k">class</span> <span class="nc">CustomEvent</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-28"></a>    <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-29"></a><span class="sd">    A very simple custom event model.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-30"></a><span class="sd">    """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-31"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-32"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-33"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-34"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-35"></a>    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-36"></a>        <span class="k">return</span> <span class="s">u"{0} ({1})"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-37"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-38"></a>    <span class="k">def</span> <span class="nf">get_google_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-39"></a>        <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-40"></a><span class="sd">        Implementing the Calendar API content required to create an event:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-41"></a><span class="sd">        https://developers.google.com/google-apps/calendar/v3/reference/events?hl=es#resource</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-42"></a><span class="sd">        """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-43"></a>        <span class="k">return</span> <span class="p">{}</span>  <span class="c"># dummy of course</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-44"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-45"></a>    <span class="k">def</span> <span class="nf">sync_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-46"></a>        <span class="sd">"""</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-47"></a><span class="sd">        Pushes current event to the user's Google Calendar service, if it is enabled.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-48"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-49"></a><span class="sd">        :param retry: Indicates if it should retry on an authentication error.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-50"></a><span class="sd">        :type retry: ``bool``</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-51"></a><span class="sd">        :return: Synchronization result from Google API.</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-52"></a><span class="sd">        :rtype: ``dict`` or ``None``</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-53"></a><span class="sd">        """</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-54"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-55"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">social_auth</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s">'google-oauth2'</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-56"></a>        <span class="k">except</span> <span class="n">UserSocialAuth</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-57"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u"Google is not authenticated; nothing to do :("</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-58"></a>            <span class="k">return</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-59"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-60"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Syncronizing event </span><span class="si">%r</span><span class="s"> into Google Calendar for user </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-61"></a>                     <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-62"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-63"></a>        <span class="n">credentials</span> <span class="o">=</span> <span class="n">AccessTokenCredentials</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-64"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">],</span> <span class="s">'my-user-agent/1.0'</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-65"></a>        <span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-66"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">httplib2</span><span class="o">.</span><span class="n">Http</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-67"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">http</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-68"></a>        <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">serviceName</span><span class="o">=</span><span class="s">'calendar'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'v3'</span><span class="p">,</span> <span class="n">http</span><span class="o">=</span><span class="n">http</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-69"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-70"></a>        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_google_data</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-71"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Creating event with data: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-72"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-73"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-74"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">events</span><span class="p">()</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-75"></a>                <span class="n">calendarId</span><span class="o">=</span><span class="s">'primary'</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">data</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-76"></a>            <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-77"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-78"></a>        <span class="k">except</span> <span class="n">AccessTokenCredentialsError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-79"></a>            <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-80"></a>            <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-81"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">(</span><span class="n">load_strategy</span><span class="p">())</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-82"></a>            <span class="k">except</span> <span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-83"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-84"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-85"></a>                    <span class="s">u"Error trying to refesh token. Authorization object "</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-86"></a>                    <span class="s">"was removed."</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-87"></a>                        <span class="s">u'response'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-88"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-89"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-90"></a>                            <span class="s">u'status_code'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-91"></a>                        <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-92"></a>                        <span class="s">u'request'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-93"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-94"></a>                            <span class="s">u'method'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-95"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-96"></a>                        <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-97"></a>                    <span class="p">})</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-98"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-99"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-100"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-101"></a>                <span class="s">u'[sync_event] Unexpected exception synchronizing event'</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-102"></a>                <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-103"></a>                    <span class="s">u'user'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-104"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-105"></a>                        <span class="s">u'email'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-106"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-107"></a>                    <span class="s">u'provider'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-108"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-109"></a>                        <span class="s">u'extra_data'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-110"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-111"></a>                    <span class="s">u'event'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-112"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-113"></a>                        <span class="s">u'name'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-114"></a>                    <span class="p">},</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-115"></a>                <span class="p">})</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-116"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-117"></a>        <span class="k">if</span> <span class="n">retry</span><span class="p">:</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-118"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_event</span><span class="p">(</span><span class="n">retry</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-119"></a>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-120"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Event creation result: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<a name="rest_code_73183e911f2741ee8c75ea9afc70cf7c-121"></a>        <span class="k">return</span> <span class="n">result</span>
+<pre class="code python"><a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-3"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-4"></a><span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-5"></a><span class="sd">Model definition for appliation ``app``.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-6"></a><span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-7"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-8"></a><span class="kn">import</span> <span class="nn">logging</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-9"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-10"></a><span class="kn">from</span> <span class="nn">apiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-11"></a><span class="kn">from</span> <span class="nn">oauth2client.client</span> <span class="kn">import</span> <span class="n">AccessTokenCredentials</span><span class="p">,</span> <span class="n">AccessTokenCredentialsError</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-12"></a><span class="kn">from</span> <span class="nn">requests.exceptions</span> <span class="kn">import</span> <span class="n">HTTPError</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-13"></a><span class="kn">import</span> <span class="nn">httplib2</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-14"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-15"></a><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-16"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-17"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-18"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.default.models</span> <span class="kn">import</span> <span class="n">UserSocialAuth</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-19"></a><span class="kn">from</span> <span class="nn">social.apps.django_app.utils</span> <span class="kn">import</span> <span class="n">load_strategy</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-20"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-21"></a><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Event</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-22"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-23"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-24"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-25"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-26"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-27"></a><span class="k">class</span> <span class="nc">CustomEvent</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-28"></a>    <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-29"></a><span class="sd">    A very simple custom event model.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-30"></a><span class="sd">    """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-31"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-32"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-33"></a>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-34"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-35"></a>    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-36"></a>        <span class="k">return</span> <span class="s">u"{0} ({1})"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-37"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-38"></a>    <span class="k">def</span> <span class="nf">get_google_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-39"></a>        <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-40"></a><span class="sd">        Implementing the Calendar API content required to create an event:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-41"></a><span class="sd">        https://developers.google.com/google-apps/calendar/v3/reference/events?hl=es#resource</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-42"></a><span class="sd">        """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-43"></a>        <span class="k">return</span> <span class="p">{}</span>  <span class="c"># dummy of course</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-44"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-45"></a>    <span class="k">def</span> <span class="nf">sync_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-46"></a>        <span class="sd">"""</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-47"></a><span class="sd">        Pushes current event to the user's Google Calendar service, if it is enabled.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-48"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-49"></a><span class="sd">        :param retry: Indicates if it should retry on an authentication error.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-50"></a><span class="sd">        :type retry: ``bool``</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-51"></a><span class="sd">        :return: Synchronization result from Google API.</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-52"></a><span class="sd">        :rtype: ``dict`` or ``None``</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-53"></a><span class="sd">        """</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-54"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-55"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">social_auth</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s">'google-oauth2'</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-56"></a>        <span class="k">except</span> <span class="n">UserSocialAuth</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-57"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u"Google is not authenticated; nothing to do :("</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-58"></a>            <span class="k">return</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-59"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-60"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Syncronizing event </span><span class="si">%r</span><span class="s"> into Google Calendar for user </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-61"></a>                     <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-62"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-63"></a>        <span class="n">credentials</span> <span class="o">=</span> <span class="n">AccessTokenCredentials</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-64"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">],</span> <span class="s">'my-user-agent/1.0'</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-65"></a>        <span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-66"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">httplib2</span><span class="o">.</span><span class="n">Http</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-67"></a>        <span class="n">http</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">http</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-68"></a>        <span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">serviceName</span><span class="o">=</span><span class="s">'calendar'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'v3'</span><span class="p">,</span> <span class="n">http</span><span class="o">=</span><span class="n">http</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-69"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-70"></a>        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_google_data</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-71"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Creating event with data: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-72"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-73"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-74"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">events</span><span class="p">()</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-75"></a>                <span class="n">calendarId</span><span class="o">=</span><span class="s">'primary'</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">data</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-76"></a>            <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-77"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-78"></a>        <span class="k">except</span> <span class="n">AccessTokenCredentialsError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-79"></a>            <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-80"></a>            <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-81"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">(</span><span class="n">load_strategy</span><span class="p">())</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-82"></a>            <span class="k">except</span> <span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-83"></a>                <span class="n">provider</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-84"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-85"></a>                    <span class="s">u"Error trying to refesh token. Authorization object "</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-86"></a>                    <span class="s">"was removed."</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-87"></a>                        <span class="s">u'response'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-88"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-89"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-90"></a>                            <span class="s">u'status_code'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-91"></a>                        <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-92"></a>                        <span class="s">u'request'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-93"></a>                            <span class="s">u'url'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-94"></a>                            <span class="s">u'method'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-95"></a>                            <span class="s">u'body'</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-96"></a>                        <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-97"></a>                    <span class="p">})</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-98"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-99"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-100"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-101"></a>                <span class="s">u'[sync_event] Unexpected exception synchronizing event'</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-102"></a>                <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-103"></a>                    <span class="s">u'user'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-104"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-105"></a>                        <span class="s">u'email'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-106"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-107"></a>                    <span class="s">u'provider'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-108"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-109"></a>                        <span class="s">u'extra_data'</span><span class="p">:</span> <span class="n">provider</span><span class="o">.</span><span class="n">extra_data</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-110"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-111"></a>                    <span class="s">u'event'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-112"></a>                        <span class="s">u'pk'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-113"></a>                        <span class="s">u'name'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-114"></a>                    <span class="p">},</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-115"></a>                <span class="p">})</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-116"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-117"></a>        <span class="k">if</span> <span class="n">retry</span><span class="p">:</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-118"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_event</span><span class="p">(</span><span class="n">retry</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-119"></a>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-120"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">u'Event creation result: </span><span class="si">%r</span><span class="s">'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<a name="rest_code_5bc98aa8dacc45d9961b2e657b2f4d95-121"></a>        <span class="k">return</span> <span class="n">result</span>
 </pre>
 <p>Happy weekend! :)</p>
 <p><strong>UPDATE on 2014-11-11:</strong> <a class="reference external" href="http://psa.matiasaguirre.net/">python-social-auth</a> has updated the documentation
 about how to refresh tokens: <a class="reference external" href="http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token">http://psa.matiasaguirre.net/docs/use_cases.html#re-prompt-google-oauth2-users-to-refresh-the-refresh-token</a></p>
 <p>Today I have found that refresh_tokens also expires, so the correct
 <tt class="docutils literal">approval_promt</tt> value to use is <tt class="docutils literal">auto</tt>:</p>
-<pre class="code python"><a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-1"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-2"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-3"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'auto'</span>  <span class="c"># Enables refresh_token, for ever and ever</span>
-<a name="rest_code_3ba73ea2c9ce4107acd535fc394432e1-4"></a><span class="p">}</span>
+<pre class="code python"><a name="rest_code_d278dc085bda49938d12cf3fe5c99812-1"></a><span class="n">SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-2"></a>    <span class="s">'access_type'</span><span class="p">:</span> <span class="s">'offline'</span><span class="p">,</span>  <span class="c"># Enables the refreshing grant</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-3"></a>    <span class="s">'approval_promt'</span><span class="p">:</span> <span class="s">'auto'</span>  <span class="c"># Enables refresh_token, for ever and ever</span>
+<a name="rest_code_d278dc085bda49938d12cf3fe5c99812-4"></a><span class="p">}</span>
 </pre>
 </div>
 </div>
@@ -268,62 +268,62 @@ about how to refresh tokens: <a class="reference external" href="http://psa.mati
 in <a class="reference external" href="https://www.djangoproject.com/">Django</a> with <strong>property</strong>. Property is a mechanism in <a class="reference external" href="https://www.python.org/">Python</a> language to
 implement getters and setters for a class field in a transparent way (<em>in a
 pythonic way</em> some might say). Here a very simple example:</p>
-<pre class="code python"><a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-1"></a><span class="c">#!/usr/bin/env python</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-3"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-4"></a><span class="sd">"""</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-5"></a><span class="sd">File: foo.py</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-6"></a><span class="sd">Description: A very simple property implementation on a very simple class.</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-7"></a><span class="sd">"""</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-8"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-9"></a><span class="kn">import</span> <span class="nn">random</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-10"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-11"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-13"></a>    <span class="sd">"""</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-14"></a><span class="sd">    This is a foo class implementation.</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-15"></a><span class="sd">    """</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="mi">1</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-17"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-18"></a>    <span class="nd">@property</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-19"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-20"></a>        <span class="sd">"""</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-21"></a><span class="sd">        Access the _foo field but doing some dummy calculations.</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-22"></a><span class="sd">        """</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-23"></a>        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span><span class="p">)</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-24"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-25"></a>    <span class="nd">@foo.setter</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-26"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-27"></a>        <span class="sd">"""</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-28"></a><span class="sd">        Setter for _foo field but doing some "validations".</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-29"></a><span class="sd">        """</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-30"></a>        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-31"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">"foo field cannot be greater than 10"</span><span class="p">)</span>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-32"></a>
-<a name="rest_code_089a65a94fcb4e5fa8cbe17f049a1444-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
+<pre class="code python"><a name="rest_code_9194f3a536b44b87af34b86616ea552a-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-3"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-4"></a><span class="sd">"""</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-5"></a><span class="sd">File: foo.py</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-6"></a><span class="sd">Description: A very simple property implementation on a very simple class.</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-7"></a><span class="sd">"""</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-8"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-9"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-10"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-11"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-13"></a>    <span class="sd">"""</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-14"></a><span class="sd">    This is a foo class implementation.</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-15"></a><span class="sd">    """</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-17"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-18"></a>    <span class="nd">@property</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-19"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-20"></a>        <span class="sd">"""</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-21"></a><span class="sd">        Access the _foo field but doing some dummy calculations.</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-22"></a><span class="sd">        """</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-23"></a>        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span><span class="p">)</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-24"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-25"></a>    <span class="nd">@foo.setter</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-26"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-27"></a>        <span class="sd">"""</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-28"></a><span class="sd">        Setter for _foo field but doing some "validations".</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-29"></a><span class="sd">        """</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-30"></a>        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-31"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">"foo field cannot be greater than 10"</span><span class="p">)</span>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-32"></a>
+<a name="rest_code_9194f3a536b44b87af34b86616ea552a-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
 </pre>
 <p>So this way the recently implemented <tt class="docutils literal">Foo</tt> class would be used:</p>
-<pre class="code bash"><a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-1"></a>~<span class="nv">$ </span>python
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-2"></a>&gt;&gt;&gt; from foo import Foo
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-3"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-4"></a>&gt;&gt;&gt; f._foo  <span class="c"># _foo field is still accessible</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-5"></a>1
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-6"></a>&gt;&gt;&gt; f.foo
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-7"></a>1
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-8"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-9"></a>True
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-10"></a>&gt;&gt;&gt; f.foo  <span class="c"># since f._foo == 1, random will only return 1</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-11"></a>1
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-12"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> 5
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-13"></a>&gt;&gt;&gt; f.foo  <span class="c"># now f._foo == 5; random numbers will vary between 1 and 5</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-14"></a>3
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-15"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="m">20</span>  <span class="c"># this will raise a ValueError exception</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-17"></a>  File <span class="s2">"&lt;stdin&gt;"</span>, line 1, in &lt;module&gt;
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-18"></a>  File <span class="s2">"foo.py"</span>, line 31, in foo
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-19"></a>    raise ValueError<span class="o">(</span><span class="s2">"foo field cannot be greater than 10"</span><span class="o">)</span>
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-20"></a>ValueError: foo field cannot be greater than 10
-<a name="rest_code_fce01dbbf1dd4b388796cbe6c37e5eb3-21"></a>&gt;&gt;&gt;
+<pre class="code bash"><a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-1"></a>~<span class="nv">$ </span>python
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-2"></a>&gt;&gt;&gt; from foo import Foo
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-3"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-4"></a>&gt;&gt;&gt; f._foo  <span class="c"># _foo field is still accessible</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-5"></a>1
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-6"></a>&gt;&gt;&gt; f.foo
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-7"></a>1
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-8"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-9"></a>True
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-10"></a>&gt;&gt;&gt; f.foo  <span class="c"># since f._foo == 1, random will only return 1</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-11"></a>1
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-12"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> 5
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-13"></a>&gt;&gt;&gt; f.foo  <span class="c"># now f._foo == 5; random numbers will vary between 1 and 5</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-14"></a>3
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-15"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="m">20</span>  <span class="c"># this will raise a ValueError exception</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-17"></a>  File <span class="s2">"&lt;stdin&gt;"</span>, line 1, in &lt;module&gt;
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-18"></a>  File <span class="s2">"foo.py"</span>, line 31, in foo
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-19"></a>    raise ValueError<span class="o">(</span><span class="s2">"foo field cannot be greater than 10"</span><span class="o">)</span>
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-20"></a>ValueError: foo field cannot be greater than 10
+<a name="rest_code_c11c6b36f6bb4578b1f42619de6361d5-21"></a>&gt;&gt;&gt;
 </pre>
 <p><a class="reference external" href="https://docs.python.org/2/library/functions.html#property">The official documentation about this functionality</a> can be found easily.</p>
 <div class="section" id="the-problem-with-django">
@@ -332,119 +332,119 @@ pythonic way</em> some might say). Here a very simple example:</p>
 all. The problem resides on using the other advantages this framework offers
 over the field used for this solution. I'm going to make a simple example with
 a <a class="reference external" href="https://www.djangoproject.com/">Django</a> project:</p>
-<pre class="code bash"><a name="rest_code_1a76345c159b40e08ba1871346b65434-1"></a>~<span class="nv">$ </span>sudo apt-get install python-pip <span class="o">&amp;&amp;</span> sudo pip install virtualenv
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-2"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-3"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-4"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-5"></a>~<span class="nv">$ </span>mkdir brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-6"></a>~/brokenprop<span class="nv">$ </span>virtualenv env
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-7"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-8"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-9"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-10"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>pip install django
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-11"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-12"></a>... <span class="o">(</span>skipped more output<span class="o">)</span>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-13"></a>
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-14"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>django-admin.py startproject brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
-<a name="rest_code_1a76345c159b40e08ba1871346b65434-15"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>chmod +x manage.py <span class="o">&amp;&amp;</span> ./manage.py startapp propapp
+<pre class="code bash"><a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-1"></a>~<span class="nv">$ </span>sudo apt-get install python-pip <span class="o">&amp;&amp;</span> sudo pip install virtualenv
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-2"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-3"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-4"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-5"></a>~<span class="nv">$ </span>mkdir brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-6"></a>~/brokenprop<span class="nv">$ </span>virtualenv env
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-7"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-8"></a>... <span class="o">(</span>skipped output<span class="o">)</span>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-9"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-10"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>pip install django
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-11"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-12"></a>... <span class="o">(</span>skipped more output<span class="o">)</span>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-13"></a>
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-14"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop<span class="nv">$ </span>django-admin.py startproject brokenprop <span class="o">&amp;&amp;</span> <span class="nb">cd </span>brokenprop
+<a name="rest_code_93e4f93269534d7d9ca8ebfec9f57e2a-15"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>chmod +x manage.py <span class="o">&amp;&amp;</span> ./manage.py startapp propapp
 </pre>
 <p>The test project was initialized. By default <a class="reference external" href="https://www.djangoproject.com/">Django</a> has configured <a class="reference external" href="http://www.sqlite.org/">SQLite</a> as
 database engine and for this example it is more than enough. I'm going to edit
 the <tt class="docutils literal">propapp</tt> application's models module and implement getter and setter in
 a class. The result is very similar to the previous example:</p>
-<pre class="code python"><a name="rest_code_e34021061f774290940a57af7f8c125d-1"></a><span class="c">#!/usr/bin/env python</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-3"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-4"></a><span class="sd">"""</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-5"></a><span class="sd">File: models.py</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-6"></a><span class="sd">Description: Model implementations for application 'propapp'.</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-7"></a><span class="sd">"""</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-8"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-9"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-10"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-11"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-13"></a>    <span class="sd">"""</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-14"></a><span class="sd">    A foo model implementation.</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-15"></a><span class="sd">    """</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-17"></a>        <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-18"></a>        <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-19"></a>        <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-20"></a>        <span class="n">db_column</span><span class="o">=</span><span class="s">'foo'</span><span class="p">,</span>  <span class="c"># keeps the field name as it should</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-21"></a>    <span class="p">)</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-22"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-23"></a>    <span class="nd">@property</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-24"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-25"></a>        <span class="sd">"""</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-26"></a><span class="sd">        The foo getter</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-27"></a><span class="sd">        """</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-28"></a>        <span class="c"># doing the things that a getter method does ...</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-29"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-30"></a>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-31"></a>    <span class="nd">@foo.setter</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-32"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-33"></a>        <span class="c"># doing the things that a setter method does ...</span>
-<a name="rest_code_e34021061f774290940a57af7f8c125d-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
+<pre class="code python"><a name="rest_code_a1f830e2130840f38ef65a4797372a06-1"></a><span class="c">#!/usr/bin/env python</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-2"></a><span class="c"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-3"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-4"></a><span class="sd">"""</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-5"></a><span class="sd">File: models.py</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-6"></a><span class="sd">Description: Model implementations for application 'propapp'.</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-7"></a><span class="sd">"""</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-8"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-9"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-10"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-11"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-12"></a><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-13"></a>    <span class="sd">"""</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-14"></a><span class="sd">    A foo model implementation.</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-15"></a><span class="sd">    """</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-16"></a>    <span class="n">_foo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-17"></a>        <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-18"></a>        <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-19"></a>        <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-20"></a>        <span class="n">db_column</span><span class="o">=</span><span class="s">'foo'</span><span class="p">,</span>  <span class="c"># keeps the field name as it should</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-21"></a>    <span class="p">)</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-22"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-23"></a>    <span class="nd">@property</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-24"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-25"></a>        <span class="sd">"""</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-26"></a><span class="sd">        The foo getter</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-27"></a><span class="sd">        """</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-28"></a>        <span class="c"># doing the things that a getter method does ...</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-29"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-30"></a>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-31"></a>    <span class="nd">@foo.setter</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-32"></a>    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-33"></a>        <span class="c"># doing the things that a setter method does ...</span>
+<a name="rest_code_a1f830e2130840f38ef65a4797372a06-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_foo</span> <span class="o">=</span> <span class="n">value</span>
 </pre>
 <p>So there it is: a field model with its methods. Here is how to use them:</p>
-<pre class="code bash"><a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-1"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py syncdb --noinput
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-2"></a>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-3"></a>... <span class="o">(</span>skipped output <span class="k">for</span> sync stuff<span class="o">)</span> ...
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-4"></a>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-5"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py shell
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-6"></a>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-7"></a>&gt;&gt;&gt; from propapp.models import Foo
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-8"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-9"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="s1">'a'</span>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-10"></a>&gt;&gt;&gt; f._foo
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-11"></a><span class="s1">'a'</span>
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-12"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
-<a name="rest_code_73c1ca46a97a4bf3b5d23d28370d9079-13"></a>True
+<pre class="code bash"><a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-1"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py syncdb --noinput
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-2"></a>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-3"></a>... <span class="o">(</span>skipped output <span class="k">for</span> sync stuff<span class="o">)</span> ...
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-4"></a>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-5"></a><span class="o">(</span>env<span class="o">)</span>~/brokenprop/brokenprop<span class="nv">$ </span>./manage.py shell
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-6"></a>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-7"></a>&gt;&gt;&gt; from propapp.models import Foo
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-8"></a>&gt;&gt;&gt; <span class="nv">f</span> <span class="o">=</span> Foo<span class="o">()</span>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-9"></a>&gt;&gt;&gt; f.foo <span class="o">=</span> <span class="s1">'a'</span>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-10"></a>&gt;&gt;&gt; f._foo
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-11"></a><span class="s1">'a'</span>
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-12"></a>&gt;&gt;&gt; f._foo <span class="o">==</span> f.foo
+<a name="rest_code_396598442f5e46d1bf7840711b8fb6ec-13"></a>True
 </pre>
 <p>Everything is ok til here; much more, everything is the same, no problem so
 far. The problems begin when a query on the field is made:</p>
-<pre class="code bash"><a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-3"></a>...
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-5"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-6"></a>FieldError: Cannot resolve keyword <span class="s1">'foo'</span> into field. Choices are: _foo, id
-<a name="rest_code_908960c41f3d4387a6953e94d0f2d6e4-7"></a>&gt;&gt;&gt;
+<pre class="code bash"><a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-3"></a>...
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-5"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-6"></a>FieldError: Cannot resolve keyword <span class="s1">'foo'</span> into field. Choices are: _foo, id
+<a name="rest_code_eb132c3d3879495e9d7e725c87f99d58-7"></a>&gt;&gt;&gt;
 </pre>
 <p>Ok, the field cannot be used as it was supposed to be <tt class="docutils literal">:(</tt>. Suppose that this
 cost is worthless for me and I want to continue this way, I don't care that the
 field name is not intuitive enough: I want (and I will) put what it requires to
 be putted to get to the field name:</p>
-<pre class="code bash"><a name="rest_code_b04445aa7cd4468a92bd07a967607d15-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-3"></a>...
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py"</span>, line 451, in execute
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-5"></a>  <span class="k">return</span> Database.Cursor.execute<span class="o">(</span>self, query, params<span class="o">)</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-6"></a>OperationalError: no such table: propapp_foo
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-7"></a>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-8"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-9"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-10"></a>...
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-11"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-12"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-13"></a>FieldError: Cannot resolve keyword <span class="s1">''</span> into field. Choices are: _foo, id
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-14"></a>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-15"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-17"></a>...
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-18"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-19"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-20"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp'</span> into field. Choices are: _foo, id
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-21"></a>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-22"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-23"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-24"></a>...
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-25"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-26"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-27"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp_foo'</span> into field. Choices are: _foo, id
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-28"></a>
-<a name="rest_code_b04445aa7cd4468a92bd07a967607d15-29"></a>&gt;&gt;&gt;
+<pre class="code bash"><a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-1"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-2"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-3"></a>...
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-4"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py"</span>, line 451, in execute
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-5"></a>  <span class="k">return</span> Database.Cursor.execute<span class="o">(</span>self, query, params<span class="o">)</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-6"></a>OperationalError: no such table: propapp_foo
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-7"></a>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-8"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-9"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-10"></a>...
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-11"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-12"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-13"></a>FieldError: Cannot resolve keyword <span class="s1">''</span> into field. Choices are: _foo, id
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-14"></a>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-15"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp__foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-16"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-17"></a>...
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-18"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-19"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-20"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp'</span> into field. Choices are: _foo, id
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-21"></a>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-22"></a>&gt;&gt;&gt; Foo.objects.filter<span class="o">(</span><span class="nv">propapp_foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">)</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-23"></a>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-24"></a>...
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-25"></a>File <span class="s2">"/home/ariel17/brokenprop/env/local/lib/python2.7/site-packages/django/db/models/sql/query.py"</span>, line 1283, in names_to_path
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-26"></a>  <span class="s2">"Choices are: %s"</span> % <span class="o">(</span>name, <span class="s2">", "</span>.join<span class="o">(</span>available<span class="o">)))</span>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-27"></a>FieldError: Cannot resolve keyword <span class="s1">'propapp_foo'</span> into field. Choices are: _foo, id
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-28"></a>
+<a name="rest_code_b5ef83b325c3429d9f157501ba1f4478-29"></a>&gt;&gt;&gt;
 </pre>
 <p><strong>The field is not reachable to be used on queries</strong>. The issue <a class="reference external" href="https://code.djangoproject.com/ticket/3148">#3148</a> on
 <a class="reference external" href="https://www.djangoproject.com/">Django</a>'s track system talks about it, but the solution propoused, on which

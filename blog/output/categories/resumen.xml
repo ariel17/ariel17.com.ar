@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (resumen)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/categories/resumen.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 14:59:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Semana 2014#43 - Resumen</title><link>http://ariel17.com.ar/blog/week-2014-43-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El resumen para la semana #43: muy movida pero concentrada en sus actividades.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (resumen)</title><link>https://example.com/</link><description></description><atom:link href="/categories/resumen.xml" type="application/rss+xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sun, 25 Mar 2018 16:13:02 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Semana 2014#43 - Resumen</title><link>/blog/week-2014-43-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;El resumen para la semana #43: muy movida pero concentrada en sus actividades.&lt;/p&gt;
 &lt;div class="section" id="libros-que-estoy-leyendo-lei"&gt;
 &lt;h2&gt;Libros que estoy leyendo/leí&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -27,7 +27,7 @@ y pronto lo usaré para mis servidores de producción :)&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://gitlab.ariel17.com.ar/arynan/base-django"&gt;Proyecto de ejemplo&lt;/a&gt; para provisionar Vagrant usando Puppet.&lt;/li&gt;
 &lt;li&gt;Mantenimiento de la huerta: ¡se vienen nuevos tomates!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>2014</category><category>resumen</category><category>semana</category><guid>http://ariel17.com.ar/blog/week-2014-43-summary/</guid><pubDate>Mon, 27 Oct 2014 13:38:00 GMT</pubDate></item><item><title>Semana 2014#42 - Resumen</title><link>http://ariel17.com.ar/blog/week-2014-42-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Durante la semana estuve pensando la manera de llevar un registro de mis
+&lt;/div&gt;&lt;/div&gt;</description><category>2014</category><category>resumen</category><category>semana</category><guid>/blog/week-2014-43-summary/</guid><pubDate>Mon, 27 Oct 2014 13:38:00 GMT</pubDate></item><item><title>Semana 2014#42 - Resumen</title><link>/blog/week-2014-42-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Durante la semana estuve pensando la manera de llevar un registro de mis
 actividades. Lo más sencillo que se me ocurrió fue hacer un resumen cerca del
 fin de semana: es un período de tiempo corto para no olvidar la mayoría de los
 sucesos pero suficientemente largo para que sucedan cosas interesantes (aunque
@@ -61,4 +61,4 @@ deploy en mi PC sin necesidad de servidores de terceros.&lt;/li&gt;
 Se ve muy lindo vacío; ¡ahora hay que llenarlo de Ariel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;¡Buen fin de semana! :D&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>resumen</category><category>semana</category><guid>http://ariel17.com.ar/blog/week-2014-42-summary/</guid><pubDate>Fri, 17 Oct 2014 12:45:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>resumen</category><category>semana</category><guid>/blog/week-2014-42-summary/</guid><pubDate>Fri, 17 Oct 2014 12:45:07 GMT</pubDate></item></channel></rss>

@@ -2,19 +2,19 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="es">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Fixing home and end keys in Vim | Ariel Gerardo Ríos</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../en/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
-<link rel="canonical" href="http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ariel Gerardo Ríos">
 <link rel="prev" href="../books-in-2016/" title="Libros en 2016" type="text/html">
 <link rel="next" href="../mision-personal-v2017/" title="Misión personal v2017" type="text/html">
 <meta property="og:site_name" content="Ariel Gerardo Ríos">
 <meta property="og:title" content="Fixing home and end keys in Vim">
-<meta property="og:url" content="http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/">
+<meta property="og:url" content="/blog/fixing-home-and-end-keys-in-vim/">
 <meta property="og:description" content='Adding this to ~/.vimrc file fixes incorrect HOME &amp; END key behavior:
 " Home key
 imap &lt;esc&gt;OH &lt;esc&gt;0i
@@ -76,15 +76,15 @@ cmap &lt;esc&gt;OF &lt;en'>
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>Adding this to <cite>~/.vimrc</cite> file fixes incorrect HOME &amp; END key behavior:</p>
-<pre class="code vim"><a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-1"></a><span class="c">" Home key</span>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-2"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>esc<span class="p">&gt;</span><span class="m">0</span>i
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-3"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>home<span class="p">&gt;</span>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-4"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="m">0</span>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-5"></a>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-6"></a><span class="c">" End key</span>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-7"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF $
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-8"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span>esc<span class="p">&gt;</span>$<span class="k">a</span>
-<a name="rest_code_ad9dd17092a1463a84c3f615bfa65198-9"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span><span class="k">end</span><span class="p">&gt;</span>
+<pre class="code vim"><a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-1"></a><span class="c">" Home key</span>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-2"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>esc<span class="p">&gt;</span><span class="m">0</span>i
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-3"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="p">&lt;</span>home<span class="p">&gt;</span>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-4"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OH <span class="m">0</span>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-5"></a>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-6"></a><span class="c">" End key</span>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-7"></a>nmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF $
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-8"></a>imap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span>esc<span class="p">&gt;</span>$<span class="k">a</span>
+<a name="rest_code_f7105f6bf3c64ba584b8ca29812d585a-9"></a>cmap <span class="p">&lt;</span>esc<span class="p">&gt;</span>OF <span class="p">&lt;</span><span class="k">end</span><span class="p">&gt;</span>
 </pre>
 </div>
     </div>
@@ -106,7 +106,7 @@ cmap &lt;esc&gt;OF &lt;en'>
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="ariel17",
-            disqus_url="http://ariel17.com.ar/blog/fixing-home-and-end-keys-in-vim/",
+            disqus_url="/blog/fixing-home-and-end-keys-in-vim/",
         disqus_title="Fixing home and end keys in Vim",
         disqus_identifier="cache/posts/fixing-home-and-end-keys-in-vim.html",
         disqus_config = function () {

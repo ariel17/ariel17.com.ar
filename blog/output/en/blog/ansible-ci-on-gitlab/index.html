@@ -2,19 +2,19 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
-<base href="http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/">
+<base href=".">
 <meta name="viewport" content="width=device-width">
 <title>Ansible CI on GitLab | Ariel Gerardo Ríos</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../../rss.xml">
-<link rel="canonical" href="http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/">
+<link rel="canonical" href=".">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Ariel Gerardo Ríos">
 <link rel="prev" href="../necochea-charts/" title="Necochea charts" type="text/html">
 <link rel="next" href="../sembrando-el-camino/" title="Sembrando el camino" type="text/html">
 <meta property="og:site_name" content="Ariel Gerardo Ríos">
 <meta property="og:title" content="Ansible CI on GitLab">
-<meta property="og:url" content="http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/">
+<meta property="og:url" content="/en/blog/ansible-ci-on-gitlab/">
 <meta property="og:description" content="Using a Docker container running a SSH daemon as idle server, Ansible can run
 playbooks safely in an ephemeral environment. GitLab CI provides a highly
 flexible interface as recipe with .gitlab-ci.yml">
@@ -68,49 +68,49 @@ flexible interface as recipe with .gitlab-ci.yml">
 <p>Using a Docker container running a SSH daemon as idle server, Ansible can run
 playbooks safely in an ephemeral environment. GitLab CI provides a highly
 flexible interface as recipe with <a class="reference external" href="https://docs.gitlab.com/ce/ci/quick_start/#quick-start"><cite>.gitlab-ci.yml</cite></a> file:</p>
-<pre class="code yaml"><a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-1"></a><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ansible/ubuntu14.04-ansible</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-2"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-3"></a><span class="l-Scalar-Plain">variables</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-4"></a>  <span class="l-Scalar-Plain">GIT_STRATEGY</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">clone</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-5"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-6"></a><span class="l-Scalar-Plain">before_script</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-7"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">eval $(ssh-agent -s)</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-8"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir -p ~/.ssh</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-9"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo "$SSH_PRIVATE_KEY" &gt; ~/.ssh/id_rsa</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-10"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">chmod 400 ~/.ssh/id_rsa</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-11"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo 'Host github.com' &gt; ~/.ssh/config</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-12"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    User git' &gt;&gt; ~/.ssh/config</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-13"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    IdentityFile ~/.ssh/id_rsa' &gt;&gt; ~/.ssh/config</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-14"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    IdentitiesOnly yes' &gt;&gt; ~/.ssh/config</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-15"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    StrictHostKeyChecking no' &gt;&gt; ~/.ssh/config</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-16"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule init</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-17"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule update</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-18"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo "$ANSIBLE_VAULT_PASSWORD" &gt; "$ANSIBLE_VAULT_PASSWORD_FILE"</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-19"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">apt-get install sshpass -y</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-20"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-21"></a><span class="l-Scalar-Plain">after_script</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-22"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rm -rf .ssh "$ANSIBLE_VAULT_PASSWORD_FILE"</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-23"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-24"></a><span class="l-Scalar-Plain">stages</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-25"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">build</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-26"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">test</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-27"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">production</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-28"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-29"></a><span class="l-Scalar-Plain">syntax_check</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-30"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">build</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-31"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-32"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook --syntax-check playbook.yml</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-33"></a>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-34"></a><span class="l-Scalar-Plain">server01</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-35"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">test</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-36"></a>  <span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-37"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rastasheep/ubuntu-sshd:14.04</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-38"></a>  <span class="l-Scalar-Plain">environment</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">testing</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-39"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-40"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '[server01]' &gt;&gt; inventory</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-41"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo 'rastasheep__ubuntu-sshd ansible_connection=ssh ansible_user=root ansible_ssh_pass=root' &gt;&gt; inventory</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-42"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible server01 -m setup</span>
-<a name="rest_code_e094845ba3af44d5a79c97e3c51071e0-43"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook playbook.yml --limit server01</span>
+<pre class="code yaml"><a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-1"></a><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ansible/ubuntu14.04-ansible</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-2"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-3"></a><span class="l-Scalar-Plain">variables</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-4"></a>  <span class="l-Scalar-Plain">GIT_STRATEGY</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">clone</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-5"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-6"></a><span class="l-Scalar-Plain">before_script</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-7"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">eval $(ssh-agent -s)</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-8"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir -p ~/.ssh</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-9"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo "$SSH_PRIVATE_KEY" &gt; ~/.ssh/id_rsa</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-10"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">chmod 400 ~/.ssh/id_rsa</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-11"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo 'Host github.com' &gt; ~/.ssh/config</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-12"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    User git' &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-13"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    IdentityFile ~/.ssh/id_rsa' &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-14"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    IdentitiesOnly yes' &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-15"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '    StrictHostKeyChecking no' &gt;&gt; ~/.ssh/config</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-16"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule init</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-17"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">git submodule update</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-18"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo "$ANSIBLE_VAULT_PASSWORD" &gt; "$ANSIBLE_VAULT_PASSWORD_FILE"</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-19"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">apt-get install sshpass -y</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-20"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-21"></a><span class="l-Scalar-Plain">after_script</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-22"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rm -rf .ssh "$ANSIBLE_VAULT_PASSWORD_FILE"</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-23"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-24"></a><span class="l-Scalar-Plain">stages</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-25"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">build</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-26"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">test</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-27"></a>  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">production</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-28"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-29"></a><span class="l-Scalar-Plain">syntax_check</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-30"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">build</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-31"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-32"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook --syntax-check playbook.yml</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-33"></a>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-34"></a><span class="l-Scalar-Plain">server01</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-35"></a>  <span class="l-Scalar-Plain">stage</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">test</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-36"></a>  <span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-37"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">rastasheep/ubuntu-sshd:14.04</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-38"></a>  <span class="l-Scalar-Plain">environment</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">testing</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-39"></a>  <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-40"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo '[server01]' &gt;&gt; inventory</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-41"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">echo 'rastasheep__ubuntu-sshd ansible_connection=ssh ansible_user=root ansible_ssh_pass=root' &gt;&gt; inventory</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-42"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible server01 -m setup</span>
+<a name="rest_code_d30c96d947134efa97c1f9c6b68f4814-43"></a>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ansible-playbook playbook.yml --limit server01</span>
 </pre>
 <p>The cheapest test that can be done is syntax checking. Once it is verified,
 test jobs will be fired in parallel (there can be any number of jobs in each
@@ -134,7 +134,7 @@ inventory is overrided to match configuration for every node.</p>
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="ariel17",
-            disqus_url="http://ariel17.com.ar/en/blog/ansible-ci-on-gitlab/",
+            disqus_url="/en/blog/ansible-ci-on-gitlab/",
         disqus_title="Ansible CI on GitLab",
         disqus_identifier="cache/posts/ansible-ci-on-gitlab.html",
         disqus_config = function () {

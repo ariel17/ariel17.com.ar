@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (week)</title><link>https://example.com/</link><description></description><atom:link href="http://ariel17.com.ar/en/categories/week.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 14:59:58 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Week 2014#43 - Summary</title><link>http://ariel17.com.ar/en/blog/week-2014-43-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;The summary for week #43: very moved but concentrated in its activities.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Ariel Gerardo Ríos (week)</title><link>https://example.com/</link><description></description><atom:link href="/en/categories/week.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 16:12:58 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Week 2014#43 - Summary</title><link>/en/blog/week-2014-43-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;The summary for week #43: very moved but concentrated in its activities.&lt;/p&gt;
 &lt;div class="section" id="books-i-am-reading-i-readed"&gt;
 &lt;h2&gt;Books I am reading/I readed&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -26,7 +26,7 @@ provisioning and soon I will use it for my production servers :)&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://gitlab.ariel17.com.ar/arynan/base-django"&gt;Example project&lt;/a&gt; for Vagrant provisioning using Puppet.&lt;/li&gt;
 &lt;li&gt;Maintenance for orchard: new tomatoes arriving!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>summary</category><category>week</category><guid>http://ariel17.com.ar/en/blog/week-2014-43-summary/</guid><pubDate>Mon, 27 Oct 2014 13:38:00 GMT</pubDate></item><item><title>Week 2014#42 - Summary</title><link>http://ariel17.com.ar/en/blog/week-2014-42-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Last week I was thinking on a way I could keep an activity registry. The
+&lt;/div&gt;&lt;/div&gt;</description><category>summary</category><category>week</category><guid>/en/blog/week-2014-43-summary/</guid><pubDate>Mon, 27 Oct 2014 13:38:00 GMT</pubDate></item><item><title>Week 2014#42 - Summary</title><link>/en/blog/week-2014-42-summary/</link><dc:creator>Ariel Gerardo Ríos</dc:creator><description>&lt;div&gt;&lt;p&gt;Last week I was thinking on a way I could keep an activity registry. The
 simplest thing I found was to do a summary close to weekend: a short period of
 time to not forget the major of occurred events but long enough to let
 interesting things to happen (but I have to prove it to myself this last one
@@ -60,4 +60,4 @@ of third party servers.&lt;/li&gt;
 It looks very nice empty; now I must fil it of me!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Good weekend! :D&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>summary</category><category>week</category><guid>http://ariel17.com.ar/en/blog/week-2014-42-summary/</guid><pubDate>Fri, 17 Oct 2014 12:45:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>summary</category><category>week</category><guid>/en/blog/week-2014-42-summary/</guid><pubDate>Fri, 17 Oct 2014 12:45:07 GMT</pubDate></item></channel></rss>
