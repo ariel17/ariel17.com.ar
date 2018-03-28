@@ -19,6 +19,8 @@
   contexto y los fundamentos de los requerimientos. |C4|_ ayuda.
 * Ante la falta de evidencia explícita de un evento exterior, asumir que fue
   el sistema bajo nuestro control el que ha fallado.
+* Las regexp no son para nada performantes; evitarlas/reducirlas lo más que se
+  pueda.
   
 .. _C4: https://c4model.com/
 .. |C4| replace:: C4 Model
