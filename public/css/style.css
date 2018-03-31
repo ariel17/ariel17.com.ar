@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+/* light is default mode, so pair with general html definition */
+.light {
+  background-color: #fdf6e3;
+  color: #657b83;
+}
+.light * {
+  color: #657b83;
+}
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+.light a,
+.light a:active,
+.light a:visited {
+  color: #586e75;
+}
+.dark {
+  background-color: #002b36;
+  color: #839496;
+}
+.dark * {
+  color: #839496;
+}
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #93a1a1;
+  border-color: #839496;
+}
+.dark a,
+.dark a:active,
+.dark a:visited {
+  color: #93a1a1;
+}
+html,
+body {
+  font-family: 'Inconsolata';
+  overflow-x: hidden;
+}
+.navbar {
+  font-size: 1.5em;
+  border: 0;
+}
+.navbar .navbar-brand {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+.navbar .navbar-brand:hover {
+  color: #268bd2;
+}
+.navbar .navbar-toggle {
+  border-color: white;
+}
+.navbar .navbar-right {
+  margin-right: 30px;
+}
+.navbar-inverse {
+  background-color: #002b36;
+}
+.navbar-inverse .navbar-nav li a {
+  color: white;
+}
+.navbar-inverse .navbar-nav li a:hover {
+  color: #268bd2;
+}
+.navbar-inverse li {
+  margin-right: 5px;
+}
+.transparent {
+  background-color: none;
+  background: none;
+}
+.intro {
+  height: 100vh;
+  background-image: linear-gradient(rgba(43, 54, 193, 0.3), rgba(43, 54, 193, 0.3)), url('../img/header-bg.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.intro .title {
+  color: white;
+  margin-top: 15%;
+}
+.intro .title h1 {
+  font-size: 7em;
+  font-weight: bold;
+}
+.intro .title .btn {
+  font-size: 2em;
+  border-radius: 15px;
+  margin: 20px;
+  border-color: white;
+}
+.intro .title .btn-primary {
+  color: black;
+  background-color: white;
+}
+.intro .title .btn-default {
+  color: white;
+  background-color: transparent;
+}
+.intro .title .links {
+  margin: 0;
+}
+.intro .title .links a {
+  text-decoration: none;
+  color: white;
+}
+.intro .title .links a:hover {
+  color: #002b36;
+}
+.intro .title .links i {
+  padding: 5px 10px;
+  display: inline-block;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  border: 2px solid white;
+}
+.intro .title .links i:hover {
+  border-color: #002b36;
+}
+h2 {
+  font-size: 3em;
+}
+section {
+  padding: 50px;
+}
+.about {
+  background-color: #eee8d5;
+}
+.about p {
+  padding: 40px;
+  font-size: 2em;
+  color: #073642;
+}
+.skills {
+  background-color: #839496;
+  color: white;
+}
+.skills h2 {
+  margin: 30px 0 20px;
+}
+.skills ul {
+  list-style-type: none;
+}
+.skills .outer {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.skills .outer li {
+  margin: 0 0 15px 0;
+}
+.skills .inner {
+  font-weight: normal;
+}
+.skills .inner li {
+  display: inline;
+}
+footer {
+  padding: 10px 0 10px;
+  background-color: #002b36;
+  color: white;
+}
+footer .copyright {
+  margin: 10px 0 10px;
+  font-size: 1.5em;
+}
+/* Small screen & Biger */
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 1em;
+  }
+  .navbar .navbar-brand {
+    font-size: 1.5em;
+  }
+  .intro {
+    background-image: linear-gradient(rgba(43, 54, 193, 0.3), rgba(43, 54, 193, 0.3)), url('../img/header-bg-mobile.jpeg');
+  }
+  .intro .title {
+    margin-top: 45%;
+  }
+  .intro .title h1 {
+    font-size: 4em;
+  }
+  .intro .title .link {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+  .about p {
+    padding: 20px;
+    font-size: 1.7em;
+    color: #073642;
+  }
+  footer .copyright {
+    font-size: 1em;
+  }
+}
